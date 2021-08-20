@@ -1,2 +1,2 @@
-# Grupo-08
+# Grupo-08-Criptoverse
 Mineração de criptomoedas
