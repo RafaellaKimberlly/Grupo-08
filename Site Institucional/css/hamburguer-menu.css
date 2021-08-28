@@ -46,7 +46,7 @@ main {
 }
 
 .mobile-menu {
-    display: none;
+    /* display: none; */
     cursor: pointer;
 }
 
@@ -54,7 +54,7 @@ main {
     width: 32px;
     height: 2px;
     background: #fff;
-    background: 8px;
+    margin: 8px;
 }
 
 @media (max-width: 999px) {
@@ -84,6 +84,6 @@ main {
         display: block;
     }
     .nav-list.active {
-        transform: translateX();
+        transform: translateX(0);
     }
 }
