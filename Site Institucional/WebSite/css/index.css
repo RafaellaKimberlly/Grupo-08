@@ -3,9 +3,13 @@
     margin: 0;
 }
 
+.body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .header {
     background-color: #231D36;
-    height: 100px;
+    height: 150px;
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -13,16 +17,43 @@
 }
 
 .logo {
-    height: 100px;
+    height: 200px;
 }
 
 .button {
+    /* float: right; */
     background: #F95738;
     border-style: none;
-    height: 30px;
-    width: 100px;
+    height: 40px;
+    width: 120px;
     border-radius: 50px;
+    cursor: pointer;
+
+    font-size: 15px;
+    font-weight: 500;
     color: #fff;
+    
+}
+
+.button-entrar {
+    margin-left: 80%;
+    float: right;
+    background: #F95738;
+    border-style: none;
+    height: 40px;
+    width: 120px;
+    border-radius: 50px;
+    cursor: pointer;
+
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+}
+
+
+.button-entrar:hover{
+
+    background-color: #fa3d17 ;
 }
 
 .chamativo {
@@ -37,7 +68,9 @@
 }
 
 .chamativo h2 {
+    font-size: xx-large;
     color: #EEAF32;
+    font-weight: 700;
 }
 
 .chamativo span {
@@ -45,15 +78,20 @@
 }
 
 .funcionalidade {
+    height: 400px;
     background-color: #EBEBD3;
     padding: 20px;
 }
 
 .funcionalidade h2 {
+
+    margin-top: 5%;
     text-align: center;
 }
 
 .topicos {
+    margin-top: 5px;
+
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -66,4 +104,54 @@
 
 .topicos div img {
     height: 100px;
+}
+
+
+.servico{
+    background-color: #F95738;
+    height: 400px;
+    display: flex;
+    
+}
+
+.servico img{
+    margin-top: 20px;
+    height: 380px;
+}
+
+.servico div{
+    float: right;
+    margin-top: 8%;
+    margin-left: 50px;
+    align-items: center;
+}
+
+.servico h2{
+font-size: 50px;
+color: #fff;
+margin-left: 50px;
+margin-bottom: 30px;
+
+}
+
+.servico span{
+    font-size: 20px;
+}
+
+.button-saiba{
+    margin-left: 30%;
+    margin-top: 50px;
+    height: 40px;
+    width: 120px;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: #231D36;
+
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.button-saiba:hover{
+    background-color: #493e6d;
 }
