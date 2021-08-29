@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoVerse</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/d2a3c39bf2.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="principal">
+        <!-- CONTAINER PRINCIPAL DA PÁGINA -->
+
+        <div class="content primeiro-conteudo">
+            <!-- INICIO PRIMEIRO CONTEUDO (REGISTRO) -->
+
+            <div class="coluna-mensagem">
+                <!-- INICIO PRIMEIRA COLUNA (MENSAGEM) -->
+                <h2 class="titulo titulo-welcome"> Hey</h2>
+                <p class="descricao">Caso já tenha uma conta</p>
+                <p class="descricao">Clique no botão abaixo para logar.</p>
+                <button id="signin" class="btn btn-primary">Entrar</button>
+            </div><!-- FINAL PRIMEIRA COLUNA (MENSAGEM) -->
+
+            <div class="coluna-dados">
+                <!-- INICIO SEGUNDA COLUNA (REGISTRO) -->
+                <h2 class="titulo titulo-cadastro">Faça seu cadastro.</h2>
+                <div class="redes-sociais">
+                    <!-- INICIO REDES SOCIAIS (REGISTRO) -->
+                    <ul class="list-social-midia-registro">
+                        <a class="link-social" href="#">
+                            <li class="item-social-midia">
+                                <i class="fab fa-facebook"></i>
+                            </li>
+                        </a>
+
+                        <a class="link-social" href="#">
+                            <li class="item-social-midia">
+                                <i class="fab fa-google-plus"></i>
+                            </li>
+                        </a>
+
+                        <a class="link-social" href="#">
+                            <li class="item-social-midia">
+                                <i class="fab fa-linkedin"></i>
+                            </li>
+                        </a>
+                    </ul>
+
+                    <p class="descricao descricao-primary">Informe seus dados.</p>
+                </div><!-- FINAL REDES SOCIAIS (REGISTRO) -->
+
+                <form class="dados-usuario">
+                    <!-- INICIO FORMULÁRIO (REGISTRO) -->
+                    <label class="label-input">
+                        <i class="fas fa-user icon-modify"></i>
+                        <input type="text" placeholder="Nome">
+                    </label>
+
+                    <label class="label-input">
+                        <i class="fas fa-envelope icon-modify"></i>
+                        <input type="email" placeholder="Email">
+                    </label>
+
+                    <label class="label-input">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input type="password" placeholder="Senha">
+                    </label>
+
+                    <label class="label-input">
+                        <i class="fas fa-globe-americas world"></i>
+                        <select class="select_pais" name="estados" id="" placeholder="País">
+                            <option value="#" disabled>Selecione seu Estado</option>
+                            <option value="0">AC</option>
+                            <option value="1">AL</option>
+                            <option value="2">AP</option>
+                            <option value="3">AM</option>
+                            <option value="4">BA</option>
+                            <option value="5">CE</option>
+                            <option value="6">ES</option>
+                            <option value="7">GO</option>
+                            <option value="8">MA</option>
+                            <option value="9">MT</option>
+                            <option value="10">MS</option>
+                            <option value="11">MG</option>
+                            <option value="12">PA</option>
+                            <option value="13">PB</option>
+                            <option value="14">PR</option>
+                            <option value="15">PE</option>
+                            <option value="16">PI</option>
+                            <option value="17">RJ</option>
+                            <option value="18">RN</option>
+                            <option value="19">RS</option>
+                            <option value="20">RO</option>
+                            <option value="21">RR</option>
+                            <option value="22">SC</option>
+                            <option value="23">SP</option>
+                            <option value="24">SE</option>
+                            <option value="25">TO</option>
+                            <option value="26">DF</option>
+                        </select>
+                    </label>
+                    <button class="btn btn-second">Registrar</button>
+                </form><!-- FINAL FORMULÁRIO (REGISTRO) -->
+
+            </div><!-- FINAL SEGUNDA COLUNA (REGISTRO) -->
+
+        </div>
+
+
+        <div class="content segundo-conteudo">
+            <!-- INICIO SEGUNDO CONTEUDO (LOGIN) -->
+
+            <div class="coluna-mensagem">
+                <!-- INICIO PRIMEIRA COLUNA (MENSAGEM) -->
+                <h2 class="titulo titulo-welcome center">Olá</h2>
+                <p class="descricao center">Não possui uma conta ?</p>
+                <p class="descricao center">Clique no botão abaixo e faça o seu cadastro</p>
+                <button id="signup" class="btn btn-primary center">Registro</button>
+            </div><!-- FINAL PRIMEIRA COLUNA (MENSAGEM) -->
+
+            <div class="coluna-dados">
+                <!-- INICIO SEGUNDA COLUNA (LOGIN) -->
+                <h2 class="titulo titulo-cadastro">Bem-vindo</h2>
+                <div class="redes-sociais">
+                    <!-- INICIO REDES SOCIAIS (LOGIN) -->
+                    <ul class="list-social-midia-login">
+                        <a class="link-social" href="#">
+                            <li class="item-social-midia">
+                                <i class="fab fa-facebook"></i>
+                            </li>
+                        </a>
+
+                        <a class="link-social" href="#">
+                            <li class="item-social-midia">
+                                <i class="fab fa-google-plus"></i>
+                            </li>
+                        </a>
+
+                        <a class="link-social" href="#">
+                            <li class="item-social-midia">
+                                <i class="fab fa-linkedin"></i>
+                            </li>
+                        </a>
+                    </ul>
+                    <p class="descricao descricao-primary">Insira seus dados e logue-se.</p>
+                </div><!-- FINAL REDES SOCIAIS (LOGIN) -->
+
+                <div class="dados-usuario">
+                    <!-- INICIO FORMULÁRIO (LOGIN) -->
+                    <form>
+                        <label class="label-input" for="">
+                            <i class="fas fa-envelope icon-modify"></i>
+                            <input type="email" placeholder="Email">
+                        </label>
+
+                        <label class="label-input" for="">
+                            <i class="fas fa-lock icon-modify"></i>
+                            <input type="password" placeholder="Senha">
+                        </label>
+                    </form>
+
+                    <a class="esqueci-senha" href="#">Esqueci minha senha</a>
+
+                    <button class="btn btn-second">Entrar</button>
+
+                </div><!-- FINAL FORMULÁRIO (LOGIN) -->
+
+            </div><!-- FINAL SEGUNDA COLUNA (LOGIN) -->
+
+        </div><!-- FINAL SEGUNDO CONTEUDO (LOGIN) -->
+
+    </div>
+
+</body>
+
+</html>
+
+<script src="js/JS.js"></script>
