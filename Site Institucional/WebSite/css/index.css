@@ -1,0 +1,69 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    background-color: #231D36;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.logo {
+    height: 100px;
+}
+
+.button {
+    background: #F95738;
+    border-style: none;
+    height: 30px;
+    width: 100px;
+    border-radius: 50px;
+    color: #fff;
+}
+
+.chamativo {
+    padding-top: 20px;
+    background-color: #231D36;
+    display: flex;
+    justify-content: space-around;
+}
+
+.chamativo img {
+    height: 250px;
+}
+
+.chamativo h2 {
+    color: #EEAF32;
+}
+
+.chamativo span {
+    color: #fff;
+}
+
+.funcionalidade {
+    background-color: #EBEBD3;
+    padding: 20px;
+}
+
+.funcionalidade h2 {
+    text-align: center;
+}
+
+.topicos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.topicos div {
+    width: 200px;
+    text-align: center;
+}
+
+.topicos div img {
+    height: 100px;
+}

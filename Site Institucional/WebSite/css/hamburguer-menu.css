@@ -12,11 +12,6 @@ body {
     font: arial;
 }
 
-img {
-    src: url(../img/botao-de-menu-de-tres-linhas-horizontais.png);
-    width: 40px;
-}
-
 ul {
     list-style: none;
 }
@@ -38,10 +33,10 @@ input[type="checkbox"] {
 }
 
 nav {
-    background-color: rgba(16, 16, 16, .5);
-    width: 350px;
+    background-color: #231D36;
+    width: 200px;
     height: 100%;
-    left: -350px;
+    left: -200px;
     position: absolute;
     transition: all .5s;
 }
@@ -69,9 +64,29 @@ label {
 }
 
 input[type="checkbox"]:checked ~ nav {
-    transform: translateX(350px);
+    transform: translateX(200px);
 }
 
-input[type="checkbox"]:checked ~ img {
-    src: url(../img/letra-x.png);
+.menu-hamburguer {
+  cursor: pointer;
+}
+
+.menu-hamburguer div {
+  width: 32px;
+  height: 2px;
+  background: #fff;
+  margin: 8px;
+  transition: 0.3s;
+}
+
+input[type="checkbox"]:checked ~ .line1 {
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+input[type="checkbox"]:checked ~ .line2 {
+  opacity: 0;
+}
+
+input[type="checkbox"]:checked ~ .line3 {
+  transform: rotate(45deg) translate(-5px, -7px);
 }
