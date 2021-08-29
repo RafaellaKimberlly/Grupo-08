@@ -1,89 +1,77 @@
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
 
 a {
-    color: #fff;
     text-decoration: none;
+    color: black;
 }
 
-a:hover {
-    opacity: 0.7;
+body {
+    font: arial;
 }
 
-.logo {
-    font-size: 24px;
-    text-transform: uppercase;
-    letter-spacing: 4px;
+img {
+    src: url(../img/botao-de-menu-de-tres-linhas-horizontais.png);
+    width: 40px;
 }
 
-nav {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    font-family: systm-ui,
-    -apple-system, Helvetica, Arial, sans-serif;
-    background: #23232e;
-    height: 8vh;
-}
-
-main {
-    background: url("bg.jpg") no-repeat
-    center center;
-    background-size: cover;
-    height: 92vh;
-}
-
-.nav-list {
+ul {
     list-style: none;
-    display: flex;
 }
 
-.nav-list li {
-    letter-spacing: 3px;
-    margin-left: 32px;
+input[type="checkbox"] {
+    display: none;
 }
 
 .mobile-menu {
-    /* display: none; */
-    cursor: pointer;
+  cursor: pointer;
+}
+  
+.mobile-menu div {
+  width: 32px;
+  height: 2px;
+  background: black;
+  margin: 8px;
+  transition: 0.3s;
 }
 
-.mobile-menu div{
-    width: 32px;
-    height: 2px;
-    background: #fff;
-    margin: 8px;
+nav {
+    background-color: rgba(16, 16, 16, .5);
+    width: 350px;
+    height: 100%;
+    left: -350px;
+    position: absolute;
+    transition: all .5s;
 }
 
-@media (max-width: 999px) {
+ul {
+    top: 70px;
+    position: absolute;
+    width: 100%;
+}
 
-    body {
-        overflow-x: hidden;
-    }
+a {
+    display: block;
+    padding: 20px 5px;
+    color: white;
+}
 
-    .nav-list {
-        position: absolute;
-        top: 8vh;
-        right: 0;
-        width: 50vw;
-        height: 92 vh;
-        background: #23232e;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        transform: translateX(100%);
-    }
+a:hover {
+    color: rgb(176, 224, 230);
+}
 
-    .nav-list li {
-        margin-left: 0;
-        opacity: 0;
-    }
-    .mobile-menu {
-        display: block;
-    }
-    .nav-list.active {
-        transform: translateX(0);
-    }
+label {
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+}
+
+input[type="checkbox"]:checked ~ nav {
+    transform: translateX(350px);
+}
+
+input[type="checkbox"]:checked ~ img {
+    src: url(../img/letra-x.png);
 }
