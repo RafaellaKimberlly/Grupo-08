@@ -8,7 +8,7 @@
 
 
 /* ESTILIZAÇÃO DAS TAG'S "a(LINK)" */
-a{
+.link_icon, .link_nav{
     text-decoration: none;
     color: rgb(222, 215, 201);
 }
@@ -30,7 +30,7 @@ a{
 
 
 /* ESTILIZAÇÃO DO LOGO CRYPTOVERSE */
-.logo{
+.logo_footer{
     width: 13%;
     margin-top: -1%;
 }
@@ -90,7 +90,7 @@ a{
 /* DEIXANDO O TEXTO DO INPUT, O INPUT, O BOTÃO E O TEXTO AUTORAL NA DIV PAI CENTRALIZADA */
 .container_entre_em_contato{
     margin-left: 57%;
-    margin-top: -9.6%;
+    margin-top: -10%;
 }
 
 

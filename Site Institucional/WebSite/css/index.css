@@ -9,7 +9,7 @@
 
 .header {
     background-color: #231D36;
-    height: 150px;
+    height: 14.5rem;
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -36,7 +36,8 @@
 }
 
 .button-entrar {
-    margin-left: 80%;
+    margin-left: 87%;
+    margin-top: -11.2%;
     float: right;
     background: #F95738;
     border-style: none;
@@ -63,6 +64,10 @@
     justify-content: space-around;
 }
 
+.mensagem_inicial{
+    margin-top: 2%;
+}
+
 .chamativo img {
     height: 250px;
 }
@@ -78,7 +83,7 @@
 }
 
 .funcionalidade {
-    height: 400px;
+    height: 31rem;
     background-color: #EBEBD3;
     padding: 20px;
 }
@@ -90,7 +95,7 @@
 }
 
 .topicos {
-    margin-top: 5px;
+    margin-top: 7%;
 
     display: flex;
     justify-content: space-around;

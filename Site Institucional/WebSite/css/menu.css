@@ -32,29 +32,31 @@ input[type="checkbox"] {
   transition: 0.3s;
 }
 
-nav {
-    background-color: #231D36;
+ nav {
+    background-color: #201f22a1;
     width: 200px;
     height: 100%;
     left: -200px;
     position: absolute;
     transition: all .5s;
-}
+} 
 
-ul {
+ .estilo_ul {
     top: 70px;
     position: absolute;
     width: 100%;
 }
 
-a {
-    display: block;
-    padding: 20px 5px;
-    color: white;
+.link_menu{
+  display: block;
+  padding: 20px 5px;
+  color: white;
+  margin-left: 3%;
 }
 
-a:hover {
-    color: rgb(176, 224, 230);
+
+.link_menu:hover{
+  color: rgb(176, 224, 230);
 }
 
 label {
