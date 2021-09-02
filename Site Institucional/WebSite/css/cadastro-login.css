@@ -18,7 +18,7 @@
 /* INICIO ESTILIZAÇÃO DO TAMANHO E COR DO BLOCO DE REGISTRO E LOGIN */
 .content{
     width: 960px;
-    height: 55%;
+    height: 60%;
     justify-content:space-between;
     align-items: center;
     border-radius: 15px;
@@ -200,7 +200,7 @@
 
 
 /* INICIO DOS AJUSTES DOS BOTÕES, ESTILIZAÇÃO ETC... */
-.btn{
+.btn_user{
     border-radius:15px;
     text-transform: uppercase;
     color: white;
@@ -215,25 +215,25 @@
     margin-top: 1rem;
 }
 
-.btn-primary{
+.btn-primary_user{
     background-color: transparent;
     border: 1px solid white;
     transition: background-color .5s;
 }
 
-.btn-second{
+.btn-second_user{
     background-color: rgb(19, 67, 107);
     border: 1px solid rgb(19, 67, 107);
     transition: background-color .5s;
 }
 
-.btn-second:hover{
+.btn-second_user:hover{
     background-color: white;
     border: 1px solid rgb(19, 67, 107);
     color: rgb(19, 67, 107);
 }
 
-.btn-primary:hover{
+.btn-primary_user:hover{
     background-color: white;
     color: rgb(19, 67, 107);
 }
