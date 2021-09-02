@@ -1,0 +1,169 @@
+*
+{
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body{
+    display:grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ebebd3;
+}
+
+.container-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    padding: 40px 0;
+}
+.container-card .card{
+    position: relative;
+    width: 320px;
+    height: 390px;
+    box-shadow: inset 0px 1px 5px #231D36;
+    border-radius: 15px;
+    margin: 30px;
+}
+.container-card .card:hover{
+    box-shadow: inset 0px 1px 5px #f95738;
+    color: #777;
+}
+.container-card .card .caixa{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    background: #231D36;
+    box-shadow: 0 10px 20px #777;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+.container-card .card:hover .caixa{
+    transform: translateY(-50px);
+    box-shadow: 0 10px 40px #231D36;
+    background: linear-gradient(45deg,#eeaf32,#f95738);
+}
+.container-card .card .caixa .conteudo{
+    padding: 20px;
+    text-align: center;
+}
+.container-card .card .caixa .conteudo figure{
+    position: absolute;
+    top: -10px;
+    right: 30px;
+    font-size: 8em;
+    color: #231D36;
+    transition: 0.5s;
+}
+.container-card .card:hover .caixa .conteudo figure{
+    color: rgba(0,0,0,0.05);
+}
+.container-card .card .caixa .conteudo h3{
+    font-size: 1.8em;
+    color: #eeaf32;
+    z-index: 1;
+    transition: 00.5s;
+}
+.container-card .card:hover .caixa .conteudo h3,
+.container-card .card:hover .caixa .conteudo p{
+    color: #231D36;
+}
+.container-card .card .caixa .conteudo p{
+    font-size: 1em;
+    font-weight: 300;
+    color: #ebebd3;
+    z-index: 1;
+    transition: 0.5s;
+}
+.icon1{
+    width:35%;
+    padding-top: 56px;
+    padding-left: 33px;
+}
+
+.caixa-txt{
+    margin-top: 5%;
+    margin-left: 30px;
+    margin-right: 30px;
+    text-align: center;
+}
+
+.ini-txt{
+    color: #231D36;
+}
+.ini2-txt{
+    color: #eeaf32;
+}
+
+.container-txt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    padding: 40px 0;
+}
+.container-txt .fundo{
+    width: 100%;
+    height: 70%;
+}
+
+.container-txt .icon-minerador{
+    position: absolute;
+    top: 145%;
+    left: 60%;
+}
+
+.container-txt .conteudo-txt{
+    position: absolute;
+      color:#231D36;
+      text-align:justify;
+      width: 53%;
+      left: 23%;
+      top: 130%;
+      line-height: 30px;
+}
+
+.container-colorido{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    padding: 40px 0;
+}
+.container-colorido .caixa-colorida{
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    background-color: #eeaf32;
+}
+.container-colorido .caixa-colorida .conteudo-colorido{
+      color:#231D36;
+      text-align:justify;
+      align-items: center;
+      width: 80%;
+      margin-top: 10%;
+      margin-left: 10%;
+      margin-bottom: 10%;
+     
+    
+}
+.container-colorido .caixa-colorida .linha1{
+     height: 5px;
+    background-color: #f95738;
+}
+
+.icon-gpu{
+    width: 30%;
+    margin-left: 35%;
+}
