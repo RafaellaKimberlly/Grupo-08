@@ -19,10 +19,11 @@
 }
 
 .chamativo img {
-    height: 250px;
+    height: 350px;
 }
 
 .chamativo h2 {
+    margin-top: 40px;
     font-size: xx-large;
     color: #EEAF32;
     font-weight: 700;

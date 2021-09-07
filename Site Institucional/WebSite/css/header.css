@@ -21,9 +21,15 @@
     cursor: pointer;
 
     font-size: 15px;
-    font-weight: 500;
+    font-weight: 600;
     color: #fff;
 }
+
+.button:hover{
+
+  background-color: #fa3d17 ;
+}
+
 
 .button-entrar {
     margin-left: 75%;
