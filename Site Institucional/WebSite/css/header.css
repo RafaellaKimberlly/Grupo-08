@@ -13,16 +13,15 @@
 } 
 
 .button {
-    background: #F95738;
-    border-style: none;
-    height: 40px;
-    width: 120px;
-    border-radius: 50px;
-    cursor: pointer;
-
-    font-size: 15px;
-    font-weight: 600;
-    color: #fff;
+  background: #F95738;
+  border-style: none;
+  height: 3em;
+  width: 10em;
+  border-radius: 2em;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #EBEBD3;
 }
 
 .button:hover{
@@ -32,17 +31,16 @@
 
 
 .button-entrar {
-    margin-left: 75%;
-    background: #F95738;
-    border-style: none;
-    height: 40px;
-    width: 120px;
-    border-radius: 50px;
-    cursor: pointer;
-
-    font-size: 18px;
-    font-weight: 700;
-    color: #fff;
+  margin-left: 75%;
+  background: #F95738;
+  border-style: none;
+  height: 1.8em;
+  width: 5em;
+  border-radius: 2em;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #EBEBD3;
 }
 
 
@@ -55,7 +53,7 @@
 
 a {
     text-decoration: none;
-    color: black;
+    color: #EBEBD3;
 }
 
 body {
@@ -83,14 +81,13 @@ input[type="checkbox"] {
 }
 
  nav {
-    background-color: #201f22a1;
-    width: 200px;
-    height: 75%;
-    left: -200px;
+  background-color: #201f22a1;
+    width: 12em;
+    height: 26em;
+    left: -12.5em;
     position: absolute;
     transition: all .5s;
-    border-bottom-right-radius: 200px;
-    border-top-right-radius: 150px;
+    border-bottom-right-radius: 15em;
 } 
 
  .estilo_ul {

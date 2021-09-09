@@ -1,8 +1,9 @@
-*
-{
-    margin: 0%;
-    padding: 0%;
-    font-family: 'Courier New', Courier, monospace;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
 body{
@@ -12,134 +13,12 @@ body{
     min-height: 100vh;
     background-color: #ebebd3;
 }
-.header {
-    background-color: #231D36;
-    height: 4.5rem;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-} 
 
-.button {
-    background: #F95738;
-    border-style: none;
-    height: 40px;
-    width: 120px;
-    border-radius: 50px;
-    cursor: pointer;
-
-    font-size: 15px;
-    font-weight: 500;
-    color: #fff;
-}
-
-.button-entrar {
-    margin-left: 75%;
-    background: #F95738;
-    border-style: none;
-    height: 40px;
-    width: 120px;
-    border-radius: 50px;
-    cursor: pointer;
-
-    font-size: 18px;
-    font-weight: 700;
-    color: #fff;
-}
-
-
-.button-entrar:hover{
-
-    background-color: #fa3d17 ;
-}
-
-/* menu hamburguer */
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-body {
-    font: arial;
-}
-
-ul {
-    list-style: none;
-}
-
-input[type="checkbox"] {
-    display: none;
-}
-
-.mobile-menu {
-  cursor: pointer;
-}
-  
-.mobile-menu div {
-  width: 32px;
-  height: 2px;
-  background: black;
-  margin: 8px;
-  transition: 0.3s;
-}
-
- nav {
-    background-color: #201f22a1;
-    width: 200px;
-    height: 75%;
-    left: -200px;
-    position: absolute;
-    transition: all .5s;
-    border-bottom-right-radius: 200px;
-    border-top-right-radius: 150px;
-} 
-
- .estilo_ul {
-    top: 70px;
-    position: absolute;
-    width: 100%;
-}
-
-.link_menu{
-  display: block;
-  padding: 20px 5px;
-  color: white;
-  margin-left: 3%;
-}
-
-.link_menu:hover{
-  color: rgb(176, 224, 230);
-}
-
-label {
-    padding: 10px;
-    /* position: absolute; */
-    z-index: 1;
-}
-
-input[type="checkbox"]:checked ~ .menu nav {
-    transform: translate(200px, -35px);
-}
-
-.menu-hamburguer {
-  cursor: pointer;
-}
-
-.menu-hamburguer div {
-  width: 32px;
-  height: 2px;
-  background: #fff;
-  margin: 8px;
-  transition: 0.3s;
-}
 
 .container-card{
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 1200px;
     flex-wrap: wrap;
     padding: 40px 0;
 }
@@ -230,16 +109,21 @@ input[type="checkbox"]:checked ~ .menu nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 1200px;
     flex-wrap: wrap;
     padding: 40px 0;
-    background-image: url("./img/fundo.png");
+    background-image: url("../img/fundo-bloco.png");
+    background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
 .container-txt .fundo{
     width: 100%;
     height: 70%;
+}
+
+.caixa-fig {
+    text-align: center;
 }
 
 .container-txt .icon-minerador{
@@ -252,7 +136,7 @@ input[type="checkbox"]:checked ~ .menu nav {
 }
 
 @keyframes mymove {
-  from {left: 0px;}
+  from {left: -200px;}
   to {left: 200px;}
 }
 
@@ -261,17 +145,22 @@ input[type="checkbox"]:checked ~ .menu nav {
       color:#231D36;
       text-align:justify;
       width: 55%;
-      margin-left: 30%;
+      margin: auto;
+      text-align: center;
       display: flex;
       flex-wrap:inherit;
       line-height: 30px;
+}
+
+.container-txt .conteudo-txt p {
+    font-size: 2em;
+    font-weight: 400;
 }
 
 .container-colorido{
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 1200px;
     flex-wrap: wrap;
     padding: 40px 0;
 }
@@ -306,7 +195,6 @@ input[type="checkbox"]:checked ~ .menu nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 1200px;
     flex-wrap: wrap;
     padding: 40px 0;
 }
@@ -338,7 +226,6 @@ input[type="checkbox"]:checked ~ .menu nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 1200px;
     flex-wrap: wrap;
     margin-top: -5px;
     margin-bottom: -5px;
@@ -376,7 +263,6 @@ input[type="checkbox"]:checked ~ .menu nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 1200px;
     flex-wrap: wrap;
     color: #f95738;
 }
@@ -396,7 +282,6 @@ input[type="checkbox"]:checked ~ .menu nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 1200px;
     flex-wrap: wrap;
     color: #231D36;
 }
@@ -426,148 +311,8 @@ input[type="checkbox"]:checked ~ .menu nav {
 
 
 .conteudo-video{
-    margin-left: 20%;
     box-shadow: 10px;
-}
-/* RESET DA PÁGINA */
-*{
-    padding: 0px;
-    border: 0px;
-    margin: 0px;
-    box-sizing: 0px;
+    text-align: center;
+    padding: 0 0 5em 0;
 }
 
-
-/* ESTILIZAÇÃO DAS TAG'S "a(LINK)" */
-.link_icon, .link_nav{
-    text-decoration: none;
-    color: rgb(222, 215, 201);
-}
-
-
-/* CRIANDO O FOOTER, CONTAINER PAI */
-.container_footer{
-    width: 100%;
-    height: 15rem;
-    background-color:black;
-}
-
-
-/* CAIXA FILHA DO FOOTER, ONDE DEIXO ALINHADO NO CENTRO TODOS O BLOCO. */
-.caixa_footer{
-    max-width: 87%;
-    margin-left: 11%;
-}
-
-
-/* ESTILIZAÇÃO DO LOGO CRYPTOVERSE */
-.logo_footer{
-    width: 13%;
-    margin-top: -1%;
-}
-
-
-/* DEIXANDO AS REDES SOCIAIS LADO A LADO */
-.container_redes_sociais li{
-    display: flex;
-}
-
-
-/* DEIXANDO AS REDES SOCIAIS CENTRALIZADAS ABAIXO DO LOGO */
-.caixa_icones_redes_sociais{
-    margin-left: 2.6%;
-}
-
-
-/* ESTILIZANDO OS ICONES DAS REDES SOCIAIS */
-.icones{
-    background-color:rgb(222, 215, 201);
-    width: 2%;
-    border: 3px solid rgb(222, 215, 201);
-    border-radius: 5px;
-}
-
-
-/* DEIXANDO OS LINK DE NAVEGAÇÃO DO RODAPÉ LADO A LADO E DEFININDO CORES E TAMANHO */
-.container_link_rodape{
-    display: flex;
-    text-decoration: none;
-    color: rgb(222, 215, 201);
-    font-size: 1rem;
-}
-
-
-/* TIRANDO A ESTILIZAÇÃO DAS LISTAS E APLICANDO UM ESPAÇAMENTO ABAIXO */
-.caixa_link_rodape1 li, .caixa_link_rodape2 li{
-    list-style: none;
-    margin-bottom: 2rem;
-}
-
-
-/* 1 COLUNA - DEIXANDO OS LINKS DE NAVEGAÇÃO DO RODAPÉ NO CENTRO E DO LADO DIREITO DO LOGO */
-.caixa_link_rodape1{
-    margin-left: 22%;
-    margin-top: -10.8%;
-}
-
-
-/* 2 COLUNA - DEIXANDO OS LINKS DE NAVEGAÇÃO DO RODAPÉ NO CENTRO E DO LADO DIREITO DO LOGO */
-.caixa_link_rodape2{
-    margin-left: 8%;
-    margin-top: -10.8%;
-}
-
-
-/* DEIXANDO O TEXTO DO INPUT, O INPUT, O BOTÃO E O TEXTO AUTORAL NA DIV PAI CENTRALIZADA */
-.container_entre_em_contato{
-    margin-left: 57%;
-    margin-top: -10%;
-}
-
-
-/* ESTILIZANDO O TEXTO EMCIMA DO INPUT */
-.container_entre_em_contato p {
-    color: rgb(222, 215, 201);
-    font-size: 1.1rem;
-}
-
-
-/* ESTILIZANDO O INPUT */
-.container_entre_em_contato input{
-    width: 40%;
-    height: 1em;
-    background-color: rgb(222, 215, 201);
-    padding: 10px;
-}
-
-
-/* ESTILIZANDO O BOTÃO */
-.btn{
-    background-color: rgb(230, 68, 9);
-    width: 13%;
-    height: 2rem;
-    transition: 0.5s;
-}
-
-
-/* COLOCANDO O EFEITO HOVER NO BOTÃO */
-.btn:hover{
-    background-color: #fb7d07;
-    color: black;
-}
-
-
-/* AJUSTANDO O INPUT E O BOTÃO, PARA FICAR MAIS CENTRALIZADO */
-.ajuste_input_btn{
-    margin-left: 7%;
-    margin-top: 2%;
-}
-
-
-/* ESTILIZANDO O TEXTO DE DIREITOS AUTORAIS */
-.direitos_autorais{
-    margin-left: 61.3%;
-    margin-top: 4.6%;
-    color: rgb(222, 215, 201);
-    font-size: 17px;
-}
