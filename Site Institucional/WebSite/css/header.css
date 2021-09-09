@@ -12,6 +12,15 @@
     align-items: center;
 } 
 
+.header-login {
+  background-color: rgb(222, 215, 201);
+  height: 4.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+} 
+
 .button {
   background: #F95738;
   border-style: none;

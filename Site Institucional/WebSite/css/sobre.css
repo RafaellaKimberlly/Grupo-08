@@ -144,3 +144,20 @@
     background-color: #F4D35E;
     height: 0.6em;
 }
+
+@media only screen and (max-width: 1400px) {
+    .content-about-upper {
+        grid-template-columns: repeat(2,auto);
+        grid-gap: 2em;
+        font-size: 6em; 
+    }
+    .text-about {
+        font-size: 1em;
+        padding: 2em;
+        text-align: justify;
+    }
+    .content-about-lower img {
+        width: 35em;
+        padding: 5em 0em 0 0;
+    }
+}

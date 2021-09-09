@@ -102,7 +102,7 @@
     grid-gap: 6em;
 }
 
-.content-service img{
+.img-conect {
     height: 40em;
 }
 
@@ -140,3 +140,23 @@
     background-color: #493e6d;
 }
 /* Fim Service */
+
+@media only screen and (max-width: 1800px) {
+    .content-service {
+        display: grid;
+        grid-template-columns: repeat(2,auto);
+        grid-gap: 4em;
+    }
+    .content-service p {
+        font-size: 1.2em;
+    }
+    .content-service h2 {
+        font-size: 5em;
+        font-weight: 400;
+        padding: 0 0 0.2em 0;
+    }
+    .img-conect {
+        height: 30em;
+        padding: 5em 0 0 0;
+    }
+}

@@ -20,7 +20,7 @@
 /* INICIO ESTILIZAÇÃO DO TAMANHO E COR DO BLOCO DE REGISTRO E LOGIN */
 .content{
     width: 960px;
-    height: 60%;
+    height: 85%;
     justify-content:space-between;
     align-items: center;
     border-radius: 15px;
