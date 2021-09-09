@@ -1,114 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&display=swap');
+
 * {
     padding: 0;
     margin: 0;
+    font-family: 'Poppins', sans-serif;
 }
-
-.body{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.chamativo {
-    padding-top: 20px;
-    background-color: #231D36;
+/* Inicio Hero */
+.section-hero {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4em 4em 3em 4em;
+    background-color: #231D36;
+}
+.content-hero {
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    grid-gap: 15em;
+    font-size: 1em;
+    margin: auto;
 }
 
 .mensagem_inicial{
     margin-top: 2%;
 }
 
-.chamativo img {
-    height: 350px;
+.content-hero img {
+    height: 30em;
+    padding: 0 3em 0 3em;
 }
 
-.chamativo h2 {
-    margin-top: 40px;
-    font-size: xx-large;
+.content-hero h2 {
+    padding: 1em 0 0.2em 0;
+    font-size: 6em;
     color: #EEAF32;
     font-weight: 700;
 }
 
-.chamativo span {
-    color: #fff;
+.content-hero p {
+    color: #EBEBD3;
 }
 
-.funcionalidade {
-    height: 31rem;
+.content-hero span {
+    color: #EBEBD3;
+}
+/* Fim Hero */
+/* Inicio Functions */
+.section-functions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4em 4em 3em 4em;
     background-color: #EBEBD3;
+}
+.content-functions {
+    height: 31rem;
     padding: 20px;
 }
 
-.funcionalidade h2 {
-
-    margin-top: 5%;
+.content-functions h2 {
     text-align: center;
+    font-size: 5em;
+    font-weight: 400;
+    color: #231D36;
 }
 
-.topicos {
-    margin-top: 7%;
-
+.icons {
+    padding: 3em 4em 0em 4em;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-.topicos div {
-    width: 200px;
+.icons-text {
+    color: grey;
+    padding: 1em;
+}
+
+.icons section {
+    width: 18em;
     text-align: center;
 }
 
-.topicos div img {
-    height: 100px;
+.icons img {
+    height: 11em;
+    padding: 0 0 1em 0;
 }
-
-
-.servico{
-    background-color: #F95738;
-    height: 400px;
+/* Fim Functions */
+/* Inicio Service */
+.section-service {
     display: flex;
-    
+    flex-direction: column;
+    justify-content: center;
+    padding: 5em 8em 3em 8em;
+    background-color: #EE964B;
 }
 
-.servico img{
-    margin-top: 20px;
-    height: 380px;
+.content-service {
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    grid-gap: 6em;
 }
 
-.servico div{
+.content-service img{
+    height: 40em;
+}
+
+.content-service article{
     float: right;
     margin-top: 8%;
     margin-left: 50px;
     align-items: center;
 }
 
-.servico h2{
-font-size: 50px;
-color: #fff;
-margin-left: 50px;
-margin-bottom: 30px;
-
+.content-service h2{
+    font-size: 5em;
+    font-weight: 400;
+    padding: 0 0 0.2em 0;
 }
 
-.servico span{
-    font-size: 20px;
+.content-service p{
+    font-size: 1.5em;
+    color: #EBEBD3;
+    padding: 0 0 2.4em 0;
 }
 
 .button-saiba{
-    margin-left: 30%;
-    margin-top: 50px;
-    height: 40px;
-    width: 120px;
-    border-radius: 50px;
+    height: 4em;
+    width: 12em;
+    border-radius: 5em;
     cursor: pointer;
     background-color: #231D36;
-
-    font-size: 15px;
-    font-weight: 500;
-    color: #fff;
+    font-size: 1em;
+    font-weight: 600;
+    color: #EBEBD3;
 }
 
 .button-saiba:hover{
     background-color: #493e6d;
 }
-
+/* Fim Service */

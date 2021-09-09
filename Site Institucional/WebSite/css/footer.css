@@ -1,3 +1,5 @@
+
+
 /* RESET DA PÁGINA */
 *{
     padding: 0px;
@@ -17,8 +19,8 @@
 /* CRIANDO O FOOTER, CONTAINER PAI */
 .container_footer{
     width: 100%;
-    height: 15rem;
-    background-color:black;
+    height: 17em;
+    background-color: #231D36;
 }
 
 
