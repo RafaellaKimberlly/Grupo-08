@@ -14,7 +14,7 @@
     left: 0;
     top: 0;
     height: 100%;
-    background: #03313D;
+    background: #F95738;
     z-index: 100;
     transition: width 300ms; /* velocidade da mudança largura ao mostrar/esconder menu*/
 }
@@ -89,12 +89,12 @@
     background-color: #fff;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    color: #00959B;
+    color: #F4D35E;
     border-radius: 30px 0 0 30px;
 }
 
 .sidebar-menu a.active span {
-    color:  #00959B;
+    color:  #F4D35E;
 }
 
 
@@ -186,8 +186,8 @@
 }
 
 .header-dashboard header {
-    display: flex;
-    justify-content: space-between;
+    /* display: flex;
+    justify-content: space-between; */
     padding: 1rem 1.5rem;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     position: fixed;
@@ -224,6 +224,7 @@
 .user-wrapper {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
 }
 
 .user-wrapper img {
