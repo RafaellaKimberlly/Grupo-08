@@ -85,26 +85,31 @@
                     <p class="descricao descricao-primary">Informe seus dados.</p>
                 </div><!-- FINAL REDES SOCIAIS (REGISTRO) -->
 
-                <form class="dados-usuario">
+                <form class="dados-usuario" id="form_cadastro" method="post" onsubmit="return cadastrar()">
                     <!-- INICIO FORMULÁRIO (REGISTRO) -->
                     <label class="label-input">
                         <i class="fas fa-user icon-modify"></i>
-                        <input type="text" placeholder="Nome">
+                        <input type="text" name="nome" placeholder="Nome" autofocus>
+                    </label>
+
+                    <label class="label-input">
+                        <i class="fas fa-user icon-modify"></i>
+                        <input type="text" name="sobrenome" placeholder="Sobrenome">
                     </label>
 
                     <label class="label-input">
                         <i class="fas fa-envelope icon-modify"></i>
-                        <input type="email" placeholder="Email">
+                        <input type="email" name="email" placeholder="Email">
                     </label>
 
                     <label class="label-input">
                         <i class="fas fa-lock icon-modify"></i>
-                        <input type="password" placeholder="Senha">
+                        <input type="password" name="senha" placeholder="Senha">
                     </label>
 
                     <label class="label-input">
                         <i class="fas fa-globe-americas world"></i>
-                        <select class="select_pais" name="estados" id="" placeholder="País">
+                        <select class="select_pais" name="pais" id="" placeholder="País">
                             <option value="#" disabled>Selecione seu Estado</option>
                             <option value="0">AC</option>
                             <option value="1">AL</option>
@@ -135,8 +140,14 @@
                             <option value="26">DF</option>
                         </select>
                     </label>
-                    <button class="btn_user btn-second_user">Registrar</button>
+                    <button type="submit" value="Cadastrar" class="btn_user btn-second_user">Registrar</button>
                 </form><!-- FINAL FORMULÁRIO (REGISTRO) -->
+
+                <img src="aguarde-orange.gif" id="img_aguarde" style="display: none; width:100px">
+    
+                <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
+                    Erro no cadastro
+                </div>
 
             </div><!-- FINAL SEGUNDA COLUNA (REGISTRO) -->
 
@@ -183,21 +194,30 @@
 
                 <div class="dados-usuario">
                     <!-- INICIO FORMULÁRIO (LOGIN) -->
-                    <form>
+                    <form id="form_login" method="post" onsubmit="return entrar()">
                         <label class="label-input" for="">
                             <i class="fas fa-envelope icon-modify"></i>
-                            <input type="email" placeholder="Email">
+                            <input type="email" name="login" placeholder="Email">
                         </label>
 
                         <label class="label-input" for="">
                             <i class="fas fa-lock icon-modify"></i>
-                            <input type="password" placeholder="Senha">
+                            <input type="password" name="senha" placeholder="Senha">
                         </label>
-                    </form>
 
-                    <a class="esqueci-senha" href="#">Esqueci minha senha</a>
+                        <a class="esqueci-senha" href="#">Esqueci minha senha</a>
 
                     <button class="btn_user btn-second_user">Entrar</button>
+
+                    </form>
+                    <div class="extra">
+                    <div id="div_erro" class="msg_erro">
+                    </div>
+
+                    <img src="aguarde-orange.gif" id="img_aguarde"  > <!--style="display: none;"-->
+                    
+                </div>
+                    
 
                 </div><!-- FINAL FORMULÁRIO (LOGIN) -->
 
@@ -212,3 +232,99 @@
 </html>
 
 <script src="../js/JS.js"></script>
+
+<!-- Cadastro  -->
+<script>
+
+    function cadastrar() {
+        aguardar();
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+            
+            if (response.ok) {
+
+                window.location.href='teste1.html';
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    div_erro.innerHTML = resposta;
+                });
+                finalizar_aguardar();
+            }
+        });
+
+        return false;
+    }
+
+    function aguardar() {
+        btn_entrar.disabled = true;
+        img_aguarde.style.display='block';
+        div_erro.style.display='none';
+    }
+
+    function finalizar_aguardar() {
+        btn_entrar.disabled = false;
+        img_aguarde.style.display='none';
+        div_erro.style.display='block';
+    }
+
+</script>
+
+
+<!-- Login -->
+
+<script>
+
+    function entrar() {
+        aguardar();
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.login_usuario_meuapp = json.login;
+                    sessionStorage.nome_usuario_meuapp = json.nome;
+
+                    window.location.href = 'teste2.html';
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizar_aguardar(texto);
+                });
+            }
+        });
+
+        return false;
+    }
+
+    function aguardar() {
+        btn_entrar.disabled = true;
+        img_aguarde.style.visibility = 'visible';
+        div_erro.style.visibility = 'hidden';
+    }
+
+    function finalizar_aguardar(resposta) {
+        btn_entrar.disabled = false;
+        img_aguarde.style.visibility = 'hidden';
+        div_erro.style.visibility = 'visible';
+        div_erro.innerHTML = resposta;
+    }
+
+</script>
+
+
