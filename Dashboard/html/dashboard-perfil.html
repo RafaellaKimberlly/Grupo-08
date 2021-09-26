@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/dashboard-perfil.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&family=Roboto:wght@300;400;500;900&display=swap"
@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="../css/menu-dashboard.css">
     <title>Document</title>
 </head>
-
 <body>
     <input type="checkbox" id="menu-toggle">
     <div class="sidebar">
@@ -73,9 +72,43 @@
 
         <main>
 
+            <div class="altera-dados">
+                <div class="perfil">
+                    <img class="foto-perfil" src="../img/foto-perfil.png" alt="">
+                    <button>Alterar foto do Perfil</button>
+                </div>
+                <div class="form-infos">
+                    <form action="">
 
+                        <div class="input-form">
+                            <span>Username:</span>
+                            <input type="text">
+                        </div>
+                        
+                        <div class="input-form">
+                            <span>Senha:</span>
+                            <input type="text">
+                        </div>
+
+                        <button>Salvar</button>
+                    </form>
+                </div>
+            </div>
+
+            <span class="titulo">Pool:</span>
+            <div class="pool">
+                <div class="your-pool">
+                    <input type="text" class="input-form">
+                    <button>Sair</button>
+                </div>
+
+                <div class="select-pool">
+                    <input placeholder="Pesquise uma Pool:" type="text" class="input-form">
+                    <button class="pesquisar">Pesquisar:</button>
+                    <button>Entrar</button>
+                </div>
+            </div>
 
         </main>
 </body>
-
 </html>

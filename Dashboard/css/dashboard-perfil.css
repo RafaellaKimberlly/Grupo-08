@@ -1,0 +1,79 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.altera-dados{
+    display: flex;
+    justify-content: space-around;
+}
+
+.perfil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.altera-dados .foto-perfil{
+    width: 300px;
+    padding: 20px;
+}
+
+.perfil button{
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+}
+
+.form-infos form{
+    /* border: black solid;
+    height: 100%;
+    width: 100%; */
+    padding: 10px;
+}
+
+.input-form{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    width: 300px;
+}
+
+.form-infos form button{
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    margin: 10px;
+}
+
+.pool{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.titulo{
+    margin: 9.3%;
+}
+
+.your-pool button{
+    width: 90px;
+    margin: 0 10px;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+}
+
+.select-pool button{
+    margin: 0 10px;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
+    float: right;
+}
