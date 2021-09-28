@@ -9,14 +9,14 @@
 
 /* Menu de Opções */
 .sidebar {
-    width: 345px;
+    width: 25.2%;
     position: fixed;
     left: 0;
     top: 0;
     height: 100%;
     background: #F95738;
     z-index: 100;
-    transition: width 300ms; /* velocidade da mudança largura ao mostrar/esconder menu*/
+    transition: 0.5s; /* velocidade da mudança largura ao mostrar/esconder menu*/
 }
 
 .menu-hamburguer {
@@ -172,6 +172,7 @@
 .header-dashboard {
     transition: margin-left 300ms; /* velocidade da mudança da margem ao mostrar/esconder menu*/
     margin-left: 345px;
+    z-index: 10;
 }
 
 .header-dashboard header h2 {
@@ -240,13 +241,13 @@
     display: inline-block;
     color: lightslategrey;
 }
-
+/* 
 main {
     margin-top: 90px;
     padding: 2rem 1.5rem;
     background: #f1f5f9;
     min-height: calc(100vh - 90px);
-}
+} */
 
 /* Responsividade */
 @media only screen and (max-width: 1200px) {
