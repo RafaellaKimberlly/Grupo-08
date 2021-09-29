@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(245, 237, 202);
+}
+.conteudo{
+    width: 100%;
+    height: 100%;
+}
+
+.caixa-conteudo{
+    display: flex;
+    margin-left: 22%;
+}
+.card-grafico{
+    width: 25%;
+    height: 4.8vw;
+    background-color: white;
+    border-left: 5px solid rgba(0, 240, 248, 0.767);
+    margin-left: 4.5%;
+    margin-top: 12vw;
+    display: flex;
+}
+.graficos{
+    width: 10.2vh;
+    margin-top: -2%;
+}
+
+.title-card{
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    margin-top: 5.5%;
+    margin-left: 50%;
+}
