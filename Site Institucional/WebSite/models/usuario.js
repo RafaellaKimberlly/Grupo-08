@@ -1,4 +1,4 @@
-	'use strict';
+'use strict';
 
 /* 
 lista e explicação dos Datatypes:
@@ -49,9 +49,3 @@ module.exports = (sequelize, DataTypes) => {
 
     return usuario;
 };
-
-function data(){
-	var dataAtual = new Date();
-	dataAtual.setHours(dataAtual.getHours()-3)
-	return dataAtual;
-}

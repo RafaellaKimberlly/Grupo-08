@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CryptoVerse</title>
-    <link rel="stylesheet" href="../public/css/cadastro-login.css">
-    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="./css/cadastro-login.css">
+    <link rel="stylesheet" href="./css/header.css">
     <script src="https://kit.fontawesome.com/d2a3c39bf2.js" crossorigin="anonymous"></script>
 </head>
 
@@ -85,7 +85,7 @@
                     <p class="descricao descricao-primary">Informe seus dados.</p>
                 </div><!-- FINAL REDES SOCIAIS (REGISTRO) -->
 
-                <form class="dados-usuario" id="form_cadastro" method="post" onsubmit="return cadastrar()">
+                <form class="dados-usuario"  id="form_cadastro" method="POST" onsubmit="return cadastrar()">
                     <!-- INICIO FORMULÁRIO (REGISTRO) -->
                     <label class="label-input">
                         <i class="fas fa-user icon-modify"></i>
@@ -150,8 +150,8 @@
                 </div>
 
             </div><!-- FINAL SEGUNDA COLUNA (REGISTRO) -->
-
         </div>
+
 
 
         <div class="content segundo-conteudo">
@@ -194,7 +194,7 @@
 
                 <div class="dados-usuario">
                     <!-- INICIO FORMULÁRIO (LOGIN) -->
-                    <form id="form_login" method="post" onsubmit="return entrar()">
+                    <form id="form_login" name="form_login" method="POST" onsubmit="return entrar()">
                         <label class="label-input" for="">
                             <i class="fas fa-envelope icon-modify"></i>
                             <input type="email" name="login" placeholder="Email">
@@ -207,7 +207,7 @@
 
                         <a class="esqueci-senha" href="#">Esqueci minha senha</a>
 
-                    <button class="btn_user btn-second_user">Entrar</button>
+                    <button class="btn_user btn-second_user" type="submit" id="btn_entrar" value="LOGIN">Entrar</button>
 
                     </form>
                     <div class="extra">
@@ -219,7 +219,8 @@
                 </div>
                     
 
-                </div><!-- FINAL FORMULÁRIO (LOGIN) -->
+                </div>
+                <!-- FINAL FORMULÁRIO (LOGIN) -->
 
             </div><!-- FINAL SEGUNDA COLUNA (LOGIN) -->
 

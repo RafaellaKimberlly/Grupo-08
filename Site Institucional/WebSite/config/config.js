@@ -25,9 +25,9 @@ module.exports = {
   // Insira aqui seus dados do banco LOCAL - MySQL Workbench
   dev: {
     // altere APENAS username, password e database.
-    username: 'SEU usuario DO WORKBENCH, provavelmente é root',
-    password: 'SUA SENHA DO WORKBENCH',
-    database: 'SEU DATABASE DO CREATE DATABASE',
+    username: 'root',
+    password: '140613',
+    database: 'Cryptoverse',
     host: '127.0.0.1',
     dialect: 'mysql',
     xuse_env_variable: 'DATABASE_URL',
