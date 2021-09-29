@@ -37,23 +37,11 @@ module.exports = (sequelize, DataTypes) => {
 			field: 'senha',
 			type: DataTypes.STRING,
 			allowNull: false
-		},
-		dataCriacao: {
-			field: 'dataCriacao',
-			defaultValue: data(),
-			type: DataTypes.DATE,
-			allowNull: false
-		},
-		dataAtualizacao: {
-			field: 'dataAtualizacao',
-			defaultValue: data(),
-			type: DataTypes.DATE,
-			allowNull: false
 		}
 
 	}, 
 	{
-		tableName: 'tbUsuario', 
+		tableName: 'usuario', 
 		freezeTableName: true, 
 		underscored: true,
 		timestamps: false,

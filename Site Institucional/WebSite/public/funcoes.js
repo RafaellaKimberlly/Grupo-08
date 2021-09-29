@@ -2,7 +2,7 @@ let login_usuario;
 let nome_usuario;
 
 function redirecionar_login() {
-    window.location.href = 'login.html';
+    window.location.href = 'login-cadastro.html';
 }
 
 function verificar_autenticacao() {
