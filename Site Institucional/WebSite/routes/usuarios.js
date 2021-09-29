@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var sequelize = require('../models').sequelize;
-var Usuario = require('../models').Usuario;
+var usuario = require('../models').usuario;
 
 let sessoes = [];
 
@@ -16,7 +16,7 @@ router.post('/autenticar', function(req, res, next) {
 	console.log(instrucaoSql);
 
 	sequelize.query(instrucaoSql, {
-		model: Usuario
+		model: usuario
 	}).then(resultado => {
 		console.log(`Encontrados: ${resultado.length}`);
 
@@ -40,7 +40,7 @@ router.post('/autenticar', function(req, res, next) {
 router.post('/cadastrar', function(req, res, next) {
 	console.log('Criando um usuário');
 	
-	Usuario.create({
+	usuario.create({
 		nome : req.body.nome,
 		sobrenome : req.body.sobrenome,
 		login : req.body.login,
@@ -99,7 +99,7 @@ router.get('/sair/:login', function(req, res, next) {
 /* Recuperar todos os usuários */
 router.get('/', function(req, res, next) {
 	console.log('Recuperando todos os usuários');
-	Usuario.findAndCountAll().then(resultado => {
+	usuario.findAndCountAll().then(resultado => {
 		console.log(`${resultado.count} registros`);
 
 		res.json(resultado.rows);
