@@ -39,3 +39,11 @@
     height: 50px;
     width: 50px;
 }
+
+.opcoes label{
+    cursor: pointer;
+}
+
+.opcoes input{
+    cursor: pointer;
+}
