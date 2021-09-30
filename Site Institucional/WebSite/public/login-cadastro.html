@@ -14,7 +14,7 @@
 <body>
 
     <header class="header-login">
-        
+
         <input type="checkbox" id="menu">
         <label for="menu">
             <div class="menu-hamburguer">
@@ -34,7 +34,7 @@
             </nav>
         </span>
 
-        
+
 
         <figure>
             <!-- <img class="logo" src="../img/logo.jpeg" alt=""> -->
@@ -85,7 +85,7 @@
                     <p class="descricao descricao-primary">Informe seus dados.</p>
                 </div><!-- FINAL REDES SOCIAIS (REGISTRO) -->
 
-                <form class="dados-usuario"  id="form_cadastro" method="POST" onsubmit="return cadastrar()">
+                <form class="dados-usuario" id="form_cadastro" method="POST" onsubmit="return cadastrar()">
                     <!-- INICIO FORMULÁRIO (REGISTRO) -->
                     <label class="label-input">
                         <i class="fas fa-user icon-modify"></i>
@@ -139,17 +139,18 @@
                             <option value="TO">TO</option>
                             <option value="DF">DF</option>
                         </select>
-                        </label>
-                    <button type="submit" id="btn_entrar" value="Cadastrar" class="btn_user btn-second_user">Registrar</button>
-                </form><!-- FINAL FORMULÁRIO (REGISTRO) -->
+                    </label>
+                    <button type="submit" id="btn_cadastrar" value="Cadastrar"
+                        class="btn_user btn-second_user">Registrar</button>
+                </form>
+                <!-- FINAL FORMULÁRIO (REGISTRO) -->
 
-                <img src="../aguarde-orange.gif" id="img_aguarde" style="display: none; width:100px">
-    
-                <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
-                    Erro no cadastro
-                </div>
+                
 
-            </div><!-- FINAL SEGUNDA COLUNA (REGISTRO) -->
+                
+
+            </div>
+            <!-- FINAL SEGUNDA COLUNA (REGISTRO) -->
         </div>
 
 
@@ -207,24 +208,27 @@
 
                         <a class="esqueci-senha" href="#">Esqueci minha senha</a>
 
-                    <button class="btn_user btn-second_user" type="submit" id="btn_entrar" value="LOGIN">Entrar</button>
+                        <button class="btn_user btn-second_user" type="submit" id="btn_entrar"
+                            value="LOGIN">Entrar</button>
+                    </div>
 
-                    </form>
-                    <div class="extra">
+                </form>
+                <div class="extra">
                     <div id="div_erro" class="msg_erro">
                     </div>
 
-                    <img src="../aguarde-orange.gif" id="img_aguarde"  > <!--style="display: none;"-->
-                    
-                </div>
-                    
+                    <img src="loading.gif" id="img_aguarde">
+                    <!--style="display: none;"-->
 
                 </div>
-                <!-- FINAL FORMULÁRIO (LOGIN) -->
 
-            </div><!-- FINAL SEGUNDA COLUNA (LOGIN) -->
 
-        </div><!-- FINAL SEGUNDO CONTEUDO (LOGIN) -->
+            </div>
+            <!-- FINAL FORMULÁRIO (LOGIN) -->
+
+        </div><!-- FINAL SEGUNDA COLUNA (LOGIN) -->
+
+    </div><!-- FINAL SEGUNDO CONTEUDO (LOGIN) -->
 
     </div>
 
@@ -236,7 +240,6 @@
 
 <!-- Cadastro  -->
 <script>
-
     function cadastrar() {
         aguardar();
         var formulario = new URLSearchParams(new FormData(form_cadastro));
@@ -244,10 +247,10 @@
             method: "POST",
             body: formulario
         }).then(function (response) {
-            
+
             if (response.ok) {
 
-                window.location.href='teste1.html';
+                window.location.href = 'teste1.html';
 
             } else {
 
@@ -264,22 +267,18 @@
 
     function aguardar() {
         btn_entrar.disabled = true;
-        img_aguarde.style.display='block';
-        div_erro.style.display='none';
+        img_aguarde.style.display = 'block';
+        div_erro.style.display = 'none';
     }
 
     function finalizar_aguardar() {
         btn_entrar.disabled = false;
-        img_aguarde.style.display='none';
-        div_erro.style.display='block';
+        img_aguarde.style.display = 'none';
+        div_erro.style.display = 'block';
     }
 
-</script>
+    // login
 
-
-<!-- Login -->
-
-<script>
 
     function entrar() {
         aguardar();
@@ -312,22 +311,4 @@
 
         return false;
     }
-
-    function aguardar() {
-        btn_entrar.disabled = true;
-        img_aguarde.style.visibility = 'visible';
-        div_erro.style.visibility = 'hidden';
-    }
-
-    function finalizar_aguardar(resposta) {
-        btn_entrar.disabled = false;
-        img_aguarde.style.visibility = 'hidden';
-        div_erro.style.visibility = 'visible';
-        div_erro.innerHTML = resposta;
-    }
-
 </script>
-
-
-
-
