@@ -10,6 +10,7 @@
 .altera-dados{
     display: flex;
     justify-content: space-around;
+    margin-top: 20px;
 }
 
 .perfil{
@@ -28,6 +29,10 @@
     border-radius: 25px;
     border: none;
     background-color: #EEAF32;
+}
+
+.form-infos{
+    padding-top: 20px;
 }
 
 .form-infos form{
@@ -89,4 +94,89 @@ form .input-form{
     border: none;
     float: right;
     background-color: #EEAF32;
+}
+
+@media only screen and (max-width: 1200px) {
+    /* Mesmas config de quando esconde o menu*/    
+    .altera-dados .foto-perfil{
+        width: 200px;
+        padding: 20px;
+    }
+    
+    .perfil button{
+        padding: 10px;
+        border-radius: 25px;
+    }
+
+    .form-infos{
+        padding-top: 20px;
+    }
+    
+    .form-infos form{
+        border: black 1px solid;
+        border-radius: 20px;
+        padding: 10px;
+    }
+    
+    form .input-form{
+        margin: 20px 0;
+    }
+    
+    .input-form{
+        display: flex;
+        flex-direction: column;
+        margin: 15px;
+        width: 250px;
+    }
+    
+    .form-infos form button{
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px;
+        border-radius: 25px;
+        margin: 10px;
+    }
+    
+    .pool-info{
+        margin-top: 50px;
+    }
+    
+    .pool{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    
+    .titulo{
+        margin: 9%;
+    }
+    
+    .your-pool button{
+        width: 90px;
+        margin: 0 10px;
+        padding: 10px;
+        border-radius: 25px;
+    }
+    
+    .select-pool button{
+        margin: 0 10px;
+        padding: 10px;
+        border-radius: 25px;
+        float: right;
+        background-color: #EEAF32;
+    }
+}
+
+@media only screen and (max-height: 600px) {
+    .altera-dados{
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+    .pool{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    
 }
