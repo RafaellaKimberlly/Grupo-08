@@ -111,7 +111,7 @@ body{
     align-items: center;
     flex-wrap: wrap;
     padding: 40px 0;
-    background-image: url("../img/fundo-bloco.png");
+    background-image: url("img/fundo-bloco.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
