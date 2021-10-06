@@ -73,6 +73,243 @@ body{
     margin-top: 1%;
 }
 
+@media only screen and (min-width: 300px){
+
+    .caixa-conteudo{
+        margin-left: 13%;
+        width: 76.8%;
+        height: 100%;
+        position: relative;
+        z-index: 0;
+        margin-top: 10%;
+        display: block;
+    }
+    
+    .card-grafico{
+        background-color: white;
+        border-left: 5px solid #13436b;
+    }
+    
+    .caixa-conteudo .card-grafico{
+        width: 79.5%;
+        height: 40vw;
+        overflow: hidden;
+        transition: 1s;
+        margin-left: 24%;
+    }
+    
+    .caixa-conteudo .card-grafico:hover{
+        z-index: 1;
+        transform: scale(1.10);
+    }
+    
+    .graficos{
+        margin-left: 31%;
+        width: 7vh;
+    }
+    
+    .title-card{
+        font-size: 1.1em;
+        color: black;
+        margin-top: 46%;
+        margin-left: 3%;
+        position: absolute;
+    }
+    
+    .situacao-porcentagem{
+        font-size: 1.1rem;
+        color: red;
+        margin-top: 46%;
+        margin-left: 46%;
+        position: absolute;
+    }
+    
+    .seta{
+        font-size: 1.1em;
+        color: red;
+        margin-top: 47.9%;
+        margin-left: 65%;
+        position: absolute;
+    }
+    
+    .title-situacao{
+        font-size: 1.4em;
+        color: black;
+        margin-left: 27.5%;
+        padding-top: 1%;
+        position: absolute;
+    }
+
+    .alertas{
+        margin-top: 17%;
+    }
+    
+    .img-alert{
+        width: 28%;
+        margin-left: 53%;
+        height: 22vw;
+        margin-top: 18%;
+    }
+}
+
+@media only screen and (min-width: 400px){
+
+    .caixa-conteudo{
+        margin-left: 23%;
+        width: 76.8%;
+        height: 100%;
+        position: relative;
+        z-index: 0;
+        margin-top: 7%;
+        display: block;
+    }
+    
+    .card-grafico{
+        background-color: white;
+        border-left: 5px solid #13436b;
+    }
+    
+    .caixa-conteudo .card-grafico{
+        width: 57.5%;
+        height: 36vw;
+        overflow: hidden;
+        transition: 1s;
+        margin-left: 24%;
+    }
+    
+    .caixa-conteudo .card-grafico:hover{
+        z-index: 1;
+        transform: scale(1.10);
+    }
+    
+    .graficos{
+        margin-left: 33%;
+        width: 7vh;
+    }
+    
+    .title-card{
+        font-size: 1.2em;
+        color: black;
+        margin-top: 42%;
+        margin-left: 2%;
+        position: absolute;
+    }
+    
+    .situacao-porcentagem{
+        font-size: 1.3em;
+        color: red;
+        margin-top: 41.8%;
+        margin-left: 34%;
+        position: absolute;
+    }
+    
+    .seta{
+        font-size: 1.3em;
+        color: red;
+        margin-top: 43.9%;
+        margin-left: 48%;
+        position: absolute;
+    }
+    
+    .title-situacao{
+        font-size: 1.4em;
+        color: black;
+        margin-left: 38.5%;
+        padding-top: 0%;
+        position: absolute;
+    }
+
+    .alertas{
+        margin-top: 17%;
+    }
+    
+    .img-alert{
+        width: 25%;
+        margin-left: 53%;
+        height: 20vw;
+        margin-top: 12%;
+    }
+}
+
+@media only screen and (min-width: 550px){
+
+    .caixa-conteudo{
+        margin-left: 14%;
+        width: 76.8%;
+        height: 100%;
+        position: relative;
+        z-index: 0;
+        margin-top: 15%;
+        display: block ruby;
+    }
+    
+    .card-grafico{
+        background-color: white;
+        border-left: 5px solid #13436b;
+    }
+    
+    .caixa-conteudo .card-grafico{
+        width: 34.5%;
+        height: 30vw;
+        overflow: hidden;
+        transition: 1s;
+        margin-left: 3%;
+    }
+    
+    .caixa-conteudo .card-grafico:hover{
+        z-index: 1;
+        transform: scale(1.10);
+    }
+    
+    .graficos{
+        margin-left: 31%;
+        width: 7vh;
+    }
+    
+    .title-card{
+        font-size: 1.1em;
+        color: black;
+        margin-top: 35%;
+        margin-left: 2%;
+        position: absolute;
+    }
+    
+    .situacao-porcentagem{
+        font-size: 1.1rem;
+        color: red;
+        margin-top: 35%;
+        margin-left: 18%;
+        position: absolute;
+    }
+    
+    .seta{
+        font-size: 1.1em;
+        color: red;
+        margin-top: 35.9%;
+        margin-left: 28.5%;
+        position: absolute;
+    }
+    
+    .title-situacao{
+        font-size: 1.4em;
+        color: black;
+        margin-left: 41.5%;
+        padding-top: 1%;
+        position: absolute;
+    }
+
+    .alertas{
+        margin-top: 17%;
+    }
+    
+    .img-alert{
+        width: 19%;
+        margin-left: 53%;
+        height: 16vw;
+        margin-top: 12%;
+    }
+}
+
 @media only screen and (min-width: 600px){
 
     .caixa-conteudo{
@@ -104,34 +341,34 @@ body{
     }
     
     .graficos{
-        margin-left: 23%;
+        margin-left: 30%;
     }
     
     .title-card{
-        font-size: 22px;
+        font-size: 1.3em;
         color: black;
-        margin-top: 105%;
-        margin-left: -73%;
+        margin-top: 35%;
+        margin-left: 1%;
     }
     
     .situacao-porcentagem{
-        font-size: 21px;
+        font-size: 1.3em;
         color: red;
-        margin-top: 105%;
-        margin-left: 13%;
+        margin-top: 35%;
+        margin-left: 16%;
     }
     
     .seta{
-        font-size: 21px;
+        font-size: 1.3em;
         color: red;
-        margin-top: 107.9%;
-        margin-left: 2%;
+        margin-top: 35.9%;
+        margin-left: 26%;
     }
     
     .title-situacao{
         font-size: 22px;
         color: black;
-        margin-left: 38%;
+        margin-left: 42%;
         padding-top: 3%;
         position: absolute;
     }
@@ -141,9 +378,9 @@ body{
     }
     
     .img-alert{
-        width: 21%;
-        margin-left: 47%;
-        height: 17vw;
+        width: 16%;
+        margin-left: 53%;
+        height: 14vw;
         margin-top: 9%;
     }
 }
@@ -179,28 +416,30 @@ body{
     }
     
     .graficos{
-        margin-left: 30%;
+        margin-left: 30.2%;
+        width: 8vh;
     }
     
     .title-card{
-        font-size: 22px;
+        font-size: 1.3em;
         color: black;
-        margin-top: 105%;
-        margin-left: -67%;
+        margin-top: 35.5%;
+        margin-left: 1%;
     }
     
     .situacao-porcentagem{
-        font-size: 21px;
+        font-size: 1.3em;
         color: red;
-        margin-top: 105%;
-        margin-left: 30%;
+        margin-top: 35.5%;
+        margin-left: 18%;
+        position: absolute;
     }
     
     .seta{
-        font-size: 21px;
+        font-size: 1.3em;
         color: red;
-        margin-top: 107.9%;
-        margin-left: 2%;
+        margin-top: 36.5%;
+        margin-left: 26%;
     }
     
     .title-situacao{
@@ -219,5 +458,389 @@ body{
         margin-left: 49%;
         height: 14vw;
         margin-top: 9%;
+    }
+}
+
+@media only screen and (min-width: 900px){
+
+    .caixa-conteudo{
+        margin-left: 9%;
+        width: 76.8%;
+        height: 96%;
+        position: relative;
+        z-index: 0;
+        margin-top: 2%;
+        display: block ruby;
+    }
+    
+    .card-grafico{
+        background-color: white;
+        border-left: 5px solid #13436b;
+    }
+    
+    .caixa-conteudo .card-grafico{
+        width: 33.5%;
+        height: 30vw;
+        overflow: hidden;
+        transition: 1s;
+        margin-left: 4%;
+    }
+    
+    .caixa-conteudo .card-grafico:hover{
+        z-index: 1;
+        transform: scale(1.10);
+    }
+    
+    .graficos{
+        margin-left: 31.2%;
+        width: 9vh;
+    }
+    
+    .title-card{
+        font-size: 1.5em;
+        color: black;
+        margin-top: 35.5%;
+        margin-left: 1%;
+    }
+    
+    .situacao-porcentagem{
+        font-size: 1.5em;
+        color: red;
+        margin-top: 35.5%;
+        margin-left: 18%;
+        position: absolute;
+    }
+    
+    .seta{
+        font-size: 1.5em;
+        color: red;
+        margin-top: 36.5%;
+        margin-left: 26%;
+    }
+    
+    .title-situacao{
+        font-size: 1.5em;
+        color: black;
+        margin-left: 44.8%;
+        padding-top: 1%;
+    }
+
+    .alertas{
+        margin-top: 10%;
+    }
+    
+    .img-alert{
+        width: 12%;
+        margin-left: 52%;
+        height: 10vw;
+        margin-top: 7%;
+    }
+}
+
+@media only screen and (min-width: 1200px){
+
+    .caixa-conteudo{
+        margin-left: 22.4%;
+        width: 76.8%;
+        height: 96%;
+        position: relative;
+        z-index: 0;
+        margin-top: -1%;
+        display: block ruby;
+    }
+    
+    .card-grafico{
+        background-color: white;
+        border-left: 5px solid #13436b;
+    }
+    
+    .caixa-conteudo .card-grafico{
+        width: 24.5%;
+        height: 20vw;
+        overflow: hidden;
+        transition: 1s;
+        margin-left: 4%;
+    }
+    
+    .caixa-conteudo .card-grafico:hover{
+        z-index: 1;
+        transform: scale(1.10);
+    }
+    
+    .graficos{
+        margin-left: 31.2%;
+        width: 9vh;
+    }
+    
+    .title-card{
+        font-size: 1.5em;
+        color: black;
+        margin-top: 22.9%;
+        margin-left: 1%;
+    }
+    
+    .situacao-porcentagem{
+        font-size: 1.5em;
+        color: red;
+        margin-top: 22.8%;
+        margin-left: 16%;
+        position: absolute;
+    }
+    
+    .seta{
+        font-size: 1.5em;
+        color: red;
+        margin-top: 23.4%;
+        margin-left: 21%;
+    }
+    
+    .title-situacao{
+        font-size: 1.5em;
+        color: black;
+        margin-left: 49.8%;
+        padding-top: 0%;
+        margin-top: -3%;
+    }
+
+    .alertas{
+        margin-top: 10%;
+    }
+    
+    .img-alert{
+        width: 8%;
+        margin-left: 55%;
+        height: 7vw;
+        margin-top: 0%;
+    }
+}
+
+@media only screen and (min-width: 1150px){
+
+    .caixa-conteudo{
+        margin-left: 22.4%;
+        width: 76.8%;
+        height: 96%;
+        position: relative;
+        z-index: 0;
+        margin-top: 3.5%;
+        display: block ruby;
+    }
+    
+    .card-grafico{
+        background-color: white;
+        border-left: 5px solid #13436b;
+    }
+    
+    .caixa-conteudo .card-grafico{
+        width: 24.5%;
+        height: 20vw;
+        overflow: hidden;
+        transition: 1s;
+        margin-left: 4%;
+    }
+    
+    .caixa-conteudo .card-grafico:hover{
+        z-index: 1;
+        transform: scale(1.10);
+    }
+    
+    .graficos{
+        margin-left: 31.2%;
+        width: 9vh;
+    }
+    
+    .title-card{
+        font-size: 1.5em;
+        color: black;
+        margin-top: 22.9%;
+        margin-left: 1%;
+    }
+    
+    .situacao-porcentagem{
+        font-size: 1.5em;
+        color: red;
+        margin-top: 22.8%;
+        margin-left: 15%;
+        position: absolute;
+    }
+    
+    .seta{
+        font-size: 1.5em;
+        color: red;
+        margin-top: 23.4%;
+        margin-left: 21%;
+    }
+    
+    .title-situacao{
+        font-size: 1.5em;
+        color: black;
+        margin-left: 49.8%;
+        padding-top: 0%;
+        margin-top: -3%;
+    }
+
+    .alertas{
+        margin-top: 10%;
+    }
+    
+    .img-alert{
+        width: 8%;
+        margin-left: 55%;
+        height: 7vw;
+        margin-top: 0%;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+
+    .caixa-conteudo{
+        margin-left: 22.4%;
+        width: 76.8%;
+        height: 96%;
+        position: relative;
+        z-index: 0;
+        margin-top: 3.5%;
+        display: block ruby;
+    }
+    
+    .card-grafico{
+        background-color: white;
+        border-left: 5px solid #13436b;
+    }
+    
+    .caixa-conteudo .card-grafico{
+        width: 24.5%;
+        height: 20vw;
+        overflow: hidden;
+        transition: 1s;
+        margin-left: 4%;
+    }
+    
+    .caixa-conteudo .card-grafico:hover{
+        z-index: 1;
+        transform: scale(1.10);
+    }
+    
+    .graficos{
+        margin-left: 31.2%;
+        width: 9vh;
+    }
+    
+    .title-card{
+        font-size: 1.5em;
+        color: black;
+        margin-top: 22.9%;
+        margin-left: 1%;
+    }
+    
+    .situacao-porcentagem{
+        font-size: 1.5em;
+        color: red;
+        margin-top: 22.8%;
+        margin-left: 15%;
+        position: absolute;
+    }
+    
+    .seta{
+        font-size: 1.5em;
+        color: red;
+        margin-top: 23.4%;
+        margin-left: 21%;
+    }
+    
+    .title-situacao{
+        font-size: 1.5em;
+        color: black;
+        margin-left: 49.8%;
+        padding-top: 0%;
+        margin-top: -3%;
+    }
+
+    .alertas{
+        margin-top: 10%;
+    }
+    
+    .img-alert{
+        width: 8%;
+        margin-left: 55%;
+        height: 7vw;
+        margin-top: 0%;
+    }
+}
+
+@media only screen and (min-width: 1366px){
+
+    .caixa-conteudo{
+        margin-left: 22.4%;
+        width: 76.8%;
+        height: 96%;
+        position: relative;
+        z-index: 0;
+        margin-top: -1%;
+        display: block ruby;
+    }
+    
+    .card-grafico{
+        background-color: white;
+        border-left: 5px solid #13436b;
+    }
+    
+    .caixa-conteudo .card-grafico{
+        width: 24.5%;
+        height: 20vw;
+        overflow: hidden;
+        transition: 1s;
+        margin-left: 4%;
+    }
+    
+    .caixa-conteudo .card-grafico:hover{
+        z-index: 1;
+        transform: scale(1.10);
+    }
+    
+    .graficos{
+        margin-left: 31.2%;
+        width: 9vh;
+    }
+    
+    .title-card{
+        font-size: 1.5em;
+        color: black;
+        margin-top: 22.9%;
+        margin-left: 1%;
+    }
+    
+    .situacao-porcentagem{
+        font-size: 1.5em;
+        color: red;
+        margin-top: 22.8%;
+        margin-left: 16%;
+        position: absolute;
+    }
+    
+    .seta{
+        font-size: 1.5em;
+        color: red;
+        margin-top: 23.4%;
+        margin-left: 21%;
+    }
+    
+    .title-situacao{
+        font-size: 1.5em;
+        color: black;
+        margin-left: 49.8%;
+        padding-top: 0%;
+        margin-top: -3%;
+    }
+
+    .alertas{
+        margin-top: 10%;
+    }
+    
+    .img-alert{
+        width: 8%;
+        margin-left: 55%;
+        height: 7vw;
+        margin-top: 0%;
     }
 }
