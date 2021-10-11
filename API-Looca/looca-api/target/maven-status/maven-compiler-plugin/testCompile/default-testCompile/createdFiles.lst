@@ -1,8 +1,9 @@
 jFrame\TelaLogin$1.class
 TesteAPi.class
 jFrame\TelaLogin$2.class
-jFrame\testeBanco.class
+jFrame\Login.class
 ProcessoGroup.class
-jFrame\DemoApplication.class
 jFrame\TelaLogin.class
 jFrame\TelaLogin$3.class
+jFrame\TesteLogin.class
+jFrame\ConfigBanco.class
