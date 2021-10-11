@@ -9,7 +9,7 @@ public class testeBanco {
     public testeBanco() {
         this.bancoDeDados = new BasicDataSource();
         this.bancoDeDados​.setDriverClassName("org.h2.Driver");
-        this.bancoDeDados​.setUrl("jdbc:sqlserver://cryptoverse.database.windows.net:1433;database=demo;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30");
+        this.bancoDeDados​.setUrl("jdbc:h2:file:./cryptoverse");
         this.bancoDeDados​.setUsername("demo@admcrypto");
         this.bancoDeDados​.setPassword("#Gfgrupo8");
     }

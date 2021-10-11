@@ -158,10 +158,10 @@
             <version>5.3.10</version>
         </dependency>
 <!--        dependencia do azure-->
-        <dependency>
+<!--        <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
             <artifactId>mssql-jdbc</artifactId>
             <version>7.4.1.jre8</version>
-        </dependency>
+        </dependency>-->
     </dependencies>
 </project>
