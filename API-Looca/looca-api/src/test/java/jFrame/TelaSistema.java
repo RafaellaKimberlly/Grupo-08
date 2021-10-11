@@ -107,11 +107,11 @@ public class TelaSistema extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+
         int response = JOptionPane.showConfirmDialog(this, "Você deseja sair?", "Sim ", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        
-        if(response == JOptionPane.YES_OPTION){
-         TelaSistema.this.dispose();
+
+        if (response == JOptionPane.YES_OPTION) {
+            TelaSistema.this.dispose();
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 

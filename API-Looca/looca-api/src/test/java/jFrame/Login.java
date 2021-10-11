@@ -10,9 +10,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
  * @author Reyel Soares
  */
 public class Login {
-    
-       private String email;
-   private String senha;
+
+    private String email;
+    private String senha;
 
     public Login(String email, String senha) {
         this.email = email;
@@ -42,25 +42,25 @@ public class Login {
     public String toString() {
         return "TesteLogin{" + "email=" + email + ", senha=" + senha + '}';
     }
-   
-    
-    
 
-void login(String email, String senha){
-    ConfigBanco config = new ConfigBanco();
-       JdbcTemplate template = new JdbcTemplate(config.getBancoDeDados());
-    try {
+    Boolean entrar(String email, String senha) {
+        ConfigBanco config = new ConfigBanco();
+        JdbcTemplate template = new JdbcTemplate(config.getBancoDeDados());
         
-        System.out.println(template.queryForList("SELECT * FROM usuario where email = ? and senha = ?", email, senha));
-    } catch (DataAccessException e) {
-        e.getMessage();
-	System.out.println("Usuário ou senha inválido");
+        
+        
+        try {
+
+            System.out.println(template.queryForList("SELECT * FROM usuario where email = ? and senha = ? and email = ? and senha = ?", email, senha));
+
+            return true;
+        } catch (DataAccessException e) {
+            e.getMessage();
+            System.out.println("Usuário ou senha inválido");
+
+            return false;
+        }
+
     }
-    
-    
-}
-
-
-
 
 }
