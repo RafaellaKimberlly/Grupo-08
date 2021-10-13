@@ -47,19 +47,25 @@ public class Login {
         ConfigBanco config = new ConfigBanco();
         JdbcTemplate template = new JdbcTemplate(config.getBancoDeDados());
         
-        
-        
-        try {
+        if(email == getEmail() && senha == getSenha()) {
 
-            System.out.println(template.queryForList("SELECT * FROM usuario where email = ? and senha = ? and email = ? and senha = ?", email, senha));
-
+            System.out.println(template.queryForList("SELECT * FROM usuario where email = ? and senha = ?", email, senha));
+            
             return true;
-        } catch (DataAccessException e) {
-            e.getMessage();
+        } else {
+            
             System.out.println("Usuário ou senha inválido");
 
             return false;
         }
+        
+//        try {
+//
+//            
+//        } catch (DataAccessException e) {
+//            e.getMessage();
+//            
+//        }
 
     }
 

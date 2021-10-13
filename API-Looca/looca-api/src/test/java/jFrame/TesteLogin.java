@@ -29,7 +29,7 @@ public static void main(String[] args) {
 
         Login login = new Login("teste@teste.com", "teste123");
        
-       
+       System.out.println(login.getEmail());
         
         
     }
