@@ -147,20 +147,23 @@ public class TelaLogin extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        String email = txtUsuario.toString();
-
-        String senha = passwordUsuario.toString();
-
+//        String email = txtUsuario.getText();
+//
+//        String senha = passwordUsuario.getText();
         Login login = new Login();
 
-        if (login.entrar(email, senha) == true) {
+        if (login.entrar(txtUsuario.getText(), passwordUsuario.getText())) {
             JOptionPane.showMessageDialog(null, "Bem vindo");
             TelaLogin.this.dispose();
             new TelaSistema().setVisible(true);
-        } else if (login.entrar(email, senha) == false) {
+        }else {
             msgError.setText("Usuario ou senha invalidos");
         }
 
+//        if (login.entrar(email, senha) == true) {
+//        } else if (login.entrar(email, senha) == false) {
+//            
+//        }
 
     }//GEN-LAST:event_jButton1ActionPerformed
 

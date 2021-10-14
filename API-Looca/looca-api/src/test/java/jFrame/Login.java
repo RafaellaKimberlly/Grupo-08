@@ -1,8 +1,10 @@
 package jFrame;
 
-import java.sql.SQLException;
-import java.util.Map;
-import org.springframework.dao.DataAccessException;
+import jFrame.ConfigBanco;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 /**
@@ -43,30 +45,52 @@ public class Login {
         return "TesteLogin{" + "email=" + email + ", senha=" + senha + '}';
     }
 
-    Boolean entrar(String email, String senha) {
-        ConfigBanco config = new ConfigBanco();
-        JdbcTemplate template = new JdbcTemplate(config.getBancoDeDados());
+    public Boolean entrar(String email, String senha) {
+    
+       ConfigBanco config = new ConfigBanco();
+       JdbcTemplate template = new JdbcTemplate(config.getBancoDeDados());
+       
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
         
-        if(email == getEmail() && senha == getSenha()) {
+        Boolean check = false;
+        
+        List<Login> login = new ArrayList<>();
+        
+        try {
 
-            System.out.println(template.queryForList("SELECT * FROM usuario where email = ? and senha = ?", email, senha));
+            stmt = (PreparedStatement) template.queryForList("SELECT * FROM usuario where email = ? and senha = ?", email, senha);
             
-            return true;
-        } else {
+            rs = stmt.executeQuery();
             
-            System.out.println("Usuário ou senha inválido");
-
-            return false;
+            if(rs.next()) {
+                check = true;
+            }
+            
+            
+        } catch (Exception e) {
         }
         
-//        try {
-//
-//            
-//        } catch (DataAccessException e) {
-//            e.getMessage();
-//            
-//        }
-
+        return check;
+        
     }
+    
+//    public Boolean entrar(String email, String senha) {
+//        ConfigBanco config = new ConfigBanco();
+//        JdbcTemplate template = new JdbcTemplate(config.getBancoDeDados());
+//        
+//        if(email == getEmail() && senha == getSenha()) {
+//
+//            System.out.println(template.queryForList("SELECT * FROM usuario where email = ? and senha = ?", email, senha));
+//            
+//            return true;
+//        } else {
+//            
+//            System.out.println("Usuário ou senha inválido");
+//
+//            return false;
+//        }
+//        
+//    }
 
 }

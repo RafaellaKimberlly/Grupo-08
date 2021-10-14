@@ -8,6 +8,7 @@ import com.github.britooo.looca.api.group.processos.ProcessosGroup;
 import com.github.britooo.looca.api.group.servicos.ServicosGroup;
 import com.github.britooo.looca.api.group.sistema.Sistema;
 import com.github.britooo.looca.api.group.temperatura.Temperatura;
+import com.github.britooo.looca.api.util.Conversor;
 import java.util.List;
 
 /*
@@ -49,19 +50,22 @@ public class TesteAPi {
         ProcessosGroup processo = looca.getGrupoDeProcessos();
         ServicosGroup servico = looca.getGrupoDeServicos();
         Temperatura temperatura = looca.getTemperatura();
+        Conversor conversor = null;
         
         
         //informações necessárias:
-        sistema.getSistemaOperacional();
-        sistema.getInicializado();
-        sistema.getTempoDeAtividade();
-        
+        System.out.println(sistema.getSistemaOperacional());
+        System.out.println(sistema.getInicializado());
+        System.out.println(conversor.formatarSegundosDecorridos(sistema.getTempoDeAtividade()));
+            
         //processador
-        processador.getIdentificador();
-        processador.getId();
-        processador.getNumeroCpusFisicas();
-        processador.getNumeroCpusLogicas();
-        processador.getUso();
+        System.out.println("");
+        System.out.println(processador.getNome());
+        System.out.println(processador.getIdentificador());
+        System.out.println(processador.getId());
+        System.out.println(processador.getNumeroCpusFisicas());
+        System.out.println(processador.getNumeroCpusLogicas());
+        System.out.println(processador.getUso());
         
          //memoria
         memoria.getDisponivel();
@@ -83,67 +87,16 @@ public class TesteAPi {
 
         //temperatura
         temperatura.getTemperatura();
-        
-        
-        
-        
-        //sistema
-//        sistema.getPermissao();
-//        sistema.getFabricante();
-//        sistema.getArquitetura();
-//        sistema.getInicializado();
-//        sistema.getTempoDeAtividade();
-//        sistema.getSistemaOperacional();
-//
-//        //processador
-//        processador.getFabricante();
-//        processador.getNome();
-//        processador.getId();
-//        processador.getIdentificador();
-//        processador.getMicroarquitetura();
-//        processador.getFrequencia();
-//        processador.getNumeroPacotesFisicos();
-//        processador.getNumeroCpusFisicas();
-//        processador.getNumeroCpusLogicas();
-//        processador.getUso();
-//
-//        //memoria
-//        memoria.getDisponivel();
-//        memoria.getEmUso();
-//        memoria.getTotal();
-//
-//        //disco
-//        disco.getDiscos();
-//        disco.getVolumes();
-//        disco.getQuantidadeDeDiscos();
-//        disco.getQuantidadeDeVolumes();
-//        disco.getTamanhoTotal();
-//
-//        //grupo de processo
-//        processo.getProcessos();
-//        processo.getTotalProcessos();
-//        processo.getTotalThreads();
-//
-//        //grupo de serviços
-//        servico.getServicos();
-//        servico.getServicosAtivos();
-//        servico.getServicosInativos();
-//        servico.getTotalDeServicos();
-//        servico.getTotalServicosAtivos();
-//        servico.getTotalServicosInativos();
-//
-//        //temperatura
-//        temperatura.getTemperatura();
 
         
         //Aparecendo no sistema
-        System.out.println(sistema);
-        System.out.println(processador);
-        System.out.println(memoria);
-        System.out.println(disco);
-        System.out.println(processo);
-        System.out.println(servico);
-        System.out.println(temperatura);
+//        System.out.println(sistema); // Sistema operaacional
+        System.out.println(processador); // CPU
+//        System.out.println(memoria); // Memoria RAM
+//        System.out.println(disco); // memoria em disco
+//        System.out.println(temperatura);
+//        System.out.println(processo); // processos
+//        System.out.println(servico);
         
 
         
