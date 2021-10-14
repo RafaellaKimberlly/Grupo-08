@@ -288,7 +288,7 @@ main {
 }
 .container-cards .content{
     position: relative;
-    margin-top: 10vh;
+    margin-top: 5vh;
     min-height: 90vh;
     background: #EBEBD3;
 }
@@ -297,13 +297,13 @@ main {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap:nowrap;
 }
 .container-cards .content .cards .card{
     width: 250px;
     height: 150px;
     background: #fff;
-    margin: 20px 10px;
+    margin: 20px 6px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -312,17 +312,21 @@ main {
 }
 .container-cards .btn{
     background: #F95738;
-    color: #231D36;
+    color: #EBEBD3;
     padding: 5px 10px;
     text-align: center;
     border-radius:3px;
+}
+.btn:hover{
+    background-color: #EBEBD3;
+    color: #231D36;
 }
 .container-cards .content .content-2{
     min-height: 60vh;
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 .container-cards .content .content-2 .recent-relatory{
     min-height: 50vh;
@@ -361,6 +365,18 @@ th, td{
 .container-cards .content .content-2 .new-relatory table td:nth-child(1) img{
     height: 40px;
     width: 40px;
+}
+.ativo:hover{
+    background-color: rgba(84, 236, 104, 0.671);
+}
+.inativo:hover{
+    background-color: rgba(255, 0, 0, 0.596);
+}
+.statusativo{
+    color: green;
+}
+.statusinativo{
+    color: red;
 }
 @media screen and (max-width:940px) {
     .brand-name h1{
