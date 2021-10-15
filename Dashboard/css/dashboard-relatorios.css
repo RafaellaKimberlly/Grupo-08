@@ -6,6 +6,9 @@
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
 }
+body{
+    background: rgb(202, 201, 201);
+}
 
 /* Menu de Opções */
 .sidebar {
@@ -14,7 +17,7 @@
     left: 0;
     top: 0;
     height: 100%;
-    background: #F95738;
+    background: #231D36;
     z-index: 100;
     transition: 0.5s; /* velocidade da mudança largura ao mostrar/esconder menu*/
 }
@@ -27,7 +30,7 @@
   .menu-hamburguer div {
     width: 32px;
     height: 2px;
-    background: #fff;
+    background: #EBEBD3;
     margin: 8px;
     transition: 0.3s;
   }
@@ -61,12 +64,12 @@
 .sidebar-menu a {
     padding-left: 1rem;
     display: block;
-    color: #fff;
+    color: #EBEBD3;
     font-size: 1.2rem;
 }
 
 .sidebar-menu span {
-    color: #fff;
+    color: #EBEBD3;
     padding-left: 1rem;  
 }
 
@@ -86,15 +89,15 @@
 
 
 .sidebar-menu a.active {
-    background-color: #fff;
+    background-color: #EBEBD3;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    color: #F4D35E;
+    color: #F95738;
     border-radius: 30px 0 0 30px;
 }
 
 .sidebar-menu a.active span {
-    color:  #F4D35E;
+    color:  #F95738;
 }
 
 
@@ -197,7 +200,7 @@
     top: 0;
     z-index: 1;
     transition: width 300ms;
-    background-color: #fff;
+    background-color: #EBEBD3;
 }
 
 .search-wrapper {
@@ -245,7 +248,6 @@
 main {
     margin-top: 60px;
     padding: 2rem 1.5rem;
-    background: #EBEBD3;
     min-height: calc(100vh - 90px);
 }
 
@@ -267,13 +269,13 @@ main {
 
 .header-dashboard {
     margin-left: 100px;
-    background-color: #fff;
+    background-color: #F95738;
 }
 
 .header-dashboard header {
     width: calc(100% - 100px);
     left: 100px;
-    background-color: #fff;
+    background-color: rgb(202, 201, 201);
 }
 }
 
@@ -290,24 +292,23 @@ main {
     position: relative;
     margin-top: 5vh;
     min-height: 90vh;
-    background: #EBEBD3;
 }
 .container-cards .content .cards{
     padding: 20px 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap:nowrap;
+    flex-wrap: wrap;
 }
 .container-cards .content .cards .card{
     width: 250px;
     height: 150px;
-    background: #fff;
+    background: #EBEBD3;
     margin: 20px 6px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    border-radius:3px;
+    border-radius:10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .container-cards .btn{
@@ -315,7 +316,7 @@ main {
     color: #EBEBD3;
     padding: 5px 10px;
     text-align: center;
-    border-radius:3px;
+    border-radius:10px;
 }
 .btn:hover{
     background-color: #EBEBD3;
@@ -326,41 +327,45 @@ main {
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 .container-cards .content .content-2 .recent-relatory{
     min-height: 50vh;
     flex: 5;
-    background: #fff;
+    background: #EBEBD3;
     margin: 0 25px 25px 25px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: flex;
     flex-direction: column;
-    border-radius:3px;
+    border-radius:10px;
 }
 .container-cards .content .content-2 .new-relatory{
     flex: 2;
-    background: #fff;
+    background: #EBEBD3;
     min-height: 50vh;
     margin: 0 25px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: flex;
     flex-direction: column;
-    border-radius:3px;
+    border-radius:10px;
 }
 .title{
     display: flex;
     align-items: center;
     justify-content: space-around;
     padding: 15px 10px;
-    border-bottom: 2px solid #231D36;
+    border-bottom: 2px solid #EE964B;
 }
 .table{
     padding: 10px;
 }
 th, td{
-    text-align: left;
+    text-align: center;
     padding: 8px;
+    border-bottom: 2px solid #ccc;
+}
+th{
+    color: #EE964B;
 }
 .container-cards .content .content-2 .new-relatory table td:nth-child(1) img{
     height: 40px;
@@ -378,6 +383,25 @@ th, td{
 .statusinativo{
     color: red;
 }
+
+
+/*Responsividade*/
+@media only screen and (max-width:1050px){
+    .recent-relatory{
+        width: 100% !important;
+    }
+    body{
+        background: rgb(202, 201, 201);
+    }
+}
+@media screen and (max-width:960px) {
+    .recent-relatory{
+        width: 100%;
+    }
+    main{
+        background: rgb(202, 201, 201);
+    }
+}
 @media screen and (max-width:940px) {
     .brand-name h1{
         font-size: 16px;
@@ -385,9 +409,19 @@ th, td{
     .container-cards .content .cards{
         justify-content: center;
     }
-    .container-cards .content .content-2 .recent-relatory table th:nth-child(2),
-    .container-cards .content .content-2 .recent-relatory table th:nth-child(2){
-        display: none;
+    main{
+        background: rgb(202, 201, 201);
+    }
+}
+@media screen and (max-width:790px) {
+    .recent-relatory{
+        width: 100%;
+    }
+    .recent-relatory th, td{
+        font-size: 70%;
+    }
+    main{
+        background: rgb(202, 201, 201);
     }
 }
 @media screen and (max-width:536px) {
@@ -397,8 +431,11 @@ th, td{
     .container-cards .content .cards{
         justify-content: center;
     }
-    .container-cards .content .content-2 .recent-relatory table th:nth-child(2),
-    .container-cards .content .content-2 .recent-relatory table th:nth-child(2){
-        display: none;
+    .recent-relatory{
+        width: 100%;
     }
+    main{
+        background: rgb(202, 201, 201);
+    }
+   
 }
