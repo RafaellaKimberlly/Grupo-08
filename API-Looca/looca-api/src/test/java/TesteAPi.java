@@ -54,18 +54,18 @@ public class TesteAPi {
         
         
         //informações necessárias:
-        System.out.println(sistema.getSistemaOperacional());
-        System.out.println(sistema.getInicializado());
-        System.out.println(conversor.formatarSegundosDecorridos(sistema.getTempoDeAtividade()));
-            
-        //processador
-        System.out.println("");
-        System.out.println(processador.getNome());
-        System.out.println(processador.getIdentificador());
-        System.out.println(processador.getId());
-        System.out.println(processador.getNumeroCpusFisicas());
-        System.out.println(processador.getNumeroCpusLogicas());
-        System.out.println(processador.getUso());
+//        System.out.println(sistema.getSistemaOperacional());
+//        System.out.println(sistema.getInicializado());
+//        System.out.println(conversor.formatarSegundosDecorridos(sistema.getTempoDeAtividade()));
+//            
+//        //processador
+//        System.out.println("");
+//        System.out.println(processador.getNome());
+//        System.out.println(processador.getIdentificador());
+//        System.out.println(processador.getId());
+//        System.out.println(processador.getNumeroCpusFisicas());
+//        System.out.println(processador.getNumeroCpusLogicas());
+//        System.out.println(processador.getUso());
         
          //memoria
         memoria.getDisponivel();

@@ -152,7 +152,7 @@ public class TelaLogin extends javax.swing.JFrame {
 //        String senha = passwordUsuario.getText();
         Login login = new Login();
 
-        if (login.entrar(txtUsuario.getText(), passwordUsuario.getText())) {
+        if (login.entrar(txtUsuario.getText(), String.valueOf(passwordUsuario.getPassword()))) {
             JOptionPane.showMessageDialog(null, "Bem vindo");
             TelaLogin.this.dispose();
             new TelaSistema().setVisible(true);

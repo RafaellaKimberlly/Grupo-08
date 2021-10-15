@@ -1,6 +1,6 @@
 package model;
 
-public class RamModel {
+public class DiscoModel {
 
     private Integer id;
     private Long tamanho;
