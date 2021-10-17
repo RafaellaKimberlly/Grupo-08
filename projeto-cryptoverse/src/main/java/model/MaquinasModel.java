@@ -10,6 +10,7 @@ public class MaquinasModel {
     private String hostName;
     private String numSerie;
     private String tipoProcessador;
+    private Integer idUsuario;
 
     public MaquinasModel(Integer idMaquina, String hostName, String numSerie, String tipoProcessador) {
         this.idMaquina = idMaquina;
@@ -49,6 +50,13 @@ public class MaquinasModel {
     public void setTipoProcessador(String tipoProcessador) {
         this.tipoProcessador = processador.getNome();
     }
-      
+
+    public Integer getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(Integer idUsuario) {
+        this.idUsuario = idUsuario;
+    }   
     
 }
