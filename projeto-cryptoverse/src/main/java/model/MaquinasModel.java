@@ -1,13 +1,17 @@
 package model;
 
+import com.github.britooo.looca.api.group.processador.Processador;
+
 public class MaquinasModel {
     
-    private int idMaquina;
+    Processador processador = new Processador();
+    
+    private Integer idMaquina;
     private String hostName;
     private String numSerie;
     private String tipoProcessador;
 
-    public MaquinasModel(int idMaquina, String hostName, String numSerie, String tipoProcessador) {
+    public MaquinasModel(Integer idMaquina, String hostName, String numSerie, String tipoProcessador) {
         this.idMaquina = idMaquina;
         this.hostName = hostName;
         this.numSerie = numSerie;
@@ -43,11 +47,8 @@ public class MaquinasModel {
     }
 
     public void setTipoProcessador(String tipoProcessador) {
-        this.tipoProcessador = tipoProcessador;
+        this.tipoProcessador = processador.getNome();
     }
-    
-    
-    
-    
+      
     
 }

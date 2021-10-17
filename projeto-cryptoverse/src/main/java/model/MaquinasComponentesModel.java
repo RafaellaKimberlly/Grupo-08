@@ -2,12 +2,12 @@ package model;
 
 public class MaquinasComponentesModel {
     
-    private int idMaquinaComponente;
-    private int idMaquina;
-    private int idComponente;
+    private Integer idMaquinaComponente;
+    private Integer idMaquina;
+    private Integer idComponente;
     private String status;
 
-    public MaquinasComponentesModel(int idMaquinaComponente, int idMaquina, int idComponente, String status) {
+    public MaquinasComponentesModel(Integer idMaquinaComponente, Integer idMaquina, Integer idComponente, String status) {
         this.idMaquinaComponente = idMaquinaComponente;
         this.idMaquina = idMaquina;
         this.idComponente = idComponente;

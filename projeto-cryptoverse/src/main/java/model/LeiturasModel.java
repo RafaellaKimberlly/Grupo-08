@@ -2,12 +2,12 @@ package model;
 
 public class LeiturasModel {
     
-    private int idLeitura;
+    private Integer idLeitura;
     private String descricao;
-    private int valor;
+    private Integer valor;
     private String dataHora; //Dúvida: podemos instânciar um  date = new date() ?
 
-    public LeiturasModel(int idLeitura, String descricao, int valor, String dataHora) {
+    public LeiturasModel(Integer idLeitura, String descricao, Integer valor, String dataHora) {
         this.idLeitura = idLeitura;
         this.descricao = descricao;
         this.valor = valor;
@@ -18,7 +18,7 @@ public class LeiturasModel {
         return idLeitura;
     }
 
-    public void setIdLeitura(int idLeitura) {
+    public void setIdLeitura(Integer idLeitura) {
         this.idLeitura = idLeitura;
     }
 
@@ -34,7 +34,7 @@ public class LeiturasModel {
         return valor;
     }
 
-    public void setValor(int valor) {
+    public void setValor(Integer valor) {
         this.valor = valor;
     }
 

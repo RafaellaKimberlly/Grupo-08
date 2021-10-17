@@ -2,10 +2,10 @@ package model;
 
 public class ComponentesModel {
     
-    private int idComponente;
+    private Integer idComponente;
     private String descComponente;
 
-    public ComponentesModel(int idComponente, String descComponente) {
+    public ComponentesModel(Integer idComponente, String descComponente) {
         this.idComponente = idComponente;
         this.descComponente = descComponente;
     }
@@ -14,7 +14,7 @@ public class ComponentesModel {
         return idComponente;
     }
 
-    public void setIdComponente(int idComponente) {
+    public void setIdComponente(Integer idComponente) {
         this.idComponente = idComponente;
     }
 
