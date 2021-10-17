@@ -2,51 +2,49 @@ create database CryptoVerse;
 
 use CryptoVerse;
 
-create table Usuario(
+create table tbUsuario(
 		 idUsuario INT PRIMARY KEY auto_increment,
          nome VARCHAR(30),
          sobrenome VARCHAR(40),
-         pais VARCHAR(25),
-         login VARCHAR(50),
+         email VARCHAR(40),
          senha VARCHAR(30),
-         dataCriacao datetime default now(),
-		 dataAtualizacao datetime default now(),
+         uf CHAR(2),
          fkPool int,
          foreign key (fkPool) references pools (idPool)
 )auto_increment = 1;
 	
-    create table Pools (
+    create table tbPools (
 		idPool int primary key auto_increment,
-        nomePool varchar(100),
+        nomePool varchar(60),
         descricao varchar(100)
     );
     
-    create table Maquinas(
+    create table tbMaquinas(
     idMaquina int primary key auto_increment,
+    hostname varchar(60),
+    numSerie varchar(60),
+    tipo_Processador varchar(20),
     fkUsuario int,
-    nomeMaquina varchar(100),
-    numSerie varchar(100)
-    );
+	foreign key (fkUsuario) references tbUsuario (idUsuario)
+    )auto_increment = 100;
 
-	create table Processador(
-    idProcessador int primary key auto_increment,
-    nome varchar(100),
-    fkMaquina int,
-    foreign key (fkMaquina) references maquinas (idMaquina)
+	create table tbComponentes(
+    idComponentes int primary key auto_increment,
+    nomeComponente varchar(30)
+    )auto_increment = 1000;
+    
+    create table tbMaquinas_Componentes(
+    idMaquina_Componentes int primary key auto_increment,
+    fkMaquinas int,
+	foreign key (fkMaquinas) references tbMaquinas(idMaquinas),
+	fkComponentes int,
+	foreign key (fkComponentes) references tbComponetes(idComponentes),
+	mcStatus varchar(7)
     );
     
-	create table PlacaVideo(
-    idPlacaVideo int primary key auto_increment,
-    nome varchar(100),
-    fkMaquina int,
-    foreign key (fkMaquina) references maquinas (idMaquina)
-    );    
-
-	create table Registros(
-    idRegistro int primary key auto_increment,
-    descricao varchar(100),
-    perfomace varchar(3),
-    alerta char(1),
+	create table tbLeituras(
+    idLeituras int primary key auto_increment,
+	nvAlerta varchar(5),
     dataHora datetime default now(),
     fkPlacaVideo int,
     foreign key (fkPlacaVideo) references PlacaVideo (idPlacaVideo),
@@ -56,4 +54,4 @@ create table Usuario(
 
 
 
-select * from usuario;
+select * from tbUsuario;
