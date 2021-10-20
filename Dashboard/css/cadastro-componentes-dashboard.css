@@ -6,6 +6,9 @@
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
 }
+body{
+    background: rgb(202, 201, 201);
+}
 
 /* Menu de Opções */
 .sidebar {
@@ -14,7 +17,7 @@
     left: 0;
     top: 0;
     height: 100%;
-    background: #F95738;
+    background: #231D36;
     z-index: 100;
     transition: 0.5s; /* velocidade da mudança largura ao mostrar/esconder menu*/
 }
@@ -27,7 +30,7 @@
   .menu-hamburguer div {
     width: 32px;
     height: 2px;
-    background: #fff;
+    background: #EBEBD3;
     margin: 8px;
     transition: 0.3s;
   }
@@ -61,12 +64,12 @@
 .sidebar-menu a {
     padding-left: 1rem;
     display: block;
-    color: #fff;
+    color: #EBEBD3;
     font-size: 1.2rem;
 }
 
 .sidebar-menu span {
-    color: #fff;
+    color: #EBEBD3;
     padding-left: 1rem;  
 }
 
@@ -86,15 +89,15 @@
 
 
 .sidebar-menu a.active {
-    background-color: #fff;
+    background-color: #EBEBD3;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    color: #F4D35E;
+    color: #F95738;
     border-radius: 30px 0 0 30px;
 }
 
 .sidebar-menu a.active span {
-    color:  #F4D35E;
+    color:  #F95738;
 }
 
 
@@ -197,7 +200,7 @@
     top: 0;
     z-index: 1;
     transition: width 300ms;
-    background-color: #fff;
+    background-color: #EBEBD3;
 }
 
 .search-wrapper {
@@ -245,7 +248,6 @@
 main {
     margin-top: 60px;
     padding: 2rem 1.5rem;
-    background: #f1f5f9;
     min-height: calc(100vh - 90px);
 }
 
@@ -278,20 +280,43 @@ main {
 }
 
 .formulario {
-    width: 600px;
-    margin-left: 20%;
-    margin-top: 40px;
+    width: 43%;
+    margin-left: 26%;
+    margin-top: 10%;
 }
 
 .ipt-form {
     float: right;
+    width: 50%;
+    height: 2vw;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    margin-right: 2%;
+    padding: 10px;
+    background-color: #EBEBD3;
 }
 
 .btn-cadastrar {
-    width: 215px;
     background-color: #F95738;
     color: #fff;
     float: right;
+    width: 50%;
+    margin-right: 1.8%;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    height: 2.5vw;
+    transition: 0.5s;
+}
+
+.btn-cadastrar:hover {
+    background-color: #922d19;
+    color: #fff;
+    float: right;
+    width: 50%;
+    margin-right: 1.8%;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    height: 2.5vw;
 }
 
 

@@ -42,6 +42,8 @@
             <!-- <img class="logo" src="img/logo.jpeg" alt=""> -->
         </figure>
 
+        <button class="button" onclick="traduzir()">English</button>
+
         <button class="button-entrar"><a href="login-cadastro.html">Entre</a></button>
     </header>
 
@@ -52,7 +54,7 @@
     <section class="section-about">
         <section class="content-about-upper">
             <article>
-                <span class="title-upper">Nós somos a</span>
+                <span id="nos_somos" class="title-upper">Nós somos a</span>
             </article>
             <article>
                 <span class="title-lower">Cryptoverse</span>
@@ -61,7 +63,7 @@
 
         <section class="content-about-lower">
             <article class="text-about">
-                <span>Somos uma empresa jovem, voltada para o monitoramento de hardware, especificamente para a
+                <span id="nos_somos_txt">Somos uma empresa jovem, voltada para o monitoramento de hardware, especificamente para a
                     mineração de
                     Criptomoedas, uma nova fonte de receitas com alto grau de procura. Fundada com o intuito de
                     difundirmos a tecnologia em
@@ -92,8 +94,8 @@
                     <img src="img/missao.png" alt="Missão">
                 </figure>
                 <article>
-                    <h1>Missão</h1>
-                    <p>Empregar maior controle para o
+                    <h1 id="missao">Missão</h1>
+                    <p id="missao_txt">Empregar maior controle para o
                         minerador, trazendo maior conforto
                         segurança e comodidade através da
                         tecnologia.</p>
@@ -105,8 +107,8 @@
                     <img src="img/visao.png" alt="Visão">
                 </figure>
                 <article>
-                    <h1>Visão</h1>
-                    <p>Revolucionar o controle de Mineração
+                    <h1 id="visao">Visão</h1>
+                    <p id="visao_txt">Revolucionar o controle de Mineração
                         mundial através da tecnologia,
                         tornando-o mensurável, controlavel
                         e seguro em todo o globo.</p>
@@ -118,8 +120,8 @@
                     <img src="img/valores.png" alt="Valores">
                 </figure>
                 <article>
-                    <h1>Valores</h1>
-                    <p>Respeito ao meio ambiente,
+                    <h1 id="valores">Valores</h1>
+                    <p id="valores_txt">Respeito ao meio ambiente,
                         sustentabilidade, agregando valor à
                         saúde financeira, utilizando os
                         recursos naturais
@@ -135,8 +137,8 @@
         <!-- Texto Time -->
         <div>
             <article class="content-team-text">
-                <h1 class="">Nosso <span class="">Time</span></h1>
-                <p class="">
+                <h1 id="nosso_time" class="">Nosso <span class="">Time</span></h1>
+                <p id="nosso_time_txt" class="">
                     Um grupo de entusiastas por tecnologia que buscam implementar os benefícios e maravilhas que a
                     modernização traz. Sempre
                     visando a simplicidade e performance das ferramentas empregadas a fim de facilitar e descomplicar as
@@ -156,8 +158,8 @@
                     <!-- Texto Membro -->
                     <article>
                         <h2>Rafaella</h2>
-                        <h3>Fundadora</h3>
-                        <p>Fundadora do Projeto, líder de projetos,
+                        <h3 id="cargo_1">Fundadora</h3>
+                        <p id="rafaella_txt">Fundadora do Projeto, líder de projetos,
                             Desenvolvedora Full Stack.</p>
                     </article>
                 </section>
@@ -170,8 +172,8 @@
                     <!-- Texto Membro -->
                     <article>
                         <h2>Isaque</h2>
-                        <h3>Fundador</h3>
-                        <p>Fundador do Projeto, Desenvolvedor Full
+                        <h3 id="cargo_2">Fundador</h3>
+                        <p id="isaque_txt">Fundador do Projeto, Desenvolvedor Full
                             Stack com habilidades em banco de dados.</p>
                     </article>
                 </section>
@@ -185,7 +187,7 @@
                     <article>
                         <h2>Matheus</h2>
                         <h3>Product Owner</h3>
-                        <p>Especialista de gerenciamento de time.
+                        <p id="matheus_txt">Especialista de gerenciamento de time.
                             Gestão ágil e especialista em
                             desenvolvimento Full Stack</p>
                     </article>
@@ -200,7 +202,7 @@
                     <article>
                         <h2>Fabrício</h2>
                         <h3>DBA</h3>
-                        <p>Mestre em desenvolvimento e análise de
+                        <p id="fabricio_txt">Mestre em desenvolvimento e análise de
                             banco de dados.</p>
                     </article>
                 </section>
@@ -214,7 +216,7 @@
                     <article>
                         <h2>Reyel</h2>
                         <h3>Scrum Master</h3>
-                        <p>Especialista do processo Scrum com o
+                        <p id="reyel_txt">Especialista do processo Scrum com o
                             conjunto de competências comportamentais
                             com habilidades de desenvolvimento Full Stack.</p>
                     </article>
@@ -228,8 +230,8 @@
                     <!-- Texto Membro -->
                     <article>
                         <h2>Gabriel</h2>
-                        <h3>Desenvolvedor Full Stack</h3>
-                        <p>Especialista em desenvolvimento Full
+                        <h3 id="cargo_3">Desenvolvedor Full Stack</h3>
+                        <p id="gabriel_txt">Especialista em desenvolvimento Full
                             Stack e em gerenciamento de time.</p>
                     </article>
                 </section>
@@ -290,3 +292,77 @@
 </body>
 
 </html>
+
+<script>
+    function traduzir() {
+        nos_somos.innerHTML = "We are the ";
+
+        nos_somos_txt.innerHTML = "We are a young company, focused on hardware monitoring, specifically for Cryptocurrency mining," + 
+        " a new source of revenue with a high degree of demand. Founded in order to spread the technology in all possible ways while " + 
+        " helping the practice become common in Brazil using the highest technology available, made available in a simple and " + 
+        " uncomplicated way to be used by enthusiasts of different levels of knowledge and setup from a more extensive farm covering " + 
+        " several m² to a leaner mining farm. Our mission is to improve your earnings and make life easier for the miner with " + 
+        " a commitment to both the environment and the customer, presenting technological solutions that do not require a " + 
+        " transformation in the customer's location, maintaining the integrity of the setup and not using technologies that are harmful " + 
+        " to performance, the commitment to the client seeks to grow the same in terms of profit and efficiency in the market, expanding " + 
+        " its participation in mining pools and consequently diversifying its possible sources of income.";
+
+        missao.innerHTML = "Mission";
+
+        missao_txt.innerHTML = "Employ greater control for the miner, bringing greater comfort, safety and convenience through technology.";
+
+        visao.innerHTML = "Vision";
+
+        visao_txt.innerHTML = "Revolutionize global mining control through technology, making it measurable, controllable and secure across the globe.";
+
+        valores.innerHTML = "Values";
+
+        valores_txt.innerHTML = "Respect for the environment, sustainability, adding value to financial health, using natural resources with ethics, transparency and superior efficiency.";
+    
+        nosso_time.innerHTML = "Our Team";
+
+        nosso_time_txt.innerHTML = "A group of technology enthusiasts looking to implement the benefits and wonders that modernization " + 
+        " brings. Always aiming at the simplicity and performance of the tools used in order to facilitate and uncomplicate customer " + 
+        " needs. Committed to the development of simple and intuitive solutions for fast and accurate use, bringing assertiveness " + 
+        " and saving unnecessary resources.";
+
+        cargo_1.innerHTML = "Foundress";
+
+        cargo_2.innerHTML = "Founder";
+
+        cargo_3.innerHTML = "Full Stack Developer";
+
+        rafaella_txt.innerHTML = "Project Founder, Project Leader, <br>" + "Full Stack Developer.";
+
+        isaque_txt.innerHTML = "Project Founder, Full Developer, <br>" + "Stack with database skills.";
+
+        matheus_txt.innerHTML = "Team management specialist. <br>" + "Agile management and specialist in <br>" + "full stack development";
+
+        fabricio_txt.innerHTML = "Master in development and analysis of <br>" + "database.";
+
+        reyel_txt.innerHTML = "Scrum process specialist with the <br>" + "set of behavioral skills <br>" + "with Full Stack development skills.";
+
+        gabriel_txt.innerHTML = "Full Development Specialist <br>" + "Stack and in team management.";
+
+        saiba_mais.innerHTML = "Know More";
+
+        sobre_nos.innerHTML = "About Us";
+    
+        servico.innerHTML = "Service";
+    
+        como_minerar.innerHTML = "How To Mine";
+    
+        fale_conosco.innerHTML = "Contact us";
+    
+        contato.innerHTML = "Contact";
+    
+        conheca_time.innerHTML = "Meet The Team";
+
+        insira_email.innerHTML = "Enter your email and stay on top of all the news!";
+
+        enviar.innerHTML = "Send";
+
+        direitos.innerHTML = "All rights reserved by CryptoVerse © 2021";
+
+    }
+</script>
