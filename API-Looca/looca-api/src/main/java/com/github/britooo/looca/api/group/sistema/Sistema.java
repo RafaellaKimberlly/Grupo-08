@@ -50,13 +50,7 @@ public class Sistema {
 
     @Override
     public String toString() {
-        return String.format(""
-                + "Sistema operacional: %s"
-                + "\nFabricante: %s"
-                + "\nArquitetura: %d bits."
-                + "\nInicializado: %s"
-                + "\nTempo de atividade: %s"
-                + "\nPermissões:\n%s",
+        return String.format("Sistema operacional: %s\nFabricante: %s\nArquitetura: %d bits.\nInicializado: %s\nTempo de atividade: %s\nPermissões:\n%s",
                 this.sistemaOperacional,
                 this.fabricante,
                 this.arquitetura,

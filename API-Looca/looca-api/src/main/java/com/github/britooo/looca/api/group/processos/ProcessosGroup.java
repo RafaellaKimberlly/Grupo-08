@@ -41,13 +41,7 @@ public class ProcessosGroup {
 
     @Override
     public String toString() {
-        return String.format("\nLista de processos"
-                + "\nTotal de processos ativos: %d"
-                + "\nTotal de threads: %d"
-                + "\nProcessos: %s",
-                this.getTotalProcessos(), 
-                this.getTotalThreads(),
-                this.getProcessos()
-        );
+        return String.format("\nLista de processos\nTotal de processos ativos: %d\nTotal de threads: %d\nProcessos: %s",
+                this.getTotalProcessos(), this.getTotalThreads(), this.getProcessos());
     }
 }
