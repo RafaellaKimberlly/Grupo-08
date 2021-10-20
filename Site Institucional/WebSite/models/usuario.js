@@ -23,13 +23,13 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-		pais: {
-			field: 'pais',
+		uf: {
+			field: 'uf',
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-		login: {
-			field: 'login',
+		email: {
+			field: 'email',
 			type: DataTypes.STRING,
 			allowNull: false
 		},
@@ -41,7 +41,7 @@ module.exports = (sequelize, DataTypes) => {
 
 	}, 
 	{
-		tableName: 'usuario', 
+		tableName: 'tbUsuario', 
 		freezeTableName: true, 
 		underscored: true,
 		timestamps: false,
