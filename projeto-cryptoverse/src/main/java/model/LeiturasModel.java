@@ -14,6 +14,9 @@ public class LeiturasModel {
         this.dataHora = dataHora;
     }
 
+    public LeiturasModel() {
+    }
+
     public int getIdLeitura() {
         return idLeitura;
     }
