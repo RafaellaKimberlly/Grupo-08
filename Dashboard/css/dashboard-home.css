@@ -1014,7 +1014,7 @@ main {
 
 @media only screen and (min-width: 1366px) {
   .caixa-conteudo {
-    margin-left: 22.4%;
+    margin-left: 24%;
     width: 76.8%;
     height: 96%;
     position: relative;
@@ -1030,7 +1030,7 @@ main {
   }
 
   .caixa-conteudo .card-grafico {
-    width: 24.5%;
+    width: 18.5%;
     height: 20vw;
     overflow: hidden;
     transition: 1s;
@@ -1050,23 +1050,23 @@ main {
   .title-card {
     font-size: 1.5em;
     color: black;
-    margin-top: 23.5%;
-    margin-left: 1%;
+    margin-top: 57.5%;
+    margin-left: -15%;
   }
 
   .situacao-porcentagem {
     font-size: 1.5em;
     color: red;
-    margin-top: 23.9%;
-    margin-left: 59%;
+    margin-top: 57.9%;
+    margin-left: 39%;
     position: absolute;
   }
 
   .seta {
     font-size: 1.5em;
     color: red;
-    margin-top: 26%;
-    margin-left: 81%;
+    margin-top: 60%;
+    margin-left: 62%;
   }
 
   .title-situacao {
