@@ -280,20 +280,43 @@ main {
 }
 
 .formulario {
-    width: 600px;
-    margin-left: 20%;
-    margin-top: 40px;
+    width: 43%;
+    margin-left: 26%;
+    margin-top: 10%;
 }
 
 .ipt-form {
     float: right;
+    width: 50%;
+    height: 2vw;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    margin-right: 2%;
+    padding: 10px;
+    background-color: #EBEBD3;
 }
 
 .btn-cadastrar {
-    width: 215px;
     background-color: #F95738;
     color: #fff;
     float: right;
+    width: 50%;
+    margin-right: 1.8%;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    height: 2.5vw;
+    transition: 0.5s;
+}
+
+.btn-cadastrar:hover {
+    background-color: #922d19;
+    color: #fff;
+    float: right;
+    width: 50%;
+    margin-right: 1.8%;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    height: 2.5vw;
 }
 
 
