@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package ProjetoCryptoverse;
+package com.projetocryptoverse;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 

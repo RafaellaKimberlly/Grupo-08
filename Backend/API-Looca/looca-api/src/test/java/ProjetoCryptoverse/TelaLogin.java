@@ -1,4 +1,4 @@
-package ProjetoCryptoverse;
+package com.projetocryptoverse;
 
 import javax.swing.JOptionPane;
 import org.springframework.jdbc.core.JdbcTemplate;

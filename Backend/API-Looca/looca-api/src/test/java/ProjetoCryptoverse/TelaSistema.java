@@ -21,7 +21,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-package ProjetoCryptoverse;
+package com.projetocryptoverse;
 
 import com.github.britooo.looca.api.core.Looca;
 import javax.swing.JOptionPane;
