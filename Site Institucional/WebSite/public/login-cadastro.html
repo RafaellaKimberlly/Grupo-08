@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CryptoVerse</title>
     <link rel="stylesheet" href="css/cadastro-login.css">
-    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/index.css">
     <script src="https://kit.fontawesome.com/d2a3c39bf2.js" crossorigin="anonymous"></script>
 </head>
 
@@ -151,9 +151,9 @@
                 </form>
                 <!-- FINAL FORMULÁRIO (REGISTRO) -->
 
-                
 
-                
+
+
 
             </div>
             <!-- FINAL SEGUNDA COLUNA (REGISTRO) -->
@@ -216,15 +216,13 @@
 
                         <button class="btn_user btn-second_user" type="submit" id="btn_entrar"
                             value="LOGIN">Entrar</button>
-                    </div>
+                </div>
 
                 </form>
                 <div class="extra">
-                    <div id="div_erro" class="msg_erro">
-                    </div>
+                    <div id="div_erro" class="msg_erro"></div>
 
-                    <img src="loading.gif" id="img_aguarde"
-                    style="display: none;">
+                    <!-- <img src="loading.gif" id="img_aguarde"style="display: none;"> -->
 
                 </div>
 
@@ -273,7 +271,7 @@
 
     function aguardar() {
         btn_entrar.disabled = true;
-        img_aguarde.style.display = 'block';
+        // img_aguarde.style.display = 'block';
         div_erro.style.display = 'none';
     }
 
@@ -301,7 +299,7 @@
                     sessionStorage.login_usuario_meuapp = json.email;
                     sessionStorage.nome_usuario_meuapp = json.nome;
 
-                    window.location.href = 'teste2.html';
+                    window.location.href = 'dashboard/dashboard-home.html';
                 });
 
             } else {
