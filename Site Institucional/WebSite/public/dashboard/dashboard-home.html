@@ -11,6 +11,7 @@
         rel="stylesheet">
         <link rel="shortcut icon" href="../img/2.png" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript" src="../funcoes.js"></script>
     <link rel="stylesheet" href="../css/dashboard-home.css">
     <title>Home</title>
 </head>
@@ -68,7 +69,7 @@
             <div class="user-wrapper">
                 <img src="../img/foto-perfil.png" width="40px" height="40px" alt="">
                 <div>
-                    <h4 id="h4_nome">Olá Gerson</h4>
+                    <h4 id="h4_nome">Olá </h4>
                     <b id="b_usuario"></b>
                     <small>Usuario comum</small>
                 </div>
@@ -125,6 +126,9 @@
 </html>
 
 <script>
+
+verificar_autenticacao();
+
 
     var ctx = document.getElementById('myChart');
 
