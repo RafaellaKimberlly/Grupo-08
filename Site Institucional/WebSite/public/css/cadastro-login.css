@@ -227,6 +227,7 @@
     background-color: #F95738 ;
     border: 1px solid ;
     transition: background-color .5s;
+    margin-left: 33%;
 }
 
 .btn-second_user:hover{

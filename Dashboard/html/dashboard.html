@@ -60,64 +60,55 @@
             </ul>
         </div>
     </div>
+
     <div class="header-dashboard">
         <header>
             <div class="user-wrapper">
                 <img src="../img/foto-perfil.png" width="40px" height="40px" alt="">
                 <div>
-                    <h4 id="h4_nome">Olá Fulano</h4>
+                    <h4 id="h4_nome">Olá Gerson</h4>
                     <b id="b_usuario"></b>
                     <small>Usuario comum</small>
                 </div>
             </div>
         </header>
-    </div>
 
+        <main>
 
-    <main>
+            <section>
+                <select class="select" name="" id="">
+                    <option value="">Máquina 1</option>
+                    <option value="">Máquina 2</option>
+                    <option value="">Máquina 3</option>
 
-        <section>
-            <select class="select" name="" id="">
-                <option value="">Máquina 1</option>
-                <option value="">Máquina 2</option>
-                <option value="">Máquina 3</option>
+                </select>
 
-            </select>
+                <div class="componentes">
+                    <label for="">Selecione os componentes </label>
+                    <br>
 
+                    <div class="opcoes">
+                        <label for="todos">Todos</label> <input name="opcoes" id="todos" type="radio">
+                        <label for="RAM">RAM</label> <input name="opcoes" id="RAM" type="radio">
+                        <label for="CPU">CPU</label> <input name="opcoes" id="CPU" type="radio">
+                        <label for="PLACA">Placa de vídeo</label> <input name="opcoes" id="PLACA" type="radio">
+                    </div>
 
-
-            <div class="componentes">
-                <label for="">Selecione os componentes </label>
-                <br>
-
-                <div class="opcoes">
-                    <label for="todos">Todos</label> <input name="opcoes" id="todos" type="radio">
-                    <label for="RAM">RAM</label> <input name="opcoes" id="RAM" type="radio">
-                    <label for="CPU">CPU</label> <input name="opcoes" id="CPU" type="radio">
-                    <label for="PLACA">Placa de vídeo</label> <input name="opcoes" id="PLACA" type="radio">
                 </div>
 
-            </div>
+            </section>
 
-        </section>
+            <section class="grafico">
 
-        <section class="grafico">
+                <canvas id="myChart"></canvas>
 
-            <canvas id="myChart"></canvas>
-
-        </section>
-
-
-
-
-
-    </main>
+            </section>
+        </main>
+    </div>
 
 </body>
 
 </html>
-
-
 
 <script>
     var ctx = document.getElementById('myChart').getContext('2d');
