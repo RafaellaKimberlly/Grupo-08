@@ -5,15 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/minerar.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/minerar-css.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
     <title>Como minerar</title>
 </head>
-
-<!-- Inicio Header -->
 <header class="header">
-
+        
     <input type="checkbox" id="menu">
     <label for="menu">
         <div class="menu-hamburguer">
@@ -33,7 +32,7 @@
         </nav>
     </span>
 
-
+    <button class="button" onclick="traduzir()">English</button>
 
     <figure>
         <!-- <img class="logo" src="img/logo.jpeg" alt=""> -->
@@ -42,84 +41,76 @@
     <button class="button-entrar"><a href="login-cadastro.html">Entre</a></button>
 </header>
 
-<!-- Fim Header -->
-
-<!-- Inicio Titulo -->
-
 <body>
-    <section class="section-title">
-        <article class="content-title">
-            <p class="text-initial-upper">Como funciona a mineração do criptomoedas:</p>
+    <div class="container-txt">
+        <div class="caixa-txt">
+            <h1 id="como_funciona" class="ini-txt">Como funciona a mineração do criptomoedas:</h1>
             <br>
-            <p class="text-initial-lower">Processo exige realização de ‘apostas’</p>
-        </article>
-    </section>
-    <!-- Fim Titulo -->
+            <h2 id="apostas" class="ini2-txt">Processo exige realização de ‘apostas’</h2>
+        </div>
+    </div>
 
-    <!-- Inicio Cards -->
-    <section class="section-card">
-        <section class="content-card">
-            <div class="card-form">
-                <div class="card-content">
+    <div class="container-card">
+        <div class="card">
+            <div class="caixa">
+                <div class="conteudo">
                     <figure>
-                        <img src="img/elo.png" alt="elo" class="card-icon">
+                        <img src="img/elo.png" alt="elo" class="icon1">
                     </figure>
                     <br><br>
-                    <h3>ELO</h3>
-                    <p>Código matemático que liga o bloco ao seu antecessor.</p>
+                    <h3 id="elo">ELO</h3>
+                    <p id="elo_txt">Código matemático que liga o bloco ao seu antecessor.</p>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section class="content-card">
-            <div class="card-form">
-                <div class="card-content">
+        <div class="card">
+            <div class="caixa">
+                <div class="conteudo">
                     <figure>
-                        <img src="img/transacao.png" alt="transação" class="card-icon">
+                        <img src="img/transacao.png" alt="transação" class="icon1">
                     </figure>
                     <br><br>
-                    <h3>TRANSAÇÕES</h3>
-                    <p>Conjunto de transferências solicitadas pelos usuários da rede.</p>
+                    <h3 id="transacoes">TRANSAÇÕES</h3>
+                    <p id="transacoes_txt">Conjunto de transferências solicitadas pelos usuários da rede.</p>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <section class="content-card">
-            <div class="card-form">
-                <div class="card-content">
+        <div class="card">
+            <div class="caixa">
+                <div class="conteudo">
                     <figure>
-                        <img src="img/chave.png" alt="chave" class="card-icon">
+                        <img src="img/chave.png" alt="chave" class="icon1">
                     </figure>
                     <br><br>
-                    <h3>CHAVE NONCE</h3>
-                    <p>Número ‘apostado’ pelo minerador para criar um bloco aceito na rede.</p>
+                    <h3 id="chave_nonce">CHAVE NONCE</h3>
+                    <p id="chave_nonce_txt">Número ‘apostado’ pelo minerador para criar um bloco aceito na rede.</p>
                 </div>
             </div>
-        </section>
-    </section>
-    <!--Fim Cards -->
+        </div>
+    </div>
+    <!-- -->
 
-    <!-- Inicio Texto Minerador Animado -->
-    <section class="section-miner">
-        <div class="content-miner">
-            <article class="miner-txt">
-                <p>Os dados da composição do bloco são
+    <div class="container-txt">
+        <div class="caixa-fig">
+            <div class="conteudo-txt">
+                <p id="hash_txt">Os dados da composição do bloco são
                     processados por uma fórmula de ‘hash’ -
                     um gerador de números com características
                     especiais para validação de dados.</p>
-            </article>
+            </div>
             <figure>
                 <img src="img/menerador-bitcoin.png" alt="minerador" class="icon-minerador">
             </figure>
         </div>
-    </section>
-    <!-- Fim Texto Minerador Animado -->
+    </div>
+    <!-- -->
 
-    <!-- Inicio Section Laranja -->
-    <section class="section-orange">
-        <section class="content-orange">
-            <div class="orange-txt">
-                <h3>
+    <div class="container-colorido">
+        <div class="caixa-colorida">
+            <div class="conteudo-colorido">
+                <h3 id="hash_txt_2">
                     <b style="color: #f95738;">O sorteio:</b> A formula hash que valida o bloco tem resultados
                     imprevisiveis,
                     criando um ciclo de tentativa e erro. Esse mecanismo atua como contrapeso
@@ -129,10 +120,12 @@
                 </h3>
                 <br><br>
 
-                <div class="orange-line"></div>
+                <div class="linha1">
+
+                </div>
 
                 <br><br>
-                <h3>
+                <h3 id="sorteio_txt">
                     <b style="color: #f95738;">Bolão do sorteio:</b> Mineradores que colaboram entre si dividem as
                     apostas,
                     formando um ‘bolão’. Os concorrentes realizam a tarefa ao tempo, tentando
@@ -142,293 +135,324 @@
             <figure>
                 <img src="img/gpu.png" alt="gpu" class="icon-gpu">
             </figure>
-        </section>
-    </section>
-    <!-- Fim Section Laranja -->
+        </div>
+    </div>
 
-    <!-- Inicio Section Resultado -->
-    <section class="section-result">
-        <div class="content-result">
+    <div class="container-resultado">
+        <div class="caixa-resultado">
+            <div class="linhas">
+            </div>
 
-            <div class="purple-line"></div>
-
-            <section class="box-result">
-                <article class="result-txt">
-                    <h1>
+            <div class="conteudo-resultado">
+                <div class="resultado-txt">
+                    <h1 id="resultado_invalido">
                         RESULTADO INVÁLIDO:
                     </h1>
                     <br>
-                    <h2>O minerador escolhe outra chave<br>
+                    <h2 id="resultado_invalido_txt">O minerador escolhe outra chave<br>
                         nonce e repete o processo.</h2>
-                </article>
+                </div>
                 <figure>
-                    <img src="img/chave-circulo.png" alt="chave circulo" class="icon-key">
+                    <img src="img/chave-circulo.png" alt="chave circulo" class="icon-chave-circulo">
                 </figure>
-            </section>
+            </div>
+            <div class="linhas">
+            </div>
 
-
-            <div class="purple-line"></div>
-
-
-            <section class="box-result">
-                <article class="result-txt">
-                    <h1>
+            <div class="conteudo-resultado">
+                <div class="resultado-txt">
+                    <h1 id="resultado_valido">
                         RESULTADO VÁLIDO:
                     </h1>
                     <br>
-                    <h2>O minerador envia o bloco de <br> rede
+                    <h2 id="resultado_valido_txt">O minerador envia o bloco de <br> rede
                         liga-lo a sequencia de blocos(Blockchain).</h2>
-                </article>
+                </div>
                 <figure>
                     <img src="img/pc.png" alt="computador" class="icon-pc">
                 </figure>
-            </section>
+            </div>
         </div>
-    </section>
-    <!-- Fim Section Resultado -->
+    </div>
 
-    <!-- Inicio Section Roxa-->
-    <!-- Triangulo Roxo Top -->
+    <!-- -->
+
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path fill="#231D36" fill-opacity="1" d="M0,288L720,32L1440,288L1440,320L720,320L0,320Z"></path>
     </svg>
-    <!-- Inicio Info Central -->
-    <section class="section-wave">
-        <div class="content-wave">
 
-            <!-- Encaixe Bloco -->
-            <section class="wave-form">
-                <figure>
-                    <img src="img/encaixe.png" alt="blocos">
-                </figure>
-                <article class="wave-txt">
-                    <h1>O ENCAIXE DO BLOCO:</h1>
-                    <h2> O bloco válido é ligado á
-                        sequência de blocos.</h2>
-                </article>
-            </section>
+<div class="container-wave">
+    <div class="caixa-wave">
 
-            <!-- Elo Aprovação -->
-            <section class="wave-form-center">
-                <article class="wave-txt">
-                    <h1> ELO DA PROVA DE TRABALHO: </h1>
-                    <h2>o biltcoin, o processamento empregado define
-                        a força do elo. Quanto maior for a carga de processamento, mais dificil é refazê-la
-                        para anular transferências passadas, gerando mais segurânça.</h2>
-                </article>
-                <figure>
-                    <img src="img/blockchain.png" alt="blockchain" class="icon-block">
-                </figure>
-            </section>
-
-            <!-- Tempo -->
-            <section class="wave-form">
-                <article class="wave-txt">
-                    <h1>TEMPO: </h1>
-                    <h2>Nas moedas,
-                        esse processo deve levar 10 minutos.
-                        O número de chaves possíveis é reduzido ou aumentado periodicamente para
-                        amantes desse ritmo.
-                    </h2>
-                </article>
-                <figure>
-                    <img src="img/ampulheta.png" alt="ampulheta">
-                </figure>
-            </section>
-        </div>
-    </section>
-    <!-- Fim Info Central -->
-    <!-- Triangulo Roxo Bottom -->
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-        <path fill="#231D36" fill-opacity="1" d="M0,0L720,320L1440,0L1440,0L720,0L0,0Z"></path>
-    </svg>
-    <!-- Fim Section Roxa -->
-
-    <!-- Inicio Info Rodapé -->
-    <section class="section-info">
-        <div class="content-info">
-            <article class="info-txt">
-                <h2>
-                    TUDO DE NOVO:
-                    Após o bloco na sequência, forma-se um novo bloco com transfêrencias pendentes.
-                    Como os dados são inéditos, o processo de tentativa e erro recomeça do zero.
-                </h2>
-            </article>
-        </div>
-    </section>
-    <!-- Fim Info Rodapé -->
-
-    <!-- Inicio Section Definições -->
-    <!-- Detalhe Top -->
-    <div class="section-definition">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#f8a494b4" fill-opacity="1"
-                d="M0,256L60,256C120,256,240,256,360,213.3C480,171,600,85,720,69.3C840,53,960,107,1080,112C1200,117,1320,75,1380,53.3L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
-            </path>
-            <path fill="#f8a494b4" fill-opacity="1"
-                d="M0,32L60,48C120,64,240,96,360,101.3C480,107,600,85,720,90.7C840,96,960,128,1080,170.7C1200,213,1320,267,1380,293.3L1440,320L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
-            </path>
-            <path fill="#f95738" fill-opacity="1"
-                d="M0,0L120,42.7C240,85,480,171,720,176C960,181,1200,107,1320,69.3L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z">
-            </path>
-        </svg>
-        <!-- Inicio Definições -->
-        <section class="content-definition">
-            <div class="box-definition">
-                <div class="definition-txt">
-                    <h1>Definições:</h1>
-                    <div class="orange-line"></div>
-                    <article>
-                        <h2>CRIPTOMOEDAS</h2>
-                    </article>
-                    <article>
-                        <p>São moedas que usam principios da criptografia para subistituir bancos por elos matemáticos.
-                        </p>
-                    </article>
-
-                    <div class="orange-line"></div>
-                    <article>
-                        <h2>BLOCOS</h2>
-                    </article>
-                    <article>
-                        <p>Um segmento de dados que contém transações. </p>
-                    </article>
-                    <div class="orange-line"></div>
-                    <article>
-                        <h2>BLOCKCHAIN</h2>
-                    </article>
-                    <article>
-                        <p>O conjunto de todos os segmentos de dados e suas transações. </p>
-                    </article>
-                    <div class="orange-line"></div>
-                    <article>
-                        <h2>TRANSAÇÃO</h2>
-                    </article>
-                    <article>
-                        <p>Criptomoedas não precisam de saldos, pois todas as trocas são registradas pelas transações.
-                        </p>
-                    </article>
-                    <div class="orange-line"></div>
-                    <article>
-                        <h2>HASH</h2>
-                    </article>
-                    <article>
-                        <p>Algoritmo de computador criado para gerar resultados ao mesmo tempo imprevisíveis e
-                            reprodutíveis. </p>
-                    </article>
-                    <div class="orange-line"></div>
-                    <article>
-                        <h2>MINERAÇÃO</h2>
-                    </article>
-                    <article>
-                        <p>Processo que agrega as transações em blocos. O hash do bloco deve atender um critério da
-                            rede.</p>
-                    </article>
-                    <div class="orange-line"></div>
-                    <article>
-                        <h2>ASIC</h2>
-                    </article>
-                    <article>
-                        <p>Chip criado para uma terefa específica, como o hash do bitcoin.</p>
-                    </article>
-                    <div class="orange-line"></div>
-                    <article>
-                        <h2>GPU</h2>
-                    </article>
-                    <article>
-                        <p>Chip de processamento de vídeo que é mais veloz para a mineração de algumas moedas.</p>
-                    </article>
-                    <div class="orange-line"></div>
-                    <article>
-                        <h2>CHAVES DE BLOCO</h2>
-                    </article>
-                    <article>
-                        <p>Número que teve de ser encontrado pelo minerador para direcionar o hash para o resultado
-                            desejado.</p>
-                    </article>
-                    <div class="orange-line"></div>
-                    <article>
-                        <h2>ATAQUE DE 51%</h2>
-                    </article>
-                    <article>
-                        <p>Cenário em que alguém controla poder de processamento suficiente para encontrar muitas chaves
-                            de bloco consecutivas, formar uma nova blockchain e apagar transferências realizadas no
-                            passado.</p>
-                    </article>
-                </div>
+        <div class="conteudo-wave1">
+            <figure>
+                <img src="img/encaixe.png" alt="blocos">
+            </figure>
+            <div class="wave-txt">
+                <h1 id="encaixe_bloco">O ENCAIXE DO BLOCO:</h1>
+                <h2 id="encaixe_bloco_txt"> O bloco válido é ligado á
+                    sequência de blocos.</h2>
             </div>
-        </section>
-        <!-- Fim Definições -->
-        <!-- Detalhe Definições Bottom -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#f8a494b4" fill-opacity="1"
-                d="M0,160L60,144C120,128,240,96,360,112C480,128,600,192,720,197.3C840,203,960,149,1080,149.3C1200,149,1320,203,1380,229.3L1440,256L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
-            </path>
-            <path fill="#f8a494b4" fill-opacity="1"
-                d="M0,256L60,256C120,256,240,256,360,213.3C480,171,600,85,720,69.3C840,53,960,107,1080,112C1200,117,1320,75,1380,53.3L1440,32L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
-            </path>
-            <path fill="#f95738" fill-opacity="1"
-                d="M0,192L120,170.7C240,149,480,107,720,106.7C960,107,1200,149,1320,170.7L1440,192L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z">
-            </path>
-        </svg>
+        </div>
+
+        <div class="conteudo-wave2">
+            <div class="wave-txt">
+                <h1 id="prova_trabalho"> ELO DA PROVA DE TRABALHO: </h1> 
+                <h2 id="prova_trabalho_txt">o biltcoin, o processamento empregado define 
+                a força do elo. Quanto maior for a carga de processamento, mais dificil é refazê-la 
+                para anular transferências passadas, gerando mais segurânça.</h2> 
+            </div>
+            <figure>
+                <img src="img/blockchain.png" alt="blockchain" class="icon-block">
+            </figure>
+        </div>
+
+        <div class="conteudo-wave1">
+            <div class="wave-txt">
+                <h1 id="tempo">TEMPO: </h1>
+                <h2 id="tempo_txt">Nas moedas,
+                esse processo deve levar 10 minutos. 
+                O número de chaves possíveis é reduzido ou aumentado periodicamente para 
+                amantes desse ritmo.
+               </h2>
+            </div>
+            <figure>
+                <img src="img/ampulheta.png" alt="ampulheta">
+            </figure>
+        </div>
+    </div>
+</div>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <path fill="#231D36" fill-opacity="1" d="M0,0L720,320L1440,0L1440,0L720,0L0,0Z"></path>
+</svg>
+
+<!-- -->
+<div class="container-branco">
+    <div class="caixa-branco">
+        <div class="conteudo-branco">
+        <h2 id="tudo_de_novo">
+            TUDO DE NOVO: 
+            Após o bloco na sequência, forma-se um novo bloco com transfêrencias pendentes. 
+            Como os dados são inéditos, o processo de tentativa e erro recomeça do zero.
+            </h2>
+        </div>
+    </div>
+</div>
+<!-- -->
+
+<div class="container-comandos">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#f8a494b4" fill-opacity="1" d="M0,256L60,256C120,256,240,256,360,213.3C480,171,600,85,720,69.3C840,53,960,107,1080,112C1200,117,1320,75,1380,53.3L1440,32L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+        <path fill="#f8a494b4" fill-opacity="1" d="M0,32L60,48C120,64,240,96,360,101.3C480,107,600,85,720,90.7C840,96,960,128,1080,170.7C1200,213,1320,267,1380,293.3L1440,320L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+        <path fill="#f95738" fill-opacity="1" d="M0,0L120,42.7C240,85,480,171,720,176C960,181,1200,107,1320,69.3L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path>
+    
+    </svg>
+    <div class="caixa-comandos">
+        <div class="conteudo-comandos">
+            <div class="conteudo-txt">
+            <h1 id="definicoes">Definições:</h1>
+            <div class="linha1"></div>
+            <div>
+                <h2 id="criptomoedas">CRIPTOMOEDAS</h2>
+            </div>
+            <div>
+                <p id="criptomoedas_txt">São moedas que usam principios da criptografia para subistituir bancos por elos matemáticos. </p>
+            </div>
+
+            <div class="linha1"></div>
+            <div>
+                <h2 id="blocos">BLOCOS</h2>
+            </div>
+            <div>
+                <p id="blocos_txt">Um segmento de dados que contém transações. </p>
+            </div>
+            <div class="linha1"></div>
+            <div>
+                <h2 id="blockchain">BLOCKCHAIN</h2>
+            </div>
+            <div>
+                <p id="blockchain_txt">O conjunto de todos os segmentos de dados e suas transações. </p>
+            </div>
+            <div class="linha1"></div>
+            <div>
+                <h2 id="transacao">TRANSAÇÃO</h2>
+            </div>
+            <div>
+                <p id="transacao_txt">Criptomoedas não precisam de saldos, pois todas as trocas são registradas pelas transações.</p>
+            </div>
+            <div class="linha1"></div>
+            <div>
+                <h2 id="hash">HASH</h2>
+            </div>
+            <div>
+                <p id="hash_txt_3">Algoritmo de computador criado para gerar resultados ao mesmo tempo imprevisíveis e reprodutíveis. </p>
+            </div>
+            <div class="linha1"></div>
+            <div>
+                <h2 id="mineracao">MINERAÇÃO</h2>
+            </div>
+            <div>
+                <p id="mineracao_txt">Processo que agrega as transações em blocos. O hash do bloco deve atender um critério da rede.</p>
+            </div>
+            <div class="linha1"></div>
+            <div>
+                <h2 id="asic">ASIC</h2>
+            </div>
+            <div>
+                <p id="asic_txt">Chip criado para uma terefa específica, como o hash do bitcoin.</p>
+            </div>
+            <div class="linha1"></div>
+            <div>
+                <h2 id="gpu">GPU</h2>
+            </div>
+            <div>
+                <p id="gpu_txt">Chip de processamento de vídeo que é mais veloz para a mineração de algumas moedas.</p>
+            </div>
+            <div class="linha1"></div>
+            <div>
+                <h2 id="chaves_bloco">CHAVES DE BLOCO</h2>
+            </div>
+            <div>
+                <p id="chaves_bloco_txt">Número que teve de ser encontrado pelo minerador para direcionar o hash para o resultado desejado.</p>
+            </div>
+            <div class="linha1"></div>
+            <div>
+                <h2 id="ataque_51">ATAQUE DE 51%</h2>
+            </div>
+            <div>
+                <p id="ataque_51_txt">Cenário em que alguém controla poder de processamento suficiente para encontrar muitas chaves de bloco consecutivas, formar uma nova blockchain e apagar transferências realizadas no passado.</p>
+            </div>
+        </div>
+        </div>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#f8a494b4" fill-opacity="1" d="M0,160L60,144C120,128,240,96,360,112C480,128,600,192,720,197.3C840,203,960,149,1080,149.3C1200,149,1320,203,1380,229.3L1440,256L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
+        <path fill="#f8a494b4" fill-opacity="1" d="M0,256L60,256C120,256,240,256,360,213.3C480,171,600,85,720,69.3C840,53,960,107,1080,112C1200,117,1320,75,1380,53.3L1440,32L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
+        <path fill="#f95738" fill-opacity="1" d="M0,192L120,170.7C240,149,480,107,720,106.7C960,107,1200,149,1320,170.7L1440,192L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path>
+    </svg>
+</div>
+
+<!-- -->
+
+<div class="container-video">
+    <div class="caixa-video">
+        <div class="conteudo-video">
+            <iframe width="760" height="515" src="https://www.youtube.com/embed/3uAZYkgdOwk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+<!-- Inicio Footer -->
+<footer class="container_footer">
+
+    <div class="caixa_footer">
+
+        <figure>
+            <img class="logo_footer" src="img/logo.png" alt="Logo CryptoVerse">
+        </figure>
+        <!-- Icones -->
+        <figure class="container_redes_sociais">
+            <div class="caixa_icones_redes_sociais">
+                <a class="link_icon" href="www.facebook.com"><img class="icones" src="img/facebook.png"
+                        alt="Icone Facebook"></a>
+                <a class="link_icon" href="www.youtube.com"><img class="icones" src="img/youtube.png"
+                        alt="Icone Youtube"></a>
+                <a class="link_icon" href="www.instagram.com"><img class="icones" src="img/instagram.png"
+                        alt="Icone Instagram"></a>
+            </div>
+        </figure>
+        <!-- Fim Icones -->
+        <div class="container_link_rodape">
+            <ul class="caixa_link_rodape1">
+                <li id="sobre_nos"><a class="link_nav" href="">Sobre nós</a></li>
+                <li id="servico"><a class="link_nav" href="">Serviço</a></li>
+                <li id="como_minerar"><a class="link_nav" href="">Como minerar</a></li>
+            </ul>
+
+            <ul class="caixa_link_rodape2">
+                <li id="fale_conosco"><a class="link_nav" href="">Fale conosco</a></li>
+                <li id="contato"><a class="link_nav" href="">Contato</a></li>
+                <li id="conheca_time"><a class="link_nav" href="">Conheça o time</a></li>
+            </ul>
+        </div>
+
+        <div class="container_entre_em_contato">
+            <p id="insira_email">Insira seu e-mail e fique por dentro de todas novidades!</p>
+            <div class="ajuste_input_btn">
+                <input type="email">
+                <button id="enviar" class="btn">Enviar</button>
+            </div>
+        </div>
+
+        <p id="direitos" class="direitos_autorais">Direitos reservados a CryptoVerse &copy 2021</p>
+
     </div>
 
-    <!-- Inicio Video -->
-            <section class="section-video">
-                <iframe width="760" height="515" src="https://www.youtube.com/embed/3uAZYkgdOwk"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-            </section>
-
-    <!-- Inicio Footer -->
-    <footer class="container_footer">
-
-        <div class="caixa_footer">
-
-            <figure>
-                <img class="logo_footer" src="img/logo.png" alt="Logo CryptoVerse">
-            </figure>
-            <!-- Icones -->
-            <figure class="container_redes_sociais">
-                <div class="caixa_icones_redes_sociais">
-                    <a class="link_icon" href="www.facebook.com"><img class="icones" src="img/facebook.png"
-                            alt="Icone Facebook"></a>
-                    <a class="link_icon" href="www.youtube.com"><img class="icones" src="img/youtube.png"
-                            alt="Icone Youtube"></a>
-                    <a class="link_icon" href="www.instagram.com"><img class="icones" src="img/instagram.png"
-                            alt="Icone Instagram"></a>
-                </div>
-            </figure>
-            <!-- Fim Icones -->
-            <div class="container_link_rodape">
-                <ul class="caixa_link_rodape1">
-                    <li><a class="link_nav" href="">Sobre nós</a></li>
-                    <li><a class="link_nav" href="">Serviço</a></li>
-                    <li><a class="link_nav" href="">Como minerar</a></li>
-                </ul>
-
-                <ul class="caixa_link_rodape2">
-                    <li><a class="link_nav" href="">Fale conosco</a></li>
-                    <li><a class="link_nav" href="">Contato</a></li>
-                    <li><a class="link_nav" href="">Conheça o time</a></li>
-                </ul>
-            </div>
-
-            <div class="container_entre_em_contato">
-                <p>Insira seu e-mail e fique por dentro de todas novidades!</p>
-                <div class="ajuste_input_btn">
-                    <input type="email" placeholder="Insira seu e-mail">
-                    <button class="btn">Enviar</button>
-                </div>
-            </div>
-
-            <p class="direitos_autorais">Direitos reservados a CryptoVerse &copy 2021</p>
-
-        </div>
-
-    </footer>
-    <!-- Fim Footer -->
+</footer>
+<!-- Fim Footer -->
 </body>
 
 </html>
+
+<script>
+    function traduzir() {
+        como_funciona.innerHTML = "How cryptocurrency mining works:";
+        apostas.innerHTML = "Process requires placing 'bets'";
+        elo.innerHTML = "LINK";
+        elo_txt.innerHTML = "Mathematical code that links the block to its predecessor.";
+        transacoes.innerHTML = "TRANSACTIONS";
+        transacoes_txt.innerHTML = "Set of transfers requested by network users.";
+        chave_nonce.innerHTML = "NONCE KEY";
+        chave_nonce_txt.innerHTML = "Number 'bet' by the miner to create an accepted block on the network.";
+        hash_txt.innerHTML = "Block composition data is processed by a 'hash' formula - a number generator with special features for data validation.";
+        hash_txt_2.innerHTML = "The draw: The hash formula that validates the block has unpredictable results, creating a cycle of trial " + 
+        " and error. This mechanism acts as a counterbalance to avoid destabilizing the network by the unrestrained creation of blocks. " + 
+        " Transactions have already been validated before this 'draw' but they depend on it to be registered. ";
+        sorteio_txt.innerHTML = "Draw Sweepstakes: Miners who collaborate with each other split the bets, forming a 'pool'. " +
+        " Competitors perform the task at a time, trying to 'approach first'.";
+        resultado_invalido.innerHTML = "INVALID RESULT:";
+        resultado_invalido_txt.innerHTML = "The miner chooses another key" + "nonce and repeat the process.";
+        resultado_valido.innerHTML = "VALID RESULT:";
+        resultado_valido_txt.innerHTML = "The miner sends the block of" + "network connects it to the sequence of blocks(Blockchain).";
+        encaixe_bloco.innerHTML = "THE FITTING OF THE BLOCK:";
+        encaixe_bloco_txt.innerHTML = "The valid block is linked to the block sequence.";
+        prova_trabalho.innerHTML = "LINK OF THE WORK TEST:";
+        prova_trabalho_txt.innerHTML = "biltcoin, the processing employed defines the strength of the link. The greater the processing " + 
+        " load, the more difficult it is to redo it to undo past transfers, creating more security.";
+        tempo.innerHTML = "TIME:";
+        tempo_txt.innerHTML = "For coins, this process should take 10 minutes. The number of possible keys is periodically reduced or " + 
+        " increased for lovers of this rhythm.";
+        tudo_de_novo.innerHTML = "ALL AGAIN: After the block in the sequence, a new block with pending transfers is formed. " + 
+        " Because the data is unpublished, the trial and error process starts over from scratch.";
+        definicoes.innerHTML = "Definitions:";
+        criptomoedas.innerHTML = "CRYPTO CURRENCIES";
+        criptomoedas_txt.innerHTML = "These are currencies that use cryptographic principles to replace banks with mathematical links.";
+        blocos.innerHTML = "BLOCKS";
+        blocos_txt.innerHTML = "A data segment that contains transactions.";
+        blockchain.innerHTML = "BLOCKCHAIN";
+        blockchain_txt.innerHTML = "The set of all data segments and their transactions.";
+        transacao.innerHTML = "TRANSACTION";
+        transacao_txt.innerHTML = "Cryptocurrencies do not need balances as all exchanges are recorded by transactions.";
+        hash.innerHTML = "HASH";
+        hash_txt_3.innerHTML = "Computer algorithm created to generate results that are both unpredictable and reproducible.";
+        mineracao.innerHTML = "MINING";
+        mineracao_txt.innerHTML = "Process that aggregates transactions into blocks. The block hash must meet a network criterion.";
+        asic.innerHTML = "ASIC";
+        asic_txt.innerHTML = "Chip created for a specific task, such as bitcoin hash.";
+        gpu.innerHTML = "GPU";
+        gpu_txt.innerHTML = "Video processing chip that is faster for mining some coins.";
+        chaves_bloco.innerHTML = "BLOCK KEYS";
+        chaves_bloco_txt.innerHTML = "Number that had to be found by the miner to drive the hash to the desired result.";
+        ataque_51.innerHTML = "51% ATTACK";
+        ataque_51_txt.innerHTML = "Scenario where someone controls enough processing power to find many consecutive block keys, " + 
+        " form a new blockchain, and delete transfers made in the past.";
+        sobre_nos.innerHTML = "About Us";
+        servico.innerHTML = "Service";
+        como_minerar.innerHTML = "How To Mine";
+        fale_conosco.innerHTML = "Contact us";
+        contato.innerHTML = "Contact";
+        conheca_time.innerHTML = "Meet The Team";
+        insira_email.innerHTML = "Enter your email and stay on top of all the news!";
+        enviar.innerHTML = "Send";
+        direitos.innerHTML = "All rights reserved by CryptoVerse © 2021";
+    }
+</script>
