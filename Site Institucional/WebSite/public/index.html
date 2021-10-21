@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
     <!-- <link rel="stylesheet" href="css/menu.css"> -->
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
     <title>CryptoVerse</title>
 </head>
 
@@ -39,10 +41,13 @@
         <figure>
             <!-- <img class="logo" src="img/logo.jpeg" alt=""> -->
         </figure>
+        
 
-        <button class="button" onclick="traduzir()">English</button>
+        <button class="button" onclick="traduzir_en()">English</button>
 
-        <button class="button-entrar"> <a href="login-cadastro.html">Entre</a></button>
+        <button class="button" onclick="traduzir_pt()">Português</button>
+
+        <button id="btn_entrar" class="button-entrar"> <a href="login-cadastro.html">Entre</a></button>
     </header>
     <!-- Fim Header -->
 
@@ -83,10 +88,7 @@
         <section class="section-functions">
             <div class="content-functions" id="idFuncionalidade">
 
-<<<<<<< HEAD
-=======
                 <h2 id="funcionalidades">Funcionalidades</h2>
->>>>>>> main
 
                 <div class="icons">
                     <section>
@@ -245,24 +247,18 @@
 </html>
 
 <script>
-    function traduzir() {
+    function traduzir_en() {
+
         home_txt.innerHTML = "We are a young company, focused on hardware monitoring, <br>" +
                              "specifically for cryptocurrency mining. <br>" +
                              "Founded with the aim of spreading technology in all possible ways <br>" +
-<<<<<<< HEAD
-                             "while we help the practice become common in Brazil and the World using the most <br>" +
-=======
                              "while we help the practice become common in Brazil and the World using the most" +
->>>>>>> main
                              "high technology available.";
         
         btn_1.innerHTML = "Learn about our solutions";
 
-<<<<<<< HEAD
-=======
         funcionalidades.innerHTML = "Functionalities";
 
->>>>>>> main
         monitoramento_hard.innerHTML = "Hardware Monitoring";
 
         monitoramento_txt.innerHTML = "Constant analysis regarding the hardware. Bringing important and accurate information about your equipment.";
@@ -303,5 +299,59 @@
         enviar.innerHTML = "Send";
 
         direitos.innerHTML = "All rights reserved by CryptoVerse © 2021";
+
+    }
+
+    function traduzir_pt() {
+        home_txt.innerHTML = "Somos uma empresa jovem, voltada para o monitoramento de hardware, <br>" +
+                             "especificamente para a mineração de Criptomoedas. <br>" +
+                             "Fundada com o intuito de difundirmos a tecnologia em todos os meios possíveis <br>" +
+                             "enquanto auxiliamos que a prática se torne comum no Brasil usando da mais " +
+                             "alta tecnologia disponível.";
+        
+        btn_1.innerHTML = "Conheça nossas soluções";
+
+        funcionalidades.innerHTML = "Funcionalidades";
+
+        monitoramento_hard.innerHTML = "Monitoramento de Hardware";
+
+        monitoramento_txt.innerHTML = "Analise constante a respeito do hardware. Trazendo informaçoes importantes e precisas a respeito do seu equipamento.";
+
+        sistemas_alertas.innerHTML = "Sistemas de Alertas";
+
+        alertas_txt.innerHTML = "Nunca mais seja pego desprevenido. Nosso sistema de alertas sempre te deixara informado e seguro a respeito do que acontece com o seu hardware";
+
+        localizacao_integrantes.innerHTML = "Localização dos Integrantes";
+
+        localizacao_txt.innerHTML = "Não fique mais na dúvida sobre quem está na empreitada contigo. Com o sistema de geolocalização é possível saber de onde são os companheiros de jornada.";
+
+        historico_logs.innerHTML = "Histórico de Logs";
+
+        historico_txt.innerHTML = "Tenha sempre em mãos relatórios e histórico do que ocorreu. Nunca fique sem dados sobre o que ocorreu com o sistema até mesmo em casos de pane.";
+        
+        nunca_sozinho.innerHTML = "Nunca sozinho";
+
+        nunca_sozinho_txt.innerHTML = "Esteja conectado com milhares de mineradores ao redor do globo, todos com o mesmo intuito de alcançarem rendimentos maiores." +
+                " Não se sinta só durante a sua jornada como um minerador digital, tendo a segurança e conforto de possuir toda uma comunidade com você.";
+
+        saiba_mais.innerHTML = "Saiba Mais";
+
+        sobre_nos.innerHTML = "Sobre Nós";
+    
+        servico.innerHTML = "Serviço";
+    
+        como_minerar.innerHTML = "Como Minerar";
+    
+        fale_conosco.innerHTML = "Fale Conosco";
+    
+        contato.innerHTML = "Contato";
+    
+        conheca_time.innerHTML = "Conheça o Time";
+
+        insira_email.innerHTML = "Insira seu e-mail e fique por dentro de todas novidades!";
+
+        enviar.innerHTML = "Enviar";
+
+        direitos.innerHTML = "Direitos reservados a CryptoVerse © 2021";
     }
 </script>
