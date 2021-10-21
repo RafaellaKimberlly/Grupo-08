@@ -89,7 +89,7 @@
                     <br>
 
                     <div class="opcoes">
-                        <label for="todos">Todos</label> <input name="opcoes" id="todos" type="radio">
+                        <label for="todos">Todos</label> <input name="opcoes" id="todos" type="radio" checked>
                         <label for="RAM">RAM</label> <input name="opcoes" id="RAM" type="radio">
                         <label for="CPU">CPU</label> <input name="opcoes" id="CPU" type="radio">
                         <label for="PLACA">Placa de vídeo</label> <input name="opcoes" id="PLACA" type="radio">
@@ -104,6 +104,19 @@
                 <canvas id="myChart"></canvas>
 
             </section>
+
+            <section class="grafico">
+
+                <canvas id="myChart2"></canvas>
+
+            </section>
+
+            <section class="grafico">
+
+                <canvas id="myChart3"></canvas>
+
+            </section>
+
         </main>
     </div>
 
@@ -114,12 +127,12 @@
 <script>
     var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {
-        type: 'line',
+        type: 'bar',
         data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: ['11:05:34', '12:05:34', '13:05:34', '14:05:34', '15:05:34', '16:05:34'],
             datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
+                label: 'Desempenho RAM',
+                data: [90, 75, 92, 93, 88, 60],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -151,4 +164,88 @@
 
 
 </script>
+
+<script>
+    var ctx = document.getElementById('myChart2').getContext('2d');
+    var myChart2 = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['11:05:34', '12:05:34', '13:05:34', '14:05:34', '15:05:34', '16:05:34'],
+            datasets: [{
+                label: 'Desempenho GPU',
+                data: [90, 75, 92, 93, 88, 60],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+
+
+</script>
+
+<script>
+    var ctx = document.getElementById('myChart3').getContext('2d');
+    var myChart3 = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['11:05:34', '12:05:34', '13:05:34', '14:05:34', '15:05:34', '16:05:34'],
+            datasets: [{
+                label: 'Desempenho Placa de vídeo',
+                data: [90, 75, 92, 93, 88, 60],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+
+
+</script>
+
+
 <script data-jsd-embedded data-key="80d9f6eb-00c3-44a5-b11d-16870c4fb50b" data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>
