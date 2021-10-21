@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&family=Roboto:wght@300;400;500;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/dashboard-relatorios.css">
+    <link rel="shortcut icon" href="../img/logo_navegador.png" type="image/x-icon">
+    <title>Relátorios</title>
+</head>
+
+<body>
+    <input type="checkbox" id="menu-toggle">
+    <div class="sidebar">
+        <div class="sidebar-marca">
+            <label for="menu-toggle">
+                <div class="menu-hamburguer">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </label>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="dashboard-home.html"><i class="fas fa-home"></i><span>Home</span></a>
+                </li>
+                <li>
+                    <a href="dashboard.html"><i class="fas fa-chart-line"></i><span>Gráficos</span></a>
+                </li>
+                <li>
+                    <a class="active" href="dashboard-relatorios.html"><i
+                            class="fas fa-clipboard-list"></i><span>Relatório</span></a>
+                </li>
+                <li>
+                    <a href="cadastro-componentes-dashboard.html"><i class="fas fa-desktop"></i></i><span>Cadastro
+                            Componentes</span></a>
+                </li>
+                <li>
+                    <a href="dashboard-perfil.html"><i class="fas fa-user-circle"></i><span>Perfil</span></a>
+                </li>
+            </ul>
+        </div>
+        <div class="sidebar-menu sair">
+            <ul>
+                <li>
+                    <a href="../../Site Institucional/WebSite/public/login-cadastro.html"><i
+                            class="fas fa-sign-out-alt"></i>
+                        <span>Encerrar sessão</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="header-dashboard">
+        <header>
+            <!-- <div class="search-wrapper">
+                <span class="icone-pesquisa"><img src="../img/icone pesquisa.png" alt=""></span>
+                <input type="search" placeholder="Search here">
+            </div> -->
+            <div class="user-wrapper">
+                <img src="../img/foto-perfil.png" width="40px" height="40px" alt="">
+                <div>
+                    <h4 id="h4_nome">Olá Gerson</h4>
+                    <b id="b_usuario"></b>
+                    <small>Usuario comum</small>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- cards inicio -->
+            <div class="container-cards">
+                <div class="content">
+                    <div class="cards">
+                        <div class="card">
+                            <div class="box">
+                                <h1>04</h1>
+                                <h3>Máquinas</h3>
+                            </div>
+                            <div class="icone-case">
+                                <figure>
+                                    <img src="../img/computadores.png" width="50" height="50" alt="">
+                                </figure>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="box">
+                                <h1>10</h1>
+                                <h3>Ram</h3>
+                            </div>
+                            <div class="icone-case">
+                                <figure>
+                                    <img src="../img/memoria-ram.png" width="50" height="50" alt="">
+                                </figure>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="box">
+                                <h1>08</h1>
+                                <h3>Placa de video</h3>
+                            </div>
+                            <div class="icone-case">
+                                <figure>
+                                    <img src="../img/placa-de-video.png" width="50" height="50" alt="">
+                                </figure>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="box">
+                                <h1>04</h1>
+                                <h3>GPU</h3>
+                            </div>
+                            <div class="icone-case">
+                                <figure>
+                                    <img src="../img/processadores.png" width="50" height="50" alt="">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-2">
+                        <div class="recent-relatory">
+                            <div class="title">
+                                <h2>Histórico</h2>
+                                <!-- <a href="#" class="btn">Visualizar</a> -->
+                            </div>
+                            <table>
+                                <tr>
+                                    <th>IDRegistro</th>
+                                    <th>NLAlerta</th>
+                                    <th>Data/Hora</th>
+                                    <th>IDMaquina</th>
+                                    <th>CPU</th>
+                                    <th>PlacaVideo</th>
+                                    <th>Ram</th>
+                                </tr>
+                                <!--linha1-->
+                                <tr>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                </tr>
+
+                                <!--Linha 2-->
+                                <tr>
+                                    <td>dd</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                </tr>
+
+                                <!--Linha 3-->
+                                <tr>
+                                    <td>dd</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                </tr>
+
+                                <!--Linha 4-->
+                                <tr>
+                                    <td>dd</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                </tr>
+
+                                <!--Linha 5-->
+                                <tr>
+                                    <td>dd</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                </tr>
+
+                                <!--Linha 6-->
+                                <tr>
+                                    <td>dd</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                </tr>
+
+                                <!--Linha 6-->
+                                <tr>
+                                    <td>dd</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                    <td>aa</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <!--tabela 2-->
+                        <div class="new-relatory">
+                            <div class="title">
+                                <h2>Relatório de máquinas</h2>
+                                <!-- <a href="#" class="btn">Visualizar</a> -->
+                            </div>
+                            <table>
+                                <tr>
+                                    <th>Maquina</th>
+                                    <th>ID</th>
+                                    <th>Nome</th>
+                                    <th>Status</th>
+                                </tr>
+                                <!--Linha 1-->
+                                <tr class="ativo">
+                                    <td><img src="../img/computador-desktop.png" alt=""></td>
+                                    <td>674BRN</td>
+                                    <td>EC203</td>
+                                    <td class="statusativo">Ativo</td>
+                                </tr>
+
+                                <!--Linha 2-->
+                                <tr class="ativo">
+                                    <td><img src="../img/notebook.png" alt=""></td>
+                                    <td>823BRC</td>
+                                    <td>RK456</td>
+                                    <td class="statusativo">Ativo</td>
+                                </tr>
+
+                                <!--Linha 3-->
+                                <tr class="inativo">
+                                    <td><img src="../img/computador-desktop.png" alt=""></td>
+                                    <td>121QWS</td>
+                                    <td>EUL907</td>
+                                    <td class="statusinativo">Inativo</td>
+                                </tr>
+
+                                <!--Linha 4-->
+                                <tr class="inativo">
+                                    <td><img src="../img/notebook.png" alt=""></td>
+                                    <td>043JPS</td>
+                                    <td>WE727</td>
+                                    <td class="statusinativo">Inativo</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+        </main>
+    </div>
+</body>
+
+</html>

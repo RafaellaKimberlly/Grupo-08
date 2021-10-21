@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráficos</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&family=Roboto:wght@300;400;500;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/menu-dashboard.css">
+
+</head>
+
+<body>
+
+    <input type="checkbox" id="menu-toggle">
+    <div class="sidebar">
+        <div class="sidebar-marca">
+            <label for="menu-toggle">
+                <div class="menu-hamburguer">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </label>
+
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="dashboard-home.html"><i class="fas fa-home"></i><span>Home</span></a>
+                </li>
+                <li>
+                    <a class="active" href="dashboard.html"><i class="fas fa-chart-line"></i><span>Gráficos</span></a>
+                </li>
+                <li>
+                    <a href="dashboard-relatorios.html"><i class="fas fa-clipboard-list"></i><span>Relatório</span></a>
+                </li>
+                <li>
+                    <a href="cadastro-componentes-dashboard.html"><i class="fas fa-desktop"></i></i><span>Cadastro
+                            Componentes</span></a>
+                </li>
+                <li>
+                    <a href="dashboard-perfil.html"><i class="fas fa-user-circle"></i><span>Perfil</span></a>
+                </li>
+            </ul>
+        </div>
+        <div class="sidebar-menu sair">
+            <ul>
+                <li>
+                    <a href="../../Site Institucional/WebSite/public/login-cadastro.html"><i
+                            class="fas fa-sign-out-alt"></i>
+                        <span>Encerrar sessão</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="header-dashboard">
+        <header>
+            <div class="user-wrapper">
+                <img src="../img/foto-perfil.png" width="40px" height="40px" alt="">
+                <div>
+                    <h4 id="h4_nome">Olá Gerson</h4>
+                    <b id="b_usuario"></b>
+                    <small>Usuario comum</small>
+                </div>
+            </div>
+        </header>
+
+        <main>
+
+            <section>
+                <select class="select" name="" id="">
+                    <option value="">Máquina 1</option>
+                    <option value="">Máquina 2</option>
+                    <option value="">Máquina 3</option>
+
+                </select>
+
+                <div class="componentes">
+                    <label for="">Selecione os componentes </label>
+                    <br>
+
+                    <div class="opcoes">
+                        <label for="todos">Todos</label> <input name="opcoes" id="todos" type="radio">
+                        <label for="RAM">RAM</label> <input name="opcoes" id="RAM" type="radio">
+                        <label for="CPU">CPU</label> <input name="opcoes" id="CPU" type="radio">
+                        <label for="PLACA">Placa de vídeo</label> <input name="opcoes" id="PLACA" type="radio">
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="grafico">
+
+                <canvas id="myChart"></canvas>
+
+            </section>
+        </main>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+
+
+</script>

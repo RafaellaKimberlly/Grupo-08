@@ -30,8 +30,8 @@
             <nav>
                 <ul class="estilo_ul">
                     <li><a class="link_menu" href="index.html">Home</a></li>
-                    <li><a class="link_menu" href="sobre.html">Sobre</a></li>
-                    <li><a class="link_menu" href="como-minerar.html">Minere já</a></li>
+                    <li id="menu_sobre"><a class="link_menu" href="sobre.html">Sobre</a></li>
+                    <li id="menu_como_minerar"><a class="link_menu" href="como-minerar.html">Minere já</a></li>
                 </ul>
             </nav>
         </span>
@@ -41,6 +41,8 @@
         <figure>
             <!-- <img class="logo" src="img/logo.jpeg" alt=""> -->
         </figure>
+
+        <button class="button" onclick="traduzir()">English</button>
 
         <button class="button-entrar"> <a href="login-cadastro.html">Entre</a></button>
     </header>
@@ -53,7 +55,7 @@
             <div class="content-hero">
                 <article class="mensagem_inicial">
                     <h2><span>Crypto</span>Verse</h2>
-                    <p>Somos uma empresa jovem, voltada para o monitoramento de hardware, 
+                    <p id="home_txt">Somos uma empresa jovem, voltada para o monitoramento de hardware, 
                         <br>
                         especificamente para a mineração de Criptomoedas.
                         <br>
@@ -68,7 +70,7 @@
 
                     <br><br>
 
-                    <button class="button"><a href="">Veja nossas soluções</a></button>
+                    <button id="btn_1" class="button"><a href="">Veja nossas soluções</a></button>
                 </article>
 
                 <figure class="logo_principal">
@@ -83,7 +85,7 @@
         <section class="section-functions">
             <div class="content-functions" id="idFuncionalidade">
 
-                <h2>Funcionalidades</h2>
+                <h2 id="funcionalidades">Funcionalidades</h2>
 
                 <div class="icons">
                     <section>
@@ -91,8 +93,8 @@
                             <img src="img/gpuTemp.png" alt="">
                         </figure>
                         <article>
-                            <h3>Monitoramento de Hardware</h3>
-                            <p class="icons-text">Analise constante a respeito do hardware.
+                            <h3 id="monitoramento_hard">Monitoramento de Hardware</h3>
+                            <p id="monitoramento_txt" class="icons-text">Analise constante a respeito do hardware.
                                 Trazendo informaçoes importantes e precisas a respeito do seu equipamento.
                             </p>
                         </article>
@@ -102,8 +104,8 @@
                         <img src="img/cpu.png" alt="">
                         </figure>
                         <article>
-                            <h3>Sistemas de Alertas</h3>
-                            <p class="icons-text">Nunca mais seja pego desprevenido. Nosso sistema de alertas sempre te deixara informado e seguro a 
+                            <h3 id="sistemas_alertas">Sistemas de Alertas</h3>
+                            <p id="alertas_txt" class="icons-text">Nunca mais seja pego desprevenido. Nosso sistema de alertas sempre te deixara informado e seguro a 
                                 respeito do que acontece com o seu hardware</p>
                         </article>
                     </section>
@@ -112,8 +114,8 @@
                         <img src="img/localizacaoPool.png" alt="">
                         </figure>
                         <article>
-                            <h3>Localização dos Integrantes</h3>
-                            <p class="icons-text">Não fique mais na dúvida sobre quem está na empreitada contigo.
+                            <h3 id="localizacao_integrantes">Localização dos Integrantes</h3>
+                            <p id="localizacao_txt" class="icons-text">Não fique mais na dúvida sobre quem está na empreitada contigo.
                                 Com o sistema de geolocalização é possível saber de onde são os companheiros de jornada.
                             </p>
                         </article>
@@ -123,8 +125,8 @@
                         <img src="img/historicoLogs.png" alt="">
                         </figure>
                         <article>
-                            <h3>Histórico de Logs</h3>
-                            <p class="icons-text">Tenha sempre em mãos relatórios e histórico do que ocorreu.
+                            <h3 id="historico_logs">Histórico de Logs</h3>
+                            <p id="historico_txt" class="icons-text">Tenha sempre em mãos relatórios e histórico do que ocorreu.
                                 Nunca fique sem dados sobre o que ocorreu com o sistema até mesmo em casos de pane.
                             </p>
                         </article>
@@ -144,13 +146,13 @@
 
 
                 <article>
-                    <h2>Nunca sozinho</h2>
-                    <p>Esteja conectado com milhares de mineradores ao redor do globo,
+                    <h2 id="nunca_sozinho">Nunca sozinho</h2>
+                    <p id="nunca_sozinho_txt">Esteja conectado com milhares de mineradores ao redor do globo,
                         todos com o mesmo intuito de alcançarem rendimentos maiores.
                         Não se sinta só durante a sua jornada como um minerador digital,
                         tendo a segurança e conforto de possuir toda uma comunidade com você.
                     </p><br>
-                    <button class="button-saiba"><a href="como-minerar.html">Saiba Mais</a></button>
+                    <button id="saiba_mais" class="button-saiba"><a href="como-minerar.html">Saiba Mais</a></button>
 
                 </article>
 
@@ -211,32 +213,87 @@
             <!-- Fim Icones -->
             <div class="container_link_rodape">
                 <ul class="caixa_link_rodape1">
-                    <li><a class="link_nav" href="">Sobre nós</a></li>
-                    <li><a class="link_nav" href="">Serviço</a></li>
-                    <li><a class="link_nav" href="">Como minerar</a></li>
+                    <li id="sobre_nos"><a class="link_nav" href="">Sobre nós</a></li>
+                    <li id="servico"><a class="link_nav" href="">Serviço</a></li>
+                    <li id="como_minerar"><a class="link_nav" href="">Como minerar</a></li>
                 </ul>
 
                 <ul class="caixa_link_rodape2">
-                    <li><a class="link_nav" href="">Fale conosco</a></li>
-                    <li><a class="link_nav" href="">Contato</a></li>
-                    <li><a class="link_nav" href="">Conheça o time</a></li>
+                    <li id="fale_conosco"><a class="link_nav" href="">Fale conosco</a></li>
+                    <li id="contato"><a class="link_nav" href="">Contato</a></li>
+                    <li id="conheca_time"><a class="link_nav" href="">Conheça o time</a></li>
                 </ul>
             </div>
 
             <div class="container_entre_em_contato">
-                <p>Insira seu e-mail e fique por dentro de todas novidades!</p>
+                <p id="insira_email">Insira seu e-mail e fique por dentro de todas novidades!</p>
                 <div class="ajuste_input_btn">
-                    <input type="email" placeholder="Insira seu e-mail">
-                    <button class="btn">Enviar</button>
+                    <input id="place" type="email" placeholder="Insira seu e-mail">
+                    <button id="enviar" class="btn">Enviar</button>
                 </div>
             </div>
 
-            <p class="direitos_autorais">Direitos reservados a CryptoVerse &copy 2021</p>
+            <p id="direitos" class="direitos_autorais">Direitos reservados a CryptoVerse &copy 2021</p>
 
         </div>
 
     </footer>
     <!-- Fim Footer -->
 </body>
-
+ 
 </html>
+
+<script>
+    function traduzir() {
+        home_txt.innerHTML = "We are a young company, focused on hardware monitoring, <br>" +
+                             "specifically for cryptocurrency mining. <br>" +
+                             "Founded with the aim of spreading technology in all possible ways <br>" +
+                             "while we help the practice become common in Brazil and the World using the most" +
+                             "high technology available.";
+        
+        btn_1.innerHTML = "Learn about our solutions";
+
+        funcionalidades.innerHTML = "Functionalities";
+
+        monitoramento_hard.innerHTML = "Hardware Monitoring";
+
+        monitoramento_txt.innerHTML = "Constant analysis regarding the hardware. Bringing important and accurate information about your equipment.";
+
+        sistemas_alertas.innerHTML = "Alert Systems";
+
+        alertas_txt.innerHTML = "Never be caught off guard again. Our alert system will always keep you informed and secure about what happens to your hardware";
+
+        localizacao_integrantes.innerHTML = "Location of Members";
+
+        localizacao_txt.innerHTML = "Don't be in doubt anymore about who is in the contract with you. With the geolocation system it is possible to know where the fellow travelers are from.";
+
+        historico_logs.innerHTML = "Log history";
+
+        historico_txt.innerHTML = "Always have reports and history of what happened at hand. Never run out of data about what happened to the system even in cases of crashes.";
+        
+        nunca_sozinho.innerHTML = "Never Alone";
+
+        nunca_sozinho_txt.innerHTML = "Connect with thousands of miners around the globe, all with the same intent to achieve higher incomes." +
+                " Don't feel alone during your journey as a digital miner, having the security and comfort of having an entire community with you.";
+
+        saiba_mais.innerHTML = "Know More";
+
+        sobre_nos.innerHTML = "About Us";
+    
+        servico.innerHTML = "Service";
+    
+        como_minerar.innerHTML = "How To Mine";
+    
+        fale_conosco.innerHTML = "Contact us";
+    
+        contato.innerHTML = "Contact";
+    
+        conheca_time.innerHTML = "Meet The Team";
+
+        insira_email.innerHTML = "Enter your email and stay on top of all the news!";
+
+        enviar.innerHTML = "Send";
+
+        direitos.innerHTML = "All rights reserved by CryptoVerse © 2021";
+    }
+</script>

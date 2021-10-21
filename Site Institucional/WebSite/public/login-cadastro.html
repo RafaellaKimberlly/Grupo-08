@@ -99,7 +99,7 @@
 
                     <label class="label-input">
                         <i class="fas fa-envelope icon-modify"></i>
-                        <input type="email" name="login" placeholder="Email">
+                        <input type="email" name="email" placeholder="Email">
                     </label>
 
                     <label class="label-input">
@@ -109,8 +109,8 @@
 
                     <label class="label-input">
                         <i class="fas fa-globe-americas world"></i>
-                        <select class="select_pais" name="pais" id="" placeholder="País">
-                            <option value="#" disabled>Selecione seu Estado</option>
+                        <select class="select_pais" name="uf" id="" placeholder="País">
+                            <option value="#" disabled autofocus>Selecione seu Estado</option>
                             <option value="AC">AC</option>
                             <option value="AL">AL</option>
                             <option value="AP">AP</option>
@@ -140,6 +140,12 @@
                             <option value="DF">DF</option>
                         </select>
                     </label>
+
+                    <label class="label-input">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <input type="number" name="fkPools" placeholder="Pool">
+                    </label>
+
                     <button type="submit" id="btn_cadastrar" value="Cadastrar"
                         class="btn_user btn-second_user">Registrar</button>
                 </form>
@@ -198,7 +204,7 @@
                     <form id="form_login" name="form_login" method="POST" onsubmit="return entrar()">
                         <label class="label-input" for="">
                             <i class="fas fa-envelope icon-modify"></i>
-                            <input type="email" name="login" placeholder="Email">
+                            <input type="email" name="email" placeholder="Email">
                         </label>
 
                         <label class="label-input" for="">
@@ -292,7 +298,7 @@
 
                 resposta.json().then(json => {
 
-                    sessionStorage.login_usuario_meuapp = json.login;
+                    sessionStorage.login_usuario_meuapp = json.email;
                     sessionStorage.nome_usuario_meuapp = json.nome;
 
                     window.location.href = 'teste2.html';

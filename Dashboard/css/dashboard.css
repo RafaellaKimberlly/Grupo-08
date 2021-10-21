@@ -1,0 +1,40 @@
+.select{
+    height: 50px;
+    width: 200px;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+
+.componentes{
+    margin-top: 3%;
+    margin-right: 5%;
+    float: right;
+
+}
+
+.grafico{
+
+    margin-top: 5%;
+    margin-left: 5%;
+    width: 600px;
+    height: 600px;
+
+}
+
+.relatorio{
+    float: right;
+    margin-right: 5%;
+    margin-top: 5%;
+    border-radius: 5px;
+    background-color: grey;
+    height: 50px;
+    width: 50px;
+}
+
+.opcoes label{
+    cursor: pointer;
+}
+
+.opcoes input{
+    cursor: pointer;
+}

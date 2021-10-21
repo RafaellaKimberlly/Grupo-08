@@ -10,9 +10,8 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&family=Roboto:wght@300;400;500;900&display=swap"
         rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="../css/menu-dashboard.css">
     <link rel="stylesheet" href="../css/dashboard-home.css">
-    <title>Dashboard-Home</title>
+    <title>Home</title>
 </head>
 
 <body>
@@ -27,32 +26,32 @@
                     <div class="line3"></div>
                 </div>
             </label>
-            <!-- <label for="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </label> -->
-            <!-- <span class="sidebar-logo-reduzido"><img src="../img/logoNovaReduzida.png" alt="logo friocontrol"></span>
-            <span class="sidebar-logo"><img src="../img/LogoNovaBranco.png" alt="logo friocontrol"></span> -->
         </div>
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a class="active" href="*"><i class="fas fa-home"></i><span>Home</span></a>
+                    <a class="active" href="dashboard-home.html"><i class="fas fa-home"></i><span>Home</span></a>
                 </li>
                 <li>
-                    <a href="*"><i class="fas fa-chart-line"></i><span>Gráficos</span></a>
+                    <a href="dashboard.html"><i class="fas fa-chart-line"></i><span>Gráficos</span></a>
                 </li>
                 <li>
-                    <a href="*"><i class="fas fa-user-circle"></i><span>Perfil</span></a>
+                    <a href="dashboard-relatorios.html"><i class="fas fa-clipboard-list"></i><span>Relatório</span></a>
                 </li>
                 <li>
-                    <a href="*"><i class="fas fa-clipboard-list"></i><span>Relatório</span></a>
+                    <a href="cadastro-componentes-dashboard.html"><i class="fas fa-desktop"></i></i><span>Cadastro
+                            Componentes</span></a>
+                </li>
+                <li>
+                    <a href="dashboard-perfil.html"><i class="fas fa-user-circle"></i><span>Perfil</span></a>
                 </li>
             </ul>
         </div>
         <div class="sidebar-menu sair">
             <ul>
                 <li>
-                    <a href=""><i class="fas fa-sign-out-alt"></i>
+                    <a href="../../Site Institucional/WebSite/public/login-cadastro.html"><i
+                            class="fas fa-sign-out-alt"></i>
                         <span>Encerrar sessão</span></a>
                 </li>
             </ul>
@@ -65,11 +64,11 @@
                 <input type="search" placeholder="Search here">
             </div> -->
             <div class="user-wrapper">
-                <img src="" width="40px" height="40px" alt="">
+                <img src="../img/foto-perfil.png" width="40px" height="40px" alt="">
                 <div>
-                    <h4 id="h4_nome">Olá Fulano</h4>
+                    <h4 id="h4_nome">Olá Gerson</h4>
                     <b id="b_usuario"></b>
-                    <small>ADM POOL</small>
+                    <small>Usuario comum</small>
                 </div>
             </div>
         </header>
@@ -81,33 +80,41 @@
                 <div class="graficos">
                     <canvas id="myChart"></canvas>
                 </div>
-                <p class="title-card">CPU</p>
-                <p class="situacao-porcentagem">75%</p>
-                <i class="fas fa-arrow-up seta"></i>
+                <div class="caixa-titulos">
+                    <p class="title-card">CPU</p>
+                    <p id="aleatorio" class="situacao-porcentagem">28%</p>
+                    <i class="fas fa-arrow-up seta"></i>
+                </div>
             </div>
 
             <div class="card-grafico">
                 <div class="graficos">
                     <canvas id="myChart2"></canvas>
                 </div>
-                <p class="title-card">RAM</p>
-                <p class="situacao-porcentagem">70%</p>
-                <i class="fas fa-arrow-up seta"></i>
+                <div class="caixa-titulos">
+                    <p class="title-card">RAM</p>
+                    <p class="situacao-porcentagem">40%</p>
+                    <i class="fas fa-arrow-up seta"></i>
+                </div>
             </div>
 
             <div class="card-grafico">
                 <div class="graficos">
                     <canvas id="myChart3"></canvas>
                 </div>
-                <p class="title-card">GPU</p>
-                <p class="situacao-porcentagem">85%</p>
-                <i class="fas fa-arrow-up seta"></i>
+                <div class="caixa-titulos">
+                    <p class="title-card">GPU</p>
+                    <p class="situacao-porcentagem">35%</p>
+                    <i class="fas fa-arrow-up seta"></i>
+                </div>
             </div>
-
         </div>
+
         <div class="alertas">
             <p class="title-situacao">Situação atual:</p>
-            <img class="img-alert" src="https://3oecq13pb7a518hqscs13jv9-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/alert-icon-red-11.png" alt="alert">
+            <img class="img-alert"
+                src="https://3oecq13pb7a518hqscs13jv9-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/alert-icon-red-11.png"
+                alt="alert">
         </div>
     </main>
 
@@ -196,4 +203,5 @@
             }],
         }
     });
+
 </script>
