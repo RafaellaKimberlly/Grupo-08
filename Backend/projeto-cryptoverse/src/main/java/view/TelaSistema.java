@@ -5,6 +5,8 @@
 package view;
 
 import javax.swing.JOptionPane;
+
+import services.ComponentesServices;
 import services.ServiceTeste;
 
 /**
@@ -137,13 +139,13 @@ public class TelaSistema extends javax.swing.JFrame {
 
     private void botaoSimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSimActionPerformed
         
-        ServiceTeste teste = new ServiceTeste();
+        ComponentesServices teste = new ComponentesServices();
         
-        ram.setText(teste.tamanhoTotalRam().toString());
+        ram.setText(teste.getMemoriaEmUsoPorc().toString());
         
-        processador.setText(teste.nomeProcessador());
+        processador.setText(teste.getCpuUsoPorc().toString());
         
-        disco.setText(teste.tamanhoTotalDisco().toString());
+        disco.setText(teste.getDiscoPorc().toString());
         
     }//GEN-LAST:event_botaoSimActionPerformed
 
