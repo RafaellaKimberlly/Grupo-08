@@ -9,9 +9,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&family=Roboto:wght@300;400;500;900&display=swap"
         rel="stylesheet">
-        <link rel="shortcut icon" href="../img/2.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../img/2.png" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script type="text/javascript" src="../funcoes.js"></script>
     <link rel="stylesheet" href="../css/dashboard-home.css">
     <title>Home</title>
 </head>
@@ -49,9 +48,10 @@
         <div class="sidebar-menu sair">
             <ul>
                 <li>
-<!-- <<<<<<< HEAD:Site Institucional/WebSite/public/dashboard/dashboard-home.html -->
-                    <a href="../login-cadastro.html"><i class="fas fa-sign-out-alt"></i>
-                        <span>Encerrar sessão</span></a>
+                    <a href="../login-cadastro.html">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Encerrar sessão</span>
+                    </a>
                 </li>
             </ul>
         </div>
@@ -65,66 +65,63 @@
             <div class="user-wrapper">
                 <img src="../img/foto-perfil.png" width="40px" height="40px" alt="">
                 <div>
-                    <h4 id="h4_nome">Olá </h4>
+                    <h4 id="h4_nome">Olá Gerson</h4>
                     <b id="b_usuario"></b>
                     <small>Usuario comum</small>
                 </div>
             </div>
         </header>
+
+        <main>
+            <div class="caixa-conteudo">
+                <div class="card-grafico">
+                    <figure class="icone">
+                        <img class="logo_componente" src="../img/processadores.png" width="80" height="80">
+                    </figure>
+                    <div class="caixa-titulos">
+                        <p class="title-card">CPU</p>
+                        <p id="aleatorio" class="situacao-porcentagem">28%</p>
+                        <i class="fas fa-arrow-up seta"></i>
+                    </div>
+                </div>
+
+                <div class="card-grafico">
+                    <figure class="icone">
+                        <img class="logo_componente" src="../img/memoria-ram.png" width="80" height="80">
+                    </figure>
+                    <div class="caixa-titulos">
+                        <p class="title-card">RAM</p>
+                        <p class="situacao-porcentagem">40%</p>
+                        <i class="fas fa-arrow-up seta"></i>
+                    </div>
+                </div>
+
+                <div class="card-grafico">
+                    <figure class="icone">
+                        <img class="logo_componente" src="../img/placa-de-video.png" width="80" height="80">
+                    </figure>
+                    <div class="caixa-titulos">
+                        <p class="title-card">GPU</p>
+                        <p class="situacao-porcentagem">35%</p>
+                        <i class="fas fa-arrow-up seta"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alertas">
+                <p class="title-situacao">Situação atual:</p>
+                <img class="img-alert"
+                    src="https://3oecq13pb7a518hqscs13jv9-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/alert-icon-red-11.png"
+                    alt="alert">
+            </div>
+        </main>
     </div>
-
-    <main>
-        <div class="caixa-conteudo">
-            <div class="card-grafico">
-                <div class="graficos">
-                    <canvas id="myChart"></canvas>
-                </div>
-                <div class="caixa-titulos">
-                    <p class="title-card">CPU</p>
-                    <p id="aleatorio" class="situacao-porcentagem">28%</p>
-                    <i class="fas fa-arrow-up seta"></i>
-                </div>
-            </div>
-
-            <div class="card-grafico">
-                <div class="graficos">
-                    <canvas id="myChart2"></canvas>
-                </div>
-                <div class="caixa-titulos">
-                    <p class="title-card">RAM</p>
-                    <p class="situacao-porcentagem">40%</p>
-                    <i class="fas fa-arrow-up seta"></i>
-                </div>
-            </div>
-
-            <div class="card-grafico">
-                <div class="graficos">
-                    <canvas id="myChart3"></canvas>
-                </div>
-                <div class="caixa-titulos">
-                    <p class="title-card">GPU</p>
-                    <p class="situacao-porcentagem">35%</p>
-                    <i class="fas fa-arrow-up seta"></i>
-                </div>
-            </div>
-        </div>
-
-        <div class="alertas">
-            <p class="title-situacao">Situação atual:</p>
-            <img class="img-alert"
-                src="https://3oecq13pb7a518hqscs13jv9-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/alert-icon-red-11.png"
-                alt="alert">
-        </div>
-    </main>
 
 </body>
 
 </html>
 
-<script>
-
-verificar_autenticacao();
-
+<!-- <script>
 
     var ctx = document.getElementById('myChart');
 
@@ -206,5 +203,6 @@ verificar_autenticacao();
         }
     });
 
-</script>
-<script data-jsd-embedded data-key="80d9f6eb-00c3-44a5-b11d-16870c4fb50b" data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>
+</script> -->
+<script data-jsd-embedded data-key="80d9f6eb-00c3-44a5-b11d-16870c4fb50b"
+    data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>

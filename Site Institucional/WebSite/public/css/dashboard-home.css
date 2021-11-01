@@ -139,8 +139,8 @@ body {
 }
 
 #menu-toggle:checked ~ .header-dashboard .caixa-conteudo {
-  width: 520px;
-  height: 700px;
+  /* width: 520px;
+  height: 700px; */
 }
 
 #menu-toggle:checked ~ .header-dashboard .container-empresa {
@@ -237,9 +237,8 @@ main {
 }
 
 .caixa-conteudo {
-  margin-left: 22%;
-  width: 76.8%;
-  height: 100%;
+  margin-left: 9%;
+  margin-top: -20px;
   position: relative;
   display: flex;
   flex-wrap: wrap;
@@ -247,19 +246,23 @@ main {
 }
 
 .card-grafico {
-  width: 23%;
-  height: 17.8vw;
-  background-color: white;
+  background-color: #ebebd3;
   border-left: 5px solid #13436b;
   display: flex;
-  margin-top: 10%;
-  margin-left: 4%;
+  margin-top: 71px;
+  margin-left: 44px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+.icone {
+  margin-left: 70px;
+  margin-top: 20px;
 }
 
 .caixa-conteudo .card-grafico {
-  width: 20%;
+  width: 226px;
   height: 20vw;
-  overflow: hidden;
   transition: 1s;
 }
 
@@ -269,515 +272,563 @@ main {
   transform: scale(1);
 }
 
-.graficos {
-  width: 10vh;
-  margin-left: 30%;
-}
-
 .title-card {
-  font-size: 1.1em;
+  font-size: 1.5em;
   color: black;
-  margin-top: 116%;
-  margin-left: -63%;
+  margin-top: 35px;
+  margin-left: -164px;
 }
 
 .situacao-porcentagem {
-  font-size: 1.1em;
+  font-size: 1.5em;
   color: red;
-  margin-top: 117%;
-  margin-left: 90%;
+  margin-top: -35px;
+  margin-left: -50.5px;
 }
 
 .seta {
-  font-size: 1.1em;
+  font-size: 1.5em;
   color: red;
-  margin-top: 119.4%;
+  margin-top: -30.8px;
+  margin-left: -1px;
+  display: flex;
+}
+
+.alertas {
+  margin-left: 34px;
 }
 
 .title-situacao {
   font-size: 1.4em;
   color: black;
-  margin-left: 48%;
-  padding-top: 7%;
+  margin-left: 426px;
+  padding-top: 48px;
 }
 
 .img-alert {
-  width: 9%;
-  margin-left: 47%;
-  height: 7vw;
-  margin-top: 1%;
+  width: 104px;
+  margin-left: 464px;
+  height: 6vw;
+  margin-top: 11px;
 }
 
 .caixa-titulos {
-  margin-left: -59%;
-  margin-top: 72%;
+  margin-left: 36px;
+  margin-top: 195px;
 }
 
 @media only screen and (min-width: 300px) {
   .caixa-conteudo {
-    margin-left: 20%;
-    width: 76.8%;
-    height: 100%;
+    margin-left: -26%;
+    margin-top: -6px;
     position: relative;
+    display: flex;
     flex-wrap: wrap;
     z-index: 0;
-    margin-top: 10%;
-    display: block;
   }
-
+  
   .card-grafico {
-    background-color: white;
+    background-color: #ebebd3;
     border-left: 5px solid #13436b;
+    display: flex;
+    margin-top: 71px;
+    margin-left: 44px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  }
+  
+  .icone {
+    margin-left: 42px;
+    margin-top: 7px;
   }
 
+  .logo_componente{
+    width: 50px;
+    height: 50px;
+  }
+  
   .caixa-conteudo .card-grafico {
-    width: 79.5%;
-    height: 40vw;
-    overflow: hidden;
+    width: 135px;
+    height: 56vw;
     transition: 1s;
-    margin-left: 24%;
   }
-
-  .caixa-conteudo .card-grafico:hover {
+  
+  .caixa-conteudo .card-grafico,
+  .caixa-titulos:hover {
     z-index: 1;
-    transform: scale(1.1);
+    transform: scale(1);
   }
-
-  .graficos {
-    margin-left: 31%;
-    width: 7vh;
-  }
-
+  
   .title-card {
     font-size: 1.1em;
     color: black;
-    margin-top: -8%;
-    margin-left: 3%;
-    position: absolute;
+    margin-top: -63px;
+    margin-left: -121px;
   }
-
+  
   .situacao-porcentagem {
-    font-size: 1.1rem;
+    font-size: 1.1em;
     color: red;
-    margin-top: -7.1%;
-    margin-left: 51%;
-    position: absolute;
+    margin-top: -27px;
+    margin-left: -63.5px;
   }
-
+  
   .seta {
     font-size: 1.1em;
     color: red;
-    margin-top: -5.1%;
-    margin-left: 78%;
-    position: absolute;
+    margin-top: -22.8px;
+    margin-left: -23px;
+    display: flex;
   }
-
+  
   .title-situacao {
-    font-size: 1.4em;
+    font-size: 1.3em;
     color: black;
-    margin-left: 30.5%;
-    padding-top: 1%;
-    position: absolute;
+    margin-left: -38.7px;
   }
-
-  .alertas {
-    margin-top: 17%;
-  }
-
+  
   .img-alert {
-    width: 34%;
-    margin-left: 55%;
-    height: 22vw;
-    margin-top: 18%;
+    width: 79px;
+    margin-left: 8px;
+    height: 24vw;
+    margin-top: 11px;
+  }
+  
+  .caixa-titulos {
+    margin-left: 36px;
+    margin-top: 195px;
   }
 }
 
 @media only screen and (min-width: 400px) {
   .caixa-conteudo {
-    margin-left: 23%;
-    width: 76.8%;
-    height: 100%;
+    margin-left: 8%;
+    margin-top: -32px;
     position: relative;
+    display: flex;
     flex-wrap: wrap;
     z-index: 0;
-    margin-top: 7%;
-    display: block;
   }
-
+  
   .card-grafico {
-    background-color: white;
+    background-color: #ebebd3;
     border-left: 5px solid #13436b;
+    display: flex;
+    margin-top: 71px;
+    margin-left: 44px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  }
+  
+  .icone {
+    margin-left: 39px;
+    margin-top: 7px;
   }
 
+  .logo_componente{
+    width: 55px;
+    height: 55px;
+  }
+  
   .caixa-conteudo .card-grafico {
-    width: 57.5%;
-    height: 36vw;
-    overflow: hidden;
+    width: 135px;
+    height: 50vw;
     transition: 1s;
-    margin-left: 24%;
   }
-
-  .caixa-conteudo .card-grafico:hover {
+  
+  .caixa-conteudo .card-grafico,
+  .caixa-titulos:hover {
     z-index: 1;
-    transform: scale(1.1);
+    transform: scale(1);
   }
-
-  .graficos {
-    margin-left: 33%;
-    width: 7vh;
-  }
-
+  
   .title-card {
-    font-size: 1.3em;
+    font-size: 1.1em;
     color: black;
-    margin-top: 5%;
-    margin-left: 1.5%;
-    position: absolute;
+    margin-top: -30px;
+    margin-left: -121px;
   }
-
+  
   .situacao-porcentagem {
-    font-size: 1.3em;
+    font-size: 1.1em;
     color: red;
-    margin-top: 4.8%;
-    margin-left: 43.6%;
-    position: absolute;
+    margin-top: -27px;
+    margin-left: -63.5px;
   }
-
+  
   .seta {
-    font-size: 1.3em;
+    font-size: 1.1em;
     color: red;
-    margin-top: 8.9%;
-    margin-left: 74%;
-    position: absolute;
+    margin-top: -22.8px;
+    margin-left: -23px;
+    display: flex;
   }
-
+  
   .title-situacao {
-    font-size: 1.4em;
+    font-size: 1.3em;
     color: black;
-    margin-left: 38.5%;
-    padding-top: 0%;
-    position: absolute;
+    margin-left: 23.3px;
   }
-
-  .alertas {
-    margin-top: 17%;
-  }
-
+  
   .img-alert {
-    width: 26%;
-    margin-left: 55%;
-    height: 17vw;
-    margin-top: 12%;
+    width: 86px;
+    margin-left: 64px;
+    height: 19vw;
+    margin-top: 11px;
+  }
+  
+  .caixa-titulos {
+    margin-left: 36px;
+    margin-top: 195px;
   }
 }
 
 @media only screen and (min-width: 550px) {
   .caixa-conteudo {
-    margin-left: 14%;
-    width: 76.8%;
-    height: 100%;
+    margin-left: 21%;
+    margin-top: -23px;
     position: relative;
+    display: flex;
     flex-wrap: wrap;
     z-index: 0;
-    margin-top: 8%;
-    display: block ruby;
   }
-
+  
   .card-grafico {
-    background-color: white;
+    background-color: #ebebd3;
     border-left: 5px solid #13436b;
+    display: flex;
+    margin-top: 71px;
+    margin-left: 44px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  }
+  
+  .icone {
+    margin-left: 50px;
+    margin-top: 7px;
   }
 
+  .logo_componente{
+    width: 60px;
+    height: 60px;
+  }
+  
   .caixa-conteudo .card-grafico {
-    width: 41.5%;
-    height: 33vw;
-    overflow: hidden;
+    width: 164px;
+    height: 43vw;
     transition: 1s;
-    margin-left: 37%;
   }
-
-  .caixa-conteudo .card-grafico:hover {
+  
+  .caixa-conteudo .card-grafico,
+  .caixa-titulos:hover {
     z-index: 1;
-    transform: scale(1.1);
+    transform: scale(1);
   }
-
-  .graficos {
-    margin-left: 31%;
-    width: 7.6vh;
-  }
-
+  
   .title-card {
-    font-size: 1.1em;
+    font-size: 1.3em;
     color: black;
-    margin-top: 29%;
-    margin-left: -5%;
-    position: absolute;
+    margin-top: 1px;
+    margin-left: -131px;
   }
-
+  
   .situacao-porcentagem {
-    font-size: 1.1rem;
+    font-size: 1.3em;
     color: red;
-    margin-top: 29%;
-    margin-left: 51%;
-    position: absolute;
+    margin-top: -33px;
+    margin-left: -63.5px;
   }
-
+  
   .seta {
-    font-size: 1.1em;
+    font-size: 1.3em;
     color: red;
-    margin-top: 32%;
-    margin-left: 74.5%;
-    position: absolute;
+    margin-top: -25.8px;
+    margin-left: -17px;
+    display: flex;
   }
-
+  
   .title-situacao {
-    font-size: 1.4em;
+    font-size: 1.3em;
     color: black;
-    margin-left: 41.5%;
-    padding-top: 0%;
-    position: absolute;
+    margin-left: 23.3px;
   }
 
-  .alertas {
-    margin-top: 17%;
+  .alertas{
+    margin-left: 111px;
   }
-
+  
   .img-alert {
-    width: 21%;
-    margin-left: 52%;
-    height: 15vw;
-    margin-top: 10%;
+    width: 89px;
+    margin-left: 62px;
+    height: 16vw;
+    margin-top: 11px;
+  }
+  
+  .caixa-titulos {
+    margin-left: 36px;
+    margin-top: 195px;
   }
 }
 
 @media only screen and (min-width: 600px) {
   .caixa-conteudo {
-    margin-left: 28%;
-    width: 78.8%;
-    height: 100%;
+    margin-left: 25%;
+    margin-top: -23px;
     position: relative;
+    display: flex;
     flex-wrap: wrap;
     z-index: 0;
-    margin-top: 8%;
-    display: block ruby;
   }
-
+  
   .card-grafico {
-    background-color: white;
+    background-color: #ebebd3;
     border-left: 5px solid #13436b;
+    display: flex;
+    margin-top: 71px;
+    margin-left: 44px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  }
+  
+  .icone {
+    margin-left: 48px;
+    margin-top: 7px;
   }
 
+  .logo_componente{
+    width: 64px;
+    height: 64px;
+  }
+  
   .caixa-conteudo .card-grafico {
-    width: 41.5%;
-    height: 34vw;
-    overflow: hidden;
+    width: 164px;
+    height: 39vw;
     transition: 1s;
-    margin-left: 19%;
   }
-
-  .caixa-conteudo .card-grafico:hover {
+  
+  .caixa-conteudo .card-grafico,
+  .caixa-titulos:hover {
     z-index: 1;
-    transform: scale(1.1);
+    transform: scale(1);
   }
-
-  .graficos {
-    margin-left: 30%;
-    width: 8vh;
-  }
-
+  
   .title-card {
-    font-size: 1.1em;
+    font-size: 1.3em;
     color: black;
-    margin-top: 29%;
-    margin-left: 3%;
-    position: absolute;
+    margin-top: 1px;
+    margin-left: -131px;
   }
-
+  
   .situacao-porcentagem {
-    font-size: 1.1rem;
+    font-size: 1.3em;
     color: red;
-    margin-top: 29%;
-    margin-left: 58%;
-    position: absolute;
+    margin-top: -33px;
+    margin-left: -63.5px;
   }
-
+  
   .seta {
-    font-size: 1.1em;
+    font-size: 1.3em;
     color: red;
-    margin-top: 31%;
-    margin-left: 80.5%;
-    position: absolute;
+    margin-top: -25.8px;
+    margin-left: -17px;
+    display: flex;
   }
-
+  
   .title-situacao {
-    font-size: 1.6em;
+    font-size: 1.3em;
     color: black;
-    margin-left: 41%;
-    padding-top: 3%;
-    position: absolute;
+    margin-left: 23.3px;
   }
 
-  .alertas {
-    margin-top: 8%;
+  .alertas{
+    margin-left: 138px;
   }
-
+  
   .img-alert {
-    width: 19%;
-    margin-left: 53%;
+    width: 89px;
+    margin-left: 62px;
     height: 14vw;
-    margin-top: 9%;
+    margin-top: 11px;
+  }
+  
+  .caixa-titulos {
+    margin-left: 36px;
+    margin-top: 195px;
   }
 }
 
 @media only screen and (min-width: 768px) {
   .caixa-conteudo {
-    margin-left: 12%;
-    width: 86.8%;
-    height: 100%;
+    margin-left: -3%;
+    margin-top: 20px;
     position: relative;
+    display: flex;
     flex-wrap: wrap;
     z-index: 0;
-    margin-top: 10%;
-    display: flex;
   }
-
+  
   .card-grafico {
-    background-color: white;
+    background-color: #ebebd3;
     border-left: 5px solid #13436b;
+    display: flex;
+    margin-top: 71px;
+    margin-left: 44px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  }
+  
+  .icone {
+    margin-left: 48px;
+    margin-top: 7px;
   }
 
+  .logo_componente{
+    width: 64px;
+    height: 64px;
+  }
+  
   .caixa-conteudo .card-grafico {
-    width: 29%;
-    height: 30vw;
-    overflow: hidden;
+    width: 164px;
+    height: 31vw;
     transition: 1s;
-    margin-left: 4%;
   }
-
-  .caixa-conteudo .card-grafico:hover {
+  
+  .caixa-conteudo .card-grafico,
+  .caixa-titulos:hover {
     z-index: 1;
-    transform: scale(1.1);
+    transform: scale(1);
   }
-
-  .graficos {
-    margin-left: 30.2%;
-    width: 9vh;
-  }
-
+  
   .title-card {
     font-size: 1.3em;
     color: black;
-    margin-top: 40.5%;
-    margin-left: -4%;
+    margin-top: 1px;
+    margin-left: -131px;
   }
-
+  
   .situacao-porcentagem {
     font-size: 1.3em;
     color: red;
-    margin-top: 40.6%;
-    margin-left: 50%;
-    position: absolute;
+    margin-top: -33px;
+    margin-left: -63.5px;
   }
-
+  
   .seta {
     font-size: 1.3em;
     color: red;
-    margin-top: 44.4%;
-    margin-left: 76%;
+    margin-top: -25.8px;
+    margin-left: -17px;
+    display: flex;
   }
-
+  
   .title-situacao {
-    font-size: 1.6em;
+    font-size: 1.3em;
     color: black;
-    margin-left: 42.5%;
-    padding-top: 3%;
+    margin-left: 23.3px;
   }
 
-  .alertas {
-    margin-top: 10%;
+  .alertas{
+    margin-left: 229px;
+    margin-top: 50px;
   }
-
+  
   .img-alert {
-    width: 17%;
-    margin-left: 51%;
-    height: 12vw;
-    margin-top: 9%;
+    width: 90px;
+    margin-left: 62px;
+    height: 11vw;
+    margin-top: 11px;
+  }
+  
+  .caixa-titulos {
+    margin-left: 36px;
+    margin-top: 195px;
   }
 }
 
 @media only screen and (min-width: 900px) {
   .caixa-conteudo {
-    margin-left: 10.2%;
-    width: 89.8%;
-    height: 96%;
+    margin-left: 5%;
+    margin-top: 20px;
     position: relative;
+    display: flex;
     flex-wrap: wrap;
     z-index: 0;
-    margin-top: 2%;
+  }
+  
+  .card-grafico {
+    background-color: #ebebd3;
+    border-left: 5px solid #13436b;
+    display: flex;
+    margin-top: 71px;
+    margin-left: 44px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  }
+  
+  .icone {
+    margin-left: 48px;
+    margin-top: 7px;
+  }
+
+  .logo_componente{
+    width: 64px;
+    height: 64px;
+  }
+  
+  .caixa-conteudo .card-grafico {
+    width: 164px;
+    height: 27vw;
+    transition: 1s;
+  }
+  
+  .caixa-conteudo .card-grafico,
+  .caixa-titulos:hover {
+    z-index: 1;
+    transform: scale(1);
+  }
+  
+  .title-card {
+    font-size: 1.3em;
+    color: black;
+    margin-top: 1px;
+    margin-left: -131px;
+  }
+  
+  .situacao-porcentagem {
+    font-size: 1.3em;
+    color: red;
+    margin-top: -33px;
+    margin-left: -63.5px;
+  }
+  
+  .seta {
+    font-size: 1.3em;
+    color: red;
+    margin-top: -25.8px;
+    margin-left: -17px;
     display: flex;
   }
-
-  .card-grafico {
-    background-color: white;
-    border-left: 5px solid #13436b;
-  }
-
-  .caixa-conteudo .card-grafico {
-    width: 28.5%;
-    height: 30vw;
-    overflow: hidden;
-    transition: 1s;
-    margin-left: 4%;
-  }
-
-  .caixa-conteudo .card-grafico:hover {
-    z-index: 1;
-    transform: scale(1.1);
-  }
-
-  .graficos {
-    margin-left: 31.2%;
-    width: 9vh;
-  }
-
-  .title-card {
-    font-size: 1.5em;
-    color: black;
-    margin-top: 36.8%;
-    margin-left: 1%;
-  }
-
-  .situacao-porcentagem {
-    font-size: 1.5em;
-    color: red;
-    margin-top: 36.8%;
-    margin-left: 57.5%;
-    position: absolute;
-  }
-
-  .seta {
-    font-size: 1.5em;
-    color: red;
-    margin-top: 38.9%;
-    margin-left: 82.5%;
-  }
-
+  
   .title-situacao {
-    font-size: 1.6em;
+    font-size: 1.3em;
     color: black;
-    margin-left: 43.8%;
-    padding-top: 1%;
   }
 
-  .alertas {
-    margin-top: 10%;
+  .alertas{
+    margin-left: 272px;
+    margin-top: 50px;
   }
-
+  
   .img-alert {
-    width: 13%;
-    margin-left: 51.6%;
-    height: 10vw;
-    margin-top: 7%;
+    width: 88px;
+    margin-left: 62px;
+    height: 9vw;
+    margin-top: 11px;
+  }
+  
+  .caixa-titulos {
+    margin-left: 36px;
+    margin-top: 195px;
   }
 }
 
@@ -937,154 +988,164 @@ main {
 
 @media only screen and (min-width: 1200px) {
   .caixa-conteudo {
-    margin-left: 22.4%;
-    width: 76.8%;
-    height: 96%;
+    margin-left: 41px;
+    margin-top: 66px;
     position: relative;
-    flex-wrap: wrap;
-    z-index: 0;
-    margin-top: -1%;
     display: flex;
+    flex-wrap: wrap;
+    z-index: 0
   }
-
+  
   .card-grafico {
-    background-color: white;
+    background-color: #ebebd3;
     border-left: 5px solid #13436b;
+    display: flex;
+    margin-top: 71px;
+    margin-left: 44px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
   }
-
+  
+  .icone {
+    margin-left: 57px;
+    margin-top: 20px;
+  }
+  
   .caixa-conteudo .card-grafico {
-    width: 24.5%;
-    height: 20vw;
-    overflow: hidden;
+    width: 181.8px;
     transition: 1s;
-    margin-left: 4%;
   }
-
-  .caixa-conteudo .card-grafico:hover {
+  
+  .caixa-conteudo .card-grafico,
+  .caixa-titulos:hover {
     z-index: 1;
-    transform: scale(1.1);
+    transform: scale(1);
   }
-
-  .graficos {
-    margin-left: 31.2%;
-    width: 9vh;
-  }
-
+  
   .title-card {
     font-size: 1.5em;
     color: black;
-    margin-top: 22.9%;
-    margin-left: 1%;
+    margin-top: 6px;
+    margin-left: -150px;
   }
-
+  
   .situacao-porcentagem {
     font-size: 1.5em;
     color: red;
-    margin-top: 22.8%;
-    margin-left: 56%;
-    position: absolute;
+    margin-top: 5px;
+    margin-left: -72.5px;
   }
-
+  
   .seta {
     font-size: 1.5em;
     color: red;
-    margin-top: 25.4%;
-    margin-left: 80%;
+    margin-top: 11.2px;
+    margin-left: -20px;
+    display: flex;
   }
-
-  .title-situacao {
-    font-size: 1.5em;
-    color: black;
-    margin-left: 49%;
-    padding-top: 0%;
-    margin-top: -3%;
-  }
-
+  
   .alertas {
-    margin-top: 10%;
+    margin-left: -184px;
   }
-
+  
+  .title-situacao {
+    font-size: 1.4em;
+    color: black;
+    margin-left: 473px;
+    padding-top: 20px;
+  }
+  
   .img-alert {
-    width: 8%;
-    margin-left: 55%;
+    width: 92px;
+    margin-left: 508px;
     height: 7vw;
-    margin-top: 0%;
+    margin-top: 39px;
+  }
+  
+  .caixa-titulos {
+    margin-left: 36px;
+    margin-top: 195px;
   }
 }
 
 @media only screen and (min-width: 1366px) {
   .caixa-conteudo {
-    margin-left: 24%;
-    width: 76.8%;
-    height: 96%;
+    margin-left: 131px;
+    margin-top: 66px;
     position: relative;
-    flex-wrap: wrap;
-    z-index: 0;
-    margin-top: -3%;
     display: flex;
+    flex-wrap: wrap;
+    z-index: 0
   }
-
+  
   .card-grafico {
-    background-color: white;
+    background-color: #ebebd3;
     border-left: 5px solid #13436b;
+    display: flex;
+    margin-top: 71px;
+    margin-left: 44px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
   }
-
+  
+  .icone {
+    margin-left: 57px;
+    margin-top: 20px;
+  }
+  
   .caixa-conteudo .card-grafico {
-    width: 18.5%;
-    height: 20vw;
-    overflow: hidden;
+    width: 200px;
     transition: 1s;
-    margin-left: 4%;
   }
-
-  .caixa-conteudo .card-grafico:hover {
+  
+  .caixa-conteudo .card-grafico,
+  .caixa-titulos:hover {
     z-index: 1;
-    transform: scale(1.1);
+    transform: scale(1);
   }
-
-  .graficos {
-    margin-left: 32.2%;
-    width: 10vh;
-  }
-
+  
   .title-card {
     font-size: 1.5em;
     color: black;
-    margin-top: 57.5%;
-    margin-left: -6%;
+    margin-top: 28px;
+    margin-left: -160px;
   }
-
+  
   .situacao-porcentagem {
     font-size: 1.5em;
     color: red;
-    margin-top: 57.9%;
-    margin-left: 42%;
-    position: absolute;
+    margin-top: 27px;
+    margin-left: -61.5px;
   }
-
+  
   .seta {
     font-size: 1.5em;
     color: red;
-    margin-top: 60%;
-    margin-left: 69%;
+    margin-top: 32.2px;
+    margin-left: -10px;
+    display: flex;
   }
-
-  .title-situacao {
-    font-size: 1.5em;
-    color: black;
-    margin-left: 49.8%;
-    padding-top: 0%;
-    margin-top: -3%;
-  }
-
+  
   .alertas {
-    margin-top: 8.3%;
+    margin-left: -49px;
   }
-
+  
+  .title-situacao {
+    font-size: 1.4em;
+    color: black;
+    margin-left: 473px;
+    padding-top: 20px;
+  }
+  
   .img-alert {
-    width: 8%;
-    margin-left: 55%;
+    width: 104px;
+    margin-left: 508px;
     height: 6vw;
-    margin-top: 0%;
+    margin-top: 39px;
+  }
+  
+  .caixa-titulos {
+    margin-left: 36px;
+    margin-top: 195px;
   }
 }
