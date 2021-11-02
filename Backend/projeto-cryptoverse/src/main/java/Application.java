@@ -5,6 +5,7 @@ import com.github.britooo.looca.api.group.discos.DiscosGroup;
 import com.github.britooo.looca.api.group.memoria.Memoria;
 import com.github.britooo.looca.api.group.processador.Processador;
 import controller.RegistroController;
+import services.LeituraService;
 import services.ServiceTeste;
 
 import java.util.List;
@@ -15,6 +16,8 @@ public class Application {
     public static void main(String[] args) {
 
         RegistroController controller = new RegistroController();
+
+        LeituraService leitura = new LeituraService();
 
         Memoria ram = new Memoria();
         Processador processador = new Processador();
@@ -47,6 +50,7 @@ public class Application {
 //
 //        System.out.println(media);
 
+        leitura.rodarTempoEmTempo();
 
     }
 

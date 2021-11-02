@@ -92,10 +92,11 @@ public class ComponentesServices {
 
         for (Disco disco : discosConvertidos) {
             System.out.println(disco);
-            tamanho = disco.getTamanhoAtualDaFila();
+            tamanho = disco.getTamanho();
         }
 
-        return tamanho.doubleValue() / (tamanhoTotalDisco() * 0.01);
+        return tamanho.doubleValue();
+//                / (tamanhoTotalDisco() * 0.01);
 //        return disco.get  (tamanhoTotalDisco() * 0.01) + 1000000000;
 
 //        tamanhoUsadoRam() / (tamanhoTotalRam() * 0.0
