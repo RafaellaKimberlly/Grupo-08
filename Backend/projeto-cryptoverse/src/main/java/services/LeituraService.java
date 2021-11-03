@@ -1,5 +1,7 @@
 package services;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -21,6 +23,18 @@ public class LeituraService {
         };
 
         timer.scheduleAtFixedRate(tarefa, 0, intervalo);
+
+    }
+
+    public void addLeitura(String data, Double valorRam) {
+
+        try{
+
+
+
+        } catch (Exception e){
+
+        }
 
     }
 
