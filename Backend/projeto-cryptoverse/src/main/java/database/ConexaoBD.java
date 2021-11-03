@@ -5,12 +5,28 @@
  */
 package database;
 
+import org.apache.commons.dbcp2.BasicDataSource;
+
 /**
  *
  * @author Fabricio
  */
 public class ConexaoBD {
     
+    private BasicDataSource bancoDeDados;
     
+    public ConexaoBD() {
+        
+        this.bancoDeDados = new BasicDataSource();
+        this.bancoDeDados.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        this.bancoDeDados.setUrl("jdbc:mysql://localhost:3306/projetoCryptoverse");
+        this.bancoDeDados.setUsername("admcrypto");
+        this.bancoDeDados.setPassword("teste123");
+        
+    }
+    
+    public BasicDataSource getDataSource() {
+        return bancoDeDados;
+    }
     
 }
