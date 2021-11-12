@@ -18,6 +18,11 @@ public class LeituraService {
         TimerTask tarefa = new TimerTask() {
             @Override
             public void run() {
+                System.out.println("Este é o uso do seu processador\n");
+                System.out.println(componente.usoProcessador());
+                System.out.println("Essa é a frequencia do seu processador\n");
+                System.out.println(componente.frequenciaProcessador());
+                System.out.println("Essa é a porcentagem de uso do seu processador\n");
                 System.out.println(componente.getCpuUsoPorc());
             }
         };

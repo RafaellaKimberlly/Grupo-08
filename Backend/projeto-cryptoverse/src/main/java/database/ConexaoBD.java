@@ -5,6 +5,7 @@
  */
 package database;
 
+import java.sql.ResultSet;
 import org.apache.commons.dbcp2.BasicDataSource;
 
 /**
@@ -14,6 +15,7 @@ import org.apache.commons.dbcp2.BasicDataSource;
 public class ConexaoBD {
     
     private BasicDataSource bancoDeDados;
+    public ResultSet rs;
     
     public ConexaoBD() {
         

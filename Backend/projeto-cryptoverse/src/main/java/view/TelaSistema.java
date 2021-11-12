@@ -41,6 +41,9 @@ public class TelaSistema extends javax.swing.JFrame {
         ram = new javax.swing.JLabel();
         disco = new javax.swing.JLabel();
         processador = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        verificarProfundo = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -62,7 +65,7 @@ public class TelaSistema extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Memória RAM:");
+        jLabel2.setText("Porcentagem em uso - RAM:");
 
         jLabel3.setText("Processador:");
 
@@ -74,6 +77,17 @@ public class TelaSistema extends javax.swing.JFrame {
 
         processador.setText("_________________________");
 
+        jLabel5.setText("Você deseja se aprofundar mais nas informações?");
+
+        verificarProfundo.setText("Sim");
+        verificarProfundo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                verificarProfundoActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("Não");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -81,6 +95,11 @@ public class TelaSistema extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(verificarProfundo, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(53, 53, 53)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel5)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(botaoSim, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -99,7 +118,7 @@ public class TelaSistema extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(disco)
                             .addComponent(jLabel4))))
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,7 +139,13 @@ public class TelaSistema extends javax.swing.JFrame {
                     .addComponent(ram, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(processador, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(disco, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(263, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 177, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(verificarProfundo)
+                    .addComponent(jButton3))
+                .addGap(34, 34, 34))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -138,25 +163,35 @@ public class TelaSistema extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoSimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoSimActionPerformed
-        
+
         ComponentesServices teste = new ComponentesServices();
-        
+
         ram.setText(teste.getMemoriaEmUsoPorc().toString());
-        
+
         processador.setText(teste.getCpuUsoPorc().toString());
-        
+
         disco.setText(teste.getDiscoPorc().toString());
-        
+
     }//GEN-LAST:event_botaoSimActionPerformed
 
     private void botaoNaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoNaoActionPerformed
-        
+
         int response = JOptionPane.showConfirmDialog(this, "Você deseja sair?", null, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        
+
         if (response == JOptionPane.YES_OPTION) {
             TelaSistema.this.dispose();
         }
     }//GEN-LAST:event_botaoNaoActionPerformed
+
+    private void verificarProfundoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verificarProfundoActionPerformed
+
+        int response = JOptionPane.showConfirmDialog(this, "Você seá redirecionado para outra tela, Tem certeza dessa ação?", null, JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+        if(response == JOptionPane.YES_OPTION){
+            new TelaSistema2().setVisible(true);
+        }
+        
+    }//GEN-LAST:event_verificarProfundoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -197,12 +232,15 @@ public class TelaSistema extends javax.swing.JFrame {
     private javax.swing.JButton botaoNao;
     private javax.swing.JButton botaoSim;
     private javax.swing.JLabel disco;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel processador;
     private javax.swing.JLabel ram;
+    private javax.swing.JButton verificarProfundo;
     // End of variables declaration//GEN-END:variables
 }
