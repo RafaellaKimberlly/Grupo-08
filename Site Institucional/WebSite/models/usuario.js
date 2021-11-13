@@ -23,11 +23,6 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-		uf: {
-			field: 'uf',
-			type: DataTypes.STRING,
-			allowNull: false
-		},
 		email: {
 			field: 'email',
 			type: DataTypes.STRING,
@@ -37,8 +32,12 @@ module.exports = (sequelize, DataTypes) => {
 			field: 'senha',
 			type: DataTypes.STRING,
 			allowNull: false
+		},
+		uf: {
+			field: 'uf',
+			type: DataTypes.STRING,
+			allowNull: false
 		}
-
 	}, 
 	{
 		tableName: 'tbUsuario', 

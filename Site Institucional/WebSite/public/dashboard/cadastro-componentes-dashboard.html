@@ -74,36 +74,36 @@
         <main>
             <div class="formulario">
 
-                <form action="" method="post">
+                <form id="form_cadastro_maquina" method="POST" onsubmit="return cadastrar_maquina()">
 
                     <h2>Cadastro de Máquinas e Componentes</h2> <br>
 
-                    <label for="">
+                    <!-- <label for="">
                         ID da Máquina:
                         <input class="ipt-form" type="text" name="id-maquina"> <br><br>
-                    </label>
+                    </label> -->
 
                     <label for="">
                         Hostname:
-                        <input class="ipt-form" type="text" name="nome-maquina"><br><br>
+                        <input class="ipt-form" type="text" name="hostname"><br><br>
                     </label>
 
                     <label for="">
-                        CPU:
-                        <input class="ipt-form" type="text" name="cpu"><br><br>
+                        Número de Série:
+                        <input class="ipt-form" type="text" name="numSerie"><br><br>
                     </label>
 
                     <label for="">
-                        GPU:
-                        <input class="ipt-form" type="text" name="placa-video"><br><br>
+                        Tipo Processador:
+                        <input class="ipt-form" type="text" name="tipo_Processador"><br><br>
                     </label>
 
-                    <label for="">
+                    <!-- <label for="">
                         Memória RAM:
                         <input class="ipt-form" type="text" name="memoria-ram"><br><br>
-                    </label>
+                    </label> -->
 
-                    <button class="btn-cadastrar" onclick="cadastrar()">Cadastrar Componentes</button>
+                    <button class="btn-cadastrar" type="submit">Cadastrar Componentes</button>
                 </form>
 
             </div>
@@ -114,8 +114,33 @@
 </body>
 
 </html>
-<!-- <script>
-    verificar_autenticacao(); -->
+<script>
+
+    function cadastrar_maquina() {
+
+        var formulario = new URLSearchParams(new FormData(form_cadastro_maquina));
+        fetch("/maquinas/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+
+            if (response.ok) {
+                console.log('Maquina cadastrada')
+
+                // window.location.href = 'login-cadastro.html';
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    alert(resposta);
+                    // div_erro.innerHTML = resposta;
+                });
+
+            }
+        });
+
+        return false;
+    }
+
 </script>
-<script data-jsd-embedded data-key="80d9f6eb-00c3-44a5-b11d-16870c4fb50b"
-    data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>
