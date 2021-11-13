@@ -5,6 +5,7 @@
 package view;
 
 import database.ConexaoBD;
+import javax.swing.JOptionPane;
 import org.springframework.jdbc.core.JdbcTemplate;
 import services.ComponentesServices;
 
@@ -27,11 +28,12 @@ public class TelaSistema2 extends javax.swing.JFrame {
         ramTotal.setText(componente.tamanhoTotalRam().toString());
         ramUsada.setText(componente.tamanhoUsadoRam().toString());
         ramDisponivel.setText(componente.tamanhoDisponivelRam().toString());
+        preencherComponente();
     }
     
     public void preencherComponente() {
         
-        assistente.execute("select * from componentes");
+        assistente.execute("select * from tbComponentes");
         try {
             
             conex.rs.first();
@@ -39,10 +41,11 @@ public class TelaSistema2 extends javax.swing.JFrame {
             comboComponente.removeAllItems();
             
             do {                
-                comboComponente.addItem(conex.rs.getString("componente"));
+                comboComponente.addItem(conex.rs.getString("nomeComponentes"));
             } while (conex.rs.next());
             
         } catch (Exception e) {
+            JOptionPane.showMessageDialog(rootPane, "Erro em preencher os componentes");
         }
         
     }
@@ -102,7 +105,7 @@ public class TelaSistema2 extends javax.swing.JFrame {
 
         ramDisponivel.setText("_______");
 
-        comboComponente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "RAM", "DISCO", "PROCESSADOR" }));
+        comboComponente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione..." }));
         comboComponente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 comboComponenteMouseClicked(evt);
@@ -146,7 +149,7 @@ public class TelaSistema2 extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(161, 161, 161)
                                 .addComponent(tipoComponente)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 262, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 280, Short.MAX_VALUE)
                         .addComponent(comboComponente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );

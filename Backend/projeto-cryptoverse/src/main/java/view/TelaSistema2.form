@@ -92,7 +92,7 @@
                                   <Component id="tipoComponente" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="262" max="32767" attributes="0"/>
+                          <EmptySpace pref="280" max="32767" attributes="0"/>
                           <Component id="comboComponente" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -193,10 +193,8 @@
         <Component class="javax.swing.JComboBox" name="comboComponente">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="3">
-                <StringItem index="0" value="RAM"/>
-                <StringItem index="1" value="DISCO"/>
-                <StringItem index="2" value="PROCESSADOR"/>
+              <StringArray count="1">
+                <StringItem index="0" value="Selecione..."/>
               </StringArray>
             </Property>
           </Properties>
