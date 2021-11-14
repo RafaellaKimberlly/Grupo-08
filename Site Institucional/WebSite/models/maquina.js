@@ -27,6 +27,11 @@ module.exports = (sequelize, DataTypes) => {
 			field: 'tipo_Processador',
 			type: DataTypes.STRING,
 			allowNull: false
+		},
+		fkUsuario: {
+			field: 'fkUsuario',
+			type: DataTypes.STRING,
+			allowNull: false
 		}
 
 	}, 

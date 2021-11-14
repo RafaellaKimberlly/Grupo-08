@@ -99,9 +99,15 @@
                     </label>
 
                     <!-- <label for="">
-                        Memória RAM:
-                        <input class="ipt-form" type="text" name="memoria-ram"><br><br>
+                        Componentes:
+                        <select name="" id="" class="ipt-form" name="fkComponentes">
+                            <option value="1000">CPU</option>
+                            <option value="1001">Memoria-RAM</option>
+                            <option value="1002">Disco</option>
+                        </select><br><br>
                     </label> -->
+
+                    <input type="text" style="display: none;" name="fkUsuario" id="fkUsuario">
 
                     <button class="btn-cadastrar" type="submit">Cadastrar Componentes</button>
                 </form>
@@ -118,6 +124,9 @@
 
     function cadastrar_maquina() {
 
+        fkUsuario.value = sessionStorage.getItem('id_usuario_meuapp');
+        console.log(fkUsuario.value)
+
         var formulario = new URLSearchParams(new FormData(form_cadastro_maquina));
         fetch("/maquinas/cadastrar", {
             method: "POST",
@@ -126,6 +135,34 @@
 
             if (response.ok) {
                 console.log('Maquina cadastrada')
+                // console.log(idUsuario)
+
+                // cadastrar_maquina_componentes();
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    alert(resposta);
+                    // div_erro.innerHTML = resposta;
+                });
+
+            }
+        });
+
+        return false;
+    }
+
+    function cadastrar_maquina_componentes() {
+
+        var formulario = new URLSearchParams(new FormData(form_cadastro_maquina));
+        fetch("/maquinasComponentes/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+
+            if (response.ok) {
+                console.log('Maquina vinculada com o componente')
 
                 // window.location.href = 'login-cadastro.html';
 

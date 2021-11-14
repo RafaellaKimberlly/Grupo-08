@@ -6,14 +6,14 @@ https://codewithhugo.com/sequelize-data-types-a-practical-guide/
 */
 
 module.exports = (sequelize, DataTypes) => {
-    let usuario = sequelize.define('componente',{
-		idUsuario: {
+    let componente = sequelize.define('componente',{
+		idComponentes: {
 			field: 'idComponentes',
 			type: DataTypes.INTEGER,
 			primaryKey: true,
 			autoIncrement: true
 		},		
-		nome: {
+		nomeComponentes: {
 			field: 'nomeComponentes',
 			type: DataTypes.STRING,
 			allowNull: false
@@ -26,5 +26,5 @@ module.exports = (sequelize, DataTypes) => {
 		timestamps: false,
 	});
 
-    return usuario;
+    return componente;
 };

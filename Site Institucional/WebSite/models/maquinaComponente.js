@@ -6,15 +6,24 @@ https://codewithhugo.com/sequelize-data-types-a-practical-guide/
 */
 
 module.exports = (sequelize, DataTypes) => {
-    let dado = sequelize.define('dado',{
-		idDado: {
+    let usuario = sequelize.define('dado',{
+		idUsuario: {
 			field: 'idDado',
 			type: DataTypes.INTEGER,
-			primaryKey: true,
 			autoIncrement: true
+		},
+        fkMaquinas: {
+			field: 'fkMaquinas',
+			type: DataTypes.INTEGER,
+            allowNull: false
+		},
+        fkComponentes: {
+			field: 'fkComponentes',
+			type: DataTypes.INTEGER,
+            allowNull: false
 		},		
-		descDado: {
-			field: 'descDado',
+		mcStatus: {
+			field: 'mcStatus',
 			type: DataTypes.STRING,
 			allowNull: false
 		}
@@ -26,5 +35,5 @@ module.exports = (sequelize, DataTypes) => {
 		timestamps: false,
 	});
 
-    return dado;
+    return usuario;
 };
