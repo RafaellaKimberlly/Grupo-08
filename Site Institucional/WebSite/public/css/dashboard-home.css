@@ -317,39 +317,267 @@ main {
   margin-top: 195px;
 }
 
-@media only screen and (min-width: 300px) {
+@media only screen and (min-width: 400px) {
+  .sidebar {
+    width: 48.2%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: #231d36;
+    z-index: 100;
+    transition: 0.5s;
+  }
+
+  .header-dashboard {
+    transition: margin-left 300ms;
+    margin-left: 191px;
+    z-index: 10;
+  }
+
   .caixa-conteudo {
-    margin-left: -26%;
-    margin-top: -6px;
-    position: relative;
-    display: flex;
+    margin-left: -22px;
+    height: 63%;
+    position: absolute;
     flex-wrap: wrap;
     z-index: 0;
+    margin-top: 55px;
+    display: grid;
   }
 
   .card-grafico {
     background-color: #ebebd3;
     border-left: 5px solid #13436b;
-    display: flex;
-    margin-top: 71px;
-    margin-left: 44px;
+    margin: 0 5px;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
   }
 
   .icone {
-    margin-left: 42px;
-    margin-top: 7px;
+    margin-left: 41px;
+    margin-top: 5px;
   }
 
-  .logo_componente {
+  .logo_componente{
+    width: 25px;
+    height: 25px;
+  }
+
+  .caixa-conteudo .card-grafico {
+    width: 140px;
+    height: 35vw;
+    transition: 1s;
+  }
+
+  .caixa-conteudo .card-grafico,
+  .caixa-titulos:hover {
+    z-index: 1;
+    transform: scale(1);
+  }
+
+  .title-card {
+    font-size: 1.3em;
+    color: black;
+    margin-top: 23px;
+    margin-left: -132px;
+  }
+
+  .situacao-porcentagem {
+    font-size: 1.3em;
+    color: red;
+    margin-top: -31px;
+    margin-left: -68.5px;
+  }
+
+  .seta {
+    font-size: 1.3em;
+    color: red;
+    margin-top: -24.8px;
+    margin-left: -25px;
+    display: flex;
+  }
+
+  .alertas {
+    margin-left: -491.9px;
+    margin-top: 508px;
+  }
+
+  .title-situacao {
+    font-size: 1.3em;
+    color: black;
+    margin-left: 473px;
+    padding-top: 20px;
+  }
+
+  .img-alert {
+    width: 67px;
+    margin-left: 522px;
+    height: 13vw;
+    margin-top: 16px;
+  }
+
+  .caixa-titulos {
+    margin-left: 44px;
+    margin-top: 86px;
+  }
+}
+
+@media only screen and (min-width: 550px) {
+  .sidebar {
+    width: 48.2%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: #231d36;
+    z-index: 100;
+    transition: 0.5s;
+  }
+
+  .header-dashboard {
+    transition: margin-left 300ms;
+    margin-left: 150px;
+    z-index: 10;
+  }
+
+  .caixa-conteudo {
+    margin-left: 117px;
+    width: -18px;
+    height: 66%;
+    position: absolute;
+    flex-wrap: wrap;
+    z-index: 0;
+    margin-top: 28px;
+    display: grid;
+  }
+
+  .card-grafico {
+    background-color: #ebebd3;
+    border-left: 5px solid #13436b;
+    margin: 0 5px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  }
+
+  .icone {
+    margin-left: 46px;
+    margin-top: 1px;
+  }
+
+  .logo_componente{
+    width: 46px;
+    height: 46px;
+  }
+
+  .caixa-conteudo .card-grafico {
+    width: 144px;
+    height: 27vw;
+    transition: 1s;
+  }
+
+  .caixa-conteudo .card-grafico,
+  .caixa-titulos:hover {
+    z-index: 1;
+    transform: scale(1);
+  }
+
+  .title-card {
+    font-size: 1.3em;
+    color: black;
+    margin-top: 23px;
+    margin-left: -125px;
+  }
+
+  .situacao-porcentagem {
+    font-size: 1.3em;
+    color: red;
+    margin-top: -31px;
+    margin-left: -68.5px;
+  }
+
+  .seta {
+    font-size: 1.3em;
+    color: red;
+    margin-top: -24.8px;
+    margin-left: -25px;
+    display: flex;
+  }
+
+  .alertas {
+    margin-left: -350.9px;
+    margin-top: 549px;
+  }
+
+  .title-situacao {
+    font-size: 1.3em;
+    color: black;
+    margin-left: 473px;
+    padding-top: 20px;
+  }
+
+  .img-alert {
+    width: 67px;
+    margin-left: 522px;
+    height: 9vw;
+    margin-top: 16px;
+  }
+
+  .caixa-titulos {
+    margin-left: 41px;
+    margin-top: 94px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .sidebar {
+    width: 44.2%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: #231d36;
+    z-index: 100;
+    transition: 0.5s;
+  }
+
+  .header-dashboard {
+    transition: margin-left 300ms;
+    margin-left: 309px;
+    z-index: 10;
+  }
+
+  .caixa-conteudo {
+    margin-left: 13px;
+    width: -18px;
+    height: 66%;
+    position: absolute;
+    flex-wrap: wrap;
+    z-index: 0;
+    margin-top: 28px;
+    display: grid;
+  }
+
+  .card-grafico {
+    background-color: #ebebd3;
+    border-left: 5px solid #13436b;
+    margin: 0 5px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+  }
+
+  .icone {
+    margin-left: 43px;
+    margin-top: 8px;
+  }
+
+  .logo_componente{
     width: 50px;
     height: 50px;
   }
 
   .caixa-conteudo .card-grafico {
-    width: 135px;
-    height: 56vw;
+    width: 144px;
+    height: 25vw;
     transition: 1s;
   }
 
@@ -360,79 +588,102 @@ main {
   }
 
   .title-card {
-    font-size: 1.1em;
+    font-size: 1.3em;
     color: black;
-    margin-top: -63px;
-    margin-left: -121px;
+    margin-top: 23px;
+    margin-left: -125px;
   }
 
   .situacao-porcentagem {
-    font-size: 1.1em;
+    font-size: 1.3em;
     color: red;
-    margin-top: -27px;
+    margin-top: -31px;
     margin-left: -63.5px;
   }
 
   .seta {
-    font-size: 1.1em;
+    font-size: 1.3em;
     color: red;
-    margin-top: -22.8px;
-    margin-left: -23px;
+    margin-top: -24.8px;
+    margin-left: -19px;
     display: flex;
+  }
+
+  .alertas {
+    margin-left: -455.9px;
+    margin-top: 549px;
   }
 
   .title-situacao {
     font-size: 1.3em;
     color: black;
-    margin-left: -38.7px;
+    margin-left: 473px;
+    padding-top: 20px;
   }
 
   .img-alert {
-    width: 79px;
-    margin-left: 8px;
-    height: 24vw;
-    margin-top: 11px;
+    width: 67px;
+    margin-left: 522px;
+    height: 8vw;
+    margin-top: 16px;
   }
 
   .caixa-titulos {
-    margin-left: 36px;
-    margin-top: 195px;
+    margin-left: 39px;
+    margin-top: 94px;
   }
 }
 
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 768px) {
+  .sidebar {
+    width: 28.2%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: #231d36;
+    z-index: 100;
+    transition: 0.5s;
+  }
+
+  .header-dashboard {
+    transition: margin-left 300ms;
+    margin-left: 106px;
+    z-index: 10;
+  }
+
   .caixa-conteudo {
-    margin-left: 8%;
-    margin-top: -32px;
-    position: relative;
-    display: flex;
+    margin-left: 86px;
+    width: 72%;
+    position: absolute;
     flex-wrap: wrap;
     z-index: 0;
+    margin-top: 109px;
+    display: flex;
   }
 
   .card-grafico {
     background-color: #ebebd3;
     border-left: 5px solid #13436b;
-    display: flex;
-    margin-top: 71px;
-    margin-left: 44px;
+    margin: 0 5px;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
   }
 
   .icone {
-    margin-left: 39px;
+    margin-left: 52px;
     margin-top: 7px;
   }
 
-  .logo_componente {
+  .logo_componente{
     width: 55px;
     height: 55px;
   }
 
   .caixa-conteudo .card-grafico {
-    width: 135px;
-    height: 50vw;
+    width: 163px;
+    height: 25vw;
+    margin-right: 14px;
     transition: 1s;
   }
 
@@ -443,248 +694,102 @@ main {
   }
 
   .title-card {
-    font-size: 1.1em;
+    font-size: 1.5em;
     color: black;
-    margin-top: -30px;
-    margin-left: -121px;
+    margin-top: 23px;
+    margin-left: -140px;
   }
 
   .situacao-porcentagem {
-    font-size: 1.1em;
+    font-size: 1.5em;
     color: red;
-    margin-top: -27px;
-    margin-left: -63.5px;
+    margin-top: -35px;
+    margin-left: -73.5px;
   }
 
   .seta {
-    font-size: 1.1em;
+    font-size: 1.5em;
     color: red;
-    margin-top: -22.8px;
-    margin-left: -23px;
+    margin-top: -29.8px;
+    margin-left: -20px;
     display: flex;
+  }
+
+  .alertas {
+    margin-left: -212.9px;
+    margin-top: 377px;
   }
 
   .title-situacao {
-    font-size: 1.3em;
+    font-size: 1.6em;
     color: black;
-    margin-left: 23.3px;
+    margin-left: 473px;
+    padding-top: 20px;
   }
 
   .img-alert {
-    width: 86px;
-    margin-left: 64px;
-    height: 19vw;
-    margin-top: 11px;
+    width: 81px;
+    margin-left: 528px;
+    height: 8vw;
+    margin-top: 16px;
   }
 
   .caixa-titulos {
-    margin-left: 36px;
-    margin-top: 195px;
+    margin-left: 40px;
+    margin-top: 133px;
   }
 }
 
-@media only screen and (min-width: 550px) {
+@media only screen and (min-width: 900px) {
+  .sidebar {
+    width: 28.2%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: #231d36;
+    z-index: 100;
+    transition: 0.5s;
+  }
+
+  .header-dashboard {
+    transition: margin-left 300ms;
+    margin-left: 106px;
+    z-index: 10;
+  }
+
   .caixa-conteudo {
-    margin-left: 21%;
-    margin-top: -23px;
-    position: relative;
-    display: flex;
+    margin-left: 153px;
+    width: 72%;
+    position: absolute;
     flex-wrap: wrap;
     z-index: 0;
+    margin-top: 90px;
+    display: flex;
   }
 
   .card-grafico {
     background-color: #ebebd3;
     border-left: 5px solid #13436b;
-    display: flex;
-    margin-top: 71px;
-    margin-left: 44px;
+    margin: 0 5px;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
   }
 
   .icone {
-    margin-left: 50px;
-    margin-top: 7px;
+    margin-left: 52px;
+    margin-top: 6px;
   }
 
-  .logo_componente {
+  .logo_componente{
     width: 60px;
     height: 60px;
   }
 
   .caixa-conteudo .card-grafico {
-    width: 164px;
-    height: 43vw;
-    transition: 1s;
-  }
-
-  .caixa-conteudo .card-grafico,
-  .caixa-titulos:hover {
-    z-index: 1;
-    transform: scale(1);
-  }
-
-  .title-card {
-    font-size: 1.3em;
-    color: black;
-    margin-top: 1px;
-    margin-left: -131px;
-  }
-
-  .situacao-porcentagem {
-    font-size: 1.3em;
-    color: red;
-    margin-top: -33px;
-    margin-left: -63.5px;
-  }
-
-  .seta {
-    font-size: 1.3em;
-    color: red;
-    margin-top: -25.8px;
-    margin-left: -17px;
-    display: flex;
-  }
-
-  .title-situacao {
-    font-size: 1.3em;
-    color: black;
-    margin-left: 23.3px;
-  }
-
-  .alertas {
-    margin-left: 111px;
-  }
-
-  .img-alert {
-    width: 89px;
-    margin-left: 62px;
-    height: 16vw;
-    margin-top: 11px;
-  }
-
-  .caixa-titulos {
-    margin-left: 36px;
-    margin-top: 195px;
-  }
-}
-
-@media only screen and (min-width: 600px) {
-  .caixa-conteudo {
-    margin-left: 25%;
-    margin-top: -23px;
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    z-index: 0;
-  }
-
-  .card-grafico {
-    background-color: #ebebd3;
-    border-left: 5px solid #13436b;
-    display: flex;
-    margin-top: 71px;
-    margin-left: 44px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
-  }
-
-  .icone {
-    margin-left: 48px;
-    margin-top: 7px;
-  }
-
-  .logo_componente {
-    width: 64px;
-    height: 64px;
-  }
-
-  .caixa-conteudo .card-grafico {
-    width: 164px;
-    height: 39vw;
-    transition: 1s;
-  }
-
-  .caixa-conteudo .card-grafico,
-  .caixa-titulos:hover {
-    z-index: 1;
-    transform: scale(1);
-  }
-
-  .title-card {
-    font-size: 1.3em;
-    color: black;
-    margin-top: 1px;
-    margin-left: -131px;
-  }
-
-  .situacao-porcentagem {
-    font-size: 1.3em;
-    color: red;
-    margin-top: -33px;
-    margin-left: -63.5px;
-  }
-
-  .seta {
-    font-size: 1.3em;
-    color: red;
-    margin-top: -25.8px;
-    margin-left: -17px;
-    display: flex;
-  }
-
-  .title-situacao {
-    font-size: 1.3em;
-    color: black;
-    margin-left: 23.3px;
-  }
-
-  .alertas {
-    margin-left: 138px;
-  }
-
-  .img-alert {
-    width: 89px;
-    margin-left: 62px;
-    height: 14vw;
-    margin-top: 11px;
-  }
-
-  .caixa-titulos {
-    margin-left: 36px;
-    margin-top: 195px;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .caixa-conteudo {
-    margin-left: -23px;
-    width: 76.8%;
-    height: 96%;
-    position: fixed;
-    flex-wrap: wrap;
-    z-index: 0;
-    margin-top: 100px;
-    display: flex;
-  }
-
-  .card-grafico {
-    background-color: #ebebd3;
-    border-left: 5px solid #13436b;
-    margin: 0 5px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
-  }
-
-  .icone {
-    margin-left: 51px;
-    margin-top: 20px;
-  }
-
-  .caixa-conteudo .card-grafico {
-    width: 175px;
-    height: 25vw;
+    width: 166px;
+    height: 23vw;
+    margin: 0 10px;
     transition: 1s;
   }
 
@@ -717,8 +822,8 @@ main {
   }
 
   .alertas {
-    margin-left: -248px;
-    margin-top: 458px;
+    margin-left: -129px;
+    margin-top: 391px;
   }
 
   .title-situacao {
@@ -729,111 +834,43 @@ main {
   }
 
   .img-alert {
-    width: 104px;
-    margin-left: 521px;
+    width: 93px;
+    margin-left: 525px;
     height: 8vw;
     margin-top: 16px;
   }
 
   .caixa-titulos {
     margin-left: 36px;
-    margin-top: 166px;
-  }
-}
-
-@media only screen and (min-width: 900px) {
-  .caixa-conteudo {
-    margin-left: -23px;
-    width: 76.8%;
-    height: 96%;
-    position: fixed;
-    flex-wrap: wrap;
-    z-index: 0;
-    margin-top: 100px;
-    display: flex;
-  }
-
-  .card-grafico {
-    background-color: #ebebd3;
-    border-left: 5px solid #13436b;
-    margin: 0 5px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
-  }
-
-  .icone {
-    margin-left: 51px;
-    margin-top: 20px;
-  }
-
-  .caixa-conteudo .card-grafico {
-    width: 175px;
-    height: 25vw;
-    transition: 1s;
-  }
-
-  .caixa-conteudo .card-grafico,
-  .caixa-titulos:hover {
-    z-index: 1;
-    transform: scale(1);
-  }
-
-  .title-card {
-    font-size: 1.5em;
-    color: black;
-    margin-top: 23px;
-    margin-left: -140px;
-  }
-
-  .situacao-porcentagem {
-    font-size: 1.5em;
-    color: red;
-    margin-top: -35px;
-    margin-left: -73.5px;
-  }
-
-  .seta {
-    font-size: 1.5em;
-    color: red;
-    margin-top: -29.8px;
-    margin-left: -20px;
-    display: flex;
-  }
-
-  .alertas {
-    margin-left: -248px;
-    margin-top: 458px;
-  }
-
-  .title-situacao {
-    font-size: 1.6em;
-    color: black;
-    margin-left: 473px;
-    padding-top: 20px;
-  }
-
-  .img-alert {
-    width: 104px;
-    margin-left: 521px;
-    height: 8vw;
-    margin-top: 16px;
-  }
-
-  .caixa-titulos {
-    margin-left: 36px;
-    margin-top: 166px;
+    margin-top: 142px;
   }
 }
 
 @media only screen and (min-width: 1000px) {
-  .caixa-conteudo {
-    margin-left: -45px;
-    width: 76.8%;
-    height: 96%;
+  .sidebar {
+    width: 28.2%;
     position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: #231d36;
+    z-index: 100;
+    transition: 0.5s;
+  }
+
+  .header-dashboard {
+    transition: margin-left 300ms;
+    margin-left: 106px;
+    z-index: 10;
+  }
+
+  .caixa-conteudo {
+    margin-left: 153px;
+    width: 72%;
+    position: absolute;
     flex-wrap: wrap;
     z-index: 0;
-    margin-top: 38px;
+    margin-top: 90px;
     display: flex;
   }
 
@@ -842,18 +879,22 @@ main {
     border-left: 5px solid #13436b;
     display: flex;
     margin-top: 71px;
-    margin-left: 44px;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
   }
 
   .icone {
-    margin-left: 51px;
-    margin-top: 20px;
+    margin-left: 68px;
+    margin-top: 15px;
+  }
+
+  .logo_componente{
+    width: 66px;
+    height: 66px;
   }
 
   .caixa-conteudo .card-grafico {
-    width: 175px;
+    width: 201px;
     height: 25vw;
     transition: 1s;
   }
@@ -875,20 +916,20 @@ main {
     font-size: 1.5em;
     color: red;
     margin-top: -35px;
-    margin-left: -73.5px;
+    margin-left: -46.5px;
   }
 
   .seta {
     font-size: 1.5em;
     color: red;
     margin-top: -29.8px;
-    margin-left: -20px;
+    margin-left: 7px;
     display: flex;
   }
 
   .alertas {
-    margin-left: -248px;
-    margin-top: 458px;
+    margin-left: -72px;
+    margin-top: 411px;
   }
 
   .title-situacao {
@@ -899,27 +940,41 @@ main {
   }
 
   .img-alert {
-    width: 104px;
+    width: 93px;
     margin-left: 521px;
-    height: 8vw;
+    height: 7vw;
     margin-top: 16px;
   }
 
   .caixa-titulos {
-    margin-left: 36px;
-    margin-top: 195px;
+    margin-left: 18px;
+    margin-top: 190px;
   }
 }
 
 @media only screen and (min-width: 1150px) {
+  .header-dashboard {
+    margin-left: 386px;
+  }
+
+  .sidebar {
+    width: 30.2%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: #231d36;
+    z-index: 100;
+    transition: 0.5s;
+  }
   .caixa-conteudo {
-    margin-left: 12px;
+    margin-left: -10px;
     width: 76.8%;
     height: 96%;
     position: fixed;
     flex-wrap: wrap;
     z-index: 0;
-    margin-top: 38px;
+    margin-top: 73px;
     display: flex;
   }
 
@@ -973,35 +1028,40 @@ main {
   }
 
   .alertas {
-    margin-left: -169px;
-    margin-top: 458px;
+    margin-left: -248px;
+    margin-top: 440px;
   }
 
   .title-situacao {
-    font-size: 1.6em;
+    font-size: 1.8em;
     color: black;
     margin-left: 473px;
-    padding-top: 20px;
+    padding-top: 0px;
   }
 
   .img-alert {
-    width: 104px;
-    margin-left: 521px;
+    width: 95px;
+    margin-left: 535px;
     height: 6vw;
     margin-top: 39px;
   }
 
   .caixa-titulos {
-    margin-left: 36px;
+    margin-left: 24px;
     margin-top: 195px;
   }
 }
 
 @media only screen and (min-width: 1200px) {
+  .header-dashboard {
+    transition: margin-left 300ms;
+    margin-left: 423px;
+    z-index: 10;
+  }
+
   .caixa-conteudo {
     margin-left: 17px;
-    margin-top: 40px;
-    position: fixed;
+    margin-top: 90px;
     display: flex;
     flex-wrap: wrap;
     z-index: 0;
@@ -1018,8 +1078,13 @@ main {
   }
 
   .icone {
-    margin-left: 57px;
+    margin-left: 65px;
     margin-top: 20px;
+  }
+
+  .logo_componente{
+    width: 70px;
+    height: 70px;
   }
 
   .caixa-conteudo .card-grafico {
@@ -1036,7 +1101,7 @@ main {
   .title-card {
     font-size: 1.5em;
     color: black;
-    margin-top: 4px;
+    margin-top: 31px;
     margin-left: -145px;
   }
 
@@ -1056,8 +1121,8 @@ main {
   }
 
   .alertas {
-    margin-left: -169px;
-    margin-top: 458px;
+    margin-left: -186px;
+    margin-top: 427px;
   }
 
   .title-situacao {
@@ -1075,16 +1140,15 @@ main {
   }
 
   .caixa-titulos {
-    margin-left: 36px;
+    margin-left: 22px;
     margin-top: 195px;
   }
 }
 
 @media only screen and (min-width: 1366px) {
   .caixa-conteudo {
-    margin-left: 131px;
-    margin-top: 15px;
-    position: relative;
+    margin-left: 132px;
+    margin-top: 61px;
     display: flex;
     flex-wrap: wrap;
     z-index: 0;
@@ -1101,13 +1165,19 @@ main {
   }
 
   .icone {
-    margin-left: 57px;
-    margin-top: 20px;
+    margin-left: 56px;
+    margin-top: 14px;
+  }
+
+  .logo_componente{
+    width: 64px;
+    height: 64px;
   }
 
   .caixa-conteudo .card-grafico {
-    width: 200px;
-    height: 19vw;
+    width: 177px;
+    height: 16vw;
+    margin: 0 30px;
     transition: 1s;
   }
 
@@ -1121,7 +1191,7 @@ main {
     font-size: 1.5em;
     color: black;
     margin-top: 28px;
-    margin-left: -145px;
+    margin-left: -136px;
   }
 
   .situacao-porcentagem {
@@ -1140,8 +1210,8 @@ main {
   }
 
   .alertas {
-    margin-left: -49px;
-    margin-top: 53px;
+    margin-left: -60px;
+    margin-top: 361px;
   }
 
   .title-situacao {
@@ -1152,14 +1222,14 @@ main {
   }
 
   .img-alert {
-    width: 104px;
-    margin-left: 508px;
-    height: 6vw;
-    margin-top: 39px;
+    width: 92px;
+    margin-left: 520px;
+    height: 5vw;
+    margin-top: 21px;
   }
 
   .caixa-titulos {
-    margin-left: 36px;
-    margin-top: 195px;
+    margin-left: 22px;
+    margin-top: 158px;
   }
 }
