@@ -15,9 +15,9 @@ import services.ComponentesServices;
  */
 public class TelaSistema2 extends javax.swing.JFrame {
 
-    ConexaoBD conex = new ConexaoBD();
-    JdbcTemplate assistente = new JdbcTemplate(
-                conex.getDataSource());
+//    ConexaoBD conex = new ConexaoBD();
+//    JdbcTemplate assistente = new JdbcTemplate(
+//                conex.getDataSource());
 
     ComponentesServices componente = new ComponentesServices();
 
@@ -28,27 +28,27 @@ public class TelaSistema2 extends javax.swing.JFrame {
         ramTotal.setText(componente.tamanhoTotalRam().toString());
         ramUsada.setText(componente.tamanhoUsadoRam().toString());
         ramDisponivel.setText(componente.tamanhoDisponivelRam().toString());
-        preencherComponente();
+//        preencherComponente();
     }
     
-    public void preencherComponente() {
-        
-        assistente.execute("select * from tbComponentes");
-        try {
-            
-            conex.rs.first();
-            
-            comboComponente.removeAllItems();
-            
-            do {                
-                comboComponente.addItem(conex.rs.getString("nomeComponentes"));
-            } while (conex.rs.next());
-            
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(rootPane, "Erro em preencher os componentes");
-        }
-        
-    }
+//    public void preencherComponente() {
+//        
+//        assistente.execute("select * from tbComponentes");
+//        try {
+//            
+//            conex.rs.first();
+//            
+//            comboComponente.removeAllItems();
+//            
+//            do {                
+//                comboComponente.addItem(conex.rs.getString("nomeComponentes"));
+//            } while (conex.rs.next());
+//            
+//        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(rootPane, "Erro em preencher os componentes");
+//        }
+//        
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.

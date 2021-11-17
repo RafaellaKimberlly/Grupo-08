@@ -153,31 +153,31 @@
         return false;
     }
 
-    function cadastrar_maquina_componentes() {
+    // function cadastrar_maquina_componentes() {
 
-        var formulario = new URLSearchParams(new FormData(form_cadastro_maquina));
-        fetch("/maquinasComponentes/cadastrar", {
-            method: "POST",
-            body: formulario
-        }).then(function (response) {
+    //     var formulario = new URLSearchParams(new FormData(form_cadastro_maquina));
+    //     fetch("/maquinasComponentes/cadastrar", {
+    //         method: "POST",
+    //         body: formulario
+    //     }).then(function (response) {
 
-            if (response.ok) {
-                console.log('Maquina vinculada com o componente')
+    //         if (response.ok) {
+    //             console.log('Maquina vinculada com o componente')
 
-                // window.location.href = 'login-cadastro.html';
+    //             // window.location.href = 'login-cadastro.html';
 
-            } else {
+    //         } else {
 
-                console.log('Erro de cadastro!');
-                response.text().then(function (resposta) {
-                    alert(resposta);
-                    // div_erro.innerHTML = resposta;
-                });
+    //             console.log('Erro de cadastro!');
+    //             response.text().then(function (resposta) {
+    //                 alert(resposta);
+    //                 // div_erro.innerHTML = resposta;
+    //             });
 
-            }
-        });
+    //         }
+    //     });
 
-        return false;
-    }
+    //     return false;
+    // }
 
 </script>
