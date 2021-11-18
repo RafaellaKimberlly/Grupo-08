@@ -40,7 +40,7 @@ module.exports = (sequelize, DataTypes) => {
 		}
 	}, 
 	{
-		tableName: 'tbUsuario', 
+		tableName: 'tb_usuario', 
 		freezeTableName: true, 
 		underscored: true,
 		timestamps: false,

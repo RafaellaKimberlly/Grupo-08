@@ -7,20 +7,20 @@ https://codewithhugo.com/sequelize-data-types-a-practical-guide/
 
 module.exports = (sequelize, DataTypes) => {
     let componente = sequelize.define('componente',{
-		idComponentes: {
-			field: 'idComponentes',
+		idComponente: {
+			field: 'idComponente',
 			type: DataTypes.INTEGER,
 			primaryKey: true,
 			autoIncrement: true
 		},		
-		nomeComponentes: {
-			field: 'nomeComponentes',
+		nomeComponente: {
+			field: 'nomeComponente',
 			type: DataTypes.STRING,
 			allowNull: false
 		}
 	}, 
 	{
-		tableName: 'tbComponentes', 
+		tableName: 'tb_componente', 
 		freezeTableName: true, 
 		underscored: true,
 		timestamps: false,

@@ -124,7 +124,7 @@
 
     function cadastrar_maquina() {
 
-        fkUsuario.value = sessionStorage.getItem('id_usuario_meuapp');
+        fkUsuario.value = Number(sessionStorage.getItem('id_usuario_meuapp'));
         console.log(fkUsuario.value)
 
         var formulario = new URLSearchParams(new FormData(form_cadastro_maquina));
@@ -136,6 +136,7 @@
             if (response.ok) {
                 console.log('Maquina cadastrada')
                 // console.log(idUsuario)
+                sessionStorage.id_maquina_meuapp += json.idMaquina;
 
                 // cadastrar_maquina_componentes();
 

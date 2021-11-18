@@ -27,7 +27,14 @@ router.post('/cadastrar', function(req, res, next) {
 router.get('/', function(req, res, next) {
 	console.log('Recuperando todas as publicações');
 	
-    let instrucaoSql = `select * from tbMaquinas;`;
+	// let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
+
+    let instrucaoSql = `select distinct(idMaquina), hostname, mcStatus, fkUsuario from tb_maquina as m
+	left join tb_maquina_componente as mc
+	on mc.fkMaquina = m.idMaquina
+	join tb_usuario as u
+	on u.idUsuario = m.fkUsuario
+	order by idMaquina;`;
 
 	sequelize.query(instrucaoSql, {
 		model: maquina,

@@ -15,7 +15,7 @@
     <title>Relátorios</title>
 </head>
 
-<body>
+<body onload="obterPublicacoes()">
     <input type="checkbox" id="menu-toggle">
     <div class="sidebar">
         <div class="sidebar-marca">
@@ -196,43 +196,46 @@
                                 <!-- <a href="#" class="btn">Visualizar</a> -->
                             </div>
                             <table>
-                                <tr>
-                                    <th>Maquina</th>
-                                    <th>ID</th>
-                                    <th>Hostname</th>
-                                    <th>Status</th>
-                                </tr>
+                                <thead>
+                                    <tr>
+                                        <th>Maquina</th>
+                                        <th>ID</th>
+                                        <th>Hostname</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="feed_container"></tbody>
                                 <!--Linha 1-->
-                                <tr class="ativo">
+                                <!-- <tr class="ativo">
                                     <td><img src="../img/computador-desktop.png" alt=""></td>
                                     <td>674BRN</td>
                                     <td>EC203</td>
                                     <td class="statusativo">Ativo</td>
-                                </tr>
+                                </tr> -->
 
                                 <!--Linha 2-->
-                                <tr class="ativo">
+                                <!-- <tr class="ativo">
                                     <td><img src="../img/notebook.png" alt=""></td>
                                     <td>823BRC</td>
                                     <td>RK456</td>
                                     <td class="statusativo">Ativo</td>
-                                </tr>
+                                </tr> -->
 
                                 <!--Linha 3-->
-                                <tr class="inativo">
+                                <!-- <tr class="inativo">
                                     <td><img src="../img/computador-desktop.png" alt=""></td>
                                     <td>121QWS</td>
                                     <td>EUL907</td>
                                     <td class="statusinativo">Inativo</td>
-                                </tr>
+                                </tr> -->
 
                                 <!--Linha 4-->
-                                <tr class="inativo">
+                                <!-- <tr class="inativo">
                                     <td><img src="../img/notebook.png" alt=""></td>
                                     <td>043JPS</td>
                                     <td>WE727</td>
                                     <td class="statusinativo">Inativo</td>
-                                </tr>
+                                </tr> -->
                             </table>
                         </div>
                     </div>
@@ -249,3 +252,58 @@
 
 <script data-jsd-embedded data-key="80d9f6eb-00c3-44a5-b11d-16870c4fb50b"
     data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>
+
+<script>
+
+    function atualizarFeed(maquinas) {
+        let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
+        var feed = document.getElementById("feed_container");
+        feed.innerHTML = "";
+        for (let i = 0; i < maquinas.length; i++) {
+            var maquina = maquinas[i];
+
+            var trMaquina = document.createElement("tr")
+            var td_idMaquina = document.createElement("td")
+            var tdHostname = document.createElement("td")
+            var tdStatus = document.createElement("td")
+
+            td_idMaquina.innerHTML = `${maquina.idMaquina}`;
+            tdHostname.innerHTML = `${maquina.hostname}`;
+            tdStatus.innerHTML = `${maquina.mcStatus}`;
+
+            if(tdStatus.value == 'Ativo') {
+                tdStatus.className = "ativo";
+                trMaquina.className = "statusativo";
+            } else {
+                tdStatus.className = "inativo";
+                trMaquina.className = "statusinativo";
+            }
+
+            trMaquina.appendChild(td_idMaquina);
+            trMaquina.appendChild(tdHostname);
+            trMaquina.appendChild(tdStatus);
+
+            feed.appendChild(trMaquina);
+        }
+    }
+
+    function obterPublicacoes() {
+        fetch("/maquinas")
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        atualizarFeed(resposta);
+
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações: ${error.message}`);
+            });
+    }
+
+</script>

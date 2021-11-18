@@ -7,8 +7,8 @@ https://codewithhugo.com/sequelize-data-types-a-practical-guide/
 
 module.exports = (sequelize, DataTypes) => {
     let maquina = sequelize.define('maquina',{
-		idMaquinas: {
-			field: 'idMaquinas',
+		idMaquina: {
+			field: 'idMaquina',
 			type: DataTypes.INTEGER,
 			primaryKey: true,
 			autoIncrement: true
@@ -36,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
 
 	}, 
 	{
-		tableName: 'tbMaquinas', 
+		tableName: 'tb_maquina', 
 		freezeTableName: true, 
 		underscored: true,
 		timestamps: false,

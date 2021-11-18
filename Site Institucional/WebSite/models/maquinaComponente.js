@@ -13,13 +13,13 @@ module.exports = (sequelize, DataTypes) => {
 			primaryKey: true,
 			autoIncrement: true
 		},
-        fkMaquinas: {
-			field: 'fkMaquinas',
+        fkMaquina: {
+			field: 'fkMaquina',
 			type: DataTypes.INTEGER,
             allowNull: false
 		},
-        fkComponentes: {
-			field: 'fkComponentes',
+        fkComponente: {
+			field: 'fkComponente',
 			type: DataTypes.INTEGER,
             allowNull: false
 		},		
@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
 		}
 	}, 
 	{
-		tableName: 'tipoDados', 
+		tableName: 'tb_maquina_componente', 
 		freezeTableName: true, 
 		underscored: true,
 		timestamps: false,
