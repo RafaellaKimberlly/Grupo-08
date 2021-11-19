@@ -83,6 +83,38 @@ router.get('/tempo-real/:idcaminhao', function(req, res, next) {
 	});
 });
 
+router.get('/', function(req, res, next) {
+	console.log('Recuperando todas as publicações');
+	
+	// let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
+
+    let instrucaoSql = `select idLeitura, nvAlerta, dataHora,  m.hostname, c.nomeComponente, m.fkUsuario from tb_leitura as l
+	join tb_maquina_componente as mc
+	on mc.idMaquinaComponente = l.fkMaquinaComponente
+	join tb_maquina as m
+	on m.idMaquina = mc.fkMaquina
+	join tb_usuario as u
+	on u.idUsuario = m.fkUsuario
+	join tb_componente as c
+	on c.idComponente = mc.fkComponente
+	order by idLeitura;`;
+
+	sequelize.query(instrucaoSql, {
+		model: leitura,
+		mapToModel: true 
+	})
+	.then(resultado => {
+		console.log(`Encontrados: ${resultado.length}`);
+		res.json(resultado);
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+	});
+});
+
+
+
+
 // estatísticas (max, min, média, mediana, quartis etc)
 router.get('/estatisticas', function (req, res, next) {
 	

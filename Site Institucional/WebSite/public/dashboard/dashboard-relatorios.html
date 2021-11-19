@@ -15,7 +15,7 @@
     <title>Relátorios</title>
 </head>
 
-<body onload="obterPublicacoes()">
+<body onload="obterDados()">
     <input type="checkbox" id="menu-toggle">
     <div class="sidebar">
         <div class="sidebar-marca">
@@ -79,7 +79,7 @@
                     <div class="cards">
                         <div class="card">
                             <div class="box">
-                                <h1>04</h1>
+                                <h1 id="qtdMaquinas" >04</h1>
                                 <h3>Máquinas</h3>
                             </div>
                             <div class="icone-case">
@@ -91,7 +91,7 @@
 
                         <div class="card">
                             <div class="box">
-                                <h1>10</h1>
+                                <h1 id="qtdRam">10</h1>
                                 <h3>RAM</h3>
                             </div>
                             <div class="icone-case">
@@ -115,7 +115,7 @@
 
                         <div class="card">
                             <div class="box">
-                                <h1>04</h1>
+                                <h1 id="qtdCpu">04</h1>
                                 <h3>CPU</h3>
                             </div>
                             <div class="icone-case">
@@ -134,58 +134,13 @@
                             </div>
                             <table>
                                 <tr>
-                                    <th>IDLeituras</th>
-                                    <th>NLAlerta</th>
+                                    <th>Id Leitura</th>
+                                    <th>Nível Alerta</th>
                                     <th>Data/Hora</th>
-                                    <th>IDComponentes</th>
+                                    <th>Nome Máquina</th>
+                                    <th>nomeComponente</th>
                                 </tr>
-                                <!--linha1-->
-                                <tr>
-                                    <td>1</td>
-                                    <td>Ideal</td>
-                                    <td>2021-01-02 09:07:00</td>
-                                    <td>100</td>
-                                </tr>
-
-                                <!--Linha 2-->
-                                <tr>
-                                    <td>2</td>
-                                    <td>Alerta</td>
-                                    <td>2021-01-02 09:07:00</td>
-                                    <td>101</td>
-                                </tr>
-
-                                <!--Linha 3-->
-                                <tr>
-                                    <td>3</td>
-                                    <td>Critico</td>
-                                    <td>2021-01-02 09:07:00</td>
-                                    <td>102</td>
-                                </tr>
-
-                                <!--Linha 4-->
-                                <tr>
-                                    <td>4</td>
-                                    <td>Ideal</td>
-                                    <td>2021-01-02 09:07:00</td>
-                                    <td>103</td>
-                                </tr>
-
-                                <!--Linha 5-->
-                                <tr>
-                                    <td>5</td>
-                                    <td>Ideal</td>
-                                    <td>2021-01-02 09:07:00</td>
-                                    <td>104</td>
-                                </tr>
-
-                                <!--Linha 6-->
-                                <tr>
-                                    <td>6</td>
-                                    <td>Alerta</td>
-                                    <td>2021-01-02 09:07:00</td>
-                                    <td>105</td>
-                                </tr>
+                                <tbody id="feed_container2"></tbody>
                             </table>
                         </div>
 
@@ -198,44 +153,12 @@
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>Maquina</th>
                                         <th>ID</th>
                                         <th>Hostname</th>
                                         <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody id="feed_container"></tbody>
-                                <!--Linha 1-->
-                                <!-- <tr class="ativo">
-                                    <td><img src="../img/computador-desktop.png" alt=""></td>
-                                    <td>674BRN</td>
-                                    <td>EC203</td>
-                                    <td class="statusativo">Ativo</td>
-                                </tr> -->
-
-                                <!--Linha 2-->
-                                <!-- <tr class="ativo">
-                                    <td><img src="../img/notebook.png" alt=""></td>
-                                    <td>823BRC</td>
-                                    <td>RK456</td>
-                                    <td class="statusativo">Ativo</td>
-                                </tr> -->
-
-                                <!--Linha 3-->
-                                <!-- <tr class="inativo">
-                                    <td><img src="../img/computador-desktop.png" alt=""></td>
-                                    <td>121QWS</td>
-                                    <td>EUL907</td>
-                                    <td class="statusinativo">Inativo</td>
-                                </tr> -->
-
-                                <!--Linha 4-->
-                                <!-- <tr class="inativo">
-                                    <td><img src="../img/notebook.png" alt=""></td>
-                                    <td>043JPS</td>
-                                    <td>WE727</td>
-                                    <td class="statusinativo">Inativo</td>
-                                </tr> -->
                             </table>
                         </div>
                     </div>
@@ -255,35 +178,51 @@
 
 <script>
 
+    function obterDados() {
+        obterPublicacoes();
+        obterPublicacoes2();
+    }
+
     function atualizarFeed(maquinas) {
         let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
         var feed = document.getElementById("feed_container");
         feed.innerHTML = "";
+
         for (let i = 0; i < maquinas.length; i++) {
             var maquina = maquinas[i];
 
-            var trMaquina = document.createElement("tr")
-            var td_idMaquina = document.createElement("td")
-            var tdHostname = document.createElement("td")
-            var tdStatus = document.createElement("td")
+            if (maquina.fkUsuario == sessionStorage.id_usuario_meuapp) {
 
-            td_idMaquina.innerHTML = `${maquina.idMaquina}`;
-            tdHostname.innerHTML = `${maquina.hostname}`;
-            tdStatus.innerHTML = `${maquina.mcStatus}`;
+                var trMaquina = document.createElement("tr")
+                var td_idMaquina = document.createElement("td")
+                var tdHostname = document.createElement("td")
+                var tdStatus = document.createElement("td")
 
-            if(tdStatus.value == 'Ativo') {
-                tdStatus.className = "ativo";
-                trMaquina.className = "statusativo";
-            } else {
-                tdStatus.className = "inativo";
-                trMaquina.className = "statusinativo";
+                td_idMaquina.innerHTML = `${maquina.idMaquina}`;
+                tdHostname.innerHTML = `${maquina.hostname}`;
+                tdStatus.innerHTML = `${maquina.mcStatus}`;
+
+                if (maquina.mcStatus == "Ativo") {
+                    tdStatus.className = "ativo";
+                    trMaquina.className = "statusativo";
+                } else {
+                    tdStatus.className = "inativo";
+                    trMaquina.className = "statusinativo";
+                }
+
+                // if (tdStatus.value == 'Ativo') {
+
+                // } else {
+
+                // }
+
+                trMaquina.appendChild(td_idMaquina);
+                trMaquina.appendChild(tdHostname);
+                trMaquina.appendChild(tdStatus);
+
+                feed.appendChild(trMaquina);
+
             }
-
-            trMaquina.appendChild(td_idMaquina);
-            trMaquina.appendChild(tdHostname);
-            trMaquina.appendChild(tdStatus);
-
-            feed.appendChild(trMaquina);
         }
     }
 
@@ -305,5 +244,87 @@
                 console.error(`Erro na obtenção das publicações: ${error.message}`);
             });
     }
+
+    function atualizarFeed2(leituras) {
+        var feed = document.getElementById("feed_container2");
+        feed.innerHTML = "";
+
+        for (let i = 0; i < leituras.length; i++) {
+            var leitura = leituras[i];
+
+            if (leitura.fkUsuario == sessionStorage.id_usuario_meuapp) {
+
+                var trLeitura = document.createElement("tr")
+                var td_idLeitura = document.createElement("td")
+                var tdAlerta = document.createElement("td")
+                var tdDataHora = document.createElement("td")
+                var tdHostname = document.createElement("td")
+                var tdNomeComponente = document.createElement("td")
+
+                td_idLeitura.innerHTML = `${leitura.idLeitura}`;
+                tdAlerta.innerHTML = `${leitura.nvAlerta}`;
+                tdDataHora.innerHTML = `${leitura.dataHora}`;
+                tdHostname.innerHTML = `${leitura.hostname}`;
+                tdNomeComponente.innerHTML = `${leitura.nomeComponente}`;
+
+                // if (maquina.mcStatus == "Ativo") {
+                //     tdStatus.className = "ativo";
+                //     trMaquina.className = "statusativo";
+                // } else {
+                //     tdStatus.className = "inativo";
+                //     trMaquina.className = "statusinativo";
+                // }
+
+                trLeitura.appendChild(td_idLeitura);
+                trLeitura.appendChild(tdAlerta);
+                trLeitura.appendChild(tdDataHora);
+                trLeitura.appendChild(tdHostname);
+                trLeitura.appendChild(tdNomeComponente);
+
+                feed.appendChild(trLeitura);
+
+            }
+        }
+    }
+
+    function obterPublicacoes2() {
+        fetch("/leituras")
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        atualizarFeed2(resposta);
+
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações: ${error.message}`);
+            });
+    }
+
+    // function contar_empresas() {
+    //     fetch("/usuarios/contar_maquinas", {
+    //         method: "POST"
+    //     }).then(function (response) {
+    //         if (response.ok) {
+    //             response.json().then(function (resposta) {
+    //                 console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+    //                 qtdMaquinas.innerHTML = resposta[0].contador;
+    //             });
+    //         }  else {
+    //             console.log('Erro de login!');
+    //             resposta.text().then(texto => {
+    //                 console.error(texto);
+    //                 finalizar_aguardar(texto);
+    //             });
+    //         }
+    //     });
+
+    //     return false;
+    // }
 
 </script>

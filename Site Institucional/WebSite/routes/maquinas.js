@@ -29,7 +29,7 @@ router.get('/', function(req, res, next) {
 	
 	// let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
 
-    let instrucaoSql = `select distinct(idMaquina), hostname, mcStatus, fkUsuario from tb_maquina as m
+    let instrucaoSql = `select distinct(idMaquina), hostname, coalesce(mcStatus, 'Inativo') as mcStatus, fkUsuario from tb_maquina as m
 	left join tb_maquina_componente as mc
 	on mc.fkMaquina = m.idMaquina
 	join tb_usuario as u

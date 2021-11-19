@@ -294,18 +294,11 @@
 
             if (resposta.ok) {
 
-                var maquina = [];
-
                 resposta.json().then(json => {
-
-                    maquina = json.idMaquina;
 
                     sessionStorage.login_usuario_meuapp = json.email;
                     sessionStorage.nome_usuario_meuapp = json.nome;
                     sessionStorage.id_usuario_meuapp = json.idUsuario;
-                    sessionStorage.id_maquina_meuapp = json.idMaquina;
-
-                    console.log(json.idMaquina);
 
                     window.location.href = 'dashboard/dashboard-home.html';
                 });
