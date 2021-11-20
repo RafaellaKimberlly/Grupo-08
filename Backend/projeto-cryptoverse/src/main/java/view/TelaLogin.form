@@ -68,8 +68,8 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="senhaUsuario" alignment="1" min="-2" pref="305" max="-2" attributes="0"/>
-                              <Component id="emailUsuario" alignment="1" min="-2" pref="305" max="-2" attributes="0"/>
+                              <Component id="passwordUsuario" alignment="1" min="-2" pref="305" max="-2" attributes="0"/>
+                              <Component id="txtUsuario" alignment="1" min="-2" pref="305" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -83,7 +83,7 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
-                              <Component id="botaoEntrar" min="-2" pref="95" max="-2" attributes="0"/>
+                              <Component id="jButton1" min="-2" pref="95" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
@@ -98,13 +98,13 @@
                       <EmptySpace pref="59" max="32767" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="emailUsuario" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtUsuario" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="senhaUsuario" min="-2" max="-2" attributes="0"/>
+                      <Component id="passwordUsuario" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
-                      <Component id="botaoEntrar" min="-2" pref="42" max="-2" attributes="0"/>
+                      <Component id="jButton1" min="-2" pref="42" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -119,18 +119,21 @@
                 <Property name="text" type="java.lang.String" value="Login"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="botaoEntrar">
+            <Component class="javax.swing.JButton" name="jButton1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Entrar"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="emailUsuario">
+            <Component class="javax.swing.JTextField" name="txtUsuario">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtUsuarioActionPerformed"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JPasswordField" name="senhaUsuario">
+            <Component class="javax.swing.JPasswordField" name="passwordUsuario">
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Email"/>
+                <Property name="text" type="java.lang.String" value="Usuario"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
