@@ -8,6 +8,7 @@ create table tb_pool (
 	descricao varchar(100)
 )auto_increment = 1;
 
+
 insert into tb_pool values
 (null, 'BitCoin', 'Venha minerara conosco'),
 (null, 'Cryptoverse', 'Venha minerar conosco'),
@@ -153,15 +154,11 @@ on c.idComponente = mc.fkComponente
 join tb_tipo_dados as d
 on d.idDado = m.fkDado;
 
-select dataHora, fkMaquina, fkComponente, idDado, valor, descDado from tb_componente join tb_maquina_componente on tb_componente.idComponente = tb_maquina_componente.fkComponente
-join tb_maquina_componente as maquinaComponente 
-join tb_leitura on maquinaComponente.idMaquinaComponente = tb_leitura.fkMaquinaComponente
+select tb_usuario.*, tb_maquina_componente.*, hostname, tipo_processador, fkUsuario,
+                                                                        nomeComponente, dataHora, idLeitura, fkDado, idDado, valor, descDado, nvAlerta
+from tb_usuario
+join tb_maquina on tb_usuario.idUsuario = tb_maquina.fkUsuario
+join tb_maquina_componente on tb_maquina.idMaquina = tb_maquina_componente.fkMaquina
+join tb_componente on tb_maquina_componente.fkComponente = tb_componente.idComponente
+join tb_leitura on tb_maquina_componente.idMaquinaComponente = tb_leitura.fkMaquinaComponente
 join tb_tipo_dados on tb_leitura.fkDado = tb_tipo_dados.idDado;
-
-
-
-
-
-
-
-select idLeitura, nvAlerta, dataHora, fkComponente from tb_leitura;
