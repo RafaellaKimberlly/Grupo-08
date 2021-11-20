@@ -79,7 +79,7 @@
                     <div class="cards">
                         <div class="card">
                             <div class="box">
-                                <h1 id="qtdMaquinas" >04</h1>
+                                <h1 id="qtdMaquinas">04</h1>
                                 <h3>Máquinas</h3>
                             </div>
                             <div class="icone-case">
@@ -103,8 +103,8 @@
 
                         <div class="card">
                             <div class="box">
-                                <h1>08</h1>
-                                <h3>GPU</h3>
+                                <h1 id="qtdDisco">08</h1>
+                                <h3>Disco</h3>
                             </div>
                             <div class="icone-case">
                                 <figure>
@@ -181,6 +181,10 @@
     function obterDados() {
         obterPublicacoes();
         obterPublicacoes2();
+        contar_maquinas();
+        contar_cpu();
+        contar_ram();
+        contar_disco();
     }
 
     function atualizarFeed(maquinas) {
@@ -306,25 +310,92 @@
             });
     }
 
-    // function contar_empresas() {
-    //     fetch("/usuarios/contar_maquinas", {
-    //         method: "POST"
-    //     }).then(function (response) {
-    //         if (response.ok) {
-    //             response.json().then(function (resposta) {
-    //                 console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-    //                 qtdMaquinas.innerHTML = resposta[0].contador;
-    //             });
-    //         }  else {
-    //             console.log('Erro de login!');
-    //             resposta.text().then(texto => {
-    //                 console.error(texto);
-    //                 finalizar_aguardar(texto);
-    //             });
-    //         }
-    //     });
+    function contar_maquinas(idUsuario) {
 
-    //     return false;
-    // }
+        idUsuario = Number(sessionStorage.getItem('id_usuario_meuapp'));
+
+        console.log(idUsuario);
+
+        fetch(`/maquinas/contar_maquinas/${idUsuario}`, {
+            method: "GET"
+        }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    qtdMaquinas.innerHTML = resposta[0].qtdMaquina;
+                });
+            } else {
+                console.log('Erro de login!');
+            }
+        });
+
+        return false;
+    }
+
+    function contar_cpu(idUsuario) {
+
+        idUsuario = Number(sessionStorage.getItem('id_usuario_meuapp'));
+
+        console.log(idUsuario);
+
+        fetch(`/maquinasComponentes/contar_cpu/${idUsuario}`, {
+            method: "GET"
+        }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    qtdCpu.innerHTML = resposta[0].qtdcpu;
+                });
+            } else {
+                console.log('Erro de login!');
+            }
+        });
+
+        return false;
+    }
+
+    function contar_ram(idUsuario) {
+
+        idUsuario = Number(sessionStorage.getItem('id_usuario_meuapp'));
+
+        console.log(idUsuario);
+
+        fetch(`/maquinasComponentes/contar_ram/${idUsuario}`, {
+            method: "GET"
+        }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    qtdRam.innerHTML = resposta[0].qtdRam;
+                });
+            } else {
+                console.log('Erro de login!');
+            }
+        });
+
+        return false;
+    }
+
+    function contar_disco(idUsuario) {
+
+        idUsuario = Number(sessionStorage.getItem('id_usuario_meuapp'));
+
+        console.log(idUsuario);
+
+        fetch(`/maquinasComponentes/contar_disco/${idUsuario}`, {
+            method: "GET"
+        }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    qtdDisco.innerHTML = resposta[0].qtdDisco;
+                });
+            } else {
+                console.log('Erro de login!');
+            }
+        });
+
+        return false;
+    }
 
 </script>

@@ -49,6 +49,29 @@ router.get('/', function(req, res, next) {
 	});
 });
 
+router.get('/contar_maquinas/:idUsuario', function(req, res, next) {
+	console.log('Recuperando quantidades');	
+
+	var idUsuario = req.params.idUsuario;
+
+	let instrucaoSql = `select count(idMaquina) as qtdMaquina from tb_maquina as m 
+	join tb_usuario as u
+	on u.idUsuario = m.fkUsuario
+	where m.fkUsuario = ${idUsuario};`;
+	
+	console.log(instrucaoSql);
+
+	sequelize.query(instrucaoSql, { 
+		model: maquina
+	})
+	.then(resultado => {
+		res.json(resultado);
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+	});
+});
+
 module.exports = router;
 
 module.exports = router;

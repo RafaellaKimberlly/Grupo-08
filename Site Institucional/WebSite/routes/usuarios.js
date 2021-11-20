@@ -36,26 +36,6 @@ router.post('/autenticar', function(req, res, next) {
   	});
 });
 
-// router.post('/contar_maquinas', function(req, res, next) {
-// 	console.log('Recuperando quantidades');	
-	
-// 	let idUsuario = Number(sessionStorage.getItem('id_usuario_meuapp'))
-
-// 	let instrucaoSql = `select count(idMaquina) as qtdMaquina from tb_maquina
-// 	where fkUsuario = ${idUsuario}; `;
-// 	console.log(instrucaoSql);
-
-// 	sequelize.query(instrucaoSql, { 
-// 		model: maquina
-// 	})
-// 	.then(resultado => {
-// 		res.json(resultado);
-// 	}).catch(erro => {
-// 		console.error(erro);
-// 		res.status(500).send(erro.message);
-// 	});
-// });
-
 /* Cadastrar usuário */
 router.post('/cadastrar', function(req, res, next) {
 	console.log('Criando um usuário');
