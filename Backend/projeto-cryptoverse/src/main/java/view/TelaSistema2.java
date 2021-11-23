@@ -28,26 +28,6 @@ public class TelaSistema2 extends javax.swing.JFrame {
         ramTotal.setText(componente.tamanhoTotalRam().toString());
         ramUsada.setText(componente.tamanhoUsadoRam().toString());
         ramDisponivel.setText(componente.tamanhoDisponivelRam().toString());
-        preencherComponente();
-    }
-
-    public void preencherComponente() {
-
-        assistente.execute("select * from tb_componente");
-        try {
-
-            conex.rs.first();
-
-            comboComponente.removeAllItems();
-
-            do {
-                comboComponente.addItem(conex.rs.getString("nomeComponente"));
-            } while (conex.rs.next());
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(rootPane, "Erro em preencher os componentes");
-        }
-
     }
 
     /**

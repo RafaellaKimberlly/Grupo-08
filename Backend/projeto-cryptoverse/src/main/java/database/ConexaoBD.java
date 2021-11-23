@@ -15,27 +15,26 @@ import org.apache.commons.dbcp2.BasicDataSource;
 public class ConexaoBD {
     
     private BasicDataSource bancoDeDados;
-    public ResultSet rs;
     
 //    // MySQL
-//    public ConexaoBD() {
-//        
-//        this.bancoDeDados = new BasicDataSource();
-//        this.bancoDeDados.setDriverClassName("com.mysql.cj.jdbc.Driver");
-//        this.bancoDeDados.setUrl("jdbc:mysql://localhost:3306/projetoCryptoverse");
-//        this.bancoDeDados.setUsername("admcrypto");
-//        this.bancoDeDados.setPassword("teste123");
-//        
-//    }
+    public ConexaoBD() {
+        
+        this.bancoDeDados = new BasicDataSource();
+        this.bancoDeDados.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        this.bancoDeDados.setUrl("jdbc:mysql://localhost:3306/projetoCryptoverse?useTimezone=true&serverTimezone=UTC");
+        this.bancoDeDados.setUsername("admcrypto");
+        this.bancoDeDados.setPassword("teste123");
+        
+    }
     
     //  SQLServer  
-    public ConexaoBD() {
-        this.bancoDeDados = new BasicDataSource();
-        this.bancoDeDados.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        this.bancoDeDados.setUrl("jdbc:sqlserver://cryptoverse.database.windows.net:1433;database=CryptoVerse;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;");
-        this.bancoDeDados.setUsername("admcrypto");
-        this.bancoDeDados.setPassword("#Gfgrupo8");
-    }
+//    public ConexaoBD() {
+//        this.bancoDeDados = new BasicDataSource();
+//        this.bancoDeDados.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+//        this.bancoDeDados.setUrl("jdbc:sqlserver://cryptoverse.database.windows.net:1433;database=CryptoVerse;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;");
+//        this.bancoDeDados.setUsername("admcrypto");
+//        this.bancoDeDados.setPassword("#Gfgrupo8");
+//    }
     
     public BasicDataSource getDataSource() {
         return bancoDeDados;
