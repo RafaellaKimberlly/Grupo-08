@@ -12,10 +12,11 @@
         rel="stylesheet">
     <link rel="shortcut icon" href="../img/2.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/cadastro-componentes-dashboard.css">
+    <link rel="stylesheet" href="../css/dashboard-relatorios.css">
     <title>Cadastro de Componentes</title>
 </head>
 
-<body>
+<body onload="carregarFeed()">
     <input type="checkbox" id="menu-toggle">
     <div class="sidebar">
         <div class="sidebar-marca">
@@ -72,48 +73,91 @@
         </header>
 
         <main>
-            <div class="formulario">
 
-                <form id="form_cadastro_maquina" method="POST" onsubmit="return cadastrar_maquina()">
+            <div class="forms">
 
-                    <h2>Cadastro de Máquinas e Componentes</h2> <br>
+                <div class="form-maquina">
+                    <form id="form_cadastro_maquina" method="POST" onsubmit="return cadastrar_maquina()">
 
-                    <!-- <label for="">
-                        ID da Máquina:
-                        <input class="ipt-form" type="text" name="id-maquina"> <br><br>
-                    </label> -->
+                        <h2>Cadastre a sua máquina</h2>
 
-                    <label for="">
-                        Hostname:
-                        <input class="ipt-form" type="text" name="hostname"><br><br>
-                    </label>
+                        <label for="" class="titleInput">
+                            Hostname:
+                            <br>
+                            <input class="ipt-form" type="text" name="hostname"><br><br>
+                        </label>
 
-                    <label for="">
-                        Número de Série:
-                        <input class="ipt-form" type="text" name="numSerie"><br><br>
-                    </label>
+                        <label for="" class="titleInput">
+                            Número de Série:
+                            <br>
+                            <input class="ipt-form" type="text" name="numSerie"><br><br>
+                        </label>
 
-                    <label for="">
-                        Tipo Processador:
-                        <input class="ipt-form" type="text" name="tipo_Processador"><br><br>
-                    </label>
+                        <label for="" class="titleInput">
+                            Tipo Processador:
+                            <br>
+                            <input class="ipt-form" type="text" name="tipo_Processador"><br><br>
+                        </label>
 
-                    <!-- <label for="">
-                        Componentes:
-                        <select name="" id="" class="ipt-form" name="fkComponentes">
-                            <option value="1000">CPU</option>
-                            <option value="1001">Memoria-RAM</option>
-                            <option value="1002">Disco</option>
-                        </select><br><br>
-                    </label> -->
+                        <input type="text" style="display: none;" name="fkUsuario" id="fkUsuario">
 
-                    <input type="text" style="display: none;" name="fkUsuario" id="fkUsuario">
+                        <button class="btn-cadastrar" type="submit">Cadastrar</button>
 
-                    <button class="btn-cadastrar" type="submit">Cadastrar Componentes</button>
-                </form>
+                    </form>
+                </div>
+
+                <div class="form-componente">
+                    <form action="">
+
+                        <h2>Cadastre seu componente</h2>
+
+                        <label for="" class="titleInput">
+                            Informe a máquina:
+                            <br>
+                            <select name="" class="option-form" id="feed_container"></select><br><br>
+                        </label>
+
+                        <label for="" class="titleInput">
+                            Componentes:
+                            <br>
+                            <select name="" class="option-form" id="feed_container2"></select><br><br>
+                        </label>
+
+                        <label for="" class="titleInput">
+                            Tipo Processador:
+                            <br>
+                            <input class="ipt-form" type="text" name="tipo_Processador"><br><br>
+                        </label>
+
+                        <input type="text" style="display: none;" name="fkUsuario" id="fkUsuario">
+
+                        <button class="btn-cadastrar" type="submit">Cadastrar</button>
+
+                    </form>
+                </div>
 
             </div>
+            <div style="display: flex; justify-content: center; width: 50%;">
 
+                <div class="new-relatory">
+                    <div class="title">
+                        <h2>Relatório de máquinas</h2>
+                        <!-- <a href="#" class="btn">Visualizar</a> -->
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Hostname</th>
+                                <th>Componente</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody id="feed_container3"></tbody>
+                    </table>
+                </div>
+            </div>
 
         </main>
     </div>
@@ -151,6 +195,174 @@
 
         return false;
     }
+
+    function carregarFeed() {
+        obterPublicacoes();
+        obterPublicacoes2();
+        obterPublicacoes3();
+    }
+
+    function atualizarFeed(maquinas) {
+        let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
+        var feed = document.getElementById("feed_container");
+        feed.innerHTML = "";
+
+        for (let i = 0; i < maquinas.length; i++) {
+            var maquina = maquinas[i];
+
+            if (maquina.fkUsuario == sessionStorage.id_usuario_meuapp) {
+
+                // var optNull = document.createElement("option")
+                var optMaquina = document.createElement("option")
+
+                // optNull.innerHTML = `Selecione :`;
+                optMaquina.innerHTML = `${maquina.hostname}`;
+
+                // if (tdStatus.value == 'Ativo') {
+
+                // } else {
+
+                // }
+
+                // trMaquina.appendChild(td_idMaquina);
+                // trMaquina.appendChild(tdHostname);
+                // trMaquina.appendChild(tdStatus);
+                // feed.appendChild(optNull);
+                feed.appendChild(optMaquina);
+
+            }
+        }
+
+    }
+
+    function atualizarFeed3(maquinas) {
+        let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
+        var feed = document.getElementById("feed_container3");
+        feed.innerHTML = "";
+
+        for (let i = 0; i < maquinas.length; i++) {
+            var maquina = maquinas[i];
+
+            if (maquina.fkUsuario == sessionStorage.id_usuario_meuapp) {
+
+                var trMaquina = document.createElement("tr")
+                var td_idMaquina = document.createElement("td")
+                var tdHostname = document.createElement("td")
+                var tdComponente = document.createElement("td")
+                var tdStatus = document.createElement("td")
+                var btnDesativar = document.createElement("td")
+
+                td_idMaquina.innerHTML = `${maquina.idMaquina}`;
+                tdHostname.innerHTML = `${maquina.hostname}`;
+                tdComponente.innerHTML = `${maquina.nomeComponente}`;
+                tdStatus.innerHTML = `${maquina.mcStatus}`;
+                btnDesativar.innerHTML = ` <button class="btn-cadastrar" type="submit">Desativar</button>`;
+
+                if (maquina.mcStatus == "Ativo") {
+                    tdStatus.className = "ativo";
+                    trMaquina.className = "statusativo";
+                    btnDesativar.innerHTML = ` <button class="btn-cadastrar" type="submit">Desativar</button>`;
+                } else {
+                    tdStatus.className = "inativo";
+                    trMaquina.className = "statusinativo";
+                    btnDesativar.innerHTML = ` <button class="btn-cadastrar" type="submit">Ativar</button>`;
+                }
+
+                // if (tdStatus.value == 'Ativo') {
+
+                // } else {
+
+                // }
+
+                trMaquina.appendChild(td_idMaquina);
+                trMaquina.appendChild(tdHostname);
+                trMaquina.appendChild(tdComponente);
+                trMaquina.appendChild(tdStatus);
+                trMaquina.appendChild(btnDesativar);
+
+                feed.appendChild(trMaquina);
+
+            }
+        }
+
+    }
+
+    function obterPublicacoes() {
+        fetch("/maquinas")
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        atualizarFeed(resposta);
+
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações: ${error.message}`);
+            });
+    }
+
+    function obterPublicacoes3() {
+        fetch("/maquinas/nomeComponente")
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                        atualizarFeed3(resposta);
+
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações: ${error.message}`);
+            });
+    }
+
+    function atualizarFeed2(componentes) {
+        let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
+        var feed = document.getElementById("feed_container2");
+        feed.innerHTML = "";
+
+        for (let i = 0; i < componentes.length; i++) {
+            var componente = componentes[i];
+
+            // var optNull = document.createElement("option")
+            var optComponente = document.createElement("option")
+
+            // optNull.innerHTML = `Selecione :`;
+            optComponente.innerHTML = `${componente.nomeComponente}`;
+
+
+            feed.appendChild(optComponente);
+        }
+
+    }
+
+    function obterPublicacoes2() {
+        fetch("/componentes")
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        atualizarFeed2(resposta);
+
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações: ${error.message}`);
+            });
+    }
+
 
     // function cadastrar_maquina_componentes() {
 

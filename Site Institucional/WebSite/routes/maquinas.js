@@ -49,6 +49,33 @@ router.get('/', function(req, res, next) {
 	});
 });
 
+router.get('/nomeComponente', function(req, res, next) {
+	console.log('Recuperando todas as publicações');
+	
+	// let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
+
+    let instrucaoSql = `select idMaquina, hostname, c.nomeComponente, coalesce(mcStatus, 'Inativo') as mcStatus, fkUsuario from tb_maquina as m
+	left join tb_maquina_componente as mc
+	on mc.fkMaquina = m.idMaquina
+	join tb_componente as c
+	on c.idComponente = mc.fkComponente
+	join tb_usuario as u
+	on u.idUsuario = m.fkUsuario
+	order by idMaquina;`;
+
+	sequelize.query(instrucaoSql, {
+		model: maquina,
+		mapToModel: true 
+	})
+	.then(resultado => {
+		console.log(`Encontrados: ${resultado.length}`);
+		res.json(resultado);
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+	});
+});
+
 router.get('/contar_maquinas/:idUsuario', function(req, res, next) {
 	console.log('Recuperando quantidades');	
 

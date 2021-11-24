@@ -67,6 +67,15 @@ insert into tb_componente values
 (null,'Disco');
 
 select * from tb_componente;
+
+select idMaquina, hostname, c.nomeComponente, coalesce(mcStatus, 'Inativo') as mcStatus, fkUsuario from tb_maquina as m
+	left join tb_maquina_componente as mc
+	on mc.fkMaquina = m.idMaquina
+	join tb_componente as c
+	on c.idComponente = mc.fkComponente
+	join tb_usuario as u
+	on u.idUsuario = m.fkUsuario
+	order by idMaquina;
     
 create table tb_maquina_componente(
 	idMaquinaComponente int primary key auto_increment,
