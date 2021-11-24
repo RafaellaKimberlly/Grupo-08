@@ -107,29 +107,29 @@
                 </div>
 
                 <div class="form-componente">
-                    <form action="">
+                    <form id="form_cadastro_maquina_componente" method="POST" onsubmit="return cadastrar_maquina_componentes()">
 
                         <h2>Cadastre seu componente</h2>
 
                         <label for="" class="titleInput">
                             Informe a máquina:
                             <br>
-                            <select name="" class="option-form" id="feed_container"></select><br><br>
+                            <select name="fkMaquina" class="option-form" id="feed_container"></select><br><br>
                         </label>
 
-                        <label for="" class="titleInput">
+                        <label for="fkComponente" class="titleInput">
                             Componentes:
                             <br>
-                            <select name="" class="option-form" id="feed_container2"></select><br><br>
+                            <select name="fkComponente" class="option-form" id="feed_container2"></select><br><br>
                         </label>
 
-                        <label for="" class="titleInput">
+                        <!-- <label for="" class="titleInput">
                             Tipo Processador:
                             <br>
                             <input class="ipt-form" type="text" name="tipo_Processador"><br><br>
-                        </label>
+                        </label> -->
 
-                        <input type="text" style="display: none;" name="fkUsuario" id="fkUsuario">
+                        <!-- <input type="text" style="display: none;" name="fkUsuario" id="fkUsuario"> -->
 
                         <button class="btn-cadastrar" type="submit">Cadastrar</button>
 
@@ -137,7 +137,7 @@
                 </div>
 
             </div>
-            <div style="display: flex; justify-content: center; width: 50%;">
+            <div style="display: flex; justify-content: center;">
 
                 <div class="new-relatory">
                     <div class="title">
@@ -216,6 +216,7 @@
                 var optMaquina = document.createElement("option")
 
                 // optNull.innerHTML = `Selecione :`;
+                optMaquina.value = `${maquina.idMaquina}`;
                 optMaquina.innerHTML = `${maquina.hostname}`;
 
                 // if (tdStatus.value == 'Ativo') {
@@ -256,12 +257,19 @@
                 tdHostname.innerHTML = `${maquina.hostname}`;
                 tdComponente.innerHTML = `${maquina.nomeComponente}`;
                 tdStatus.innerHTML = `${maquina.mcStatus}`;
-                btnDesativar.innerHTML = ` <button class="btn-cadastrar" type="submit">Desativar</button>`;
+                // btnDesativar.innerHTML = ` <button class="btn-cadastrar" type="submit">Desativar</button>`;
+
+                
+                tdComponente.id = 'componente';
+                tdHostname.id = 'hostname';
+                
+                tdHostname.value = `${maquina.idMaquina}`;
+                tdComponente.value = `${maquina.nomeComponente}`;
 
                 if (maquina.mcStatus == "Ativo") {
                     tdStatus.className = "ativo";
                     trMaquina.className = "statusativo";
-                    btnDesativar.innerHTML = ` <button class="btn-cadastrar" type="submit">Desativar</button>`;
+                    btnDesativar.innerHTML = ` <button class="btn-cadastrar" type="submit" onclick="teste()">Desativar</button>`;
                 } else {
                     tdStatus.className = "inativo";
                     trMaquina.className = "statusinativo";
@@ -284,6 +292,8 @@
 
             }
         }
+
+        console.log(componente.value);
 
     }
 
@@ -332,10 +342,10 @@
         for (let i = 0; i < componentes.length; i++) {
             var componente = componentes[i];
 
-            // var optNull = document.createElement("option")
-            var optComponente = document.createElement("option")
+            optComponente = document.createElement("option")
 
-            // optNull.innerHTML = `Selecione :`;
+            optComponente.value = `${componente.idComponente}`;
+
             optComponente.innerHTML = `${componente.nomeComponente}`;
 
 
@@ -364,31 +374,36 @@
     }
 
 
-    // function cadastrar_maquina_componentes() {
+    function cadastrar_maquina_componentes() {
 
-    //     var formulario = new URLSearchParams(new FormData(form_cadastro_maquina));
-    //     fetch("/maquinasComponentes/cadastrar", {
-    //         method: "POST",
-    //         body: formulario
-    //     }).then(function (response) {
+        var formulario = new URLSearchParams(new FormData(form_cadastro_maquina_componente));
+        fetch("/maquinasComponentes/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
 
-    //         if (response.ok) {
-    //             console.log('Maquina vinculada com o componente')
+            if (response.ok) {
+                console.log('Maquina vinculada com o componente')
 
-    //             // window.location.href = 'login-cadastro.html';
+                // window.location.href = 'login-cadastro.html';
 
-    //         } else {
+            } else {
 
-    //             console.log('Erro de cadastro!');
-    //             response.text().then(function (resposta) {
-    //                 alert(resposta);
-    //                 // div_erro.innerHTML = resposta;
-    //             });
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    alert(resposta);
+                    // div_erro.innerHTML = resposta;
+                });
 
-    //         }
-    //     });
+            }
+        });
 
-    //     return false;
-    // }
+        return false;
+    }
+
+    function teste() {
+        console.log(componente.value);
+        console.log(hostname.value);
+    }
 
 </script>

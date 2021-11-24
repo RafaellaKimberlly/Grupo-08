@@ -9,7 +9,7 @@ let sessoes = [];
 router.post('/cadastrar', function(req, res, next) {
 	console.log('Vinculando máquina e componente');
 
-	maquinasComponentes.create({
+	maquinaComponente.create({
         fkMaquina: req.body.fkMaquina,
 		fkComponente: req.body.fkComponente,
         mcStatus: "Ativo"
@@ -115,6 +115,24 @@ router.get('/contar_disco/:idUsuario', function(req, res, next) {
 		res.status(500).send(erro.message);
 	});
 });
+
+router.post('/atualizar_freezer', function(req, res, next) {
+	console.log('Recuperando usuário por id e senha');
+
+	var fkMaquina = req.body.fkMaquina; // depois de .body, use o nome (name) do campo em seu formulário de login
+	var fkComponente = req.body.fkComponente; // depois de .body, use o nome (name) do campo em seu formulário de login
+
+	let instrucaoSql = `update tb_maquina_componente set mcStatus = 'Inativo' where fkMaquina = ${fkMaquina} and fkComponente = ${fkComponente};`;
+	console.log(instrucaoSql);
+
+	sequelize.query(instrucaoSql, { type: sequelize.QueryTypes.UPDATE })
+	.then(resultado => {
+		res.json(resultado);
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+  	});
+})
 
 module.exports = router;
 

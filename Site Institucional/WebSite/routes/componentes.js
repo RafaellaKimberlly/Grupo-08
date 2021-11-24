@@ -29,7 +29,7 @@ router.get('/', function(req, res, next) {
 	
 	// let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
 
-    let instrucaoSql = `select nomeComponente from tb_componente;`;
+    let instrucaoSql = `select idComponente, nomeComponente from tb_componente;`;
 
 	sequelize.query(instrucaoSql, {
 		model: componente,
