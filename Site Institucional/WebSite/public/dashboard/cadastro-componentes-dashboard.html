@@ -236,6 +236,7 @@
 
     }
 
+
     function atualizarFeed3(maquinas) {
         let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
         var feed = document.getElementById("feed_container3");
@@ -342,7 +343,7 @@
         for (let i = 0; i < componentes.length; i++) {
             var componente = componentes[i];
 
-            optComponente = document.createElement("option")
+            optComponente = document.createElement("option");
 
             optComponente.value = `${componente.idComponente}`;
 
