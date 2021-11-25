@@ -99,6 +99,7 @@ router.get('/contar_maquinas/:idUsuario', function(req, res, next) {
 	});
 });
 
+
 module.exports = router;
 
 module.exports = router;

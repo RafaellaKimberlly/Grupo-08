@@ -91,7 +91,7 @@
                     </figure>
                     <div class="caixa-titulos">
                         <p class="title-card">RAM</p>
-                        <p class="situacao-porcentagem">40%</p>
+                        <p class="situacao-porcentagem" id="situacao_ram">40%</p>
                         <i class="fas fa-arrow-up seta"></i>
                     </div>
                 </div>
@@ -121,88 +121,48 @@
 
 </html>
 
-<!-- <script>
 
-    var ctx = document.getElementById('myChart');
+<script>
 
-    var myChart = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-            labels: [],
-            datasets: [{
-                label: 'My First Dataset',
-                data: [1],
-                backgroundColor: [
-                    'rgb(19, 67, 107)',
-                ],
-                borderColor: [
-                    'rgb(19, 67, 107)',
-                ],
-                hoverOffset: 4
-            }],
-        }
-    });
+    function leitura_componente(idUsuario) {
 
-    var cty = document.getElementById('myChart2');
+        idUsuario = Number(sessionStorage.getItem('id_usuario_meuapp'));
 
-    var myChart2 = new Chart(cty, {
-        type: 'doughnut',
-        data: {
-            labels: [],
-            datasets: [{
-                label: 'My First Dataset',
-                data: [1],
-                backgroundColor: [
-                    'rgb(19, 67, 107)',
-                ],
-                borderColor: [
-                    'rgb(19, 67, 107)',
-                ],
-                hoverOffset: 4
-            }],
-        }
-    });
+        console.log(idUsuario);
 
-    var ctz = document.getElementById('myChart3');
+        fetch(`/leituras/situacao_componente/${idUsuario}`, {
+            method: "GET"
+        }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
-    var myChart3 = new Chart(ctz, {
-        type: 'doughnut',
-        data: {
-            labels: [],
-            datasets: [{
-                label: 'My First Dataset',
-                data: [1],
-                backgroundColor: [
-                    'rgb(19, 67, 107)',
-                ],
-                borderColor: [
-                    'rgb(19, 67, 107)',
-                ],
-                hoverOffset: 4
-            }],
-        }
-    });
 
-    var ctx = document.getElementById('myChart');
+                    if (resposta[0].nomeComponente == "Memoria-ram") {
 
-    var myChart = new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-            labels: [],
-            datasets: [{
-                label: 'My First Dataset',
-                data: [1],
-                backgroundColor: [
-                    'rgb(19, 67, 107)',
-                ],
-                borderColor: [
-                    'rgb(19, 67, 107)',
-                ],
-                hoverOffset: 4
-            }],
-        }
-    });
+                        situacao_ram.innerHTML = resposta[0].valor;
 
-</script> -->
+                    } else if (resposta[0].nomeComponente == "Cpu") {
+
+                        situacao_cpu.innerHTML = resposta[0].valor;
+
+                    } else if (resposta[0].nomeComponente == "Disco") {
+
+                        situacao_cpu.innerHTML = resposta[0].valor;
+                    } else {
+
+                        console.log("Sem leitura");
+                    }
+
+                });
+            } else {
+                console.log('Erro de login!');
+            }
+        });
+
+        return false;
+    }
+
+</script>
 <script data-jsd-embedded data-key="80d9f6eb-00c3-44a5-b11d-16870c4fb50b"
     data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>

@@ -4,55 +4,6 @@ var sequelize = require('../models').sequelize;
 var leitura = require('../models').leitura;
 var env = process.env.NODE_ENV || 'development';
 
-/* Recuperar as últimas N leituras */
-router.get('/ultimas/:idcaminhao', function(req, res, next) {
-	
-	// quantas são as últimas leituras que quer? 7 está bom?
-	const limite_linhas = 7;
-
-	var idcaminhao = req.params.idcaminhao;
-
-	console.log(`Recuperando as ultimas ${limite_linhas} leituras`);
-	
-	let instrucaoSql = "";
-
-	if (env == 'dev') {
-		// abaixo, escreva o select de dados para o Workbench
-		instrucaoSql = `select 
-		temperatura, 
-		umidade, 
-		momento,
-		DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico
-		from leitura
-		where fkcaminhao = ${idcaminhao}
-		order by id desc limit ${limite_linhas}`;
-	} else if (env == 'production') {
-		// abaixo, escreva o select de dados para o SQL Server
-		instrucaoSql = `select top ${limite_linhas} 
-		temperatura, 
-		umidade, 
-		momento,
-		FORMAT(momento,'HH:mm:ss') as momento_grafico
-		from leitura
-		where fkcaminhao = ${idcaminhao}
-		order by id desc`;
-	} else {
-		console.log("\n\n\n\nVERIFIQUE O VALOR DE LINHA 1 EM APP.JS!\n\n\n\n")
-	}
-	
-	sequelize.query(instrucaoSql, {
-		model: Leitura,
-		mapToModel: true 
-	})
-	.then(resultado => {
-		console.log(`Encontrados: ${resultado.length}`);
-		res.json(resultado);
-	}).catch(erro => {
-		console.error(erro);
-		res.status(500).send(erro.message);
-	});
-});
-
 
 router.get('/tempo-real/:idcaminhao', function(req, res, next) {
 	console.log('Recuperando caminhões');
@@ -113,8 +64,6 @@ router.get('/', function(req, res, next) {
 });
 
 
-
-
 // estatísticas (max, min, média, mediana, quartis etc)
 router.get('/estatisticas', function (req, res, next) {
 	
@@ -138,6 +87,27 @@ router.get('/estatisticas', function (req, res, next) {
 			res.status(500).send(erro.message);
 		});
   
+});
+
+//TESTE//
+router.get('/situacao_componente/:idUsuario', function(req, res, next) {
+	console.log('Recuperando valor');	
+
+	var idUsuario = req.params.idUsuario;
+
+	let instrucaoSql = `select * from isaque join matheus where idUsuario = ${idUsuario}`;
+	
+	console.log(instrucaoSql);
+
+	sequelize.query(instrucaoSql, { 
+		model: maquina
+	})
+	.then(resultado => {
+		res.json(resultado);
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+	});
 });
 
 

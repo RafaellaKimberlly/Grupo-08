@@ -107,7 +107,8 @@
                 </div>
 
                 <div class="form-componente">
-                    <form id="form_cadastro_maquina_componente" method="POST" onsubmit="return cadastrar_maquina_componentes()">
+                    <form id="form_cadastro_maquina_componente" method="POST"
+                        onsubmit="return cadastrar_maquina_componentes()">
 
                         <h2>Cadastre seu componente</h2>
 
@@ -181,6 +182,8 @@
                 console.log('Maquina cadastrada')
 
                 // cadastrar_maquina_componentes();
+                alert('Maquina cadastrada com sucesso!');
+                carregarFeed();
 
             } else {
 
@@ -260,10 +263,10 @@
                 tdStatus.innerHTML = `${maquina.mcStatus}`;
                 // btnDesativar.innerHTML = ` <button class="btn-cadastrar" type="submit">Desativar</button>`;
 
-                
+
                 tdComponente.id = 'componente';
                 tdHostname.id = 'hostname';
-                
+
                 tdHostname.value = `${maquina.idMaquina}`;
                 tdComponente.value = `${maquina.nomeComponente}`;
 
@@ -290,7 +293,7 @@
                 trMaquina.appendChild(btnDesativar);
 
                 feed.appendChild(trMaquina);
-
+                
             }
         }
 
@@ -386,7 +389,9 @@
             if (response.ok) {
                 console.log('Maquina vinculada com o componente')
 
-                // window.location.href = 'login-cadastro.html';
+                /* window.location.href = 'login-cadastro.html'; */
+                alert('Componente cadastrada com sucesso!');
+                carregarFeed();
 
             } else {
 
