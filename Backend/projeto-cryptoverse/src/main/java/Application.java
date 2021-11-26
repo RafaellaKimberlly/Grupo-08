@@ -5,16 +5,24 @@ import com.github.britooo.looca.api.group.discos.DiscosGroup;
 import com.github.britooo.looca.api.group.memoria.Memoria;
 import com.github.britooo.looca.api.group.processador.Processador;
 import controller.RegistroController;
+import java.io.IOException;
 import services.ComponentesServices;
 import services.LeituraService;
 import services.ServiceTeste;
-
 import java.util.List;
-
+import org.json.JSONObject;
+import services.Slack;
 
 public class Application {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, InterruptedException {
+        
+//        Creio que não precise desse código para funcionar, porém, vou deixar comentado caso seja útil
+//        JSONObject json = new JSONObject();
+//        json.put("text", "Slack funcionando time. Faz o Pix pro pai.");
+//        Slack.sendMessage(json);
+
+          Slack slack = new Slack();
 
         RegistroController controller = new RegistroController();
 
