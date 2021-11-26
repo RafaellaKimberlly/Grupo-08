@@ -6,14 +6,15 @@ view\TelaSistema2$3.class
 model\TipoDadosModel.class
 view\TelaSistema$3.class
 view\TelaSistema.class
+projeto\cryptoverse\docker\AcoesCli.class
 database\ConexaoBD.class
 view\TelaLogin$2.class
 services\ServiceTeste.class
-Application.class
 model\LeiturasModel.class
 services\ComponentesServices.class
 log\Logs.class
 model\ComponentesModel.class
+projeto\cryptoverse\docker\ProjetoCryptoverseDocker.class
 model\MaquinasModel.class
 view\TelaLogin.class
 view\TelaSistema$1.class
@@ -25,6 +26,5 @@ model\MaquinasComponentesModel.class
 view\TelaLogin$1.class
 controller\RegistroController.class
 view\TelaSistema$2.class
-AcoesCli.class
 services\LeituraService.class
 view\TelaSistema2$4.class
