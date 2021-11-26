@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráficos</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="shortcut icon" href="../img/2.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/menu-dashboard.css">
+
+</head>
+
+<body>
+
+    <input type="checkbox" id="menu-toggle">
+    <div class="sidebar">
+        <div class="sidebar-marca">
+            <label for="menu-toggle">
+                <div class="menu-hamburguer">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </label>
+
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="dashboard-home.html"><i class="fas fa-home"></i><span>Home</span></a>
+                </li>
+                <li>
+                    <a class="active" href="dashboard.html"><i class="fas fa-chart-line"></i><span>Gráficos</span></a>
+                </li>
+                <li>
+                    <a href="dashboard-relatorios.html"><i class="fas fa-clipboard-list"></i><span>Relatório</span></a>
+                </li>
+                <li>
+                    <a href="cadastro-componentes-dashboard.html"><i class="fas fa-desktop"></i></i><span>Cadastro
+                            Componentes</span></a>
+                </li>
+                <li>
+                    <a href="dashboard-perfil.html"><i class="fas fa-user-circle"></i><span>Perfil</span></a>
+                </li>
+            </ul>
+        </div>
+        <div class="sidebar-menu sair">
+            <ul>
+                <li>
+                    <a href="../../Site Institucional/WebSite/public/login-cadastro.html"><i
+                            class="fas fa-sign-out-alt"></i>
+                        <span>Encerrar sessão</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="header-dashboard">
+        <header>
+            <div class="user-wrapper">
+                <img src="../img/foto-perfil.png" width="40px" height="40px" alt="">
+                <div>
+                    <h4 id="h4_nome">Olá Gerson</h4>
+                    <b id="b_usuario"></b>
+                    <small>Usuario comum</small>
+                </div>
+            </div>
+        </header>
+
+        <main>
+           <!-- Trigger/Open The Modal -->
+<button id="myBtn">Open Modal</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+  </div>
+
+</div>
+            <div class="container-card-components">
+                <div class="card-components">
+                    <div class="content-components">
+                        <div class="content-components-form">
+                            <h1>CPU</h1>
+                            <p>%</p>
+                            <div class="custom-select">
+                                <select>
+                                    <option value="0">Selecione:</option>
+                                    <option value="1">rk-0891184</option>
+                                    <option value="2">fa-035890</option>
+                                    <option value="3">ic-9909385</option>
+                                    <option value="4">ml-674221</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="imgBX" data-text="CPU">
+                        <img src="cpu.png" alt="CPU">
+                    </div>
+                </div>
+
+                <div class="card-components">
+                    <div class="content-components">
+                        <div class="content-components-form">
+                            <h1>RAM</h1>
+                            <p>Mb</p>
+                            <div class="custom-select">
+                                <select>
+                                    <option value="0">Selecione:</option>
+                                    <option value="1">DDR3-8G-rk654</option>
+                                    <option value="2">DDR4-8G-fb20123</option>
+                                    <option value="3">DDR3-8G-is19304</option>
+                                    <option value="4">DDR3-8G-mt0124875</option>
+                                    <option value="5">DDR4-8G-gv758490</option>
+                                    <option value="6">DDR3-8G-rr293847</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="imgBX" data-text="RAM">
+                        <img src="../img/memoria-ram.png" alt="">
+                    </div>
+                </div>
+
+                <div class="card-components">
+                    <div class="content-components">
+                        <div class="content-components-form">
+                            <h1>GPU</h1>
+                            <p>%</p>
+                            <div class="custom-select">
+                                <select>
+                                    <option value="0">Selecione:</option>
+                                    <option value="1">xrt-690-oux</option>
+                                    <option value="2">qxt-504-zxp</option>
+                                    <option value="3">RTX3060-O12G-V2</option>
+                                    <option value="4">VCNT400-PB-NAC</option>
+                                    <option value="5">GV-R66EAGLE-8GD</option>
+                                    <option value="6">RTX3080-O10G</option>
+                                    <option value="7">RTX3060-O12G-V2</option>
+                                    <option value="8">MCR-RX5504GD5-V1</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="imgBX" data-text="GPU">
+                        <img src="../img/gpu.png" alt="">
+                    </div>
+                </div>
+
+                <div class="card-components">
+                    <div class="content-components">
+                        <div class="content-components-form">
+                            <h1>DISCO</h1>
+                            <p>MB</p>
+                            <div class="custom-select">
+                                <select>
+                                    <option value="0">Selecione:</option>
+                                    <option value="1">Disco E:</option>
+                                    <option value="2">Disco D:</option>
+                                    <option value="2">Disco F:</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="imgBX" data-text="DISCO">
+                        <img src="../img/disco-rigido-escravo.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <!-- buid cpu -->
+            <div>
+
+            </div>
+            <!-- Fim -->
+
+            <!--  inicio graficos -->
+
+            <div class="row-grafico">
+                <div class="column-grafico" style="background-color:#EBEBD3;">
+                    <h2>Gráfico de desempenho de componente</h2>
+                    <!-- adicione a tag canvas no seu HTML -->
+                    <div class="chart-container" style="position: relative; height:45vh; width:45vw; margin-top: 20px;">
+                    <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="column-grafico" style="background-color:#EBEBD3;">
+                    <h2>Utilização do componente</h2>
+                    <br><br>
+                    <h2>CPU</h2>
+                    <p style="float: left;">% Utilização</p><p style="float: right;">
+                        Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz
+                    </p>
+                    <br>
+                    <div style="overflow-x:auto;">
+                        <table>
+                          <tr>
+                            <th>Utilização</th>
+                            <th>Velocidade</th>
+                            <th>Tempo de atividade</th>
+                            <th>Processos</th>
+                            <th>Threads</th>
+                          </tr>
+                          <tr>
+                            <td>Jill</td>
+                            <td>Smith</td>
+                            <td>50</td>
+                            <td>50</td>
+                            <td>50</td>
+                          </tr>
+                          <tr>
+                            <td>Eve</td>
+                            <td>Jackson</td>
+                            <td>94</td>
+                            <td>94</td>
+                            <td>94</td>
+                          </tr>
+                          <tr>
+                            <td>Adam</td>
+                            <td>Johnson</td>
+                            <td>67</td>
+                            <td>67</td>
+                            <td>67</td>
+                          </tr>
+                        </table>
+                      </div>
+                </div>
+            </div>
+
+            <div class="row-grafico">
+                <div class="column-grafico" style="background-color:#EBEBD3;">
+                    <h2>Utilização do componente</h2>
+                    <div class="chart-container" style="position: relative; height:35vh; width:28w; margin-top: 20px;">
+                        <canvas id="RAMChart"></canvas>
+                    </div>
+                </div>
+            
+            <div class="column-grafico" style="background-color:#EBEBD3;">
+                <h2>Utilização do componente</h2>
+                <div class="chart-container" style="position: relative; height:35vh; width:28vw; margin-top: 20px;">
+                    <canvas id="GPUChart"></canvas>
+                </div>
+            </div>
+            
+            <div class="column-grafico" style="background-color:#EBEBD3;">
+                <h2>Utilização do componente</h2>
+                <div class="chart-container" style="position: relative; height:35vh; width:28vw; margin-top: 20px;">
+                    <canvas id="DiscoChart"></canvas>
+                    </div>
+            </div>
+
+
+
+
+
+            <!-- Fim Graficos -->
+        </main>
+
+</html>
+<script src="../js/graficos-js.js"></script>
+
+<script data-jsd-embedded data-key="80d9f6eb-00c3-44a5-b11d-16870c4fb50b"
+    data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>
+
+<script>
+
+</script>

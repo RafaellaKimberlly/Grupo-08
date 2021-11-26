@@ -1,0 +1,259 @@
+main
+{
+    /* display: flex;  */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container-card-components{
+    position: relative;
+    width: 100%;
+    height: 350px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+.container-card-components .card-components{
+    position: relative;
+    height: 240px;
+    background: #EBEBD3;
+    display: grid;
+    width: 19em;
+    margin: 5rem 0 0 0;
+}
+.container-card-components .card-components .imgBX{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #231D36;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+}
+.container-card-components .card-components:hover .imgBX{
+    width: 150px;
+    height: 150px;
+    right: -75px;
+    top: calc(50% - 75px);
+    transition: 0.5s ease-in-out;
+    background: #F95738;
+}
+.container-card-components .card-components .imgBX::before{
+    content: attr(data-text);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 4em;
+    color: rgba(255, 255, 255, 0.089);
+    font-weight: 600;
+}
+.container-card-components .card-components .imgBX img{
+    max-width: 40%;
+    max-height: 55%;
+    transition: 0.5s ease-in-out;
+    margin-top: 10px;
+
+}
+.container-card-components .card-components:hover .imgBX img{
+    max-width: 80%;
+}
+.content-components{
+    display: grid;
+    justify-content: end;
+}
+.content-components-form{
+    display: flex;
+    padding: 4em 1em 1em 1em;
+    flex-direction: column;
+}
+
+.container-card-components .card-components .content-components h1{
+    margin-bottom: 5px;
+    font-size: 24px;
+}
+.container-card-components .card-components .content-components a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 10px;
+    background: #EE964B;
+    text-decoration: none;
+    color: #EBEBD3;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.container-card-components .card-components .content-components a:hover{
+    background: #F95738;
+
+}
+@media (max-width: 992px){
+    .container-card-components{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    .container-card-components .card-components{
+        width: 400px;
+    }
+}
+@media (max-width: 992px){
+    .container-card-components .card-components{
+        max-width: 300px;
+        flex-direction: column;
+        height: auto;
+    }
+    .container-card-components .card-components .imgBX{
+        position: relative;
+    }
+    .container-card-components .card-components .imgBX,
+    .container-card-components .card-components:hover .imgBX{
+        width: 100%;
+        height: 200px;
+        left: 0;
+    }
+    .container-card-components .card-components .imgBX img,
+    .container-card-components .card-components:hover .imgBX img{
+        max-width: 100px;
+    }
+    .container-card-components .card-components .content-components{
+        position: relative;
+        width: 100%;
+    }
+}
+.custom-select {
+    width: 8em;
+    position: relative;
+    font-family: Arial;
+  }
+  
+  .custom-select select {
+    display: none; /*hide original SELECT element: */
+  }
+  
+  .select-selected {
+    background-color: #F95738;
+  }
+  
+  /* Style the arrow inside the select element: */
+  .select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+  }
+  
+  /* Point the arrow upwards when the select box is open (active): */
+  .select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+  }
+  
+  /* style the items (options), including the selected item: */
+  .select-items div,.select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+  }
+  
+  /* Style items (options): */
+  .select-items {
+    position: absolute;
+    background-color: #F95738;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  }
+  
+  /* Hide the items when the select box is closed: */
+  .select-hide {
+    display: none;
+  }
+  
+  .select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+
+/* graficos */
+.container-grafico{
+    box-sizing: border-box;
+}
+.row-grafico {
+    display: flex;
+    
+  }
+  
+  /* Create two equal columns that sits next to each other */
+  .column-grafico {
+    flex: 30%;
+    padding: 20px;
+    height: 400px; /* Should be removed. Only for demonstration */
+    background-color: #fff;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even){background-color: #f2f2f2}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+  
