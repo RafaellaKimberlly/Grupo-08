@@ -1,35 +1,34 @@
 
-import com.github.britooo.looca.api.core.Looca;
-import com.github.britooo.looca.api.group.discos.Disco;
-import com.github.britooo.looca.api.group.discos.DiscosGroup;
-import com.github.britooo.looca.api.group.memoria.Memoria;
-import com.github.britooo.looca.api.group.processador.Processador;
 import controller.RegistroController;
+import database.ConexaoBD;
+import org.springframework.jdbc.core.JdbcTemplate;
 import services.ComponentesServices;
 import services.LeituraService;
-import services.ServiceTeste;
-
-import java.util.List;
-
 
 public class Application {
 
+    ConexaoBD configBanco = new ConexaoBD();
+
+    JdbcTemplate assistenteBd = new JdbcTemplate(configBanco.getDataSource());
+
+    LeituraService leitura = new LeituraService();
+    
+    ComponentesServices componente = new ComponentesServices();
+    
+    RegistroController teste = new RegistroController();
+
     public static void main(String[] args) {
 
-        RegistroController controller = new RegistroController();
+        AcoesCli sistema = new AcoesCli();
 
-        LeituraService leitura = new LeituraService();
-        ComponentesServices componentes = new ComponentesServices();
+        System.out.println("\nFavor Insirir seu Login\n");
 
-        Memoria ram = new Memoria();
-        Processador processador = new Processador();
-        DiscosGroup disco = new DiscosGroup();
-        Looca looca = new Looca();
-        DiscosGroup grupoDeDiscos = looca.getGrupoDeDiscos();
-
-//        leitura.rodarTempoEmTempo();
-        System.out.println(componentes.getDiscoPorc());
+        sistema.loginCli();
+        
+        sistema.leiturasRamCli();
 
     }
-
+    
+    
+    
 }

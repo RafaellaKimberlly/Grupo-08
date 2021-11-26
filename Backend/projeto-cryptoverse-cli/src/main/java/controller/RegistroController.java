@@ -22,11 +22,10 @@ public class RegistroController {
     ComponentesServices componente = new ComponentesServices();
 
     public void addLeituraRam(){
-//        String dataAtual = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss").format(Calendar.getInstance().getTime());
-//        System.out.println("Coletando Hora atual: " + dataAtual);
-        Double valorRam = (componente.tamanhoUsadoRam()/1000000000);
-        Double totalRam = (componente.tamanhoTotalRam()/1000000000);
-        leitura.addLeituraRam(valorRam, totalRam);
+        String dataAtual = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+        Double valorRam = componente.tamanhoUsadoRam();
+        Double totalRam = componente.tamanhoTotalRam();
+        leitura.addLeituraRam(dataAtual, valorRam, totalRam);
         
         }
         
