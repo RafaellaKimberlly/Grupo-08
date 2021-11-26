@@ -1,9 +1,4 @@
 FROM openjdk:11
-
-WORKDIR /Grupo-08
-
-RUN cd /Grupo-08
-
-COPY /Backend/projeto-cryptoverse/target/jarcrypt.jar /Grupo-08/
-
-ENTRYPOINT java -jar /Grupo-08/blablabla.jar
+ADD target/cryptoverse-finalizado.jar cryptoverse-finalizado.jar
+EXPOSE 8085
+ENTRYPOINT ["java", "-jar", "cryptoverse-finalizado.jar"]
