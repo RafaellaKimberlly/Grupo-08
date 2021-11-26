@@ -2,16 +2,19 @@ package controller;
 
 import com.github.britooo.looca.api.core.Looca;
 import database.ConexaoBD;
+import java.io.IOException;
 import services.ComponentesServices;
 import services.LeituraService;
-import services.ServiceTeste;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.springframework.jdbc.core.JdbcTemplate;
+import services.Slack;
 
 public class RegistroController {
     Looca looca = new Looca();
@@ -20,6 +23,8 @@ public class RegistroController {
     
     LeituraService leitura = new LeituraService();
     ComponentesServices componente = new ComponentesServices();
+    Slack slack = new Slack();
+
 
     public void addLeituraRam(){
 //        String dataAtual = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss").format(Calendar.getInstance().getTime());
@@ -27,35 +32,21 @@ public class RegistroController {
         Double valorRam = (componente.tamanhoUsadoRam()/1000000000);
         Double totalRam = (componente.tamanhoTotalRam()/1000000000);
         leitura.addLeituraRam(valorRam, totalRam);
-        
         }
         
-        public void addLeituraCpu(){
+        public void addLeituraCpu() throws IOException, InterruptedException{
         String dataAtual = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
         Double valorCpu = componente.getCpuUsoPorc();
         leitura.addLeituraCpu(dataAtual, valorCpu);
         
         }
     
-        public void addLeituraDisco(){
+        public void addLeituraDisco() throws IOException, InterruptedException{
         String dataAtual = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
         Double valorDisco = componente.getDiscoPorc();
         leitura.addLeituraDisco(dataAtual, valorDisco);
         
         }
-        
-        public static void main(String[] args) {
-        RegistroController enviaDados = new RegistroController();
-        new Timer().scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-                enviaDados.addLeituraRam();
-                enviaDados.addLeituraCpu();
-                enviaDados.addLeituraDisco();
-            }
-        }, 0, 10000);
-            
-    }
     
     }
    

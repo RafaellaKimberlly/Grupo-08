@@ -1,9 +1,9 @@
 package services;
 
 import database.ConexaoBD;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -19,6 +19,7 @@ public class LeituraService {
     public void rodarTempoEmTempo() {
 
         Integer intervalo = (1000 * 2);
+
 
         TimerTask tarefa = new TimerTask() {
             @Override
@@ -63,7 +64,8 @@ public class LeituraService {
         timer.scheduleAtFixedRate(tarefa, 0, intervalo);
     }
 
-    public void addLeituraCpu(String data, Double valorCpu) {
+
+    public void addLeituraCpu(String data, Double valorCpu) throws IOException, InterruptedException {
         System.out.println(data);
         System.out.println("Enviando dados de CPU");
         String nvAlerta = "";
@@ -84,10 +86,23 @@ public class LeituraService {
                 valorCpu, nvAlerta, data, 10, 10001);
     }
 
-    public void addLeituraDisco(String data, Double valorDisco) {
+    public void addLeituraDisco(String data, Double valorDisco) throws IOException, InterruptedException {
         System.out.println(data);
         System.out.println("Enviando dados de Disco");
         String nvAlerta = "";
+        if (valorDisco < 30) {
+            System.out.println("Estado Critico!");
+            nvAlerta = "C";
+        } else if (valorDisco < 60) {
+            System.out.println("Estado de Atenção!!!");
+            nvAlerta = "B";
+        } else if (valorDisco < 90) {
+            System.out.println("Em bom estado!");
+            nvAlerta = "A";
+        } else {
+            System.out.println("Em perfeito estado");
+            nvAlerta = "S";
+        }
 
         controller.update("insert into tb_leitura (valor, nvAlerta, dataHora, fkDado, fkMaquinaComponente) values (?,?,?,?,?)",
                 valorDisco, nvAlerta, data, 10, 10001);
