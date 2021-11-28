@@ -34,6 +34,9 @@
                     <a href="dashboard-home.html"><i class="fas fa-home"></i><span>Home</span></a>
                 </li>
                 <li>
+                    <a href="dashboard-graficos.html"><i class="fas fa-chart-line"></i><span>Gráficos</span></a>
+                </li>
+                <li>
                     <a href="dashboard-relatorios.html"><i class="fas fa-clipboard-list"></i><span>Relatório</span></a>
                 </li>
                 <li>
@@ -150,8 +153,42 @@
 </body>
 
 </html>
-<!-- <script>
-    verificar_autenticacao();
-</script> -->
+
+<script>
+
+    function cadastrar_maquina(idUsuario) {
+
+        fkUsuario.value = Number(sessionStorage.getItem('id_usuario_meuapp'));
+        console.log(fkUsuario.value)
+
+        var formulario = new URLSearchParams(new FormData(form_cadastro_maquina));
+        fetch("/usuarios/atualizar/:idUsuario", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+
+            if (response.ok) {
+                console.log('Maquina cadastrada')
+
+                // cadastrar_maquina_componentes();
+                alert('Maquina cadastrada com sucesso!');
+                carregarFeed();
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    alert(resposta);
+                    // div_erro.innerHTML = resposta;
+                });
+
+            }
+        });
+
+        return false;
+    }
+
+</script>
+
 <script data-jsd-embedded data-key="80d9f6eb-00c3-44a5-b11d-16870c4fb50b"
     data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>

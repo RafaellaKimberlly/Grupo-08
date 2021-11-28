@@ -33,6 +33,9 @@
                     <a href="dashboard-home.html"><i class="fas fa-home"></i><span>Home</span></a>
                 </li>
                 <li>
+                    <a href="dashboard-graficos.html"><i class="fas fa-chart-line"></i><span>Gráficos</span></a>
+                </li>
+                <li>
                     <a class="active" href="dashboard-relatorios.html"><i
                             class="fas fa-clipboard-list"></i><span>Relatório</span></a>
                 </li>
@@ -187,6 +190,25 @@
         contar_disco();
     }
 
+    function obterPublicacoes() {
+        fetch("/maquinas")
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        atualizarFeed(resposta);
+
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações: ${error.message}`);
+            });
+    }
+
     function atualizarFeed(maquinas) {
         let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
         var feed = document.getElementById("feed_container");
@@ -230,14 +252,14 @@
         }
     }
 
-    function obterPublicacoes() {
-        fetch("/maquinas")
+    function obterPublicacoes2() {
+        fetch("/leituras")
             .then(resposta => {
                 if (resposta.ok) {
                     resposta.json().then(function (resposta) {
                         console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
-                        atualizarFeed(resposta);
+                        atualizarFeed2(resposta);
 
                     });
                 } else {
@@ -289,25 +311,6 @@
 
             }
         }
-    }
-
-    function obterPublicacoes2() {
-        fetch("/leituras")
-            .then(resposta => {
-                if (resposta.ok) {
-                    resposta.json().then(function (resposta) {
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-
-                        atualizarFeed2(resposta);
-
-                    });
-                } else {
-                    console.error('Nenhum dado encontrado ou erro na API');
-                }
-            })
-            .catch(function (error) {
-                console.error(`Erro na obtenção das publicações: ${error.message}`);
-            });
     }
 
     function contar_maquinas(idUsuario) {

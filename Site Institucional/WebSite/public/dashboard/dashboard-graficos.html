@@ -10,12 +10,12 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <link rel="shortcut icon" href="../img/2.png" type="image/x-icon">
-    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/dashboard-graficos.css">
     <link rel="stylesheet" href="../css/menu-dashboard.css">
 
 </head>
 
-<body>
+<body onload="carregarComponentes()">
 
     <input type="checkbox" id="menu-toggle">
     <div class="sidebar">
@@ -73,20 +73,53 @@
         </header>
 
         <main>
-           <!-- Trigger/Open The Modal -->
-<button id="myBtn">Open Modal</button>
+            <!-- Trigger/Open The Modal -->
+            <button id="myBtn">Open Modal</button>
 
-<!-- The Modal -->
-<div id="myModal" class="modal">
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
 
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Some text in the Modal..</p>
-  </div>
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>Some text in the Modal..</p>
+                </div>
 
-</div>
+            </div>
             <div class="container-card-components">
+
+                <div class="card-components">
+                    <div class="content-components">
+                        <div class="content-components-form">
+                            <h1>Máquinas</h1>
+                            <p>%</p>
+                            <div class="custom-select">
+                                <select id="feed_container">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="imgBX" data-text="Máquina">
+                        <img src="../img/computadores.png" alt="">
+                    </div>
+                </div>
+                <div class="card-components">
+                    <div class="content-components">
+                        <div class="content-components-form">
+                            <h1>RAM</h1>
+                            <p>Mb</p>
+                            <div class="custom-select">
+                                <select id="feed_container2">
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="imgBX" data-text="RAM">
+                        <img src="../img/memoria-ram.png" alt="">
+                    </div>
+                </div>
+
                 <div class="card-components">
                     <div class="content-components">
                         <div class="content-components-form">
@@ -104,55 +137,7 @@
                         </div>
                     </div>
                     <div class="imgBX" data-text="CPU">
-                        <img src="cpu.png" alt="CPU">
-                    </div>
-                </div>
-
-                <div class="card-components">
-                    <div class="content-components">
-                        <div class="content-components-form">
-                            <h1>RAM</h1>
-                            <p>Mb</p>
-                            <div class="custom-select">
-                                <select>
-                                    <option value="0">Selecione:</option>
-                                    <option value="1">DDR3-8G-rk654</option>
-                                    <option value="2">DDR4-8G-fb20123</option>
-                                    <option value="3">DDR3-8G-is19304</option>
-                                    <option value="4">DDR3-8G-mt0124875</option>
-                                    <option value="5">DDR4-8G-gv758490</option>
-                                    <option value="6">DDR3-8G-rr293847</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="imgBX" data-text="RAM">
-                        <img src="../img/memoria-ram.png" alt="">
-                    </div>
-                </div>
-
-                <div class="card-components">
-                    <div class="content-components">
-                        <div class="content-components-form">
-                            <h1>GPU</h1>
-                            <p>%</p>
-                            <div class="custom-select">
-                                <select>
-                                    <option value="0">Selecione:</option>
-                                    <option value="1">xrt-690-oux</option>
-                                    <option value="2">qxt-504-zxp</option>
-                                    <option value="3">RTX3060-O12G-V2</option>
-                                    <option value="4">VCNT400-PB-NAC</option>
-                                    <option value="5">GV-R66EAGLE-8GD</option>
-                                    <option value="6">RTX3080-O10G</option>
-                                    <option value="7">RTX3060-O12G-V2</option>
-                                    <option value="8">MCR-RX5504GD5-V1</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="imgBX" data-text="GPU">
-                        <img src="../img/gpu.png" alt="">
+                        <img src="../img/cpu.png" alt="CPU">
                     </div>
                 </div>
 
@@ -190,7 +175,7 @@
                     <h2>Gráfico de desempenho de componente</h2>
                     <!-- adicione a tag canvas no seu HTML -->
                     <div class="chart-container" style="position: relative; height:45vh; width:45vw; margin-top: 20px;">
-                    <canvas id="myChart"></canvas>
+                        <canvas id="myChart"></canvas>
                     </div>
                 </div>
 
@@ -198,80 +183,398 @@
                     <h2>Utilização do componente</h2>
                     <br><br>
                     <h2>CPU</h2>
-                    <p style="float: left;">% Utilização</p><p style="float: right;">
+                    <p style="float: left;">% Utilização</p>
+                    <p style="float: right;">
                         Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz
                     </p>
                     <br>
                     <div style="overflow-x:auto;">
                         <table>
-                          <tr>
-                            <th>Utilização</th>
-                            <th>Velocidade</th>
-                            <th>Tempo de atividade</th>
-                            <th>Processos</th>
-                            <th>Threads</th>
-                          </tr>
-                          <tr>
-                            <td>Jill</td>
-                            <td>Smith</td>
-                            <td>50</td>
-                            <td>50</td>
-                            <td>50</td>
-                          </tr>
-                          <tr>
-                            <td>Eve</td>
-                            <td>Jackson</td>
-                            <td>94</td>
-                            <td>94</td>
-                            <td>94</td>
-                          </tr>
-                          <tr>
-                            <td>Adam</td>
-                            <td>Johnson</td>
-                            <td>67</td>
-                            <td>67</td>
-                            <td>67</td>
-                          </tr>
+                            <tr>
+                                <th>Utilização</th>
+                                <th>Velocidade</th>
+                                <th>Tempo de atividade</th>
+                                <th>Processos</th>
+                                <th>Threads</th>
+                            </tr>
+                            <tr>
+                                <td>Jill</td>
+                                <td>Smith</td>
+                                <td>50</td>
+                                <td>50</td>
+                                <td>50</td>
+                            </tr>
+                            <tr>
+                                <td>Eve</td>
+                                <td>Jackson</td>
+                                <td>94</td>
+                                <td>94</td>
+                                <td>94</td>
+                            </tr>
+                            <tr>
+                                <td>Adam</td>
+                                <td>Johnson</td>
+                                <td>67</td>
+                                <td>67</td>
+                                <td>67</td>
+                            </tr>
                         </table>
-                      </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="row-grafico">
+            <!-- <div class="row-grafico">
                 <div class="column-grafico" style="background-color:#EBEBD3;">
                     <h2>Utilização do componente</h2>
                     <div class="chart-container" style="position: relative; height:35vh; width:28w; margin-top: 20px;">
                         <canvas id="RAMChart"></canvas>
                     </div>
                 </div>
-            
-            <div class="column-grafico" style="background-color:#EBEBD3;">
-                <h2>Utilização do componente</h2>
-                <div class="chart-container" style="position: relative; height:35vh; width:28vw; margin-top: 20px;">
-                    <canvas id="GPUChart"></canvas>
-                </div>
-            </div>
-            
-            <div class="column-grafico" style="background-color:#EBEBD3;">
-                <h2>Utilização do componente</h2>
-                <div class="chart-container" style="position: relative; height:35vh; width:28vw; margin-top: 20px;">
-                    <canvas id="DiscoChart"></canvas>
+
+                <div class="column-grafico" style="background-color:#EBEBD3;">
+                    <h2>Utilização do componente</h2>
+                    <div class="chart-container" style="position: relative; height:35vh; width:28vw; margin-top: 20px;">
+                        <canvas id="GPUChart"></canvas>
                     </div>
-            </div>
+                </div>
+
+                <div class="column-grafico" style="background-color:#EBEBD3;">
+                    <h2>Utilização do componente</h2>
+                    <div class="chart-container" style="position: relative; height:35vh; width:28vw; margin-top: 20px;">
+                        <canvas id="DiscoChart"></canvas>
+                    </div>
+                </div> -->
 
 
 
 
 
-            <!-- Fim Graficos -->
+                <!-- Fim Graficos -->
         </main>
 
 </html>
-<script src="../js/graficos-js.js"></script>
+<script>
+
+    function carregarComponentes() {
+        obterPublicacoes();
+        // obterPublicacoes2();
+    }
+
+    function obterPublicacoes() {
+        fetch("/maquinas")
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        atualizarFeed(resposta);
+
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações: ${error.message}`);
+            });
+    }
+
+    function atualizarFeed(maquinas) {
+        let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
+        var feed = document.getElementById("feed_container");
+        feed.innerHTML = "";
+
+        for (let i = 0; i < maquinas.length; i++) {
+            var maquina = maquinas[i];
+
+            if (maquina.fkUsuario == sessionStorage.id_usuario_meuapp) {
+
+                var optMaquina = document.createElement("option")
+
+                optMaquina.value = `${maquina.idMaquina}`;
+                optMaquina.innerHTML = `${maquina.hostname}`;
+
+                feed.appendChild(optMaquina);
+
+            }
+        }
+
+    }
+
+    function obterPublicacoes2(idMaquina) {
+
+        idMaquina = feed_container.optMaquina;
+
+        fetch(`/componentes/componente_usuario/${idMaquina}`)
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        atualizarFeed2(resposta);
+
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações: ${error.message}`);
+            });
+    }
+
+    function atualizarFeed2(componentes) {
+        let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
+        var feed = document.getElementById("feed_container2");
+        feed.innerHTML = "";
+
+        for (let i = 0; i < componentes.length; i++) {
+            var componente = componentes[i];
+
+            optComponente = document.createElement("option");
+
+            optComponente.value = `${componente.idComponente}`;
+
+            optComponente.innerHTML = `${componente.nomeComponente}`;
+
+
+            feed.appendChild(optComponente);
+        }
+
+    }
+
+    function obterDadosGraficoPrimeiraVez() {
+        console.log("executei obterDadosGraficoPrimeiraVez")
+        // alterarCoresBotoes(idFreezer);
+
+        // if (proximaAtualizacao != undefined) {
+        //     clearTimeout(proximaAtualizacao);
+        // }
+
+        fetch(`/maquinasComponentes/componentes`)
+            .then(function (response) {
+                if (response.ok) {
+                    response.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                        resposta.reverse();
+
+                        var dados = {
+                            labels: [],
+                            datasets: [
+                                {
+                                    yAxisID: 'y-temperatura',
+                                    label: 'Leiruras',
+                                    borderColor: 'rgba(255,0,0,1)',
+                                    backgroundColor: 'rgba(255,0,0,1)',
+                                    fill: false,
+                                    data: []
+                                }
+                            ]
+                        };
+                        for (i = 0; i < resposta.length; i++) {
+                            var registro = resposta[i];
+                            dados.labels.push(registro.nomeComponente);
+                            dados.datasets[0].data.push(registro.componentes);
+
+                        }
+                        console.log(JSON.stringify(dados));
+                        // div_aguarde.style.display = 'none';
+                        plotarGrafico(dados);
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+    }
+
+    window.onload = obterDadosGraficoPrimeiraVez();
+
+    function plotarGrafico(dados) {
+        console.log("executei plotarGrafico")
+        console.log('iniciando plotagem do gráfico...');
+
+        let ctx = document.getElementById('myChart').getContext('2d');
+        
+        let chart = new Chart.Line(ctx, {
+            data: dados,
+            options: configurarGrafico()
+        });
+
+        // setTimeout(() => atualizarGrafico(dados), 2000);
+    }
+
+    function configurarGrafico() {
+        console.log("executei configurarGrafico")
+        var configuracoes = {
+            responsive: true,
+            animation: { duration: 500 },
+            hoverMode: 'index',
+            stacked: false,
+            title: {
+                display: true,
+                text: 'Histórico de leituras'
+            },
+            scales: {
+                yAxes: [{
+                    type: 'linear', // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                    display: true,
+                    position: 'left',
+                    id: 'y-temperatura',
+                }, {
+
+
+                }],
+            }
+        };
+
+        return configuracoes;
+    }
+
+
+
+    // let ctx = document.getElementById('myChart');
+
+    // let chart = new Chart(ctx, {
+    //     type: 'line',
+    //     // O objeto data possui os valores dispostos no gráfico
+    //     data: {
+    //         // Legendas das Linhas
+    //         labels: ['00:00', '02:00', '04:00', '06:00', '08:00', '10:00', '11:00', '13:00', '15:00'],
+    //         datasets: [{
+    //             // Legenda
+    //             color: '#231D36',
+    //             label: 'Desempenho diário',
+    //             backgroundColor: '#F49D67',
+    //             // Define-se a cor da linha.
+    //             borderColor: '#F95738',
+    //             // Dados a serem inseridos nas linhas
+    //             data: [100, 96, 20, 41, 32, 79, 100, 10, 9],
+    //         }]
+    //     },
+    //     options: {
+    //         elements: {
+    //             line: {
+    //                 tension: 0
+    //             }
+    //         }
+    //     }
+
+    // });
+
+    // const ctxGPU = document.getElementById('GPUChart');
+    // const GPUChart = new Chart(ctxGPU, {
+    //     type: 'bar',
+    //     data: {
+    //         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    //         datasets: [{
+    //             label: '# of Votes',
+    //             data: [12, 19, 3, 5, 2, 3],
+    //             backgroundColor: [
+    //                 'rgba(255, 99, 132, 0.2)',
+    //                 'rgba(54, 162, 235, 0.2)',
+    //                 'rgba(255, 206, 86, 0.2)',
+    //                 'rgba(75, 192, 192, 0.2)',
+    //                 'rgba(153, 102, 255, 0.2)',
+    //                 'rgba(255, 159, 64, 0.2)'
+    //             ],
+    //             borderColor: [
+    //                 'rgba(255, 99, 132, 1)',
+    //                 'rgba(54, 162, 235, 1)',
+    //                 'rgba(255, 206, 86, 1)',
+    //                 'rgba(75, 192, 192, 1)',
+    //                 'rgba(153, 102, 255, 1)',
+    //                 'rgba(255, 159, 64, 1)'
+    //             ],
+    //             borderWidth: 1
+    //         }]
+    //     },
+    //     options: {
+    //         scales: {
+    //             y: {
+    //                 beginAtZero: true
+    //             }
+    //         }
+    //     }
+    // });
+
+    const ctxRAM = document.getElementById('RAMChart');
+    const RAMChart = new Chart(ctxRAM, {
+        type: 'polarArea',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    const ctxDisco = document.getElementById('DiscoChart');
+    const DiscoChart = new Chart(ctxDisco, {
+        type: 'line',
+        data: {
+            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [{
+                label: '# of Votes',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+</script>
+<!-- <script src="../js/graficos-js.js"></script> -->
 
 <script data-jsd-embedded data-key="80d9f6eb-00c3-44a5-b11d-16870c4fb50b"
     data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>
-
-<script>
-
-</script>

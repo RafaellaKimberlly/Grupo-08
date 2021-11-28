@@ -15,7 +15,7 @@
     <title>Home</title>
 </head>
 
-<body>
+<body onload="leitura_componente()">
 
     <input type="checkbox" id="menu-toggle">
     <div class="sidebar">
@@ -32,6 +32,9 @@
             <ul>
                 <li>
                     <a class="active" href="dashboard-home.html"><i class="fas fa-home"></i><span>Home</span></a>
+                </li>
+                <li>
+                    <a href="dashboard-graficos.html"><i class="fas fa-chart-line"></i><span>Gráficos</span></a>
                 </li>
                 <li>
                     <a href="dashboard-relatorios.html"><i class="fas fa-clipboard-list"></i><span>Relatório</span></a>
@@ -80,7 +83,7 @@
                     </figure>
                     <div class="caixa-titulos">
                         <p class="title-card">CPU</p>
-                        <p id="aleatorio" class="situacao-porcentagem">28%</p>
+                        <p id="situacao_cpu" class="situacao-porcentagem">28%</p>
                         <i class="fas fa-arrow-up seta"></i>
                     </div>
                 </div>
@@ -102,7 +105,7 @@
                     </figure>
                     <div class="caixa-titulos">
                         <p class="title-card">GPU</p>
-                        <p class="situacao-porcentagem">35%</p>
+                        <p class="situacao-porcentagem" id="situacao_disco">35%</p>
                         <i class="fas fa-arrow-up seta"></i>
                     </div>
                 </div>
@@ -137,22 +140,26 @@
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
+                    for (let i = 0; i < resposta.length; i++) {
+                        var resp = resposta[i];
+                        if (resp.nomeComponente == "Memoria-RAM") {
 
-                    if (resposta[0].nomeComponente == "Memoria-ram") {
+                            situacao_ram.innerHTML = resposta[i].valor;
 
-                        situacao_ram.innerHTML = resposta[0].valor;
+                        } else if (resp.nomeComponente == "cpu") {
 
-                    } else if (resposta[0].nomeComponente == "Cpu") {
+                            situacao_cpu.innerHTML = resposta[i].valor;
 
-                        situacao_cpu.innerHTML = resposta[0].valor;
+                        } else if (resp.nomeComponente == "Disco") {
 
-                    } else if (resposta[0].nomeComponente == "Disco") {
-
-                        situacao_cpu.innerHTML = resposta[0].valor;
-                    } else {
-
-                        console.log("Sem leitura");
+                            situacao_disco.innerHTML = resposta[i].valor;
+                        } else {
+                            console.log("Sem leitura");
+                        }
                     }
+
+
+
 
                 });
             } else {

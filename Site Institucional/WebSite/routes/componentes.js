@@ -44,6 +44,27 @@ router.get('/', function(req, res, next) {
 	});
 });
 
+router.get('/componente_usuario/:idMaquina', function(req, res, next) {
+	console.log('Recuperando todas as publicações');
+	
+	// let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
+	let idMaquina = req.params.idMaquina;
+
+    let instrucaoSql = `select idComponente, nomeComponente from tb_componente where idMaquina = ${idMaquina};`;
+
+	sequelize.query(instrucaoSql, {
+		model: componente,
+		mapToModel: true 
+	})
+	.then(resultado => {
+		console.log(`Encontrados: ${resultado.length}`);
+		res.json(resultado);
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+	});
+});
+
 module.exports = router;
 
 module.exports = router;

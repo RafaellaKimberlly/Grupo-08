@@ -134,7 +134,7 @@ main
   }
   
   .custom-select select {
-    display: none; /*hide original SELECT element: */
+    display: block; /*hide original SELECT element: */
   }
   
   .select-selected {

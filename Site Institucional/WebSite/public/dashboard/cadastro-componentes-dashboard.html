@@ -34,6 +34,9 @@
                     <a href="dashboard-home.html"><i class="fas fa-home"></i><span>Home</span></a>
                 </li>
                 <li>
+                    <a href="dashboard-graficos.html"><i class="fas fa-chart-line"></i><span>Gráficos</span></a>
+                </li>
+                <li>
                     <a href="dashboard-relatorios.html"><i class="fas fa-clipboard-list"></i><span>Relatório</span></a>
                 </li>
                 <li>
@@ -205,6 +208,25 @@
         obterPublicacoes3();
     }
 
+    function obterPublicacoes() {
+        fetch("/maquinas")
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        atualizarFeed(resposta);
+
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações: ${error.message}`);
+            });
+    }
+
     function atualizarFeed(maquinas) {
         let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
         var feed = document.getElementById("feed_container");
@@ -215,23 +237,11 @@
 
             if (maquina.fkUsuario == sessionStorage.id_usuario_meuapp) {
 
-                // var optNull = document.createElement("option")
                 var optMaquina = document.createElement("option")
 
-                // optNull.innerHTML = `Selecione :`;
                 optMaquina.value = `${maquina.idMaquina}`;
                 optMaquina.innerHTML = `${maquina.hostname}`;
 
-                // if (tdStatus.value == 'Ativo') {
-
-                // } else {
-
-                // }
-
-                // trMaquina.appendChild(td_idMaquina);
-                // trMaquina.appendChild(tdHostname);
-                // trMaquina.appendChild(tdStatus);
-                // feed.appendChild(optNull);
                 feed.appendChild(optMaquina);
 
             }
@@ -293,7 +303,7 @@
                 trMaquina.appendChild(btnDesativar);
 
                 feed.appendChild(trMaquina);
-                
+
             }
         }
 
@@ -301,24 +311,6 @@
 
     }
 
-    function obterPublicacoes() {
-        fetch("/maquinas")
-            .then(resposta => {
-                if (resposta.ok) {
-                    resposta.json().then(function (resposta) {
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-
-                        atualizarFeed(resposta);
-
-                    });
-                } else {
-                    console.error('Nenhum dado encontrado ou erro na API');
-                }
-            })
-            .catch(function (error) {
-                console.error(`Erro na obtenção das publicações: ${error.message}`);
-            });
-    }
 
     function obterPublicacoes3() {
         fetch("/maquinas/nomeComponente")

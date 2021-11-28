@@ -95,12 +95,23 @@ router.get('/situacao_componente/:idUsuario', function(req, res, next) {
 
 	var idUsuario = req.params.idUsuario;
 
-	let instrucaoSql = `select * from isaque join matheus where idUsuario = ${idUsuario}`;
+	let instrucaoSql = `select u.idUsuario, mc.idMaquinaComponente, c.nomeComponente, m.hostname, l.valor, d.descDado from tb_leitura as l
+	join tb_maquina_componente as mc
+	on mc.idMaquinaComponente = l.fkMaquinaComponente
+	join tb_componente as c
+	on c.idComponente = mc.fkComponente
+	join tb_maquina as m
+	on m.idMaquina = mc.fkMaquina
+	join tb_usuario as u
+	on u.idUsuario = m.fkUsuario
+	join tb_tipo_dados as d
+	on d.idDado = l.fkDado
+	where idUsuario = ${idUsuario};`;
 	
 	console.log(instrucaoSql);
 
 	sequelize.query(instrucaoSql, { 
-		model: maquina
+		model: leitura
 	})
 	.then(resultado => {
 		res.json(resultado);

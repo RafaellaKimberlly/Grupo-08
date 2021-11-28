@@ -6,12 +6,12 @@ var usuario = require('../models').usuario;
 let sessoes = [];
 
 /* Recuperar usuário por login e senha */
-router.post('/autenticar', function(req, res, next) {
+router.post('/autenticar', function (req, res, next) {
 	console.log('Recuperando usuário por email e senha');
 
 	var email = req.body.email; // depois de .body, use o nome (name) do campo em seu formulário de login
 	var senha = req.body.senha; // depois de .body, use o nome (name) do campo em seu formulário de login	
-	
+
 	let instrucaoSql = `select * from tb_usuario where email='${email}' and senha='${senha}'`;
 	console.log(instrucaoSql);
 
@@ -22,7 +22,7 @@ router.post('/autenticar', function(req, res, next) {
 
 		if (resultado.length == 1) {
 			sessoes.push(resultado[0].dataValues.email);
-			console.log('sessoes: ',sessoes);
+			console.log('sessoes: ', sessoes);
 			res.json(resultado[0]);
 		} else if (resultado.length == 0) {
 			res.status(403).send('Email e/ou senha inválido(s)');
@@ -33,13 +33,13 @@ router.post('/autenticar', function(req, res, next) {
 	}).catch(erro => {
 		console.error(erro);
 		res.status(500).send(erro.message);
-  	});
+	});
 });
 
 /* Cadastrar usuário */
-router.post('/cadastrar', function(req, res, next) {
+router.post('/cadastrar', function (req, res, next) {
 	console.log('Criando um usuário');
-	
+
 	usuario.create({
 		nome: req.body.nome,
 		sobrenome: req.body.sobrenome,
@@ -50,21 +50,21 @@ router.post('/cadastrar', function(req, res, next) {
 
 	}).then(resultado => {
 		console.log(`Registro criado: ${resultado}`)
-        res.send(resultado);
-    }).catch(erro => {
+		res.send(resultado);
+	}).catch(erro => {
 		console.error(erro);
 		res.status(500).send(erro.message);
-  	});
+	});
 });
 
 
 /* Verificação de usuário */
-router.get('/sessao/:email', function(req, res, next) {
+router.get('/sessao/:email', function (req, res, next) {
 	let email = req.params.email;
 	console.log(`Verificando se o usuário ${email} tem sessão`);
-	
+
 	let tem_sessao = false;
-	for (let u=0; u<sessoes.length; u++) {
+	for (let u = 0; u < sessoes.length; u++) {
 		if (sessoes[u] == email) {
 			tem_sessao = true;
 			break;
@@ -78,16 +78,16 @@ router.get('/sessao/:email', function(req, res, next) {
 	} else {
 		res.sendStatus(403);
 	}
-	
+
 });
 
 
 /* Logoff de usuário */
-router.get('/sair/:email', function(req, res, next) {
+router.get('/sair/:email', function (req, res, next) {
 	let email = req.params.email;
 	console.log(`Finalizando a sessão do usuário ${email}`);
 	let nova_sessoes = []
-	for (let u=0; u<sessoes.length; u++) {
+	for (let u = 0; u < sessoes.length; u++) {
 		if (sessoes[u] != email) {
 			nova_sessoes.push(sessoes[u]);
 		}
@@ -98,7 +98,7 @@ router.get('/sair/:email', function(req, res, next) {
 
 
 /* Recuperar todos os usuários */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
 	console.log('Recuperando todos os usuários');
 	usuario.findAndCountAll().then(resultado => {
 		console.log(`${resultado.count} registros`);
@@ -107,7 +107,33 @@ router.get('/', function(req, res, next) {
 	}).catch(erro => {
 		console.error(erro);
 		res.status(500).send(erro.message);
-  	});
+	});
+});
+
+router.post('/atualizar/:idUsuario', function (req, res, next) {
+	console.log('Recuperando todas as publicações');
+
+	// let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
+	let email = req.body.email;
+	let senha = req.body.senha;
+	let idUsuario = req.params.idUsuario
+
+	let instrucaoSql = `update tb_usuario set
+	email = ${email},
+	senha = ${senha}
+	where idUsuario = ${idUsuario};`;
+
+	sequelize.query(instrucaoSql, {
+		model: usuario,
+		mapToModel: true
+	}
+		.then(resultado => {
+			console.log(`Encontrados: ${resultado.length}`);
+			res.json(resultado);
+		}).catch(erro => {
+			console.error(erro);
+			res.status(500).send(erro.message);
+		}))
 });
 
 module.exports = router;
