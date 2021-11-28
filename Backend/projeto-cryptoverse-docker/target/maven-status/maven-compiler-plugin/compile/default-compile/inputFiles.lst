@@ -1,18 +1,17 @@
-C:\Users\imkbe\OneDrive\햞ea de Trabalho\Criptoverse\Grupo-08\Backend\projeto-cryptoverse-docker\src\main\java\model\MaquinasModel.java
-C:\Users\imkbe\OneDrive\햞ea de Trabalho\Criptoverse\Grupo-08\Backend\projeto-cryptoverse-docker\src\main\java\projeto\cryptoverse\docker\AcoesCli.java
-C:\Users\imkbe\OneDrive\햞ea de Trabalho\Criptoverse\Grupo-08\Backend\projeto-cryptoverse-docker\src\main\java\log\Logs.java
-C:\Users\imkbe\OneDrive\햞ea de Trabalho\Criptoverse\Grupo-08\Backend\projeto-cryptoverse-docker\src\main\java\projeto\cryptoverse\docker\ProjetoCryptoverseDocker.java
-C:\Users\imkbe\OneDrive\햞ea de Trabalho\Criptoverse\Grupo-08\Backend\projeto-cryptoverse-docker\src\main\java\model\MaquinasComponentesModel.java
-C:\Users\imkbe\OneDrive\햞ea de Trabalho\Criptoverse\Grupo-08\Backend\projeto-cryptoverse-docker\src\main\java\view\TelaSistema2.java
-C:\Users\imkbe\OneDrive\햞ea de Trabalho\Criptoverse\Grupo-08\Backend\projeto-cryptoverse-docker\src\main\java\model\Usuario.java
-C:\Users\imkbe\OneDrive\햞ea de Trabalho\Criptoverse\Grupo-08\Backend\projeto-cryptoverse-docker\src\main\java\database\ConexaoBD.java
-C:\Users\imkbe\OneDrive\햞ea de Trabalho\Criptoverse\Grupo-08\Backend\projeto-cryptoverse-docker\src\main\java\view\TelaSistema.java
-C:\Users\imkbe\OneDrive\햞ea de Trabalho\Criptoverse\Grupo-08\Backend\projeto-cryptoverse-docker\src\main\java\services\Slack.java
-C:\Users\imkbe\OneDrive\햞ea de Trabalho\Criptoverse\Grupo-08\Backend\projeto-cryptoverse-docker\src\main\java\view\TelaLogin.java
-C:\Users\imkbe\OneDrive\햞ea de Trabalho\Criptoverse\Grupo-08\Backend\projeto-cryptoverse-docker\src\main\java\model\TipoDadosModel.java
-C:\Users\imkbe\OneDrive\햞ea de Trabalho\Criptoverse\Grupo-08\Backend\projeto-cryptoverse-docker\src\main\java\controller\RegistroController.java
-C:\Users\imkbe\OneDrive\햞ea de Trabalho\Criptoverse\Grupo-08\Backend\projeto-cryptoverse-docker\src\main\java\services\LeituraService.java
-C:\Users\imkbe\OneDrive\햞ea de Trabalho\Criptoverse\Grupo-08\Backend\projeto-cryptoverse-docker\src\main\java\model\LeiturasModel.java
-C:\Users\imkbe\OneDrive\햞ea de Trabalho\Criptoverse\Grupo-08\Backend\projeto-cryptoverse-docker\src\main\java\services\ComponentesServices.java
-C:\Users\imkbe\OneDrive\햞ea de Trabalho\Criptoverse\Grupo-08\Backend\projeto-cryptoverse-docker\src\main\java\model\ComponentesModel.java
-C:\Users\imkbe\OneDrive\햞ea de Trabalho\Criptoverse\Grupo-08\Backend\projeto-cryptoverse-docker\src\main\java\services\ServiceTeste.java
+C:\Users\fabri\Documents\BandTec 2 Semestre\Pi\Sprint 3\Grupo-08\Backend\projeto-cryptoverse\src\main\java\controller\RegistroController.java
+C:\Users\fabri\Documents\BandTec 2 Semestre\Pi\Sprint 3\Grupo-08\Backend\projeto-cryptoverse\src\main\java\database\ConexaoBD.java
+C:\Users\fabri\Documents\BandTec 2 Semestre\Pi\Sprint 3\Grupo-08\Backend\projeto-cryptoverse\src\main\java\model\Usuario.java
+C:\Users\fabri\Documents\BandTec 2 Semestre\Pi\Sprint 3\Grupo-08\Backend\projeto-cryptoverse\src\main\java\Application.java
+C:\Users\fabri\Documents\BandTec 2 Semestre\Pi\Sprint 3\Grupo-08\Backend\projeto-cryptoverse\src\main\java\AcoesCli.java
+C:\Users\fabri\Documents\BandTec 2 Semestre\Pi\Sprint 3\Grupo-08\Backend\projeto-cryptoverse\src\main\java\model\ComponentesModel.java
+C:\Users\fabri\Documents\BandTec 2 Semestre\Pi\Sprint 3\Grupo-08\Backend\projeto-cryptoverse\src\main\java\services\ComponentesServices.java
+C:\Users\fabri\Documents\BandTec 2 Semestre\Pi\Sprint 3\Grupo-08\Backend\projeto-cryptoverse\src\main\java\view\TelaSistema.java
+C:\Users\fabri\Documents\BandTec 2 Semestre\Pi\Sprint 3\Grupo-08\Backend\projeto-cryptoverse\src\main\java\model\MaquinasModel.java
+C:\Users\fabri\Documents\BandTec 2 Semestre\Pi\Sprint 3\Grupo-08\Backend\projeto-cryptoverse\src\main\java\model\TipoDadosModel.java
+C:\Users\fabri\Documents\BandTec 2 Semestre\Pi\Sprint 3\Grupo-08\Backend\projeto-cryptoverse\src\main\java\view\TelaLogin.java
+C:\Users\fabri\Documents\BandTec 2 Semestre\Pi\Sprint 3\Grupo-08\Backend\projeto-cryptoverse\src\main\java\view\TelaSistema2.java
+C:\Users\fabri\Documents\BandTec 2 Semestre\Pi\Sprint 3\Grupo-08\Backend\projeto-cryptoverse\src\main\java\model\MaquinasComponentesModel.java
+C:\Users\fabri\Documents\BandTec 2 Semestre\Pi\Sprint 3\Grupo-08\Backend\projeto-cryptoverse\src\main\java\model\LeiturasModel.java
+C:\Users\fabri\Documents\BandTec 2 Semestre\Pi\Sprint 3\Grupo-08\Backend\projeto-cryptoverse\src\main\java\services\ServiceTeste.java
+C:\Users\fabri\Documents\BandTec 2 Semestre\Pi\Sprint 3\Grupo-08\Backend\projeto-cryptoverse\src\main\java\log\Logs.java
+C:\Users\fabri\Documents\BandTec 2 Semestre\Pi\Sprint 3\Grupo-08\Backend\projeto-cryptoverse\src\main\java\services\LeituraService.java
