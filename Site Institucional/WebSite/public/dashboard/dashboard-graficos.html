@@ -249,7 +249,7 @@
 
 
 
-                <!-- Fim Graficos -->
+            <!-- Fim Graficos -->
         </main>
 
 </html>
@@ -257,6 +257,7 @@
 
     function carregarComponentes() {
         obterPublicacoes();
+        obterDadosGraficoPrimeiraVez();
         // obterPublicacoes2();
     }
 
@@ -345,13 +346,8 @@
 
     function obterDadosGraficoPrimeiraVez() {
         console.log("executei obterDadosGraficoPrimeiraVez")
-        // alterarCoresBotoes(idFreezer);
 
-        // if (proximaAtualizacao != undefined) {
-        //     clearTimeout(proximaAtualizacao);
-        // }
-
-        fetch(`/maquinasComponentes/componentes`)
+        fetch(`/leituras/componentes`)
             .then(function (response) {
                 if (response.ok) {
                     response.json().then(function (resposta) {
@@ -363,7 +359,7 @@
                             datasets: [
                                 {
                                     yAxisID: 'y-temperatura',
-                                    label: 'Leiruras',
+                                    label: 'leituras',
                                     borderColor: 'rgba(255,0,0,1)',
                                     backgroundColor: 'rgba(255,0,0,1)',
                                     fill: false,
@@ -373,8 +369,8 @@
                         };
                         for (i = 0; i < resposta.length; i++) {
                             var registro = resposta[i];
-                            dados.labels.push(registro.nomeComponente);
-                            dados.datasets[0].data.push(registro.componentes);
+                            dados.labels.push(registro.dataHora);
+                            dados.datasets[0].data.push(registro.valor);
 
                         }
                         console.log(JSON.stringify(dados));
@@ -391,20 +387,20 @@
 
     }
 
-    window.onload = obterDadosGraficoPrimeiraVez();
+    // window.onload = obterDadosGraficoPrimeiraVez();
 
     function plotarGrafico(dados) {
         console.log("executei plotarGrafico")
         console.log('iniciando plotagem do gráfico...');
 
-        let ctx = document.getElementById('myChart').getContext('2d');
-        
-        let chart = new Chart.Line(ctx, {
+        let ctx = myChart.getContext("2d");
+
+        window.myChart = Chart.Line(ctx, {
             data: dados,
             options: configurarGrafico()
         });
 
-        // setTimeout(() => atualizarGrafico(dados), 2000);
+        setTimeout(() => atualizarGrafico(dados), 2000);
     }
 
     function configurarGrafico() {
@@ -434,144 +430,39 @@
         return configuracoes;
     }
 
+    function atualizarGrafico(dados) {
+        console.log("executei atualizarGrafico")
+        fetch(`/leituras/tempo-real`).then(function (response) {
+            console.log("Estou tentando pegar as leituras da maquina")
+            if (response.ok) {
+                response.json().then(function (novoRegistro) {
+
+                    console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                    console.log(`Dados atuais do gráfico: ${dados}`);
+
+                    // tirando e colocando valores no gráfico
+                    dados.labels.shift(); // apagar o primeiro
+                    dados.labels.push(novoRegistro.dataHora); // incluir um novo momento
+                    dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
+                    dados.datasets[0].data.push(novoRegistro.valor); // incluir uma nova leitura de temperatura
+
+                    // console.log("meu freezer é o " + idFreezer)
+
+                    window.grafico_linha.update();
 
 
-    // let ctx = document.getElementById('myChart');
-
-    // let chart = new Chart(ctx, {
-    //     type: 'line',
-    //     // O objeto data possui os valores dispostos no gráfico
-    //     data: {
-    //         // Legendas das Linhas
-    //         labels: ['00:00', '02:00', '04:00', '06:00', '08:00', '10:00', '11:00', '13:00', '15:00'],
-    //         datasets: [{
-    //             // Legenda
-    //             color: '#231D36',
-    //             label: 'Desempenho diário',
-    //             backgroundColor: '#F49D67',
-    //             // Define-se a cor da linha.
-    //             borderColor: '#F95738',
-    //             // Dados a serem inseridos nas linhas
-    //             data: [100, 96, 20, 41, 32, 79, 100, 10, 9],
-    //         }]
-    //     },
-    //     options: {
-    //         elements: {
-    //             line: {
-    //                 tension: 0
-    //             }
-    //         }
-    //     }
-
-    // });
-
-    // const ctxGPU = document.getElementById('GPUChart');
-    // const GPUChart = new Chart(ctxGPU, {
-    //     type: 'bar',
-    //     data: {
-    //         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-    //         datasets: [{
-    //             label: '# of Votes',
-    //             data: [12, 19, 3, 5, 2, 3],
-    //             backgroundColor: [
-    //                 'rgba(255, 99, 132, 0.2)',
-    //                 'rgba(54, 162, 235, 0.2)',
-    //                 'rgba(255, 206, 86, 0.2)',
-    //                 'rgba(75, 192, 192, 0.2)',
-    //                 'rgba(153, 102, 255, 0.2)',
-    //                 'rgba(255, 159, 64, 0.2)'
-    //             ],
-    //             borderColor: [
-    //                 'rgba(255, 99, 132, 1)',
-    //                 'rgba(54, 162, 235, 1)',
-    //                 'rgba(255, 206, 86, 1)',
-    //                 'rgba(75, 192, 192, 1)',
-    //                 'rgba(153, 102, 255, 1)',
-    //                 'rgba(255, 159, 64, 1)'
-    //             ],
-    //             borderWidth: 1
-    //         }]
-    //     },
-    //     options: {
-    //         scales: {
-    //             y: {
-    //                 beginAtZero: true
-    //             }
-    //         }
-    //     }
-    // });
-
-    const ctxRAM = document.getElementById('RAMChart');
-    const RAMChart = new Chart(ctxRAM, {
-        type: 'polarArea',
-        data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(dados), 5000);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(dados), 5000);
             }
-        }
-    });
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
 
-    const ctxDisco = document.getElementById('DiscoChart');
-    const DiscoChart = new Chart(ctxDisco, {
-        type: 'line',
-        data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-            datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(75, 192, 192, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
+    }
 
 </script>
 <!-- <script src="../js/graficos-js.js"></script> -->

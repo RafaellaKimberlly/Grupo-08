@@ -89,6 +89,83 @@ router.get('/estatisticas', function (req, res, next) {
   
 });
 
+router.get('/componentes', function(req, res, next) {
+	
+	// quantas são as últimas leituras que quer? 7 está bom?
+	const limite_linhas = 7;
+
+	var idFreezer = req.params.idFreezer;
+
+	console.log(`Recuperando as ultimas ${limite_linhas} leituras`);
+	
+	let instrucaoSql = "";
+
+	if (env == 'dev') {
+		// abaixo, escreva o select de dados para o Workbench
+		instrucaoSql = `select idLeitura, valor, dataHora, fkDado, fkMaquina, fkComponente from tb_leitura as l
+		join tb_maquina_componente as mc
+		on mc.idMaquinaComponente = l.fkMaquinaComponente
+		join tb_maquina as m
+		on m.idMaquina = mc.fkMaquina
+		join tb_componente as c
+		on c.idComponente = mc.fkComponente
+		where fkMaquina = 100 and fkComponente = 1001
+		order by idLeitura desc limit 7;`;
+	} else if (env == 'production') {
+		// abaixo, escreva o select de dados para o SQL Server
+		instrucaoSql = `select top ${limite_linhas} 
+		temperatura, 
+		dataHora,
+		FORMAT(dataHora,'HH:mm:ss') as momento_grafico
+		from historicoFreezer
+		where fkFreezer = ${idFreezer}
+		order by idhistoricoFreezer desc`;
+	} else {
+		console.log("\n\n\n\nVERIFIQUE O VALOR DE LINHA 1 EM APP.JS!\n\n\n\n")
+	}
+	
+	sequelize.query(instrucaoSql, {
+		model: leitura,
+		mapToModel: true 
+	})
+	.then(resultado => {
+		console.log(`Encontrados: ${resultado.length}`);
+		res.json(resultado);
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+	});
+});
+
+router.get('/tempo-real', function(req, res, next) {
+	console.log('Recuperando leituras');
+	
+	//var idcaminhao = req.body.idcaminhao; // depois de .body, use o nome (name) do campo em seu formulário de login
+	var idFreezer = req.params.idFreezer;
+	
+	let instrucaoSql = "";
+	
+	if (env == 'dev') {
+		// abaixo, escreva o select de dados para o Workbench
+		instrucaoSql = `select valor, dataHora from tb_leitura order by idLeitura desc limit 1;`;
+	} else if (env == 'production') {
+		// abaixo, escreva o select de dados para o SQL Server
+		instrucaoSql = `select top 1 temperatura, dataHora, FORMAT(dataHora,'HH:mm:ss') as momento_grafico from historicoFreezer where fkFreezer = ${idFreezer} order by idhistoricoFreezer desc`;
+	} else {
+		console.log("\n\n\n\nVERIFIQUE O VALOR DE LINHA 1 EM APP.JS!\n\n\n\n")
+	}
+	
+	console.log(instrucaoSql);
+	
+	sequelize.query(instrucaoSql, { type: sequelize.QueryTypes.SELECT })
+	.then(resultado => {
+		res.json(resultado[0]);
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+	});
+});
+
 //TESTE//
 router.get('/situacao_componente/:idUsuario', function(req, res, next) {
 	console.log('Recuperando valor');	
