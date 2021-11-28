@@ -25,13 +25,12 @@ public class RegistroController {
     ComponentesServices componente = new ComponentesServices();
     Slack slack = new Slack();
 
-
-    public void addLeituraRam(){
-//        String dataAtual = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss").format(Calendar.getInstance().getTime());
-//        System.out.println("Coletando Hora atual: " + dataAtual);
-        Double valorRam = (componente.tamanhoUsadoRam()/1000000000);
-        Double totalRam = (componente.tamanhoTotalRam()/1000000000);
-        leitura.addLeituraRam(valorRam, totalRam);
+    public void addLeituraRam() throws IOException, InterruptedException{
+        String dataAtual = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+        Double valorRam = componente.tamanhoUsadoRam();
+        Double totalRam = componente.tamanhoTotalRam();
+        leitura.addLeituraRam(dataAtual, valorRam, totalRam);
+        
         }
         
         public void addLeituraCpu() throws IOException, InterruptedException{
@@ -47,6 +46,40 @@ public class RegistroController {
         leitura.addLeituraDisco(dataAtual, valorDisco);
         
         }
+        
+        public static void main(String[] args)throws IOException{
+            
+        RegistroController enviaDados = new RegistroController();
+        
+        new Timer().scheduleAtFixedRate(new TimerTask() {
+            
+            @Override
+            public void run() {
+                try {
+                    enviaDados.addLeituraRam();
+                } catch (IOException ex) {
+                    Logger.getLogger(RegistroController.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(RegistroController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+                    enviaDados.addLeituraCpu();
+                } catch (IOException ex) {
+                    Logger.getLogger(RegistroController.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(RegistroController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                try {
+                    enviaDados.addLeituraDisco();
+                } catch (IOException ex) {
+                    Logger.getLogger(RegistroController.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(RegistroController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }, 0, 10000);
+            
+    }
     
     }
    
