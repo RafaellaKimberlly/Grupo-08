@@ -1,63 +1,86 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Simple Map</title>
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-    <link rel="stylesheet" type="text/css" href="./style.css" />
-    <script src="./index.js"></script>
-  </head>
-  <body>
-    <div id="map"></div>
 
-    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHuEUBhrwiYDF8lzFfYiXrI74qDamCCy4&callback=initMap&v=weekly"
-      async
-    ></script>
-  </body>
+<head>
+  <title>Simple Map</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+  <link rel="stylesheet" type="text/css" href="./style.css" />
+  <script type="text/javascript" src="maps.js"></script>
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+  <script src="./index.js"></script>
+</head>
+
+<body>
+  <div>
+    Indique um endereço: <input type="text" id="address-input">
+    <button onclick="searchAddress();">Pesquisar</button>
+  </div>
+  <div id="map"></div>
+
+  <script src="pontos.json"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+    crossorigin="anonymous"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHuEUBhrwiYDF8lzFfYiXrI74qDamCCy4&callback=initMap&v=weekly"
+    async></script>
+    <div id="teste"></div>
+</body>
+
 </html>
 
 
-<script>
-    // Initialize and add the map
-    function initMap() {
-      // The location of Uluru
-      const uluru = { lat: -22.618827234831404, lng: -42.57636812499999,  
-         lat: -22.57825604463875, lng: -48.68476656249999 };
-      const uluru2 = { lat: -22.57825604463875, lng: -48.68476656249999 };
+<script type="text/javascript">
+  var map;
+  var markes = [];
 
-      // The map, centered at Uluru
-      const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 10,
-        center: uluru,
-      });
-      // The marker, positioned at Uluru
-      const marker = new google.maps.Marker({
-        
-        position: uluru,
-        map: map,
-      });
+  function initMap() {
 
-      const marker2 = new google.maps.Marker({
-        position: uluru2,
-        map: map,
-      });
-    }
-  </script>
+
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {
+        lat: -19.212355602107472,
+        lng: -44.20234468749999
+      },
+      zoom: 4,
+    });
+
+
+    // const marker = new google.maps.Marker({
+
+    //   position: uluru,
+    //   map: map,
+    // });
+    habilitarMarkers();
+
+  }
+
+  function habilitarMarkers() {
+    $.each(points, function (key, point) {
+      var position = new google.maps.LatLng(point.lat, point.lng);
+      var marker = new google.maps.Marker({
+        position: position,
+        map: map
+      })
+      markes.push(marker);
+    })
+  }
+</script>
+
+
+
 
 <style>
-    /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-#map {
-  height: 100%;
-}
+  #map {
+    height: 100%;
+  }
 
-/* Optional: Makes the sample page fill the window. */
-html,
-body {
-  height: 80%;
-  width: 70%;
-  margin: 0;
-  padding: 0;
-}
+  html,
+  body {
+    height: 80%;
+    width: 70%;
+    margin: 0;
+    padding: 0;
+  }
 </style>
