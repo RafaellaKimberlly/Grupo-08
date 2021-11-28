@@ -86,67 +86,76 @@
 
                 <div class="form-infos">
                     <h2>Suas Informações</h2>
-                    <form action="">
+                    <form id="form_alteracao" method="POST" onsubmit="return alterarDados()">
+
+                        <input type="text" name="idUsuario" id="idUsuario" style="display: none;">
 
                         <div class="input-form">
                             <i class="fas fa-user icon-modify"></i>
-                            <input type="text" placeholder="Nome">
+                            <input id="nome" name="nome" type="text" placeholder="Nome">
                         </div>
 
                         <div class="input-form">
                             <i class="fas fa-user icon-modify"></i>
-                            <input type="text" placeholder="Sobrenome">
+                            <input id="sobrenome" name="sobrenome" type="text" placeholder="Sobrenome">
                         </div>
 
                         <div class="input-form">
                             <i class="fas fa-envelope icon-modify"></i>
-                            <input type="email" placeholder="Endereço de email">
+                            <input id="email" name="email" type="email" placeholder="Endereço de email">
                         </div>
 
                         <div class="input-form">
                             <i class="fas fa-lock icon-modify"></i>
-                            <input type="password" placeholder="Alterar Senha">
+                            <input id="senha" name="senha" type="password" placeholder="Alterar Senha">
                         </div>
 
                         <div class="input-form">
-                            <i class="fas fa-lock icon-modify"></i>
-                            <input type="password" placeholder="Digite novamente">
+                            <label class="label-input">
+                                <i class="fas fa-globe-americas world"></i>
+                                <select class="select_pais" name="uf" id="uf" placeholder="Estado">
+                                    <option value="#" autofocus>Selecione seu Estado</option>
+                                    <option value="AC">AC</option>
+                                    <option value="AL">AL</option>
+                                    <option value="AP">AP</option>
+                                    <option value="AM">AM</option>
+                                    <option value="BA">BA</option>
+                                    <option value="CE">CE</option>
+                                    <option value="ES">ES</option>
+                                    <option value="GO">GO</option>
+                                    <option value="MA">MA</option>
+                                    <option value="MT">MT</option>
+                                    <option value="MS">MS</option>
+                                    <option value="MG">MG</option>
+                                    <option value="PA">PA</option>
+                                    <option value="PB">PB</option>
+                                    <option value="PR">PR</option>
+                                    <option value="PE">PE</option>
+                                    <option value="PI">PI</option>
+                                    <option value="RJ">RJ</option>
+                                    <option value="RN">RN</option>
+                                    <option value="RS">RS</option>
+                                    <option value="RO">RO</option>
+                                    <option value="RR">RR</option>
+                                    <option value="SC">SC</option>
+                                    <option value="SP">SP</option>
+                                    <option value="SE">SE</option>
+                                    <option value="TO">TO</option>
+                                    <option value="DF">DF</option>
+                                </select>
+                            </label>
                         </div>
 
-                        <!--<label class="label-input">
-                            <i class="fas fa-globe-americas world"></i>
-                            <select class="select_pais" name="uf" id="" placeholder="Estado">
-                                <option value="#" autofocus>Selecione seu Estado</option>
-                                <option value="AC">AC</option>
-                                <option value="AL">AL</option>
-                                <option value="AP">AP</option>
-                                <option value="AM">AM</option>
-                                <option value="BA">BA</option>
-                                <option value="CE">CE</option>
-                                <option value="ES">ES</option>
-                                <option value="GO">GO</option>
-                                <option value="MA">MA</option>
-                                <option value="MT">MT</option>
-                                <option value="MS">MS</option>
-                                <option value="MG">MG</option>
-                                <option value="PA">PA</option>
-                                <option value="PB">PB</option>
-                                <option value="PR">PR</option>
-                                <option value="PE">PE</option>
-                                <option value="PI">PI</option>
-                                <option value="RJ">RJ</option>
-                                <option value="RN">RN</option>
-                                <option value="RS">RS</option>
-                                <option value="RO">RO</option>
-                                <option value="RR">RR</option>
-                                <option value="SC">SC</option>
-                                <option value="SP">SP</option>
-                                <option value="SE">SE</option>
-                                <option value="TO">TO</option>
-                                <option value="DF">DF</option>
-                            </select>
-                        </label> -->
-                        <button class="btn_perfil">Alterar informações</button>
+                        <!-- <div class="input-form">
+                            <label class="label-input">
+                                <i class="fas fa-lock icon-modify"></i>
+                                <input type="number" id="fkPool" name="fkPool" placeholder="Pool">
+                            </label>
+                        </div> -->
+
+                        <button type="submit" class="btn_perfil">
+                            Alterar informações
+                        </button>
                     </form>
                 </div>
 
@@ -191,6 +200,34 @@
 
             }
         });
+
+        return false;
+    }
+
+    function alterarDados() {
+
+        idUsuario.value = Number(sessionStorage.getItem('id_usuario_meuapp'));
+        console.log(idUsuario.value);
+
+        var formulario = new URLSearchParams(new FormData(form_alteracao));
+        fetch("/usuarios/alterar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+
+            if (response.ok) {
+
+                console.log(senha.value);
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    div_erro.innerHTML = resposta;
+                });
+            }
+        });
+
 
         return false;
     }

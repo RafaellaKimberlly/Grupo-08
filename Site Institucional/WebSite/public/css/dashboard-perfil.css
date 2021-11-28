@@ -47,6 +47,10 @@
     padding: 10px 10px;
 }
 
+.label-input{
+    width: 10%;
+}
+
 form input{
     margin: 15px 0;
     height: 2.8vw;
@@ -69,7 +73,7 @@ select{
     margin: 10px 0;
     height: 2.6vw;
     border: 1px solid transparent;
-    width: 86%;
+    width: 94%;
     background-color: #EBEBD3;
     border: 1px solid transparent;
     border-radius: 10px;

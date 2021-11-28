@@ -46,7 +46,7 @@ router.post('/cadastrar', function (req, res, next) {
 		email: req.body.email,
 		senha: req.body.senha,
 		uf: req.body.uf,
-		fkPools: req.body.fkPools
+		fkPool: req.body.fkPool
 
 	}).then(resultado => {
 		console.log(`Registro criado: ${resultado}`)
@@ -57,6 +57,30 @@ router.post('/cadastrar', function (req, res, next) {
 	});
 });
 
+/* Alterar dados do usuário */
+router.post('/alterar/', function (req, res, next) {
+	console.log('Alterando os dados do usuário.');
+
+	var idUsuario = req.body.idUsuario;
+	var nome = req.body.nome;
+	var sobrenome = req.body.sobrenome;
+	var email = req.body.email;
+	var senha = req.body.senha;
+	var uf = req.body.uf;
+
+	let instrucaoSql = `UPDATE tb_usuario
+	SET nome='${nome}', sobrenome='${sobrenome}', email='${email}',
+	senha='${senha}', uf='${uf}' 
+	WHERE idUsuario = ${idUsuario};`;
+
+	sequelize.query(instrucaoSql, { type: sequelize.QueryTypes.UPDATE })
+	.then(resultado => {
+			res.json(resultado);
+		}).catch(erro => {
+			console.error(erro);
+			res.status(500).send(erro.message);
+		});
+})
 
 /* Verificação de usuário */
 router.get('/sessao/:email', function (req, res, next) {
@@ -110,7 +134,7 @@ router.get('/', function (req, res, next) {
 	});
 });
 
-router.post('/atualizar/:idUsuario', function (req, res, next) {
+/* router.post('/atualizar/:idUsuario', function (req, res, next) {
 	console.log('Recuperando todas as publicações');
 
 	// let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
@@ -134,6 +158,6 @@ router.post('/atualizar/:idUsuario', function (req, res, next) {
 			console.error(erro);
 			res.status(500).send(erro.message);
 		}))
-});
+}); */
 
 module.exports = router;
