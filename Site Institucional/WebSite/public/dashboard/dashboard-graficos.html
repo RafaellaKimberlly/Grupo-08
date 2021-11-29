@@ -162,7 +162,7 @@
             <!--  inicio graficos -->
 
             <div class="row-grafico">
-                <div class="column-grafico" style="background-color:#EBEBD3;">
+                <div class="column-grafico">
                     <h2>Gráfico de desempenho de componente</h2>
                     <!-- adicione a tag canvas no seu HTML -->
                     <div class="chart-container" style="position: relative; height:45vh; width:45vw; margin-top: 20px;">
@@ -170,7 +170,7 @@
                     </div>
                 </div>
 
-                <div class="column-grafico" style="background-color:#EBEBD3;">
+                <div class="column-grafico" >
                     <h2>Utilização do componente</h2>
                     <br><br>
                     <h2>CPU</h2>
@@ -181,34 +181,16 @@
                     <br>
                     <div style="overflow-x:auto;">
                         <table>
-                            <tr>
-                                <th>Utilização</th>
-                                <th>Velocidade</th>
-                                <th>Tempo de atividade</th>
-                                <th>Processos</th>
-                                <th>Threads</th>
-                            </tr>
-                            <tr>
-                                <td>Jill</td>
-                                <td>Smith</td>
-                                <td>50</td>
-                                <td>50</td>
-                                <td>50</td>
-                            </tr>
-                            <tr>
-                                <td>Eve</td>
-                                <td>Jackson</td>
-                                <td>94</td>
-                                <td>94</td>
-                                <td>94</td>
-                            </tr>
-                            <tr>
-                                <td>Adam</td>
-                                <td>Johnson</td>
-                                <td>67</td>
-                                <td>67</td>
-                                <td>67</td>
-                            </tr>
+                            <thead>
+                                <tr>
+                                    <th>Utilização</th>
+                                    <th>Velocidade</th>
+                                    <th>Tempo de atividade</th>
+                                    <th>Processos</th>
+                                    <th>Threads</th>
+                                </tr>
+                            </thead>
+                            <tbody id="feed_container5"></tbody>
                         </table>
                     </div>
                 </div>
@@ -224,6 +206,7 @@
         obterPublicacoes2();
         obterPublicacoes3();
         obterPublicacoes4();
+        obterPublicacoes5();
     }
 
     function obterPublicacoes() {
@@ -266,7 +249,6 @@
         }
 
     }
-
 
     function obterPublicacoes2(idUsuario) {
 
@@ -400,6 +382,59 @@
             feed.appendChild(optComponente);
         }
 
+    }
+
+    function obterPublicacoes5() {
+        fetch("/leituras")
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        atualizarFeed5(resposta);
+
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações: ${error.message}`);
+            });
+    }
+
+    function atualizarFeed5(leituras) {
+        var feed = document.getElementById("feed_container5");
+        feed.innerHTML = "";
+
+        for (let i = 0; i < leituras.length; i++) {
+            var leitura = leituras[i];
+
+            if (leitura.fkUsuario == sessionStorage.id_usuario_meuapp) {
+
+                var trLeitura = document.createElement("tr")
+                var td_idLeitura = document.createElement("td")
+                var tdAlerta = document.createElement("td")
+                var tdDataHora = document.createElement("td")
+                var tdHostname = document.createElement("td")
+                var tdNomeComponente = document.createElement("td")
+
+                td_idLeitura.innerHTML = `${leitura.idLeitura}`;
+                tdAlerta.innerHTML = `${leitura.nvAlerta}`;
+                tdDataHora.innerHTML = `${leitura.dataHora}`;
+                tdHostname.innerHTML = `${leitura.hostname}`;
+                tdNomeComponente.innerHTML = `${leitura.nomeComponente}`;
+
+                trLeitura.appendChild(td_idLeitura);
+                trLeitura.appendChild(tdAlerta);
+                trLeitura.appendChild(tdDataHora);
+                trLeitura.appendChild(tdHostname);
+                trLeitura.appendChild(tdNomeComponente);
+
+                feed.appendChild(trLeitura);
+
+            }
+        }
     }
 
     function obterDadosGraficoPrimeiraVez() {
