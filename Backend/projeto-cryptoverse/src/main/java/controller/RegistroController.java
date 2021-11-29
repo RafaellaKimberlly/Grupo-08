@@ -29,21 +29,21 @@ public class RegistroController {
         String dataAtual = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
         Double valorRam = componente.tamanhoUsadoRam();
         Double totalRam = componente.tamanhoTotalRam();
-        leitura.addLeituraRam(dataAtual, valorRam, totalRam);
+        leitura.addLeituraRam();
         
         }
         
         public void addLeituraCpu() throws IOException, InterruptedException{
         String dataAtual = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
         Double valorCpu = componente.getCpuUsoPorc();
-        leitura.addLeituraCpu(dataAtual, valorCpu);
+        leitura.addLeituraCpu();
         
         }
     
         public void addLeituraDisco() throws IOException, InterruptedException{
         String dataAtual = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
         Double valorDisco = componente.getDiscoPorc();
-        leitura.addLeituraDisco(dataAtual, valorDisco);
+        leitura.addLeituraDisco();
         
         }
         

@@ -22,8 +22,8 @@ public class ConexaoBD {
         this.bancoDeDados = new BasicDataSource();
         this.bancoDeDados.setDriverClassName("com.mysql.cj.jdbc.Driver");
         this.bancoDeDados.setUrl("jdbc:mysql://localhost:3306/projetoCryptoverse?useTimezone=true&serverTimezone=UTC");
-        this.bancoDeDados.setUsername("admcrypto");
-        this.bancoDeDados.setPassword("teste123");
+        this.bancoDeDados.setUsername("root");
+        this.bancoDeDados.setPassword("saladaMista1234@");
         
     }
     

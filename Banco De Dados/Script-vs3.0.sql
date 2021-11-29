@@ -34,6 +34,11 @@ insert into tb_usuario (nome, sobrenome, email, senha, uf, fkPool) values
 
 select * from tb_usuario;
 
+UPDATE tb_usuario
+	SET nome = '${nome}', sobrenome = '${sobrenome}', email = '${email}',
+	senha = '${senha}', uf = '${uf}', fkPool = '${fkPool}' 
+	WHERE idUsuario = '${4}';
+
 create table tb_maquina(
 	idMaquina int primary key auto_increment,
 	hostname varchar(60),
