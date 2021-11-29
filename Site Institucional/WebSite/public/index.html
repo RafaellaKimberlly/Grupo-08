@@ -9,6 +9,11 @@
     <!-- <link rel="stylesheet" href="css/menu.css"> -->
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="maps.js"></script>
+    <script src="./index.js"></script>
+ 
     <title>CryptoVerse</title>
 </head>
 
@@ -166,29 +171,25 @@
         <!-- Iniio Map -->
         <article class="mapa">
             <div>
-                <div class="mapouter">
-                    <div class="gmap_canvas"><iframe width="100%" height="300" id="gmap_canvas"
-                            src="https://maps.google.com/maps?q=bandtec&t=&z=11&ie=UTF8&iwloc=&output=embed"
-                            frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
-                            href="https://fmovies-online.net"></a><br>
-                        <style>
-                            .mapouter {
-                                position: relative;
-                                text-align: right;
-                                height: 300px;
-                                width: 100%;
-                            }
-                        </style><a href="https://www.embedgooglemap.net">embed google map into website</a>
-                        <style>
-                            .gmap_canvas {
-                                overflow: hidden;
-                                background: none !important;
-                                height: 300px;
-                                width: 100%;
-                            }
-                        </style>
-                    </div>
-                </div>
+
+                <!-- <div>
+                    Indique um endereço: <input type="text" id="address-input">
+                    <button onclick="searchAddress();">Pesquisar</button>
+                  </div> -->
+
+                <div id="map"></div>
+
+                <script src="pontos.json"></script>
+                <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+                  crossorigin="anonymous"></script>
+                  <script
+                  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHuEUBhrwiYDF8lzFfYiXrI74qDamCCy4&callback=initMap&v=weekly"
+                  async></script>
+                  <div id="teste"></div>
+
+
+
+
             </div>
         </article>
         <!-- Fim Map -->
@@ -246,7 +247,54 @@
  
 </html>
 
+
+
+<script type="text/javascript">
+    var map;
+    var markes = [];
+  
+    function initMap() {
+  
+  
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {
+          lat: -19.212355602107472,
+          lng: -44.20234468749999
+        },
+        zoom: 4,
+      });
+  
+  
+      // const marker = new google.maps.Marker({
+  
+      //   position: uluru,
+      //   map: map,
+      // });
+      habilitarMarkers();
+  
+    }
+  
+    function habilitarMarkers() {
+      $.each(points, function (key, point) {
+        var position = new google.maps.LatLng(point.lat, point.lng);
+        var marker = new google.maps.Marker({
+          position: position,
+          map: map
+        })
+        markes.push(marker);
+      })
+    }
+  </script>
+  <style>
+    #map {
+      height: 500px;
+        width: 100%;
+    }
+
+  </style>
+
 <script>
+
     function traduzir_en() {
 
         home_txt.innerHTML = "We are a young company, focused on hardware monitoring, <br>" +
