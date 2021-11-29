@@ -126,12 +126,7 @@
                             <h1>CPU</h1>
                             <p>%</p>
                             <div class="custom-select">
-                                <select>
-                                    <option value="0">Selecione:</option>
-                                    <option value="1">rk-0891184</option>
-                                    <option value="2">fa-035890</option>
-                                    <option value="3">ic-9909385</option>
-                                    <option value="4">ml-674221</option>
+                                <select id="feed_container3">
                                 </select>
                             </div>
                         </div>
@@ -147,11 +142,7 @@
                             <h1>DISCO</h1>
                             <p>MB</p>
                             <div class="custom-select">
-                                <select>
-                                    <option value="0">Selecione:</option>
-                                    <option value="1">Disco E:</option>
-                                    <option value="2">Disco D:</option>
-                                    <option value="2">Disco F:</option>
+                                <select id="feed_container4">
                                 </select>
                             </div>
                         </div>
@@ -222,34 +213,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- <div class="row-grafico">
-                <div class="column-grafico" style="background-color:#EBEBD3;">
-                    <h2>Utilização do componente</h2>
-                    <div class="chart-container" style="position: relative; height:35vh; width:28w; margin-top: 20px;">
-                        <canvas id="RAMChart"></canvas>
-                    </div>
-                </div>
-
-                <div class="column-grafico" style="background-color:#EBEBD3;">
-                    <h2>Utilização do componente</h2>
-                    <div class="chart-container" style="position: relative; height:35vh; width:28vw; margin-top: 20px;">
-                        <canvas id="GPUChart"></canvas>
-                    </div>
-                </div>
-
-                <div class="column-grafico" style="background-color:#EBEBD3;">
-                    <h2>Utilização do componente</h2>
-                    <div class="chart-container" style="position: relative; height:35vh; width:28vw; margin-top: 20px;">
-                        <canvas id="DiscoChart"></canvas>
-                    </div>
-                </div> -->
-
-
-
-
-
-            <!-- Fim Graficos -->
         </main>
 
 </html>
@@ -258,7 +221,9 @@
     function carregarComponentes() {
         obterPublicacoes();
         obterDadosGraficoPrimeiraVez();
-        // obterPublicacoes2();
+        obterPublicacoes2();
+        obterPublicacoes3();
+        obterPublicacoes4();
     }
 
     function obterPublicacoes() {
@@ -302,11 +267,14 @@
 
     }
 
-    function obterPublicacoes2(idMaquina) {
 
-        idMaquina = feed_container.optMaquina;
+    function obterPublicacoes2(idUsuario) {
 
-        fetch(`/componentes/componente_usuario/${idMaquina}`)
+        idUsuario = Number(sessionStorage.getItem('id_usuario_meuapp'));
+
+        // idMaquina = feed_container.optMaquina;
+
+        fetch(`/componentes/componente_usuario/${idUsuario}`)
             .then(resposta => {
                 if (resposta.ok) {
                     resposta.json().then(function (resposta) {
@@ -329,6 +297,8 @@
         var feed = document.getElementById("feed_container2");
         feed.innerHTML = "";
 
+        var contador = 1;
+
         for (let i = 0; i < componentes.length; i++) {
             var componente = componentes[i];
 
@@ -336,7 +306,95 @@
 
             optComponente.value = `${componente.idComponente}`;
 
-            optComponente.innerHTML = `${componente.nomeComponente}`;
+            optComponente.innerHTML = `${componente.nomeComponente}${contador++}`;
+
+
+            feed.appendChild(optComponente);
+        }
+
+    }
+
+    function obterPublicacoes3(idUsuario) {
+
+        idUsuario = Number(sessionStorage.getItem('id_usuario_meuapp'));
+
+        fetch(`/componentes/cpu_usuario/${idUsuario}`)
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        atualizarFeed3(resposta);
+
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações: ${error.message}`);
+            });
+    }
+
+    function atualizarFeed3(componentes) {
+        let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
+        var feed = document.getElementById("feed_container3");
+        feed.innerHTML = "";
+
+        var contador = 1;
+
+        for (let i = 0; i < componentes.length; i++) {
+            var componente = componentes[i];
+
+            optComponente = document.createElement("option");
+
+            optComponente.value = `${componente.idComponente}`;
+
+            optComponente.innerHTML = `${componente.nomeComponente} ${contador++}`;
+
+
+            feed.appendChild(optComponente);
+        }
+
+    }
+
+    function obterPublicacoes4(idUsuario) {
+
+        idUsuario = Number(sessionStorage.getItem('id_usuario_meuapp'));
+
+        fetch(`/componentes/disco_usuario/${idUsuario}`)
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        atualizarFeed4(resposta);
+
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações: ${error.message}`);
+            });
+    }
+
+    function atualizarFeed4(componentes) {
+        let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
+        var feed = document.getElementById("feed_container4");
+        feed.innerHTML = "";
+
+        var contador = 1;
+
+        for (let i = 0; i < componentes.length; i++) {
+            var componente = componentes[i];
+
+            optComponente = document.createElement("option");
+
+            optComponente.value = `${componente.idComponente}`;
+
+            optComponente.innerHTML = `${componente.nomeComponente} ${contador++}`;
 
 
             feed.appendChild(optComponente);
