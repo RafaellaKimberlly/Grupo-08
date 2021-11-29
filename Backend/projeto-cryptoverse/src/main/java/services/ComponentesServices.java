@@ -6,6 +6,7 @@ import com.github.britooo.looca.api.group.discos.DiscosGroup;
 import com.github.britooo.looca.api.group.discos.Volume;
 import com.github.britooo.looca.api.group.memoria.Memoria;
 import com.github.britooo.looca.api.group.processador.Processador;
+import java.net.InetAddress;
 
 import java.util.List;
 
@@ -39,6 +40,16 @@ public class ComponentesServices {
 //
 //    ======================================================================================================
 //    Processador
+    
+    public void hostName(){
+    try{
+      String nomecomputador=InetAddress.getLocalHost().getHostName();
+      System.out.println(nomecomputador);
+    }catch (Exception e){
+      System.out.println("Exception caught ="+e.getMessage());
+    }
+ 
+    }
     public String nomeProcessador(){
         return processador.getNome();
     }

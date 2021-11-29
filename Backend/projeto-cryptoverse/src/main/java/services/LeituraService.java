@@ -1,5 +1,6 @@
 package services;
 
+import com.github.britooo.looca.api.core.Looca;
 import database.ConexaoBD;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -28,12 +29,38 @@ public class LeituraService {
         TimerTask tarefa = new TimerTask() {
             @Override
             public void run() {
+                System.out.println("Hostname:");
+                componente.hostName();
+                System.out.println(componente.looca.getSistema());
+                System.out.println("-------------------------------");
+                
+                System.out.println("Dados do Processador:");
+                System.out.println(componente.looca.getProcessador());
                 System.out.println("Este é o uso do seu processador\n");
                 System.out.println(componente.usoProcessador());
                 System.out.println("Essa é a frequencia do seu processador\n");
                 System.out.println(componente.frequenciaProcessador());
                 System.out.println("Essa é a porcentagem de uso do seu processador\n");
                 System.out.println(componente.getCpuUsoPorc());
+                
+                System.out.println("---------------------------------");
+                System.out.println("Dados da Memoria:");
+                System.out.println(componente.looca.getMemoria());
+                System.out.println("Tamanho disponivel de ram: " + componente.tamanhoDisponivelRam());
+                System.out.println("Porcentagem de memoria em uso: " + componente.getMemoriaEmUsoPorc());
+                
+                System.out.println("-------------------------------");
+                System.out.println("Dados do Dados de disco:");
+                System.out.println("Porcentagem de discos em uso: " + componente.getDiscoPorc());
+                
+                System.out.println("----------");
+                System.out.println("Quantidade de discos:" + componente.discos.getQuantidadeDeDiscos());
+                System.out.println("Quantidade de volumes:" + componente.discos.getQuantidadeDeVolumes());
+                System.out.println("Tamanho total:" + componente.discos.getTamanhoTotal());
+                
+                System.out.println("--------------------------------------------------");
+                
+                System.out.println("---Nova leitura----");
             }
         };
 
@@ -73,7 +100,7 @@ public class LeituraService {
             nvAlerta = "S";
         }
         controller.update("insert into tb_leitura (nvAlerta, valor, dataHora, fkDado, fkMaquinaComponente) values (?,?,?,?,?)",
-                nvAlerta, componente.ram.getEmUso(), data, 10, 10001);
+                nvAlerta, componente.ram.getEmUso(), data, 1, 1);
     }
 
     public void addLeituraCpu() throws IOException, InterruptedException {
@@ -109,7 +136,7 @@ public class LeituraService {
             nvAlerta = "S";
         }
         controller.update("insert into tb_leitura (nvAlerta, valor, dataHora, fkDado, fkMaquinaComponente) values (?,?,?,?,?)",
-                nvAlerta, componente.processador.getUso(), data, 10, 10001);
+                nvAlerta, componente.processador.getUso(), data, 1, 1);
     }
 
     public void addLeituraDisco() throws IOException, InterruptedException {
@@ -145,7 +172,7 @@ public class LeituraService {
         }
 
         controller.update("insert into tb_leitura (nvAlerta, valor, dataHora, fkDado, fkMaquinaComponente) values (?,?,?,?,?)",
-                nvAlerta, componente.discos.getTamanhoTotal(), data, 10, 10001);
+                nvAlerta, componente.discos.getTamanhoTotal(), data, 1, 1);
     }
 
 }

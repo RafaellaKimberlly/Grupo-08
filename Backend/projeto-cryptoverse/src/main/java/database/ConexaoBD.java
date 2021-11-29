@@ -17,24 +17,24 @@ public class ConexaoBD {
     private BasicDataSource bancoDeDados;
     
 //    // MySQL
-    public ConexaoBD() {
-        
-        this.bancoDeDados = new BasicDataSource();
-        this.bancoDeDados.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        this.bancoDeDados.setUrl("jdbc:mysql://localhost:3306/projetoCryptoverse?useTimezone=true&serverTimezone=UTC");
-        this.bancoDeDados.setUsername("root");
-        this.bancoDeDados.setPassword("saladaMista1234@");
-        
-    }
+//    public ConexaoBD() {
+//        
+//        this.bancoDeDados = new BasicDataSource();
+//        this.bancoDeDados.setDriverClassName("com.mysql.cj.jdbc.Driver");
+//        this.bancoDeDados.setUrl("jdbc:mysql://localhost:3306/projetoCryptoverse?useTimezone=true&serverTimezone=UTC");
+//        this.bancoDeDados.setUsername("root");
+//        this.bancoDeDados.setPassword("saladaMista1234@");
+//        
+//    }
     
     //  SQLServer  
-//    public ConexaoBD() {
-//        this.bancoDeDados = new BasicDataSource();
-//        this.bancoDeDados.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-//        this.bancoDeDados.setUrl("jdbc:sqlserver://cryptoverse.database.windows.net:1433;database=CryptoVerse;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;");
-//        this.bancoDeDados.setUsername("admcrypto");
-//        this.bancoDeDados.setPassword("#Gfgrupo8");
-//    }
+    public ConexaoBD() {
+        this.bancoDeDados = new BasicDataSource();
+        this.bancoDeDados.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+        this.bancoDeDados.setUrl("jdbc:sqlserver://cryptoverse.database.windows.net:1433;database=cryptoverse;user=admcrypto@cryptoverse;password={your_password_here};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;");
+        this.bancoDeDados.setUsername("admcrypto");
+        this.bancoDeDados.setPassword("#Gfgrupo8");
+    }
     
     public BasicDataSource getDataSource() {
         return bancoDeDados;

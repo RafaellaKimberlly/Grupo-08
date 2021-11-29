@@ -37,12 +37,15 @@ public class Application {
         Looca looca = new Looca();
         DiscosGroup grupoDeDiscos = looca.getGrupoDeDiscos();
 
-//        leitura.rodarTempoEmTempo();
-        System.out.println(componentes.getDiscoPorc());
-
+        leitura.rodarTempoEmTempo();
+        
+        System.out.println("---------------------");
         leitura.addLeituraRam();
+        System.out.println("----------------------");
         leitura.addLeituraCpu();
+        System.out.println("----------------------");
         leitura.addLeituraDisco();
+        System.out.println("----------------------");
 
     }
 
