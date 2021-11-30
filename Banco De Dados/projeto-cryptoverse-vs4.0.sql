@@ -31,12 +31,11 @@ select * from tb_usuario;
 
  create table tb_geolocalizacao(
  idgeolocalizacao int primary key auto_increment,
- latitude varchar(60),
- longitude varchar(60)
+  latlng varchar(250)
  )auto_increment = 1;
 
  insert into tb_geolocalizacao values(
- null, '-31.2255562', '-65.5521114455'
+ null, '-31.2255562 -65.5521114455'
  );
  
  select * from tb_geolocalizacao;
@@ -67,7 +66,9 @@ select * from tb_componente;
 
 insert into tb_componente values
 (null,'cpu');
-
+insert into tb_componente values
+(null,'Memoria-Ram'),
+(null,'Disco');
 
 select idMaquina, hostname, c.nomeComponente, coalesce(mcStatus, 'Inativo') as mcStatus, fkUsuario from tb_maquina as m
 	left join tb_maquina_componente as mc
@@ -107,7 +108,7 @@ select * from tb_tipo_dados;
 create table tb_leitura(
 	idLeitura int primary key auto_increment,
 	nvAlerta varchar(1),
-	valor int,
+	valor double,
 	dataHora datetime,
 	fkDado int,
 	foreign key (fkDado) references tb_tipo_dados(idDado),
@@ -116,7 +117,7 @@ create table tb_leitura(
 ) auto_increment = 1;
 
 insert into tb_leitura (nvAlerta, valor, dataHora, fkDado, fkMaquinaComponente) values
-('c', '100', '2021-04-19 12:09:50', 1, 1);
+('c', 99.0, '2021-04-19 12:09:50', 1, 1);
 
 select * from tb_leitura;
 

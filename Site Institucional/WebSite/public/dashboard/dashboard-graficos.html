@@ -480,7 +480,7 @@
 
     }
 
-    // window.onload = obterDadosGraficoPrimeiraVez();
+     window.onload = obterDadosGraficoPrimeiraVez();
 
     function plotarGrafico(dados) {
         console.log("executei plotarGrafico")
@@ -539,16 +539,16 @@
                     dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
                     dados.datasets[0].data.push(novoRegistro.valor); // incluir uma nova leitura de temperatura
 
-                    // console.log("meu freezer é o " + idFreezer)
+                    // console.log("minha maquina é a " + idMaquina)
 
                     window.grafico_linha.update();
 
 
-                    proximaAtualizacao = setTimeout(() => atualizarGrafico(dados), 5000);
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(dados), 2000);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
-                proximaAtualizacao = setTimeout(() => atualizarGrafico(dados), 5000);
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(dados), 2000);
             }
         })
             .catch(function (error) {
