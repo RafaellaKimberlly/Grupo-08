@@ -4,7 +4,7 @@ module.exports = {
     // altere APENAS username, password, database e host.
     username: 'admcrypto',
     password: '#Gfgrupo8',
-    database: 'CryptoVerse',
+    database: 'cryptoverse',
     host: 'cryptoverse.database.windows.net',
     dialect: 'mssql',
     xuse_env_variable: 'DATABASE_URL',

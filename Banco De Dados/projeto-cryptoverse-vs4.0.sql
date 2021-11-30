@@ -43,6 +43,7 @@ select * from tb_usuario;
 create table tb_maquina(
 	idMaquina int primary key auto_increment,
 	hostname varchar(60),
+    numSerie varchar(60),
 	tipo_processador varchar(20),
 	fkUsuario int,
 	foreign key (fkUsuario) references tb_usuario (idUsuario),
@@ -69,6 +70,9 @@ insert into tb_componente values
 insert into tb_componente values
 (null,'Memoria-Ram'),
 (null,'Disco');
+
+select * from tb_componente where idComponente = 1;
+
 
 select idMaquina, hostname, c.nomeComponente, coalesce(mcStatus, 'Inativo') as mcStatus, fkUsuario from tb_maquina as m
 	left join tb_maquina_componente as mc
@@ -118,6 +122,13 @@ create table tb_leitura(
 
 insert into tb_leitura (nvAlerta, valor, dataHora, fkDado, fkMaquinaComponente) values
 ('c', 99.0, '2021-04-19 12:09:50', 1, 1);
+insert into tb_leitura (nvAlerta, valor, dataHora, fkDado, fkMaquinaComponente) values
+('c', 80.0, '2021-11-30 00:42:50', 1, 1);
+
+select max(valor) from tb_leitura;
+select round(avg(valor),0) as media from tb_leitura group by fkMaquinaComponente;
+
+select max(valor) from tb_leitura where fkMaquinaComponente = 1;
 
 select * from tb_leitura;
 
@@ -232,6 +243,8 @@ select round(avg(valor),0) as media from tb_leitura;
 select sum(valor) from tb_leitura;
 
 select min(valor) from tb_leitura;
+
+
 
 
 drop database projetoCryptoverse;
