@@ -121,9 +121,9 @@
                         <label for="" class="titleInput">
                             <div id="testeLat"></div>
                             <br>
-                            
+
                         </label>
-                    
+
 
 
 
@@ -136,7 +136,7 @@
 
                 <div class="form-componente">
                     <form id="form_cadastro_maquina_componente" method="POST"
-                        onsubmit="return cadastrar_maquina_componentes()">
+                        onsubmit="return cadastrar_maquina()">
 
                         <h2>Cadastre seu componente</h2>
 
@@ -194,8 +194,10 @@
 
 </html>
 <script>
-    
     var myResult;
+
+
+
 
     function searchAddress() {
 
@@ -215,16 +217,12 @@
                 testeLat.innerHTML = myResult;
 
                 myResult = myResult.toString();
-                myResult.replace('(', '');
-                myResult.replace(')', '');
+                // myResult.replace('(', '');
+                // myResult.replace(')', '');
 
 
-                console.log(myResult);
-                
+                console.log("Geolocalização: ", myResult);
 
-
-                var teste1 = results[0].geometry.location;
-                // teste.innerHTML = myResult;
                 // referência ao valor LatLng
 
 
@@ -237,6 +235,7 @@
 
         });
     }
+    
 
     function cadastrar_maquina() {
 
@@ -244,7 +243,7 @@
 
         fkUsuario.value = Number(sessionStorage.getItem('id_usuario_meuapp'));
         console.log(fkUsuario.value)
-        
+
 
 
 
@@ -254,7 +253,9 @@
             body: formulario
         }).then(function (response) {
 
-            if (response.ok) {
+            if (myResult == undefined) {
+                searchAddress()
+            }else if (response.ok) {
                 console.log('Maquina cadastrada')
 
                 // cadastrar_maquina_componentes();

@@ -64,6 +64,24 @@ router.get('/', function(req, res, next) {
 });
 
 
+router.get('/marcadores', function (req, res, next) {
+	
+	console.log(`Recuperando os marcadores`);
+
+	const instrucaoSql = `select latlng from tb_maquina;`;
+					
+
+	sequelize.query(instrucaoSql, { type: sequelize.QueryTypes.SELECT })
+		.then(resultado => {
+			res.json(resultado[0]);
+		}).catch(erro => {
+			console.error(erro);
+			res.status(500).send(erro.message);
+		});
+  
+});
+
+
 // estatísticas (max, min, média, mediana, quartis etc)
 router.get('/estatisticas', function (req, res, next) {
 	
