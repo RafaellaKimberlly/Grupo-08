@@ -3,17 +3,20 @@ var router = express.Router();
 var sequelize = require('../models').sequelize;
 var maquina = require('../models').maquina;
 
+var endereco = require('../public/maps');
+
 let sessoes = [];
 
 // Cadastrando Máquina
-router.post('/cadastrar', function(req, res, next) {
+router.post('/cadastrar/:myResult', function(req, res, next) {
 	console.log('Criando uma maquina');
 	
 	maquina.create({
 		hostname : req.body.hostname,
 		numSerie : req.body.numSerie,
 		tipo_Processador : req.body.tipo_Processador,
-		fkUsuario: req.body.fkUsuario
+		fkUsuario: req.body.fkUsuario,
+		latlng: req.params.myResult
 	}).then(resultado => {
 		console.log(`Registro criado: ${resultado}`)
         res.send(resultado);

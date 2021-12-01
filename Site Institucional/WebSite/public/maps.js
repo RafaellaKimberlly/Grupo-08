@@ -25,13 +25,8 @@ function searchAddress() {
         var myResult = results[0].geometry.location;
         
         var teste1 = results[0].geometry.location;
-        teste.innerHTML = teste1;// referência ao valor LatLng
-  
-        createMarker(myResult); // adicionar chamada à função que adiciona o marcador
-  
-        map.setCenter(myResult);
-  
-        map.setZoom(17);h
+        teste.innerHTML = myResult;// referência ao valor LatLng
+
   
       } else { // se o valor de status é diferente de "google.maps.GeocoderStatus.OK"
 

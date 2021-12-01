@@ -28,6 +28,11 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.STRING,
 			allowNull: false
 		},
+		latlng: {
+			field: 'latlng',
+			type: DataTypes.STRING,
+			allowNull: false
+		},
 		fkUsuario: {
 			field: 'fkUsuario',
 			type: DataTypes.STRING,
