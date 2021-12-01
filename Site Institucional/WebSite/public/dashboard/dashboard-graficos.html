@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <link rel="shortcut icon" href="../img/2.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/dash.css">
     <link rel="stylesheet" href="../css/dashboard-graficos.css">
     <link rel="stylesheet" href="../css/menu-dashboard.css">
 
@@ -35,7 +36,7 @@
                     <a href="dashboard-home.html"><i class="fas fa-home"></i><span>Home</span></a>
                 </li>
                 <li>
-                    <a class="active" href="dashboard.html"><i class="fas fa-chart-line"></i><span>Gráficos</span></a>
+                    <a class="active" href="dash.html"><i class="fas fa-chart-line"></i><span>Gráficos</span></a>
                 </li>
                 <li>
                     <a href="dashboard-relatorios.html"><i class="fas fa-clipboard-list"></i><span>Relatório</span></a>
@@ -52,9 +53,9 @@
         <div class="sidebar-menu sair">
             <ul>
                 <li>
-                    <a href="../../Site Institucional/WebSite/public/login-cadastro.html"><i
+                    <a href="../login-cadastro.html"><i
                             class="fas fa-sign-out-alt"></i>
-                        <span>Encerrar sessão</span></a>
+                        <span onclick="logoff()">Encerrar sessão</span></a>
                 </li>
             </ul>
         </div>
@@ -65,140 +66,130 @@
             <div class="user-wrapper">
                 <img src="../img/foto-perfil.png" width="40px" height="40px" alt="">
                 <div>
-                    <h4 id="h4_nome">Olá Gerson</h4>
-                    <b id="b_usuario"></b>
+                    <h4 id="h4_nome">Olá
+                    <b id="b_usuario" style="text-transform: uppercase;"></b></h4>
                     <small>Usuario comum</small>
                 </div>
             </div>
         </header>
 
-        <main>
-            <!-- Trigger/Open The Modal -->
-            <button id="myBtn">Open Modal</button>
+<main>
 
-            <!-- The Modal -->
-            <div id="myModal" class="modal">
-
-                <!-- Modal content -->
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <p>Some text in the Modal..</p>
+<!-- cards inicio -->
+<div class="container-cards">
+    <div class="content">
+        <div class="cards">
+            <div class="card">
+                <div class="box">
+                    <h1>MAQUINAS</h1>
                 </div>
-
-            </div>
-            <div class="container-card-components">
-
-                <div class="card-components">
-                    <div class="content-components">
-                        <div class="content-components-form">
-                            <h1>Máquinas</h1>
-                            <p>%</p>
-                            <div class="custom-select">
-                                <select id="feed_container">
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="imgBX" data-text="Máquina">
-                        <img src="../img/computadores.png" alt="">
-                    </div>
+                <div class="icone-case">
+                    <figure>
+                        <img src="../img/computadores.png" width="50" height="50" alt="">
+                    </figure>
                 </div>
-                <div class="card-components">
-                    <div class="content-components">
-                        <div class="content-components-form">
-                            <h1>RAM</h1>
-                            <p>Mb</p>
-                            <div class="custom-select">
-                                <select id="feed_container2">
-
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="imgBX" data-text="RAM">
-                        <img src="../img/memoria-ram.png" alt="">
-                    </div>
-                </div>
-
-                <div class="card-components">
-                    <div class="content-components">
-                        <div class="content-components-form">
-                            <h1>CPU</h1>
-                            <p>%</p>
-                            <div class="custom-select">
-                                <select id="feed_container3">
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="imgBX" data-text="CPU">
-                        <img src="../img/cpu.png" alt="CPU">
-                    </div>
-                </div>
-
-                <div class="card-components">
-                    <div class="content-components">
-                        <div class="content-components-form">
-                            <h1>DISCO</h1>
-                            <p>MB</p>
-                            <div class="custom-select">
-                                <select id="feed_container4">
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="imgBX" data-text="DISCO">
-                        <img src="../img/disco-rigido-escravo.png" alt="">
-                    </div>
+                <div class="select_but">
+                    <select class="selection-but" name="" id="feed_container">
+                        <option value="">Selecione</option>
+                    </select>
                 </div>
             </div>
 
-            <!-- buid cpu -->
-            <div>
 
-            </div>
-            <!-- Fim -->
-
-            <!--  inicio graficos -->
-
-            <div class="row-grafico">
-                <div class="column-grafico">
-                    <h2>Gráfico de desempenho de componente</h2>
-                    <!-- adicione a tag canvas no seu HTML -->
-                    <div class="chart-container" style="position: relative; height:45vh; width:45vw; margin-top: 20px;">
-                        <canvas id="myChart"></canvas>
-                    </div>
+            <div class="card">
+                <div class="box">
+                    <h1>RAM</h1>
                 </div>
-
-                <div class="column-grafico" >
-                    <h2>Utilização do componente</h2>
-                    <br><br>
-                    <h2>CPU</h2>
-                    <p style="float: left;">% Utilização</p>
-                    <p style="float: right;">
-                        Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz
-                    </p>
-                    <br>
-                    <div style="overflow-x:auto;">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Utilização</th>
-                                    <th>Velocidade</th>
-                                    <th>Tempo de atividade</th>
-                                    <th>Processos</th>
-                                    <th>Threads</th>
-                                </tr>
-                            </thead>
-                            <tbody id="feed_container5"></tbody>
-                        </table>
-                    </div>
+                <div class="icone-case">
+                    <figure>
+                        <img src="../img/memoria-ram.png" width="50" height="50" alt="">
+                    </figure>
+                </div>
+                <div class="select_but">
+                    <select class="selection-but" name="" id="feed_container2">
+                        <option value="">Selecione</option>
+                    </select>
                 </div>
             </div>
-        </main>
 
+            <div class="card">
+                <div class="box">
+                    <h1>DISCO</h1>
+                </div>
+                <div class="icone-case">
+                    <figure>
+                        <img src="../img/placa-de-video.png" width="50" height="50" alt="">
+                    </figure>
+                </div>
+                <div class="select_but">
+                    <select class="selection-but" name="" id="feed_container3">
+                        <option value="">Selecione</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="box">
+                    <h1>CPU</h1>
+                </div>
+                <div class="icone-case">
+                    <figure>
+                        <img src="../img/processadores.png" width="50" height="50" alt="">
+                    </figure>
+                </div>
+                <div class="select_but">
+                    <select class="selection-but" name="" id="feed_container4">
+                        <option value="">Selecione</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+<!--  inicio graficos -->
+
+<div class="row-grafico">
+    <div class="column-grafico">
+        <h2>Gráfico de desempenho de componente</h2>
+        <!-- adicione a tag canvas no seu HTML -->
+        <div class="chart-container" style="position: relative; height:45vh; width:45vw; margin-top: 20px;">
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+
+    <div class="column-grafico" >
+        <h2>Utilização do componente</h2>
+        <br><br>
+        <h2>CPU</h2>
+        <p style="float: left;">% Utilização</p>
+        <p style="float: right;">
+            Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz
+        </p>
+        <br>
+        <div style="overflow-x:auto;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Utilização</th>
+                        <th>Velocidade</th>
+                        <th>Tempo de atividade</th>
+                        <th>Processos</th>
+                        <th>Threads</th>
+                    </tr>
+                </thead>
+                <tbody id="feed_container5"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!--  fim -->
+
+
+
+</main>
 </html>
+
 <script>
+    b_usuario.innerHTML = sessionStorage.nome_usuario_meuapp;
 
     function carregarComponentes() {
         obterPublicacoes();
@@ -439,8 +430,9 @@
 
     function obterDadosGraficoPrimeiraVez() {
         console.log("executei obterDadosGraficoPrimeiraVez")
+        var idMaquina = sessionStorage.id_usuario_meuapp
 
-        fetch(`/leituras/componentes`)
+        fetch(`/leituras/componentes/${idMaquina}`)
             .then(function (response) {
                 if (response.ok) {
                     response.json().then(function (resposta) {
@@ -453,8 +445,8 @@
                                 {
                                     yAxisID: 'y-temperatura',
                                     label: 'leituras',
-                                    borderColor: 'rgba(255,0,0,1)',
-                                    backgroundColor: 'rgba(255,0,0,1)',
+                                    borderColor: '#F95738',
+                                    backgroundColor: '#F95738',
                                     fill: false,
                                     data: []
                                 }
@@ -482,18 +474,19 @@
 
      window.onload = obterDadosGraficoPrimeiraVez();
 
-    function plotarGrafico(dados) {
+    function plotarGrafico(dados,idMaquina) {
         console.log("executei plotarGrafico")
         console.log('iniciando plotagem do gráfico...');
+        div_aguarde.style.display = 'block';
 
         let ctx = myChart.getContext("2d");
 
-        window.myChart = Chart.Line(ctx, {
+        window.grafico_linha = Chart.Line(ctx, {
             data: dados,
             options: configurarGrafico()
         });
 
-        setTimeout(() => atualizarGrafico(dados), 2000);
+        setTimeout(() => atualizarGrafico(idMaquina, dados), 2000);
     }
 
     function configurarGrafico() {
@@ -523,9 +516,10 @@
         return configuracoes;
     }
 
-    function atualizarGrafico(dados) {
+    function atualizarGrafico(idMaquina, dados) {
         console.log("executei atualizarGrafico")
-        fetch(`/leituras/tempo-real`).then(function (response) {
+        var idMaquinaComponente = 1
+        fetch(`/leituras/tempo-atual/${idMaquina}`).then(function (response) {
             console.log("Estou tentando pegar as leituras da maquina")
             if (response.ok) {
                 response.json().then(function (novoRegistro) {
@@ -539,10 +533,10 @@
                     dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
                     dados.datasets[0].data.push(novoRegistro.valor); // incluir uma nova leitura de temperatura
 
-                    // console.log("minha maquina é a " + idMaquina)
+                   console.log("minha maquina é a " + idMaquina)
 
                     window.grafico_linha.update();
-
+                    
 
                     proximaAtualizacao = setTimeout(() => atualizarGrafico(dados), 2000);
                 });

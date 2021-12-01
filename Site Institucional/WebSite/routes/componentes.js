@@ -57,7 +57,7 @@ router.get('/componente_usuario/:idUsuario', function (req, res, next) {
 	on m.idMaquina = mc.fkMaquina
 	join tb_usuario as u
 	on u.idUsuario = m.fkUsuario
-	where nomeComponente = 'Memoria-RAM'
+	where nomeComponente = 'Memoria-ram'
 	and idUsuario = ${idUsuario}
 	order by fkMaquina;`;
 

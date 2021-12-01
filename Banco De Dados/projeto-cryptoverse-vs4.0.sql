@@ -29,17 +29,6 @@ insert into tb_usuario (nome, sobrenome, email, senha, uf, fkPool) values
 
 select * from tb_usuario;
 
- create table tb_geolocalizacao(
- idgeolocalizacao int primary key auto_increment,
-  latlng varchar(250)
- )auto_increment = 1;
-
- insert into tb_geolocalizacao values(
- null, '-31.2255562 -65.5521114455'
- );
- 
- select * from tb_geolocalizacao;
-
 create table tb_maquina(
 	idMaquina int primary key auto_increment,
 	hostname varchar(60),
@@ -47,12 +36,13 @@ create table tb_maquina(
 	tipo_processador varchar(20),
 	fkUsuario int,
 	foreign key (fkUsuario) references tb_usuario (idUsuario),
-     fkgeolocalizacao int,
-		foreign key (fkgeolocalizacao) references tb_geolocalizacao (idgeolocalizacao)
+	latlng varchar(250)
 )auto_increment = 1;
 
+
+
 insert into tb_maquina values
-(null,'naj45454opee663','i5',1,1);
+(null,'naj45454opee663','i5',1,1,'-31.2255562, -65.5521114455');
 
 select * from tb_maquina;
 
@@ -85,6 +75,7 @@ select idMaquina, hostname, c.nomeComponente, coalesce(mcStatus, 'Inativo') as m
     
 create table tb_maquina_componente(
 	idMaquinaComponente int primary key auto_increment,
+    desComponente varchar(20),
 	fkMaquina int,
 	foreign key (fkMaquina) references tb_maquina(idMaquina),
 	fkComponente int,
@@ -94,7 +85,7 @@ create table tb_maquina_componente(
 )auto_increment = 1;
 
 insert into tb_maquina_componente values
-(null, 1, 1, 'Ativo');
+(null,'cpu1', 1, 1, 'Ativo');
 
 select * from tb_maquina_componente;
     
@@ -132,7 +123,15 @@ select max(valor) from tb_leitura where fkMaquinaComponente = 1;
 
 select * from tb_leitura;
 
-
+select idLeitura, valor, dataHora, fkDado, fkMaquina, fkComponente from tb_leitura as l
+		join tb_maquina_componente as mc
+		on mc.idMaquinaComponente = l.fkMaquinaComponente
+		join tb_maquina as m
+		on m.idMaquina = mc.fkMaquina
+		join tb_componente as c
+		on c.idComponente = mc.fkComponente
+		where fkMaquina = 1 and fkComponente = 1
+		order by idLeitura desc limit 7;
 
 -- Selects API-PROJETO_SITE
 select idLeitura, nvAlerta, dataHora, m.hostname, c.nomeComponente from tb_leitura as l
@@ -168,6 +167,16 @@ join tb_componente as c
 on c.idComponente = mc.fkComponente
 where fkUsuario = 1 and nomeComponente = 'cpu';
 
+select idLeitura, nvAlerta, dataHora,  m.hostname, c.nomeComponente, mc.desComponente, m.fkUsuario from tb_leitura as l
+	join tb_maquina_componente as mc
+	on mc.idMaquinaComponente = l.fkMaquinaComponente
+	join tb_maquina as m
+	on m.idMaquina = mc.fkMaquina
+	join tb_usuario as u
+	on u.idUsuario = m.fkUsuario
+	join tb_componente as c
+	on c.idComponente = mc.fkComponente
+	order by idLeitura;
 
 -- select 
 

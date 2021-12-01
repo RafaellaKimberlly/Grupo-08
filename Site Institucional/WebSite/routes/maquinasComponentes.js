@@ -117,8 +117,8 @@ router.get('/contar_disco/:idUsuario', function(req, res, next) {
 	});
 });
 
-router.post('/atualizar_freezer', function(req, res, next) {
-	console.log('Recuperando usuário por id e senha');
+router.post('/atualizar_tb_maquina_componente', function(req, res, next) {
+	console.log('Atualizando status');
 
 	var fkMaquina = req.body.fkMaquina; // depois de .body, use o nome (name) do campo em seu formulário de login
 	var fkComponente = req.body.fkComponente; // depois de .body, use o nome (name) do campo em seu formulário de login
