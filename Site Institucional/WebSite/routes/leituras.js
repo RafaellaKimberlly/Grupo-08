@@ -268,7 +268,8 @@ router.get('/situacao_componente/:idUsuario', function(req, res, next) {
 
 	var idUsuario = req.params.idUsuario;
 
-	let instrucaoSql = `select u.idUsuario, mc.idMaquinaComponente, c.nomeComponente, m.hostname, l.valor, d.descDado from tb_leitura as l
+	let instrucaoSql = `select 
+	u.idUsuario, mc.idMaquinaComponente, c.nomeComponente, m.hostname, l.valor, d.descDado from tb_leitura as l
 	join tb_maquina_componente as mc
 	on mc.idMaquinaComponente = l.fkMaquinaComponente
 	join tb_componente as c
