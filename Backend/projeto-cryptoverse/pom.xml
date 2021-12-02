@@ -52,6 +52,12 @@
             <artifactId>h2</artifactId>
             <version>1.4.200</version>
         </dependency>
-        
+        <dependency>
+            <groupId>com.github.mayoi7</groupId>
+            <artifactId>timer</artifactId>
+            <version>1.2.0-RELEASE</version>
+            <scope>compile</scope>
+        </dependency>
+
     </dependencies>
 </project>
