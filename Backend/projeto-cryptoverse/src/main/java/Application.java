@@ -40,9 +40,9 @@ public class Application {
        // leitura.rodarTempoEmTempo();
         
         System.out.println("---------------------");
-        //leitura.addLeituraRam();
+        leitura.addLeituraRam();
         System.out.println("----------------------");
-        leitura.addLeituraCpu();
+        //leitura.addLeituraCpu();
         System.out.println("----------------------");
         //leitura.addLeituraDisco();
         System.out.println("----------------------");
