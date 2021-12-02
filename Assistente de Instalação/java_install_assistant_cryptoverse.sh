@@ -78,8 +78,8 @@ if [ $? -eq 0 ]
 			sudo apt update -y
 			clear
 			
-			if [ $VERSAO -eq 11 ]
-				then
+		if [ $VERSAO -eq 11 ]
+			then
 					echo "2° passo - Preparando a instalação da versão 11 do Java. "
 					echo ""
 					echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7) ${name} Quando for solicitado, confirme a instalação do Java."
@@ -94,11 +94,30 @@ if [ $? -eq 0 ]
 					clear
 					echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7) Java instalado com sucesso!"
 					echo ""
+					echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7) Você deseja iniciar sua aplicação ${name} ? (S/N)"
+					echo ""
+					read inst
+			if [ \"$inst\" == \"s\" ]
+				then
+					echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7) Lembre-se, para encerrar a aplicação pressione 'ctrl + c'."
+					echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7) Iniciado a aplicação. Aguarde! :D"
+					echo  "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7)  Iniciando..."
+					echo -ne '\e[1;31m #####                     (33%)\r \e[0m'
+					sleep 1
+					echo -ne '\e[1;31m #############             (66%)\r \e[0m'
+					sleep 1	
+					echo -ne $(tput setaf 10)'#######################   (100%)\r'	
+					echo -ne '\n'
+					echo sed -i -e 's/\r$//' projeto-cryptoverse.jar
+					echo ./projeto-cryptoverse.jar
+					echo ""
+			else    echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7) Você optou por não iniciar a instalação"
+					echo ""
 					echo "Nosso tempo juntos chegou ao fim, muito obrigado por confiar na CryptoVerse, espero ter sido útil! ${name}"
 				fi
-		else 	
-		echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7)  Você optou por não instalar o Java, até a próxima ${name}!"
-	fi
+		else 		echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7)  Você optou por não instalar o Java, até a próxima ${name}!"
+	 fi
+  fi
 fi
 
 # ===================================================================
