@@ -12,7 +12,7 @@ function verificar_autenticacao() {
     if (login_usuario == undefined)  {
         redirecionar_login();
     } else {
-        b_usuario.innerHTML = nome_usuario;
+        b_usuario.innerHTML = `Olá ${nome_usuario} <br>`;
         validar_sessao();
     }
     

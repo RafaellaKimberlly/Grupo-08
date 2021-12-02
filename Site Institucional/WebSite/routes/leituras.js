@@ -39,16 +39,29 @@ router.get('/', function(req, res, next) {
 	
 	// let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
 
-    let instrucaoSql = `select top 6 idLeitura, nvAlerta, dataHora,  m.hostname, c.nomeComponente, mc.descComponente, m.fkUsuario from tb_leitura as l
-	join tb_maquina_componente as mc
-	on mc.idMaquinaComponente = l.fkMaquinaComponente
-	join tb_maquina as m
-	on m.idMaquina = mc.fkMaquina
-	join tb_usuario as u
-	on u.idUsuario = m.fkUsuario
-	join tb_componente as c
-	on c.idComponente = mc.fkComponente
-	order by idLeitura;`;
+	if(env == 'dev') {
+		instrucaoSql = `select idLeitura, nvAlerta, dataHora,  m.hostname, c.nomeComponente, m.fkUsuario from tb_leitura as l
+		join tb_maquina_componente as mc
+		on mc.idMaquinaComponente = l.fkMaquinaComponente
+		join tb_maquina as m
+		on m.idMaquina = mc.fkMaquina
+		join tb_usuario as u
+		on u.idUsuario = m.fkUsuario
+		join tb_componente as c
+		on c.idComponente = mc.fkComponente
+		order by idLeitura;`;
+	} else if (env == 'product') {
+		instrucaoSql = `select idLeitura, nvAlerta, dataHora,  m.hostname, c.nomeComponente, m.fkUsuario from tb_leitura as l
+		join tb_maquina_componente as mc
+		on mc.idMaquinaComponente = l.fkMaquinaComponente
+		join tb_maquina as m
+		on m.idMaquina = mc.fkMaquina
+		join tb_usuario as u
+		on u.idUsuario = m.fkUsuario
+		join tb_componente as c
+		on c.idComponente = mc.fkComponente
+		order by idLeitura;`;
+	}
 
 	sequelize.query(instrucaoSql, {
 		model: leitura,
@@ -64,30 +77,110 @@ router.get('/', function(req, res, next) {
 });
 
 
-// estatísticas (max, min, média, mediana, quartis etc)
-router.get('/estatisticas', function (req, res, next) {
+router.get('/marcadores', function (req, res, next) {
 	
-	console.log(`Recuperando as estatísticas atuais`);
+	console.log(`Recuperando os marcadores`);
 
-	const instrucaoSql = `select 
-							max(temperatura) as temp_maxima, 
-							min(temperatura) as temp_minima, 
-							avg(temperatura) as temp_media,
-							max(umidade) as umidade_maxima, 
-							min(umidade) as umidade_minima, 
-							avg(umidade) as umidade_media 
-						from leitura`;
-					
-
+	const instrucaoSql = `select lat, lng from tb_maquina;`;
+				
 	sequelize.query(instrucaoSql, { type: sequelize.QueryTypes.SELECT })
 		.then(resultado => {
-			res.json(resultado[0]);
+			res.json(resultado);
 		}).catch(erro => {
 			console.error(erro);
 			res.status(500).send(erro.message);
 		});
   
 });
+
+router.delete('/deletar/:idMaquina', function (req, res, next) {
+    console.log('Deletando maquina');
+    var idMaquina = req.params.idMaquina;
+    let instrucaoSql = "";
+    let instrucaoSql2 = "";
+	
+     
+
+    if (env == 'dev') {
+		instrucaoSql = `update tb_maquina_componente set fkMaquina = null where fkMaquina = ${idMaquina} `;
+		instrucaoSql2 = `delete from tb_maquina where idMaquina = ${idMaquina};`;
+    } else if (env == 'production') {
+        instrucaoSql = `update tb_maquina_componente set fkMaquina = null where fkMaquina = ${idMaquina} `;
+		instrucaoSql2 = `delete from tb_maquina where idMaquina = ${idMaquina};`;
+    } else {
+        console.log("\n\n\n\nVERIFIQUE O VALOR DE LINHA 1 EM APP.JS!\n\n\n\n")
+    }
+
+    console.log(instrucaoSql);
+    console.log(instrucaoSql2);
+	sequelize.query(instrucaoSql, { type: sequelize.QueryTypes.UPDATE })
+	.then(resultado => {
+		console.log(resultado)
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+	});
+
+    sequelize.query(instrucaoSql2, { type: sequelize.QueryTypes.DELETE })
+        .then(resultado => {
+		console.log(resultado)
+            
+        }).catch(erro => {
+            console.error(erro);
+            res.status(500).send(erro.message);
+        });
+}); 
+
+
+router.get('/componentes', function(req, res, next) {
+	
+	// quantas são as últimas leituras que quer? 7 está bom?
+	const limite_linhas = 7;
+
+	var idFreezer = req.params.idFreezer;
+
+	console.log(`Recuperando as ultimas ${limite_linhas} leituras`);
+	
+	let instrucaoSql = "";
+
+	if (env == 'dev') {
+		// abaixo, escreva o select de dados para o Workbench
+		instrucaoSql = `select idLeitura, valor, dataHora, fkDado, fkMaquina, fkComponente from tb_leitura as l
+		join tb_maquina_componente as mc
+		on mc.idMaquinaComponente = l.fkMaquinaComponente
+		join tb_maquina as m
+		on m.idMaquina = mc.fkMaquina
+		join tb_componente as c
+		on c.idComponente = mc.fkComponente
+		where fkMaquina = 100 and fkComponente = 1001
+		order by idLeitura desc limit 7;`;
+	} else if (env == 'production') {
+		// abaixo, escreva o select de dados para o SQL Server
+		instrucaoSql = `select top ${limite_linhas} 
+		temperatura, 
+		dataHora,
+		FORMAT(dataHora,'HH:mm:ss') as momento_grafico
+		from historicoFreezer
+		where fkFreezer = ${idFreezer}
+		order by idhistoricoFreezer desc`;
+	} else {
+		console.log("\n\n\n\nVERIFIQUE O VALOR DE LINHA 1 EM APP.JS!\n\n\n\n")
+	}
+	
+	sequelize.query(instrucaoSql, {
+		model: leitura,
+		mapToModel: true 
+	})
+	.then(resultado => {
+		console.log(`Encontrados: ${resultado.length}`);
+		res.json(resultado);
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+	});
+});
+
+
 
 router.get('/componentes/:idMaquina', function(req, res, next) {
 	
@@ -136,6 +229,9 @@ router.get('/componentes/:idMaquina', function(req, res, next) {
 		res.status(500).send(erro.message);
 	});
 });
+
+
+
 
 router.get('/tempo-Atual:idMaquinaComponente', function(req, res, next) {
 	console.log('Recuperando leituras');

@@ -255,6 +255,8 @@
             if (response.ok) {
 
                 window.location.href = 'login-cadastro.html';
+                alert("Cadastro realizado com sucesso!")
+
 
             } else {
 
@@ -307,6 +309,9 @@
 
             } else {
 
+
+                alert("Login ou senha inválidos!")
+                
                 console.log('Erro de login!');
 
                 resposta.text().then(texto => {

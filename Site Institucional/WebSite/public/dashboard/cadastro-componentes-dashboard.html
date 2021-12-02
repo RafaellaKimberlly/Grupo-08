@@ -77,7 +77,7 @@
             <div class="user-wrapper">
                 <img src="../img/foto-perfil.png" width="40px" height="40px" alt="">
                 <div>
-                    <h4 id="h4_nome">Olá </h4>
+                    <h4 id="h4_nome"></h4>
                     <b id="b_usuario"></b>
                     <small>Usuario comum</small>
                 </div>
@@ -161,6 +161,8 @@
                         <!-- <input type="text" style="display: none;" name="fkUsuario" id="fkUsuario"> -->
 
                         <button class="btn-cadastrar" type="submit">Cadastrar</button>
+                        <label for=""  style="font-size: 12px;"><br><br>*Ao adicionar uma máquina você concorda com o registro de sua geolocalização</label>
+                        
 
                     </form>
                 </div>
@@ -235,88 +237,62 @@
             });
         }
     }
+    verificar_autenticacao();
+
     
     const button = document.querySelector('.btn-deletar');
     button.addEventListener('click', () => iniciaModal('modal-deletar'));
     
     var myResult;
     
-    function searchAddress() {
-        
-        var addressInput = document.getElementById('latlng').value;
-        
-        var geocoder = new google.maps.Geocoder();
-        
-        geocoder.geocode({
-            address: addressInput
-        }, function (results, status) {
 
-            if (status == google.maps.GeocoderStatus.OK) {
-                
-                myResult = results[0].geometry.location;
-                console.log(myResult)
-                
-                testeLat.innerHTML = myResult;
-                
-                myResult = myResult.toString();
-                myResult.replace('(', '');
-                myResult.replace(')', '');
-                
-                
-                console.log(myResult);
-                
-                
-                
-                var teste1 = results[0].geometry.location;
-                // teste.innerHTML = myResult;
-                // referência ao valor LatLng
-                
-                
-            } else { // se o valor de status é diferente de "google.maps.GeocoderStatus.OK"
-            
-            // mensagem de erro
-            alert("O Geocode não foi bem sucedido pela seguinte razão: " + status);
-            
-        }
-        
-    });
-}
 
 function cadastrar_maquina() {
-    
-    searchAddress();
-    
-    fkUsuario.value = Number(sessionStorage.getItem('id_usuario_meuapp'));
-    console.log(fkUsuario.value)
-    
-    
-    
-    
-    var formulario = new URLSearchParams(new FormData(form_cadastro_maquina));
-    fetch(`/maquinas/cadastrar/${myResult}`, {
-        method: "POST",
-        body: formulario
-    }).then(function (response) {
-        
+
+
+
+fkUsuario.value = Number(sessionStorage.getItem('id_usuario_meuapp'));
+console.log(fkUsuario.value)
+
+
+var formulario = new URLSearchParams(new FormData(form_cadastro_maquina));
+let long
+let lat
+
+let apiAdress = latlng.value.replace(" ", "+");
+fetch(
+        `https://maps.googleapis.com/maps/api/geocode/json?address=${apiAdress}&key=AIzaSyBoUFDJU_guFct2DUVx48sZUt9G14gp0wY`
+    )
+    .then(response => {
         if (response.ok) {
-            console.log('Maquina cadastrada')
-            
-            // cadastrar_maquina_componentes();
-            alert('Maquina cadastrada com sucesso!');
-            carregarFeed();
-            
-        } else {
-            
-            console.log('Erro de cadastro!');
-            response.text().then(function (resposta) {
-                alert(resposta);
-                // div_erro.innerHTML = resposta;
-            });
-            
+            response.json().then(resposta => {
+                console.log(JSON.stringify(resposta))
+                long = resposta.results[0].geometry.location.lng;
+                lat = resposta.results[0].geometry.location.lat;
+                console.log(long, lat);
+                
+                fetch(`/maquinas/cadastrar/${long}/${lat}`, {
+                    method: "POST",
+                    body: formulario
+                }).then(function (response) {
+                    if (response.ok) {
+                        console.log('Maquina cadastrada')
+                        // cadastrar_maquina_componentes();
+                        alert('Maquina cadastrada com sucesso!');
+                        carregarFeed();
+                    } else {
+                        console.log('Erro de cadastro!');
+                        response.text().then(function (resposta) {
+                            alert(resposta);
+                            // div_erro.innerHTML = resposta;
+                        });
+                    }
+                });
+            })
         }
-    });
-    
-    return false;
+    })
+return false;
+
 }
 
     function carregarFeed() {
@@ -445,12 +421,12 @@ function cadastrar_maquina() {
                 if (maquina.mcStatus == "Ativo") {
                     tdStatus.className = "ativo";
                     trMaquina.className = "statusativo";
-                    // btnDesativar.innerHTML =
-                    //     ` <button class="btn-cadastrar" type="submit" onclick="teste()">Desativar</button>`;
+                    btnDesativar.innerHTML =
+                        ` <button class="btn-cadastrar" type="submit" onclick="teste(${maquina.idMaquina})">Desativar</button>`;
                 } else {
                     tdStatus.className = "inativo";
                     trMaquina.className = "statusinativo";
-                    // btnDesativar.innerHTML = ` <button class="btn-cadastrar" type="submit">Ativar</button>`;
+                    btnDesativar.innerHTML = ` <button class="btn-cadastrar" type="submit">Ativar</button>`;
                 }
 
                 // if (tdStatus.value == 'Ativo') {
@@ -463,7 +439,7 @@ function cadastrar_maquina() {
                 trMaquina.appendChild(tdHostname);
                 trMaquina.appendChild(tdComponente);
                 trMaquina.appendChild(tdStatus);
-                // trMaquina.appendChild(btnDesativar);
+                trMaquina.appendChild(btnDesativar);
 
                 feed.appendChild(trMaquina);
 
@@ -597,6 +573,34 @@ function cadastrar_maquina() {
 
             }
         });
+
+        return false;
+    }
+
+    function teste(idMaquina) {
+        console.log(componente.value);
+        console.log(hostname.value);
+
+        fetch(`/leituras/deletar/${idMaquina}`, {
+                    method: 'DELETE'
+                })
+                window.location.href = 'cadastro-componentes-dashboard.html'
+                console.log('apagou saporra')
+                .then(function (response) {
+                    if (response.ok) {
+                    } else {
+                        console.log('Erro ao deletar!');
+                        response.text().then(function (resposta) {
+                        });
+                    }
+                    
+                });
+                
+                    
+        
+      
+            
+        
 
         return false;
     }

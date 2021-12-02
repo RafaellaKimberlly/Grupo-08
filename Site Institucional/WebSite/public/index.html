@@ -177,14 +177,15 @@
                     <button onclick="searchAddress();">Pesquisar</button>
                   </div> -->
 
-                <div id="map"></div>
 
-                <script src="pontos.json"></script>
-                <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
-                  crossorigin="anonymous"></script>
+                  <div id="map"></div>
+
+                  <script src="pontos.json"></script>
+                  <script src="https://code.jquery.com/jquery-1.12.4.js"
+                      integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
                   <script
-                  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHuEUBhrwiYDF8lzFfYiXrI74qDamCCy4&callback=initMap&v=weekly"
-                  async></script>
+                      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDHuEUBhrwiYDF8lzFfYiXrI74qDamCCy4&callback=initMap&v=weekly"
+                      async></script>
                   <div id="teste"></div>
 
 
@@ -250,48 +251,81 @@
 
 
 <script type="text/javascript">
-    var map;
+      var map;
     var markes = [];
-  
+
     function initMap() {
-  
-  
-      map = new google.maps.Map(document.getElementById('map'), {
-        center: {
-          lat: -19.212355602107472,
-          lng: -44.20234468749999
-        },
-        zoom: 4,
-      });
-  
-  
-      // const marker = new google.maps.Marker({
-  
-      //   position: uluru,
-      //   map: map,
-      // });
-      habilitarMarkers();
-  
+
+
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: {
+                lat: -23.5581662,
+                lng: -46.661538
+            },
+            zoom: 15,
+        });
+
+
+        // const marker = new google.maps.Marker({
+
+        //   position: uluru,
+        //   map: map,
+        // });
+        obterMarcadores();
+
     }
-  
-    function habilitarMarkers() {
-      $.each(points, function (key, point) {
-        var position = new google.maps.LatLng(point.lat, point.lng);
-        var marker = new google.maps.Marker({
-          position: position,
-          map: map
-        })
-        markes.push(marker);
-      })
-    }
-  </script>
-  <style>
+</script>
+<style>
     #map {
-      height: 500px;
+        height: 500px;
         width: 100%;
     }
+</style>
 
-  </style>
+<script>
+    function createMarker(latlng) {
+        // Se o utilizador efetuar outra pesquisa é necessário limpar a variável marker
+        // if(marker != undefined && marker != ''){
+        //  marker.setMap(null);
+        //  marker = '';
+        // }
+
+        marker = new google.maps.Marker({
+            map: map,
+            position: latlng
+        });
+
+    }
+
+
+    function obterMarcadores() {
+        fetch("leituras/marcadores")
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        for (let i = 0; i < resposta.length; i++) {
+                            var atual = resposta[i];
+                            console.log(atual)
+                            $.each(resposta, function (key, point) {
+                                var position = new google.maps.LatLng(atual.lat, atual.lng);
+                                var marker = new google.maps.Marker({
+                                    position: position,
+                                    map: map
+                                })
+                                markes.push(marker);
+                            })
+                        }
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                    finalizarAguardar("Nenhum resultado encontrado ou erro na API");
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações: ${error.message}`);
+            });
+    };
+    </script>
 
 <script>
 
