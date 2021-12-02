@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var sequelize = require('../models').sequelize;
 var usuario = require('../models').usuario;
+var env = process.env.NODE_ENV || 'development';
+
 
 let sessoes = [];
 
@@ -12,7 +14,11 @@ router.post('/autenticar', function (req, res, next) {
 	var email = req.body.email; // depois de .body, use o nome (name) do campo em seu formulário de login
 	var senha = req.body.senha; // depois de .body, use o nome (name) do campo em seu formulário de login	
 
-	let instrucaoSql = `select * from tb_usuario where email='${email}' and senha='${senha}'`;
+	if(env == 'dev') {
+		instrucaoSql = `select * from tb_usuario where email='${email}' and senha='${senha}'`;
+	} else if (env == 'production') {
+		instrucaoSql = `select * from tb_usuario where email='${email}' and senha='${senha}'`;
+	}
 	console.log(instrucaoSql);
 
 	sequelize.query(instrucaoSql, {
@@ -68,10 +74,19 @@ router.post('/alterar/', function (req, res, next) {
 	var senha = req.body.senha;
 	var uf = req.body.uf;
 
-	let instrucaoSql = `UPDATE tb_usuario
-	SET nome='${nome}', sobrenome='${sobrenome}', email='${email}',
-	senha='${senha}', uf='${uf}' 
-	WHERE idUsuario = ${idUsuario};`;
+	let instrucaoSql = "";
+
+	if(env == 'dev') {
+		instrucaoSql = `UPDATE tb_usuario
+		SET nome='${nome}', sobrenome='${sobrenome}', email='${email}',
+		senha='${senha}', uf='${uf}' 
+		WHERE idUsuario = ${idUsuario};`;
+	} else if (env == 'production') {
+		instrucaoSql = `UPDATE tb_usuario
+		SET nome='${nome}', sobrenome='${sobrenome}', email='${email}',
+		senha='${senha}', uf='${uf}' 
+		WHERE idUsuario = ${idUsuario};`;
+	}
 
 	sequelize.query(instrucaoSql, { type: sequelize.QueryTypes.UPDATE })
 	.then(resultado => {

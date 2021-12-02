@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="../css/menu-dashboard.css">
     <link rel="shortcut icon" href="../img/2.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/dashboard-perfil.css">
+    <script type="text/javascript" src="../funcoes.js"></script>
+
     <title>Perfil</title>
 </head>
 
@@ -69,7 +71,7 @@
             <div class="user-wrapper">
                 <img src="../img/foto-perfil.png" width="40px" height="40px" alt="">
                 <div>
-                    <h4 id="h4_nome">Olá </h4>
+                    <h4 id="h4_nome"></h4>
                     <b id="b_usuario"></b>
                     <small>Usuario comum</small>
                 </div>
@@ -171,6 +173,7 @@
 </html>
 
 <script>
+    verificar_autenticacao();
 
     function cadastrar_maquina(idUsuario) {
 

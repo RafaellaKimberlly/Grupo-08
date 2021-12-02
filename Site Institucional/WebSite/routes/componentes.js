@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var sequelize = require('../models').sequelize;
 var componente = require('../models').componente;
+var env = process.env.NODE_ENV || 'development';
+
 
 let sessoes = [];
 
@@ -31,6 +33,12 @@ router.get('/', function (req, res, next) {
 
 	let instrucaoSql = `select idComponente, nomeComponente from tb_componente;`;
 
+	if(env == 'dev') {
+		instrucaoSql = `select idComponente, nomeComponente from tb_componente;`;
+	} else if (env == 'production') {
+		instrucaoSql = `select idComponente, nomeComponente from tb_componente;`;
+	}
+
 	sequelize.query(instrucaoSql, {
 		model: componente,
 		mapToModel: true
@@ -50,16 +58,29 @@ router.get('/componente_usuario/:idUsuario', function (req, res, next) {
 	// let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
 	let idUsuario = req.params.idUsuario;
 
-	let instrucaoSql = `select fkMaquina, nomeComponente from tb_maquina_componente as mc
-	join tb_componente as c
-	on c.idComponente = mc.fkComponente 
-	join tb_maquina as m
-	on m.idMaquina = mc.fkMaquina
-	join tb_usuario as u
-	on u.idUsuario = m.fkUsuario
-	where nomeComponente = 'Memoria-ram'
-	and idUsuario = ${idUsuario}
-	order by fkMaquina;`;
+	if(env == 'dev') {
+		instrucaoSql = `select fkMaquina, nomeComponente from tb_maquina_componente as mc
+		join tb_componente as c
+		on c.idComponente = mc.fkComponente 
+		join tb_maquina as m
+		on m.idMaquina = mc.fkMaquina
+		join tb_usuario as u
+		on u.idUsuario = m.fkUsuario
+		where nomeComponente = 'Memoria-RAM'
+		and idUsuario = ${idUsuario}
+		order by fkMaquina;`;
+	} else if (env == 'production') {
+		instrucaoSql = `select fkMaquina, nomeComponente from tb_maquina_componente as mc
+		join tb_componente as c
+		on c.idComponente = mc.fkComponente 
+		join tb_maquina as m
+		on m.idMaquina = mc.fkMaquina
+		join tb_usuario as u
+		on u.idUsuario = m.fkUsuario
+		where nomeComponente = 'Memoria-RAM'
+		and idUsuario = ${idUsuario}
+		order by fkMaquina;`;
+	}
 
 	sequelize.query(instrucaoSql, {
 		model: componente,
@@ -80,7 +101,8 @@ router.get('/cpu_usuario/:idUsuario', function (req, res, next) {
 	// let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
 	let idUsuario = req.params.idUsuario;
 
-	let instrucaoSql = `select fkMaquina, nomeComponente from tb_maquina_componente as mc
+	if(env == 'dev') {
+		instrucaoSql = `select fkMaquina, nomeComponente from tb_maquina_componente as mc
 	join tb_componente as c
 	on c.idComponente = mc.fkComponente 
 	join tb_maquina as m
@@ -90,6 +112,18 @@ router.get('/cpu_usuario/:idUsuario', function (req, res, next) {
 	where nomeComponente = 'cpu'
 	and idUsuario = ${idUsuario}
 	order by fkMaquina;`;
+	} else if (env == 'production') {
+		instrucaoSql = `select fkMaquina, nomeComponente from tb_maquina_componente as mc
+	join tb_componente as c
+	on c.idComponente = mc.fkComponente 
+	join tb_maquina as m
+	on m.idMaquina = mc.fkMaquina
+	join tb_usuario as u
+	on u.idUsuario = m.fkUsuario
+	where nomeComponente = 'cpu'
+	and idUsuario = ${idUsuario}
+	order by fkMaquina;`;
+	}
 
 	sequelize.query(instrucaoSql, {
 		model: componente,
@@ -110,7 +144,8 @@ router.get('/disco_usuario/:idUsuario', function (req, res, next) {
 	// let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
 	let idUsuario = req.params.idUsuario;
 
-	let instrucaoSql = `select fkMaquina, nomeComponente from tb_maquina_componente as mc
+	if(env == 'dev') {
+		instrucaoSql = `select fkMaquina, nomeComponente from tb_maquina_componente as mc
 	join tb_componente as c
 	on c.idComponente = mc.fkComponente 
 	join tb_maquina as m
@@ -120,7 +155,19 @@ router.get('/disco_usuario/:idUsuario', function (req, res, next) {
 	where nomeComponente = 'Disco'
 	and idUsuario = ${idUsuario}
 	order by fkMaquina;`;
-
+	} else if (env == 'production') {
+		instrucaoSql = `select fkMaquina, nomeComponente from tb_maquina_componente as mc
+	join tb_componente as c
+	on c.idComponente = mc.fkComponente 
+	join tb_maquina as m
+	on m.idMaquina = mc.fkMaquina
+	join tb_usuario as u
+	on u.idUsuario = m.fkUsuario
+	where nomeComponente = 'Disco'
+	and idUsuario = ${idUsuario}
+	order by fkMaquina;`;
+	}
+	
 	sequelize.query(instrucaoSql, {
 		model: componente,
 		mapToModel: true

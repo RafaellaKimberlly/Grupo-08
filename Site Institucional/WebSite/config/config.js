@@ -5,7 +5,7 @@ module.exports = {
     username: 'admcrypto',
     password: '#Gfgrupo8',
     database: 'cryptoverse',
-    host: 'cryptoverse.database.windows.net',
+    host: 'projeto-cryptoverse.database.windows.net',
     dialect: 'mssql',
     xuse_env_variable: 'DATABASE_URL',
     dialectOptions: {
@@ -26,7 +26,7 @@ module.exports = {
   dev: {
     // altere APENAS username, password e database.
     username: 'root',
-    password: '1104.Adri',
+    password: '140613',
     database: 'projetoCryptoverse',
     host: '127.0.0.1',
     dialect: 'mysql',

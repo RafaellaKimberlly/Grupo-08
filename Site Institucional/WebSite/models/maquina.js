@@ -28,8 +28,13 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-		latlng: {
-			field: 'latlng',
+		lat: {
+			field: 'lat',
+			type: DataTypes.STRING,
+			allowNull: false
+		},
+		lng: {
+			field: 'lng',
 			type: DataTypes.STRING,
 			allowNull: false
 		},

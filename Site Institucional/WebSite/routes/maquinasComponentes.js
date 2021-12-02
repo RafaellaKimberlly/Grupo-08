@@ -27,7 +27,13 @@ router.post('/cadastrar', function(req, res, next) {
 router.get('/', function(req, res, next) {
 	console.log('Recuperando todas as publicações');
 	
-    let instrucaoSql = `select * from tbMaquinas;`;
+	let instrucaoSql = "";
+
+	if(env == 'dev') {
+		instrucaoSql = `select * from tbMaquinas;`;
+	} else if (env == 'production') {
+		instrucaoSql = `select * from tbMaquinas;`;
+	}
 
 	sequelize.query(instrucaoSql, {
 		model: maquina,
@@ -47,7 +53,10 @@ router.get('/contar_cpu/:idUsuario', function(req, res, next) {
 
 	var idUsuario = req.params.idUsuario;
 
-	let instrucaoSql = `select count(fkComponente) as qtdcpu from tb_maquina_componente as mc
+	let instrucaoSql = "";
+
+if( env == 'dev' ) {
+	instrucaoSql = `select count(fkComponente) as qtdcpu from tb_maquina_componente as mc
 	join tb_maquina as m
 	on m.idMaquina = mc.fkMaquina
 	join tb_usuario as u
@@ -55,6 +64,16 @@ router.get('/contar_cpu/:idUsuario', function(req, res, next) {
 	join tb_componente as c
 	on c.idComponente = mc.fkComponente
 	where m.fkUsuario = ${idUsuario} and nomeComponente = 'cpu';`;
+} else if(dev == 'production') {
+	instrucaoSql = `select count(fkComponente) as qtdcpu from tb_maquina_componente as mc
+	join tb_maquina as m
+	on m.idMaquina = mc.fkMaquina
+	join tb_usuario as u
+	on u.idUsuario = m.fkUsuario
+	join tb_componente as c
+	on c.idComponente = mc.fkComponente
+	where m.fkUsuario = ${idUsuario} and nomeComponente = 'cpu';`;
+}
 
 	sequelize.query(instrucaoSql, { 
 		model: maquinaComponente
@@ -72,14 +91,27 @@ router.get('/contar_ram/:idUsuario', function(req, res, next) {
 
 	var idUsuario = req.params.idUsuario;
 
-	let instrucaoSql = `select count(fkComponente) as qtdRam from tb_maquina_componente as mc
-	join tb_maquina as m
-	on m.idMaquina = mc.fkMaquina
-	join tb_usuario as u
-	on u.idUsuario = m.fkUsuario
-	join tb_componente as c
-	on c.idComponente = mc.fkComponente
-	where fkUsuario = ${idUsuario} and nomeComponente = 'Memoria-ram';`;
+	let instrucaoSql = "";
+
+	if(env == 'dev') {
+		instrucaoSql = `select count(fkComponente) as qtdRam from tb_maquina_componente as mc
+		join tb_maquina as m
+		on m.idMaquina = mc.fkMaquina
+		join tb_usuario as u
+		on u.idUsuario = m.fkUsuario
+		join tb_componente as c
+		on c.idComponente = mc.fkComponente
+		where fkUsuario = ${idUsuario} and nomeComponente = 'Memoria-ram';`;
+	} else if (env == 'production') {
+		instrucaoSql = `select count(fkComponente) as qtdRam from tb_maquina_componente as mc
+		join tb_maquina as m
+		on m.idMaquina = mc.fkMaquina
+		join tb_usuario as u
+		on u.idUsuario = m.fkUsuario
+		join tb_componente as c
+		on c.idComponente = mc.fkComponente
+		where fkUsuario = ${idUsuario} and nomeComponente = 'Memoria-ram';`;
+	}
 
 	sequelize.query(instrucaoSql, { 
 		model: maquinaComponente
@@ -97,14 +129,25 @@ router.get('/contar_disco/:idUsuario', function(req, res, next) {
 
 	var idUsuario = req.params.idUsuario;
 
-	let instrucaoSql = `select count(fkComponente) as qtdDisco from tb_maquina_componente as mc
-	join tb_maquina as m
-	on m.idMaquina = mc.fkMaquina
-	join tb_usuario as u
-	on u.idUsuario = m.fkUsuario
-	join tb_componente as c
-	on c.idComponente = mc.fkComponente
-	where fkUsuario = ${idUsuario} and nomeComponente = 'disco';`;
+	if(env == 'dev') {
+		instrucaoSql = `select count(fkComponente) as qtdDisco from tb_maquina_componente as mc
+		join tb_maquina as m
+		on m.idMaquina = mc.fkMaquina
+		join tb_usuario as u
+		on u.idUsuario = m.fkUsuario
+		join tb_componente as c
+		on c.idComponente = mc.fkComponente
+		where fkUsuario = ${idUsuario} and nomeComponente = 'disco';`;
+	} else if(env == 'production') {
+		instrucaoSql = `select count(fkComponente) as qtdDisco from tb_maquina_componente as mc
+		join tb_maquina as m
+		on m.idMaquina = mc.fkMaquina
+		join tb_usuario as u
+		on u.idUsuario = m.fkUsuario
+		join tb_componente as c
+		on c.idComponente = mc.fkComponente
+		where fkUsuario = ${idUsuario} and nomeComponente = 'disco';`;
+	}
 
 	sequelize.query(instrucaoSql, { 
 		model: maquinaComponente

@@ -187,7 +187,9 @@
 </html>
 
 <script>
-    b_usuario.innerHTML = sessionStorage.nome_usuario_meuapp;
+    verificar_autenticacao();
+
+    // b_usuario.innerHTML = sessionStorage.nome_usuario_meuapp;
 
     function carregarComponentes() {
         obterPublicacoes();
