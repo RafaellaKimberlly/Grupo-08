@@ -16,7 +16,7 @@ router.post('/cadastrar/:myResult', function(req, res, next) {
 		numSerie : req.body.numSerie,
 		tipo_Processador : req.body.tipo_Processador,
 		fkUsuario: req.body.fkUsuario,
-		latlng: req.params.myResult
+		lat: req.params.myResult
 	}).then(resultado => {
 		console.log(`Registro criado: ${resultado}`)
         res.send(resultado);

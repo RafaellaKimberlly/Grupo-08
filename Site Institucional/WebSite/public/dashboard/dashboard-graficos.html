@@ -53,8 +53,7 @@
         <div class="sidebar-menu sair">
             <ul>
                 <li>
-                    <a href="../login-cadastro.html"><i
-                            class="fas fa-sign-out-alt"></i>
+                    <a href="../login-cadastro.html"><i class="fas fa-sign-out-alt"></i>
                         <span onclick="logoff()">Encerrar sessão</span></a>
                 </li>
             </ul>
@@ -67,125 +66,124 @@
                 <img src="../img/foto-perfil.png" width="40px" height="40px" alt="">
                 <div>
                     <h4 id="h4_nome">Olá
-                    <b id="b_usuario" style="text-transform: uppercase;"></b></h4>
+                        <b id="b_usuario" style="text-transform: uppercase;"></b>
+                    </h4>
                     <small>Usuario comum</small>
                 </div>
             </div>
         </header>
 
-<main>
+        <main>
 
-<!-- cards inicio -->
-<div class="container-cards">
-    <div class="content">
-        <div class="cards">
-            <div class="card">
-                <div class="box">
-                    <h1>MAQUINAS</h1>
-                </div>
-                <div class="icone-case">
-                    <figure>
-                        <img src="../img/computadores.png" width="50" height="50" alt="">
-                    </figure>
-                </div>
-                <div class="select_but">
-                    <select class="selection-but" name="" id="feed_container">
-                        <option value="">Selecione</option>
-                    </select>
-                </div>
-            </div>
+            <!-- cards inicio -->
+            <div class="container-cards">
+                <div class="content">
+                    <div class="cards">
+                        <div class="card">
+                            <div class="box">
+                                <h1>MAQUINAS</h1>
+                            </div>
+                            <div class="icone-case">
+                                <figure>
+                                    <img src="../img/computadores.png" width="50" height="50" alt="">
+                                </figure>
+                            </div>
+                            <div class="select_but">
+                                <select class="selection-but" name="" id="feed_container"
+                                    onchange="obterDadosGraficoPorId(document.querySelector('#feed_container').value)">
+                                    <option value="">Selecione</option>
+                                </select>
+                            </div>
+                        </div>
 
 
-            <div class="card">
-                <div class="box">
-                    <h1>RAM</h1>
-                </div>
-                <div class="icone-case">
-                    <figure>
-                        <img src="../img/memoria-ram.png" width="50" height="50" alt="">
-                    </figure>
-                </div>
-                <div class="select_but">
-                    <select class="selection-but" name="" id="feed_container2">
-                        <option value="">Selecione</option>
-                    </select>
-                </div>
-            </div>
+                        <div class="card">
+                            <div class="box">
+                                <h1>RAM</h1>
+                            </div>
+                            <div class="icone-case">
+                                <figure>
+                                    <img src="../img/memoria-ram.png" width="50" height="50" alt="">
+                                </figure>
+                            </div>
+                            <div class="select_but">
+                                <select class="selection-but" name="" id="feed_container2">
+                                    <option value="">Selecione</option>
+                                </select>
+                            </div>
+                        </div>
 
-            <div class="card">
-                <div class="box">
-                    <h1>DISCO</h1>
-                </div>
-                <div class="icone-case">
-                    <figure>
-                        <img src="../img/placa-de-video.png" width="50" height="50" alt="">
-                    </figure>
-                </div>
-                <div class="select_but">
-                    <select class="selection-but" name="" id="feed_container3">
-                        <option value="">Selecione</option>
-                    </select>
-                </div>
-            </div>
+                        <div class="card">
+                            <div class="box">
+                                <h1>DISCO</h1>
+                            </div>
+                            <div class="icone-case">
+                                <figure>
+                                    <img src="../img/placa-de-video.png" width="50" height="50" alt="">
+                                </figure>
+                            </div>
+                            <div class="select_but">
+                                <select class="selection-but" name="" id="feed_container3">
+                                    <option value="">Selecione</option>
+                                </select>
+                            </div>
+                        </div>
 
-            <div class="card">
-                <div class="box">
-                    <h1>CPU</h1>
-                </div>
-                <div class="icone-case">
-                    <figure>
-                        <img src="../img/processadores.png" width="50" height="50" alt="">
-                    </figure>
-                </div>
-                <div class="select_but">
-                    <select class="selection-but" name="" id="feed_container4">
-                        <option value="">Selecione</option>
-                    </select>
-                </div>
-            </div>
-        </div>
+                        <div class="card">
+                            <div class="box">
+                                <h1>CPU</h1>
+                            </div>
+                            <div class="icone-case">
+                                <figure>
+                                    <img src="../img/processadores.png" width="50" height="50" alt="">
+                                </figure>
+                            </div>
+                            <div class="select_but">
+                                <select class="selection-but" name="" id="feed_container4">
+                                    <option value="">Selecione</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
 
-<!--  inicio graficos -->
+                    <!--  inicio graficos -->
 
-<div class="row-grafico">
-    <div class="column-grafico">
-        <h2>Gráfico de desempenho de componente</h2>
-        <!-- adicione a tag canvas no seu HTML -->
-        <div class="chart-container" style="position: relative; height:45vh; width:45vw; margin-top: 20px;">
-            <canvas id="myChart"></canvas>
-        </div>
-    </div>
+                    <div class="row-grafico">
+                        <div class="column-grafico">
+                            <h2>Gráfico de desempenho de componente</h2>
+                            <!-- adicione a tag canvas no seu HTML -->
+                            <div class="chart-container"
+                                style="position: relative; height:45vh; width:45vw; margin-top: 20px;">
+                                <canvas id="myChart"></canvas>
+                            </div>
+                        </div>
 
-    <div class="column-grafico" >
-        <h2>Utilização do componente</h2>
-        <br><br>
-        <h2>CPU</h2>
-        <p style="float: left;">% Utilização</p>
-        <p style="float: right;">
-            Intel(R) Core(TM) i5-10210U CPU @ 1.60GHz
-        </p>
-        <br>
-        <div style="overflow-x:auto;">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Utilização</th>
-                        <th>Velocidade</th>
-                        <th>Tempo de atividade</th>
-                        <th>Processos</th>
-                        <th>Threads</th>
-                    </tr>
-                </thead>
-                <tbody id="feed_container5"></tbody>
-            </table>
-        </div>
-    </div>
-</div>
-<!--  fim -->
+                        <div class="column-grafico">
+
+                            <h2>Histórico</h2>
+                            <br>
+                            <div style="overflow-x:auto;">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Id Leitura</th>
+                                            <th>Nível Alerta</th>
+                                            <th>Data/Hora</th>
+                                            <th>Máquina</th>
+                                            <th>Componente</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="feed_container5"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  fim -->
 
 
 
-</main>
+        </main>
+
 </html>
 
 <script>
@@ -199,8 +197,10 @@
         obterPublicacoes4();
         obterPublicacoes5();
     }
+    carregarComponentes();
 
     function obterPublicacoes() {
+
         fetch("/maquinas")
             .then(resposta => {
                 if (resposta.ok) {
@@ -222,6 +222,7 @@
     function atualizarFeed(maquinas) {
         let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
         var feed = document.getElementById("feed_container");
+
         feed.innerHTML = "";
 
         for (let i = 0; i < maquinas.length; i++) {
@@ -309,7 +310,7 @@
             });
     }
 
-    function atualizarFeed3(componentes) {
+    function atualizarFeed4(componentes) {
         let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
         var feed = document.getElementById("feed_container3");
         feed.innerHTML = "";
@@ -353,7 +354,7 @@
             });
     }
 
-    function atualizarFeed4(componentes) {
+    function atualizarFeed3(componentes) {
         let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
         var feed = document.getElementById("feed_container4");
         feed.innerHTML = "";
@@ -376,6 +377,7 @@
     }
 
     function obterPublicacoes5() {
+        debugger
         fetch("/leituras")
             .then(resposta => {
                 if (resposta.ok) {
@@ -427,6 +429,66 @@
             }
         }
     }
+    function obterDadosGraficoPorId(idMaquina) {
+        //  console.log("executei obterDadosGraficoPrimeiraVez")
+        // var idMaquina = sessionStorage.id_usuario_meuapp
+        debugger;
+
+        fetch(`/leituras/componentes/${idMaquina}`)
+            .then(function (response) {
+                if (response.ok) {
+                    response.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                        resposta.reverse();
+
+                        var dados = {
+                            labels: [],
+                            datasets: [
+                                {
+                                    yAxisID: 'y-temperatura',
+                                    label: 'CPU',
+                                    borderColor: '#F95738',
+                                    backgroundColor: '#F95738',
+                                    fill: false,
+                                    data: []
+                                },
+                                {
+                                    yAxisID: 'y-temperatura',
+                                    label: 'RAM',
+                                    borderColor: 'blue',
+                                    backgroundColor: 'blue',
+                                    fill: false,
+                                    data: []
+                                }
+                            ]
+                        };
+                        for (i = 0; i < resposta.length; i++) {
+                            var registro = resposta[i];
+
+                            if (registro.fkComponente == 1) {
+                                dados.labels.push(registro.dataHora);
+                                dados.datasets[0].data.push(registro.valor);
+                            } else if (registro.fkComponente == 2) {
+                                dados.labels.push(registro.dataHora);
+                                dados.datasets[1].data.push(registro.valor);
+                            }
+
+                        }
+
+
+                        console.log(JSON.stringify(dados));
+                        // div_aguarde.style.display = 'none';
+                        plotarGrafico(dados, idMaquina);
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+
+    }
 
     function obterDadosGraficoPrimeiraVez() {
         console.log("executei obterDadosGraficoPrimeiraVez")
@@ -444,9 +506,17 @@
                             datasets: [
                                 {
                                     yAxisID: 'y-temperatura',
-                                    label: 'leituras',
+                                    label: 'CPU',
                                     borderColor: '#F95738',
                                     backgroundColor: '#F95738',
+                                    fill: false,
+                                    data: []
+                                },
+                                {
+                                    yAxisID: 'y-temperatura',
+                                    label: 'RAM',
+                                    borderColor: 'blue',
+                                    backgroundColor: 'blue',
                                     fill: false,
                                     data: []
                                 }
@@ -454,9 +524,14 @@
                         };
                         for (i = 0; i < resposta.length; i++) {
                             var registro = resposta[i];
-                            dados.labels.push(registro.dataHora);
-                            dados.datasets[0].data.push(registro.valor);
 
+                            if (registro.fkComponente == 1) {
+                                dados.labels.push(registro.dataHora);
+                                dados.datasets[0].data.push(registro.valor);
+                            } else if (registro.fkComponente == 2) {
+                                dados.labels.push(registro.dataHora);
+                                dados.datasets[1].data.push(registro.valor);
+                            }
                         }
                         console.log(JSON.stringify(dados));
                         // div_aguarde.style.display = 'none';
@@ -472,12 +547,12 @@
 
     }
 
-     window.onload = obterDadosGraficoPrimeiraVez();
+    window.onload = obterDadosGraficoPrimeiraVez();
 
-    function plotarGrafico(dados,idMaquina) {
+    function plotarGrafico(dados, idMaquina) {
         console.log("executei plotarGrafico")
         console.log('iniciando plotagem do gráfico...');
-        div_aguarde.style.display = 'block';
+        // div_aguarde.style.display = 'block';
 
         let ctx = myChart.getContext("2d");
 
@@ -533,16 +608,16 @@
                     dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
                     dados.datasets[0].data.push(novoRegistro.valor); // incluir uma nova leitura de temperatura
 
-                   console.log("minha maquina é a " + idMaquina)
+                    console.log("minha maquina é a " + idMaquina)
 
                     window.grafico_linha.update();
-                    
 
-                    proximaAtualizacao = setTimeout(() => atualizarGrafico(dados), 2000);
+
+                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idMaquina, dados), 2000);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
-                proximaAtualizacao = setTimeout(() => atualizarGrafico(dados), 2000);
+                proximaAtualizacao = setTimeout(() => atualizarGrafico(idMaquina, dados), 2000);
             }
         })
             .catch(function (error) {

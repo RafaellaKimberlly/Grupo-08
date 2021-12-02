@@ -39,7 +39,7 @@ router.get('/', function(req, res, next) {
 	
 	// let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
 
-    let instrucaoSql = `select idLeitura, nvAlerta, dataHora,  m.hostname, c.nomeComponente, mc.desComponente, m.fkUsuario from tb_leitura as l
+    let instrucaoSql = `select top 6 idLeitura, nvAlerta, dataHora,  m.hostname, c.nomeComponente, mc.descComponente, m.fkUsuario from tb_leitura as l
 	join tb_maquina_componente as mc
 	on mc.idMaquinaComponente = l.fkMaquinaComponente
 	join tb_maquina as m
@@ -92,7 +92,7 @@ router.get('/estatisticas', function (req, res, next) {
 router.get('/componentes/:idMaquina', function(req, res, next) {
 	
 	// quantas são as últimas leituras que quer? 7 está bom?
-	const limite_linhas = 7;
+	const limite_linhas = 6;
 
 	var idMaquina = req.params.idMaquina;
 
@@ -109,7 +109,7 @@ router.get('/componentes/:idMaquina', function(req, res, next) {
 		on m.idMaquina = mc.fkMaquina
 		join tb_componente as c
 		on c.idComponente = mc.fkComponente
-		where fkMaquina = ${idMaquina} and fkComponente = 1
+		where fkMaquina = ${idMaquina} 
 		order by idLeitura desc limit 7;`;
 
 	} else if (env == 'production') {
@@ -118,7 +118,7 @@ router.get('/componentes/:idMaquina', function(req, res, next) {
 		join tb_maquina_componente on tb_maquina_componente.idMaquinaComponente = tb_leitura.fkMaquinaComponente
 		join tb_maquina on tb_maquina.idMaquina = tb_maquina_componente.fkMaquina
 		join tb_componente on tb_componente.idComponente = tb_maquina_componente.fkComponente
-		where fkMaquina = ${idMaquina} and fkComponente = 1
+		where fkMaquina = ${idMaquina} 
 		order by idLeitura desc`;
 	} else {
 		console.log("\n\n\n\nVERIFIQUE O VALOR DE LINHA 1 EM APP.JS!\n\n\n\n")
