@@ -106,7 +106,7 @@ public class LeituraService {
             nvAlerta = "S";
         }
         
-            return String.format("insert into tb_leitura (nvAlerta, valor, dataHora, fkDado, fkMaquinaComponente) values ('%s',%s,now(),%d,%d)",
+            return String.format("insert into tb_leitura (nvAlerta, valor, dataHora, fkDado, fkMaquinaComponente) values (?,?,?,?,?)",
                 nvAlerta, ramEmUsoGb, data, 2, 2);
     }
 
