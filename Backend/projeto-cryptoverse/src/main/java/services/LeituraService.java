@@ -74,28 +74,38 @@ public class LeituraService {
         json.put("text", "Enviando dados de RAM.");
         Slack.sendMessage(json);
         String nvAlerta = "";
-        if (componente.ram.getEmUso() < 30) {
-            System.out.printf("Estado Critico!");
+        
+        long ramTotalGb = (componente.ram.getTotal()/1000000000);
+        long ramEmUsoGb = (componente.ram.getEmUso()/1000000000);
+        
+        System.out.println(ramEmUsoGb + " GB em uso.");
+        System.out.println("Total disponível: " + ramTotalGb + " GB");
+        
+        if ((ramEmUsoGb * 100) / ramTotalGb < 30) {
+            System.out.printf("Performance: Estado Critico!");
             json.put("text", "Componente critico! Memória Ram com baixo desempenho. \n"
-                    + Math.round(componente.ram.getEmUso() * 100) / 100 + "GB");
+                    + Math.round(componente.ram.getEmUso())/1000000000 + " GB");
             Slack.sendMessage(json);
             nvAlerta = "C";
-        } else if (componente.ram.getEmUso() < 60) {
-            System.out.println("Estado de Atenção!!!");
-            json.put("text", "Atenção!!! Sua memória ram está perdendo desempenho. \n"
-                    + Math.round(componente.ram.getEmUso() * 100) / 100 + "GB");
+            
+        } else if ((ramEmUsoGb * 100) / ramTotalGb < 60) {
+            System.out.println("Performance: Estado de Atenção!");
+            json.put("text", "Atenção!!! Sua memória ram está com baixo desempenho. \n"
+                    + Math.round(componente.ram.getEmUso())/1000000000 + " GB");
             Slack.sendMessage(json);
             nvAlerta = "B";
-        } else if (componente.ram.getEmUso() < 90) {
-            System.out.println("Em bom estado!");
+            
+        } else if ((ramEmUsoGb * 100) / ramTotalGb < 90) {
+            System.out.println("Performance: Em bom estado!");
             json.put("text", "Componente em bom estado! Memória Ram em ótimo desempenho. \n"
-                    + Math.round(componente.ram.getEmUso() * 100) / 100 + "GB");
+                    + Math.round(componente.ram.getEmUso())/1000000000 + " GB");
             Slack.sendMessage(json);
             nvAlerta = "A";
+            
         } else {
-            System.out.println("Em perfeito estado!!!");
-            json.put("text", "Componente em ótimo estado! Memória Ram em seu desempenho máximo. \n"
-                    + Math.round(componente.ram.getEmUso() * 100) / 100 + "GB");
+            System.out.println("Performance: Em perfeito estado!");
+            json.put("text", "Componente em perfeito estado! Memória Ram em seu desempenho máximo. \n"
+                    + Math.round(componente.ram.getEmUso())/1000000000 + " GB");
             Slack.sendMessage(json);
             nvAlerta = "S";
         }
@@ -109,34 +119,38 @@ public class LeituraService {
         json.put("text", "Enviando dados de CPU.");
         Slack.sendMessage(json);
         String nvAlerta = "";
-        if (componente.processador.getUso() < 30) {
+        
+        long usoCpuPorc = Math.round(componente.processador.getUso());
+        System.out.println(usoCpuPorc + "%");
+        
+        if (usoCpuPorc < 30) {
             System.out.println("Estado Critico!");
             json.put("text", "Componente critico! CPU em baixo desempenho. \n"
-                    + Math.round(componente.processador.getUso() * 100) / 100 + "%");
+                    + usoCpuPorc + "%");
 
             Slack.sendMessage(json);
             nvAlerta = "C";
-        } else if (componente.processador.getUso() < 60) {
+        } else if (usoCpuPorc < 60) {
             System.out.println("Estado de Atenção!!!");
             json.put("text", "Atenção!!! Sua CPU está perdendo desempenho. \n"
-                    + Math.round(componente.processador.getUso() * 100) / 100 + "%");
+                    + usoCpuPorc + "%");
             Slack.sendMessage(json);
             nvAlerta = "B";
-        } else if (componente.processador.getUso() < 90) {
+        } else if (usoCpuPorc < 90) {
             System.out.println("Em bom estado!");
             json.put("text", "Componente em bom estado! CPU em ótimo desempenho. \n"
-                    + Math.round(componente.processador.getUso() * 100) / 100 + "%");
+                    + usoCpuPorc + "%");
             Slack.sendMessage(json);
             nvAlerta = "A";
         } else {
             System.out.println("Em perfeito estado");
             json.put("text", "Componente em ótimo estado! CPU em seu desempenho máximo. \n"
-                    + Math.round(componente.processador.getUso() * 100) / 100 + "%");
+                    + usoCpuPorc + "%");
             Slack.sendMessage(json);
             nvAlerta = "S";
         }
         controller.update("insert into tb_leitura (nvAlerta, valor, dataHora, fkDado, fkMaquinaComponente) values (?,?,?,?,?)",
-                nvAlerta, componente.processador.getUso(), data, 1, 1);
+                nvAlerta, usoCpuPorc, data, 1, 1);
     }
 
     public void addLeituraDisco() throws IOException, InterruptedException {
@@ -145,6 +159,11 @@ public class LeituraService {
         json.put("text", "Enviando dados de Disco.");
         Slack.sendMessage(json);
         String nvAlerta = "";
+        
+        System.out.println(componente.discos.getTamanhoTotal()/1000000000 + "GB");
+        componente.discos.getVolumes();
+       
+        
         if (componente.discos.getTamanhoTotal() < 30) {
             System.out.println("Estado Critico!");
             json.put("text", "Componente critico! Disco com baixo armazenamento. \n"
