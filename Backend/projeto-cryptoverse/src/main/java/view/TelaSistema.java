@@ -245,11 +245,11 @@ public class TelaSistema extends javax.swing.JFrame {
 
         ComponentesServices teste = new ComponentesServices();
 
-        disco1.setText(teste.getMemoriaEmUsoPorc().toString());
+        disco2.setText(teste.getMemoriaEmUsoPorc().toString());
 
-        disco2.setText(teste.getCpuUsoPorc().toString());
+        disco1.setText(teste.getCpuUsoPorc().toString());
 
-        disco.setText(teste.getDiscoPorc().toString());
+        disco.setText(teste.tamanhoTotalDisco().toString());
 
     }//GEN-LAST:event_botaoSimActionPerformed
 

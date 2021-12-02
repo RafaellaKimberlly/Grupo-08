@@ -9,7 +9,7 @@ import oshi.software.os.OSFileStore;
  */
 public class Volume {
 
-    private final OSFileStore volume;
+    private final OSFileStore volume;   
 
     public Volume(OSFileStore volume) {
         this.volume = volume;

@@ -16,6 +16,7 @@ public class ComponentesServices {
     Looca looca = new Looca();
     Processador processador = new Processador();
     DiscosGroup discos = new DiscosGroup();
+    
 
 //    =======================================================================================================
 //    RAM
@@ -33,7 +34,7 @@ public class ComponentesServices {
     }
 
     public Double getMemoriaEmUsoPorc() {
-        return tamanhoUsadoRam() / (tamanhoTotalRam() * 0.01);
+        return (tamanhoUsadoRam()*100) / tamanhoTotalRam();
     }
 
 //    ======================================================================================================
@@ -67,16 +68,16 @@ public class ComponentesServices {
     }
 
     public Double getCpuUsoPorc(){
-        Double cpuUso = usoProcessador().doubleValue();
-        return cpuUso;
+        Integer cpuUso = usoProcessador()/1000000000;
+        return cpuUso.doubleValue();
     }
 
 //    ========================================================================================================
 
 //    ========================================================================================================
 //    Disco
-    public Double tamanhoTotalDisco(){
-        return discos.getTamanhoTotal().doubleValue();
+    public Long tamanhoTotalDisco(){
+        return discos.getTamanhoTotal() / 1000000000;
     }
 
     public List<Disco> totalDiscos(){
@@ -95,23 +96,22 @@ public class ComponentesServices {
         return discos.getQuantidadeDeVolumes();
     }
 
-    public Double getDiscoPorc(){
+    public long getDiscoPorc(){
 
         List<Disco> discosConvertidos = totalDiscos();
 
-        Long tamanho = 0L;
-
         for (Disco disco : discosConvertidos) {
             System.out.println(disco);
-            tamanho = disco.getTamanho();
+            System.out.println(disco.getBytesDeEscritas());
         }
 
-        return tamanho.doubleValue();
+        return discos.getTamanhoTotal();
 //                / (tamanhoTotalDisco() * 0.01);
 //        return disco.get  (tamanhoTotalDisco() * 0.01) + 1000000000;
 
 //        tamanhoUsadoRam() / (tamanhoTotalRam() * 0.0
     }
+    
 
 //    =========================================================================================================
 }

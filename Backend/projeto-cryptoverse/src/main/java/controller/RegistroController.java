@@ -40,12 +40,11 @@ public class RegistroController {
         
         }
     
-        public void addLeituraDisco() throws IOException, InterruptedException{
-        String dataAtual = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
-        Double valorDisco = componente.getDiscoPorc();
-        leitura.addLeituraDisco();
+//        public void addLeituraDisco() throws IOException, InterruptedException{
+//        String dataAtual = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+//        leitura.addLeituraDisco();
         
-        }
+//        }
         
         public static void main(String[] args)throws IOException{
             
@@ -69,13 +68,13 @@ public class RegistroController {
                 } catch (InterruptedException ex) {
                     Logger.getLogger(RegistroController.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                try {
-                    enviaDados.addLeituraDisco();
-                } catch (IOException ex) {
-                    Logger.getLogger(RegistroController.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(RegistroController.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                //try {
+                //    enviaDados.addLeituraDisco();
+                //} catch (IOException ex) {
+                //    Logger.getLogger(RegistroController.class.getName()).log(Level.SEVERE, null, ex);
+                //} catch (InterruptedException ex) {
+                //    Logger.getLogger(RegistroController.class.getName()).log(Level.SEVERE, null, ex);
+                //}
             }
         }, 0, 10000);
             
