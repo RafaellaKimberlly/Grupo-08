@@ -333,6 +333,17 @@ main {
     height: 2.5vw;
 }
 
+.btn-deletar {
+    background-color: #F95738;
+    color: #fff;
+    width: 15%;
+    margin: 10px 0px 10px 20px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    height: 2.5vw;
+    transition: 0.5s;
+}
+
 .new-relatory {
     width: 50%;
     display: flex;
@@ -352,18 +363,51 @@ main {
     border-radius: 10px;
 }
 
-/* 
-.ipt-form {
-    float: right;
-    width: 50%;
-    height: 2vw;
-    border: 1px solid transparent;
-    border-radius: 7px;
-    margin-right: 2%;
-    padding: 10px;
-    background-color: #EBEBD3;
+.modal-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 0, 0, .5);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 50;
+    display: none;
+    justify-content: center;
+    align-items: center;
 }
 
- */
+.modal {
+    background-color: white;
+    width: 60%;
+    min-width: 300px;
+    padding: 40px;
+    box-shadow: 0 0  10px black;
+}
 
+.fechar {
+    position: absolute;
+    top: 28%;
+    right: 18.5%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
 
+.modal-container.mostrar {
+    display: flex;
+}
+
+@keyframes modal {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -60px, 0);
+    } to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.mostrar .modal {
+    animation: modal .3s;
+}

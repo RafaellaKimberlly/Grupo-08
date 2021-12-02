@@ -26,7 +26,7 @@ module.exports = {
   dev: {
     // altere APENAS username, password e database.
     username: 'root',
-    password: '140613',
+    password: '1104.Adri',
     database: 'projetoCryptoverse',
     host: '127.0.0.1',
     dialect: 'mysql',
