@@ -34,7 +34,7 @@ public class ComponentesServices {
     }
 
     public Double getMemoriaEmUsoPorc() {
-        return tamanhoUsadoRam() / (tamanhoTotalRam() * 0.01);
+        return (tamanhoUsadoRam()*100) / tamanhoTotalRam();
     }
 
 //    ======================================================================================================
@@ -68,16 +68,16 @@ public class ComponentesServices {
     }
 
     public Double getCpuUsoPorc(){
-        Double cpuUso = usoProcessador().doubleValue();
-        return cpuUso;
+        Integer cpuUso = usoProcessador()/1000000000;
+        return cpuUso.doubleValue();
     }
 
 //    ========================================================================================================
 
 //    ========================================================================================================
 //    Disco
-    public Double tamanhoTotalDisco(){
-        return discos.getTamanhoTotal().doubleValue();
+    public Long tamanhoTotalDisco(){
+        return discos.getTamanhoTotal() / 1000000000;
     }
 
     public List<Disco> totalDiscos(){

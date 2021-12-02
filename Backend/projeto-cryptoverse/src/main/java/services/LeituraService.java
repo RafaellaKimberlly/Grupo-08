@@ -153,45 +153,45 @@ public class LeituraService {
                 nvAlerta, usoCpuPorc, data, 1, 1);
     }
 
-    public void addLeituraDisco() throws IOException, InterruptedException {
-        System.out.println(data);
-        System.out.println("Enviando dados de Disco");
-        json.put("text", "Enviando dados de Disco.");
-        Slack.sendMessage(json);
-        String nvAlerta = "";
+//    public void addLeituraDisco() throws IOException, InterruptedException {
+//        System.out.println(data);
+//        System.out.println("Enviando dados de Disco");
+//        json.put("text", "Enviando dados de Disco.");
+//        Slack.sendMessage(json);
+//        String nvAlerta = "";
         
-        System.out.println(componente.discos.getTamanhoTotal()/1000000000 + "GB");
-        componente.discos.getVolumes();
+//        System.out.println(componente.discos.getTamanhoTotal()/1000000000 + "GB");
+//        componente.discos.getVolumes();
        
         
-        if (componente.discos.getTamanhoTotal() < 30) {
-            System.out.println("Estado Critico!");
-            json.put("text", "Componente critico! Disco com baixo armazenamento. \n"
-                    + Math.round(componente.discos.getTamanhoTotal() * 100) / 100 + "%");
-            Slack.sendMessage(json);
-            nvAlerta = "C";
-        } else if (componente.discos.getTamanhoTotal() < 60) {
-            System.out.println("Estado de Atenção!!!");
-            json.put("text", "Atenção!!! Seu disco está abaixo do armazenamento recomendado. \n"
-                    + Math.round(componente.discos.getTamanhoTotal() * 100) / 100 + "%");
-            Slack.sendMessage(json);
-            nvAlerta = "B";
-        } else if (componente.discos.getTamanhoTotal() < 90) {
-            System.out.println("Em bom estado!");
-            json.put("text", "Componente em bom estado! Disco com bom armazenamento. \n"
-                    + Math.round(componente.discos.getTamanhoTotal() * 100) / 100 + "%");
-            Slack.sendMessage(json);
-            nvAlerta = "A";
-        } else {
-            System.out.println("Em perfeito estado");
-            json.put("text", "Componente em ótimo estado! Disco com excelente armazenamento. \n"
-                    + Math.round(componente.discos.getTamanhoTotal() * 100) / 100 + "%");
-            Slack.sendMessage(json);
-            nvAlerta = "S";
-        }
+//       if (componente.discos.getTamanhoTotal() < 30) {
+//            System.out.println("Estado Critico!");
+//            json.put("text", "Componente critico! Disco com baixo armazenamento. \n"
+//                    + Math.round(componente.discos.getTamanhoTotal() * 100) / 100 + "%");
+//            Slack.sendMessage(json);
+//            nvAlerta = "C";
+//        } else if (componente.discos.getTamanhoTotal() < 60) {
+//            System.out.println("Estado de Atenção!!!");
+//            json.put("text", "Atenção!!! Seu disco está abaixo do armazenamento recomendado. \n"
+//                    + Math.round(componente.discos.getTamanhoTotal() * 100) / 100 + "%");
+//            Slack.sendMessage(json);
+//            nvAlerta = "B";
+//        } else if (componente.discos.getTamanhoTotal() < 90) {
+//            System.out.println("Em bom estado!");
+//            json.put("text", "Componente em bom estado! Disco com bom armazenamento. \n"
+//                    + Math.round(componente.discos.getTamanhoTotal() * 100) / 100 + "%");
+//            Slack.sendMessage(json);
+//            nvAlerta = "A";
+//        } else {
+//            System.out.println("Em perfeito estado");
+//            json.put("text", "Componente em ótimo estado! Disco com excelente armazenamento. \n"
+//                    + Math.round(componente.discos.getTamanhoTotal() * 100) / 100 + "%");
+//            Slack.sendMessage(json);
+//            nvAlerta = "S";
+//        }
 
-        controller.update("insert into tb_leitura (nvAlerta, valor, dataHora, fkDado, fkMaquinaComponente) values (?,?,?,?,?)",
-                nvAlerta, componente.discos.getTamanhoTotal(), data, 1, 1);
-    }
+//        controller.update("insert into tb_leitura (nvAlerta, valor, dataHora, fkDado, fkMaquinaComponente) values (?,?,?,?,?)",
+//                nvAlerta, componente.discos.getTamanhoTotal(), data, 1, 1);
+//    }
 
 }

@@ -42,9 +42,9 @@ public class Application {
         System.out.println("---------------------");
         //leitura.addLeituraRam();
         System.out.println("----------------------");
-        //leitura.addLeituraCpu();
+        leitura.addLeituraCpu();
         System.out.println("----------------------");
-        leitura.addLeituraDisco();
+        //leitura.addLeituraDisco();
         System.out.println("----------------------");
 
     }
