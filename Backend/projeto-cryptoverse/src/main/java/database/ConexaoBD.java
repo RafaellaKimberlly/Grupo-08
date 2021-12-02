@@ -31,7 +31,7 @@ public class ConexaoBD {
     public ConexaoBD() {
         this.bancoDeDados = new BasicDataSource();
         this.bancoDeDados.setDriverClassName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-        this.bancoDeDados.setUrl("jdbc:sqlserver://cryptoverse.database.windows.net:1433;database=cryptoverse;user=admcrypto@cryptoverse;password={your_password_here};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;");
+        this.bancoDeDados.setUrl("jdbc:sqlserver://projeto-cryptoverse.database.windows.net:1433;database=cryptoverse;user=admcrypto@projeto-cryptoverse;password={your_password_here};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;");
         this.bancoDeDados.setUsername("admcrypto");
         this.bancoDeDados.setPassword("#Gfgrupo8");
     }
