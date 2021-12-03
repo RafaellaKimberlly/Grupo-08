@@ -57,8 +57,10 @@ if [ $? -eq 0 ]
 		echo ""
 		echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7) ${name}, realmente deseja instalar o JAVA em sua máquina? (S/N)"
 	read inst
-	if [ \"$inst\" == \"s\" ]
+	if [ \"$inst\" == \"n\" ]
 		then
+			echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7)  Você optou por não instalar o Java, até a próxima ${name}!"
+		fi	
 			echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7)  Ok! Vamos instalar o Java."
 			echo ""
 			echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7) Mas precisamos seguir alguns passos, ok ?"
@@ -96,9 +98,7 @@ if [ $? -eq 0 ]
 					echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7) Java instalado com sucesso!"
 					echo ""
 					echo "Nosso tempo juntos chegou ao fim, muito obrigado por confiar na CryptoVerse, espero ter sido útil! ${name}"
-				fi
-		else 	
-		echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7)  Você optou por não instalar o Java, até a próxima ${name}!"
+				fi	
 	fi
 fi
 
