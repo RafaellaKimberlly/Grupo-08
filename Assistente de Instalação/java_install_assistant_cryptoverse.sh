@@ -7,7 +7,7 @@ VERSAO=11
 	echo  "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7) Olá Minerador! Eu sou Crypton, o seu assistênte;"
 	echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7) Para começarmos, qual o seu nome?"
 	read name
-	echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7) É um prazer tê-lo(a) conosco${name}? Podemos começar? (S/N)" 
+	echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7) É um prazer tê-lo(a) conosco ${name}. Podemos começar? (S/N)" 
 	read inicio
 	if [ \"$inicio\" == \"n\" ]
 	then
@@ -18,8 +18,11 @@ VERSAO=11
 		echo ""
 		echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7)  Você deseja atualizar suas dependências? (S/N)?"
 		read mensage
-	if [ \"$mensage\" == \"s\" ]
+	if [ \"$mensage\" == \"n\" ]
 	then
+		echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7)  Tudo bem, não iremos atualiza-la!"
+		echo ""
+	fi	
 		echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7) Ok, irei atualizar!ê!"
 		echo  "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7)  Instalando depêndencias..."
 		echo -ne '\e[1;31m #####                     (33%)\r \e[0m'
@@ -28,11 +31,9 @@ VERSAO=11
 		sleep 1	
 		echo -ne $(tput setaf 10)'#######################   (100%)\r'
 		echo -ne '\n'
-		sudo apt upgrade && sudo apt update
-	fi		
+		sudo apt upgrade && sudo apt update	
 		echo ""
-		echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7)  Tudo bem, não iremos atualiza-la!"
-		echo ""
+		
 		echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7)  Agora, vamos verificar o seu JAVA."
 
 		echo  "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7)  Verificando..."
@@ -56,8 +57,10 @@ if [ $? -eq 0 ]
 		echo ""
 		echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7) ${name}, realmente deseja instalar o JAVA em sua máquina? (S/N)"
 	read inst
-	if [ \"$inst\" == \"s\" ]
+	if [ \"$inst\" == \"n\" ]
 		then
+			echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7)  Você optou por não instalar o Java, até a próxima ${name}!"
+		else	
 			echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7)  Ok! Vamos instalar o Java."
 			echo ""
 			echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7) Mas precisamos seguir alguns passos, ok ?"
@@ -95,9 +98,7 @@ if [ $? -eq 0 ]
 					echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7) Java instalado com sucesso!"
 					echo ""
 					echo "Nosso tempo juntos chegou ao fim, muito obrigado por confiar na CryptoVerse, espero ter sido útil! ${name}"
-				fi
-		else 	
-		echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7)  Você optou por não instalar o Java, até a próxima ${name}!"
+				fi	
 	fi
 fi
 
