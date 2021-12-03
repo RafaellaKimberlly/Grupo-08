@@ -60,7 +60,7 @@ if [ $? -eq 0 ]
 	if [ \"$inst\" == \"n\" ]
 		then
 			echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7)  Você optou por não instalar o Java, até a próxima ${name}!"
-		fi	
+		else	
 			echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7)  Ok! Vamos instalar o Java."
 			echo ""
 			echo "$(tput setaf 10)[CrytoVerse]:$(tput setaf 7) Mas precisamos seguir alguns passos, ok ?"
