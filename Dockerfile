@@ -1,10 +1,10 @@
 FROM openjdk:11
 
-WORKDIR /Grupo-08
+WORKDIR /cryptoverse
 
 RUN cd /Grupo-08
 
-COPY /Backend/projeto-cryptoverse/target/projeto-cryptoverse-1.0-SNAPSHOT-jar-with-dependencies.jar /Grupo-08/
+COPY /Backend/projeto-cryptoverse/target/projeto-cryptoverse-1.0-SNAPSHOT-jar-with-dependencies.jar /cryptoverse/
 
-ENTRYPOINT java -jar /Grupo-08/projeto-cryptoverse-1.0-SNAPSHOT-jar-with-dependencies.jar
+ENTRYPOINT java -jar /cryptoverse/projeto-cryptoverse-1.0-SNAPSHOT-jar-with-dependencies.jar
 
