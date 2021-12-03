@@ -70,7 +70,7 @@ public class LeituraService {
 
     }
 
-    public String addLeituraRam() throws IOException, InterruptedException {
+    public void addLeituraRam() throws IOException, InterruptedException {
         System.out.println(data);
         System.out.println("Enviando dados da Ram");
         json.put("text", "Enviando dados de RAM.");
@@ -106,11 +106,11 @@ public class LeituraService {
             nvAlerta = "S";
         }
         
-            return String.format("insert into tb_leitura (nvAlerta, valor, dataHora, fkDado, fkMaquinaComponente) values (?,?,?,?,?)",
+            controller.update("insert into tb_leitura (nvAlerta, valor, dataHora, fkDado, fkMaquinaComponente) values (?,?,?,?,?)",
                 nvAlerta, ramEmUsoGb, data, 2, 2);
     }
 
-    public String addLeituraCpu() throws IOException, InterruptedException {
+    public void addLeituraCpu() throws IOException, InterruptedException {
         System.out.println(data);
         System.out.println("Enviando dados de CPU");
         json.put("text", "Enviando dados de CPU.");
@@ -146,7 +146,7 @@ public class LeituraService {
             nvAlerta = "S";
         }
         
-        return String.format("insert into tb_leitura (nvAlerta, valor, dataHora, fkDado, fkMaquinaComponente) values (?,?,?,?,?)",
+        controller.update("insert into tb_leitura (nvAlerta, valor, dataHora, fkDado, fkMaquinaComponente) values (?,?,?,?,?)",
                 nvAlerta, usoCpuPorc,data, 1, 1);
     }
 
@@ -190,24 +190,24 @@ public class LeituraService {
 //        controller.update("insert into tb_leitura (nvAlerta, valor, dataHora, fkDado, fkMaquinaComponente) values (?,?,?,?,?)",
 //                nvAlerta, componente.discos.getTamanhoTotal(), data, 1, 1);
 //    }
-    TimerTask timeTeste = new TimerTask() {
-        @Override
-        public void run() {
-            try {
-                controller.update(addLeituraRam());
-                controller.update(addLeituraCpu());
-            } catch (IOException ex) {
-                Logger.getLogger(LeituraService.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(LeituraService.class.getName()).log(Level.SEVERE, null, ex);
-            }
+    //TimerTask timeTeste = new TimerTask() {
+        //@Override
+        //public void run() {
+            //try {
+                //controller.update(addLeituraRam());
+                //controller.update(addLeituraCpu());
+            //} catch (IOException ex) {
+            //    Logger.getLogger(LeituraService.class.getName()).log(Level.SEVERE, null, ex);
+            //} catch (InterruptedException ex) {
+            //    Logger.getLogger(LeituraService.class.getName()).log(Level.SEVERE, null, ex);
+            //}
 
-        }
-    };
+        //}
+    //};
 
-    public void inserindoDados() {
+    //public void inserindoDados() {
 
-        timer.scheduleAtFixedRate(timeTeste, 0, 4000);
-    }
+        //timer.scheduleAtFixedRate(timeTeste, 0, 4000);
+    //}
 
 }
