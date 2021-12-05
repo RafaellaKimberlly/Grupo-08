@@ -181,6 +181,74 @@ router.get('/disco_usuario/:idUsuario', function (req, res, next) {
 		});
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ROUTES TELA GRÁFICO
+
+router.get('/todos_componentes/:idMaquina', function (req, res, next) {
+	console.log('Recuperando componentes da máquina');
+
+	// let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
+	let idMaquina = req.params.idMaquina;
+
+	// if(env == 'dev') {
+	// 	instrucaoSql = `select fkMaquina, nomeComponente from tb_maquina_componente as mc
+	// join tb_componente as c
+	// on c.idComponente = mc.fkComponente 
+	// join tb_maquina as m
+	// on m.idMaquina = mc.fkMaquina
+	// join tb_usuario as u
+	// on u.idUsuario = m.fkUsuario
+	// where nomeComponente = 'Disco'
+	// and idUsuario = ${idUsuario}
+	// order by fkMaquina;`;
+	// } else 
+	
+	if (env == 'production') {
+		instrucaoSql = `select fkMaquina, nomeComponente, descComponente, mc.idMaquinaComponente as id_comp from tb_maquina_componente as mc
+		join tb_componente as c
+		on c.idComponente = mc.fkComponente 
+		join tb_maquina as m
+		on m.idMaquina = mc.fkMaquina
+		join tb_usuario as u
+		on u.idUsuario = m.fkUsuario
+		where m.idMaquina = ${idMaquina};`;
+	}
+	
+	sequelize.query(instrucaoSql, {
+		model: componente,
+		mapToModel: true
+	})
+		.then(resultado => {
+			console.log(`Encontrados: ${resultado.length}`);
+			res.json(resultado);
+		}).catch(erro => {
+			console.error(erro);
+			res.status(500).send(erro.message);
+		});
+});
+
+router.get('historic/:idMaquina/:idRam/:idCpu/:idDisco',(req,res,next) =>{
+	let query = ``
+})
+
+
+
+
 module.exports = router;
 
 module.exports = router;

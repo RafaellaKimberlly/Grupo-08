@@ -90,7 +90,7 @@
                             </div>
                             <div class="select_but">
                                 <select class="selection-but" name="" id="feed_container"
-                                    onchange="obterDadosGraficoPorId(document.querySelector('#feed_container').value)">
+                                    onchange="getMachineComponents(document.querySelector('#feed_container').value)">
                                     <option value="">Selecione</option>
                                 </select>
                             </div>
@@ -107,7 +107,7 @@
                                 </figure>
                             </div>
                             <div class="select_but">
-                                <select class="selection-but" name="" id="feed_container2">
+                                <select class="selection-but" name="" id="feed_container2" onchange="getInfosForGraph()" >
                                     <option value="">Selecione</option>
                                 </select>
                             </div>
@@ -123,7 +123,7 @@
                                 </figure>
                             </div>
                             <div class="select_but">
-                                <select class="selection-but" name="" id="feed_container3">
+                                <select class="selection-but" name="" id="feed_container3" onchange="getInfosForGraph()">
                                     <option value="">Selecione</option>
                                 </select>
                             </div>
@@ -139,7 +139,7 @@
                                 </figure>
                             </div>
                             <div class="select_but">
-                                <select class="selection-but" name="" id="feed_container4">
+                                <select class="selection-but" name="" id="feed_container4" onchange="getInfosForGraph()" >
                                     <option value="">Selecione</option>
                                 </select>
                             </div>
@@ -147,6 +147,8 @@
                     </div>
 
                     <!--  inicio graficos -->
+
+                    <!-- Gráfico 1 -->
 
                     <div class="row-grafico">
                         <div class="column-grafico">
@@ -178,6 +180,11 @@
                             </div>
                         </div>
                     </div>
+
+
+                    
+
+
                     <!--  fim -->
 
 
@@ -200,6 +207,67 @@
         obterPublicacoes5();
     }
     carregarComponentes();
+
+    function getMachineComponents(hostName) {
+        clearSelectors()
+        fetch(`../componentes/todos_componentes/${hostName}`)
+            .then((response) => {
+                if (response.ok) {
+                    response.json().then(json => {
+                     
+                        for (let i = 0; i < json.length; i++) {
+                            const resposta = json[i];
+                            sessionStorage.fkMaquina = resposta.fkMaquina
+                            let selector;
+                            
+                            
+                           
+                            switch (resposta.nomeComponente) {
+                                case "cpu":
+                                    selector = document.getElementById("feed_container4")
+                                    break;
+                                case "Memoria-Ram":
+                                    selector = document.getElementById("feed_container2")
+                                    break;
+                                case "Disco":
+                                    selector = document.getElementById("feed_container3")
+                                    break;
+                            }
+                            
+                            let opt = document.createElement('option');
+                            opt.value = resposta.id_comp;
+                            opt.innerHTML =  resposta.descComponente != null ?  resposta.descComponente : `${resposta.nomeComponente + " " + resposta.id_comp}`  ;
+                            selector.appendChild(opt);
+
+                        }
+                    })
+                }
+            })
+
+    }
+    function getInfosForGraph(){
+        let ram = document.getElementById("feed_container2").value
+        let cpu =  document.getElementById("feed_container4").value
+        let disco = document.getElementById("feed_container3").value
+        let maquina = document.getElementById("feed_container").value
+        obterDadosGrapoficoPorId(maquina,ram,cpu,disco)
+
+    }
+    function clearSelectors(){
+        let selectorArray = [document.getElementById("feed_container4"),document.getElementById("feed_container3"),document.getElementById("feed_container2")]
+        for (let i = 0; i < selectorArray.length; i++) {
+            const element = selectorArray[i];
+         element.options.length = 0;
+         let opt = document.createElement('option');
+                            opt.value = "";
+                            opt.innerHTML = "Selecione";
+                            element.appendChild(opt);
+        }
+    }
+
+
+
+
 
     function obterPublicacoes() {
 
@@ -241,6 +309,7 @@
 
             }
         }
+        getMachineComponents(maquinas[0])
 
     }
 
@@ -256,7 +325,7 @@
                     resposta.json().then(function (resposta) {
                         console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
-                        atualizarFeed2(resposta);
+                        ob(resposta);
 
                     });
                 } else {
@@ -272,21 +341,6 @@
         let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
         var feed = document.getElementById("feed_container2");
         feed.innerHTML = "";
-
-        var contador = 1;
-
-        for (let i = 0; i < componentes.length; i++) {
-            var componente = componentes[i];
-
-            optComponente = document.createElement("option");
-
-            optComponente.value = `${componente.idComponente}`;
-
-            optComponente.innerHTML = `${componente.nomeComponente}${contador++}`;
-
-
-            feed.appendChild(optComponente);
-        }
 
     }
 
@@ -319,19 +373,6 @@
 
         var contador = 1;
 
-        for (let i = 0; i < componentes.length; i++) {
-            var componente = componentes[i];
-
-            optComponente = document.createElement("option");
-
-            optComponente.value = `${componente.idComponente}`;
-
-            optComponente.innerHTML = `${componente.nomeComponente} ${contador++}`;
-
-
-            feed.appendChild(optComponente);
-        }
-
     }
 
     function obterPublicacoes4(idUsuario) {
@@ -363,23 +404,10 @@
 
         var contador = 1;
 
-        for (let i = 0; i < componentes.length; i++) {
-            var componente = componentes[i];
-
-            optComponente = document.createElement("option");
-
-            optComponente.value = `${componente.idComponente}`;
-
-            optComponente.innerHTML = `${componente.nomeComponente} ${contador++}`;
-
-
-            feed.appendChild(optComponente);
-        }
-
     }
 
     function obterPublicacoes5() {
-        debugger
+
         fetch("/leituras")
             .then(resposta => {
                 if (resposta.ok) {
@@ -431,12 +459,15 @@
             }
         }
     }
-    function obterDadosGraficoPorId(idMaquina) {
+
+    function obterDadosGrapoficoPorId(idMaquina,idRam,idCPU,idDisco) {
         //  console.log("executei obterDadosGraficoPrimeiraVez")
         // var idMaquina = sessionStorage.id_usuario_meuapp
-        debugger;
-
-        fetch(`/leituras/componentes/${idMaquina}`)
+        if(idRam == undefined || idCPU == undefined || idDisco == undefined){
+            alert("Selecione todos os componetes para continuar")
+            return
+        }
+           fetch(`/leituras/componentes/${idMaquina}`)
             .then(function (response) {
                 if (response.ok) {
                     response.json().then(function (resposta) {
@@ -445,8 +476,7 @@
 
                         var dados = {
                             labels: [],
-                            datasets: [
-                                {
+                            datasets: [{
                                     yAxisID: 'y-temperatura',
                                     label: 'CPU',
                                     borderColor: '#F95738',
@@ -505,8 +535,7 @@
 
                         var dados = {
                             labels: [],
-                            datasets: [
-                                {
+                            datasets: [{
                                     yAxisID: 'y-temperatura',
                                     label: 'CPU',
                                     borderColor: '#F95738',
@@ -519,6 +548,14 @@
                                     label: 'RAM',
                                     borderColor: 'blue',
                                     backgroundColor: 'blue',
+                                    fill: false,
+                                    data: []
+                                },
+                                {
+                                    yAxisID: 'y-temperatura',
+                                    label: 'CPU',
+                                    borderColor: 'green',
+                                    backgroundColor: 'green',
                                     fill: false,
                                     data: []
                                 }
@@ -546,6 +583,7 @@
             .catch(function (error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
+            getMachineComponents(idMaquina)
 
     }
 
@@ -555,22 +593,25 @@
         console.log("executei plotarGrafico")
         console.log('iniciando plotagem do gráfico...');
         // div_aguarde.style.display = 'block';
-
         let ctx = myChart.getContext("2d");
+        if (idMaquina === undefined) {
 
-        window.grafico_linha = Chart.Line(ctx, {
-            data: dados,
-            options: configurarGrafico()
-        });
+            window.grafico_linha = Chart.Line(ctx, {
+                data: dados,
+                options: configurarGrafico()
+            });
+        }
 
-        setTimeout(() => atualizarGrafico(idMaquina, dados), 2000);
+        // setTimeout(() => atualizarGrafico(idMaquina, dados), 2000);
     }
 
     function configurarGrafico() {
         console.log("executei configurarGrafico")
         var configuracoes = {
             responsive: true,
-            animation: { duration: 500 },
+            animation: {
+                duration: 500
+            },
             hoverMode: 'index',
             stacked: false,
             title: {
@@ -597,37 +638,37 @@
         console.log("executei atualizarGrafico")
         var idMaquinaComponente = 1
         fetch(`/leituras/tempo-atual/${idMaquina}`).then(function (response) {
-            console.log("Estou tentando pegar as leituras da maquina")
-            if (response.ok) {
-                response.json().then(function (novoRegistro) {
+                console.log("Estou tentando pegar as leituras da maquina")
+                if (response.ok) {
+                    response.json().then(function (novoRegistro) {
 
-                    console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
-                    console.log(`Dados atuais do gráfico: ${dados}`);
+                        console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                        console.log(`Dados atuais do gráfico: ${dados}`);
 
-                    // tirando e colocando valores no gráfico
-                    dados.labels.shift(); // apagar o primeiro
-                    dados.labels.push(novoRegistro.dataHora); // incluir um novo momento
-                    dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
-                    dados.datasets[0].data.push(novoRegistro.valor); // incluir uma nova leitura de temperatura
+                        // tirando e colocando valores no gráfico
+                        dados.labels.shift(); // apagar o primeiro
+                        dados.labels.push(novoRegistro.dataHora); // incluir um novo momento
+                        dados.datasets[0].data.shift(); // apagar o primeiro de temperatura
+                        dados.datasets[0].data.push(novoRegistro
+                        .valor); // incluir uma nova leitura de temperatura
 
-                    console.log("minha maquina é a " + idMaquina)
+                        console.log("minha maquina é a " + idMaquina)
 
-                    window.grafico_linha.update();
+                        window.grafico_linha.update();
 
 
+                        proximaAtualizacao = setTimeout(() => atualizarGrafico(idMaquina, dados), 2000);
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
                     proximaAtualizacao = setTimeout(() => atualizarGrafico(idMaquina, dados), 2000);
-                });
-            } else {
-                console.error('Nenhum dado encontrado ou erro na API');
-                proximaAtualizacao = setTimeout(() => atualizarGrafico(idMaquina, dados), 2000);
-            }
-        })
+                }
+            })
             .catch(function (error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
 
     }
-
 </script>
 <!-- <script src="../js/graficos-js.js"></script> -->
 

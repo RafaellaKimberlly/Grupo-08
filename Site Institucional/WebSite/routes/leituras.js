@@ -93,7 +93,7 @@ router.get('/marcadores', function (req, res, next) {
   
 });
 
-router.delete('/deletar/:idMaquina', function (req, res, next) {
+router.delete('/deletar/:idMaquina/', function (req, res, next) {
     console.log('Deletando maquina');
     var idMaquina = req.params.idMaquina;
     let instrucaoSql = "";

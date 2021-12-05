@@ -27,6 +27,11 @@ module.exports = (sequelize, DataTypes) => {
 			field: 'mcStatus',
 			type: DataTypes.STRING,
 			allowNull: false
+		},
+		descComponente: {
+			field: 'descComponente',
+			type: DataTypes.STRING,
+			allowNull: false
 		}
 	}, 
 	{
