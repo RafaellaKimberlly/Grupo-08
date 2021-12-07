@@ -65,8 +65,9 @@
             <div class="user-wrapper">
                 <img src="../img/foto-perfil.png" width="40px" height="40px" alt="">
                 <div>
-                    <h4 id="h4_nome">
-                    <b id="b_usuario"></b></h4>
+                    <h4 id="h4_nome">Olá 
+                        <b id="b_usuario"></b>
+                    </h4>
                     <small>Usuario comum</small>
                 </div>
             </div>
@@ -141,9 +142,9 @@
                             </div>
                             <div class="select_but">
                                 <select class="selection-but" name="" id="feed_container4"
-                                onchange="obterHistoricosComponentes(document.querySelector('#feed_container4').value)">
-                                 
-                                
+                                    onchange="obterHistoricosComponentes(document.querySelector('#feed_container4').value)">
+
+
                                     <option id="padrao" value="">Selecione</option>
                                 </select>
                             </div>
@@ -193,12 +194,14 @@
 <script>
     verificar_autenticacao();
 
-    // b_usuario.innerHTML = sessionStorage.nome_usuario_meuapp;
+     b_usuario.innerHTML = sessionStorage.nome_usuario_meuapp;
 
     function carregarComponentes() {
+
         obterPublicacoes();
         setTimeout(() => {
             obterDadosGraficoPrimeiraVez();
+           
             obterPublicacoes2();
             obterPublicacoes3();
             obterPublicacoes4();
@@ -333,7 +336,7 @@
                 console.error(`Erro na obtenção das publicações: ${error.message}`);
             });
     }
-    
+
 
     function atualizarFeed4(componentes) {
         let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
@@ -464,12 +467,12 @@
             }
         }
     }
-    function clearFunction(){
-        document.getElementById("feed_container5").innerHTML="";
+    function clearFunction() {
+        document.getElementById("feed_container5").innerHTML = "";
     }
 
     function obterHistoricosComponentes(idComponente) {
-      
+
         clearFunction();
         var idMaquina = document.getElementById("feed_container").value;
         let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
@@ -489,7 +492,7 @@
 
     }
 
-   
+
 
 
     function obterDadosGraficoPorId(idMaquina) {
@@ -506,7 +509,7 @@
                             labels: [],
                             datasets: [
                                 {
-                                
+                                    yAxisID: 'y-temperatura',
                                     label: 'CPU',
                                     borderColor: '#F95738',
                                     backgroundColor: '#F95738',
@@ -514,7 +517,7 @@
                                     data: []
                                 },
                                 {
-                                    
+                                    yAxisID: 'y-temperatura',
                                     label: 'RAM',
                                     borderColor: 'blue',
                                     backgroundColor: 'blue',
@@ -523,7 +526,7 @@
                                 }
                                 ,
                                 {
-                                  
+                                    yAxisID: 'y-temperatura',
                                     label: 'Disco',
                                     borderColor: 'yellow',
                                     backgroundColor: 'yellow',
@@ -542,11 +545,11 @@
                                 }
                             } else if (registro.fkComponente == 2) {
                                 if (dados.datasets[1].data.length != 6) {
-                                dados.datasets[1].data.push(registro.valor);
+                                    dados.datasets[1].data.push(registro.valor);
                                 }
                             } else {
                                 if (dados.datasets[2].data.length != 6) {
-                                dados.datasets[2].data.push(registro.valor);
+                                    dados.datasets[2].data.push(registro.valor);
                                 }
                             }
 
@@ -569,8 +572,7 @@
 
     function obterDadosGraficoPrimeiraVez() {
         console.log("executei obterDadosGraficoPrimeiraVez")
-        var idMaquina = sessionStorage.id_usuario_meuapp
-
+        var idMaquina = document.getElementById("feed_container").value;
         fetch(`/leituras/componentes/${idMaquina}`)
             .then(function (response) {
                 if (response.ok) {
@@ -582,7 +584,7 @@
                             labels: [],
                             datasets: [
                                 {
-                                    
+                                    yAxisID: 'y-temperatura',
                                     label: 'CPU',
                                     borderColor: '#F95738',
                                     backgroundColor: '#F95738',
@@ -590,7 +592,7 @@
                                     data: []
                                 },
                                 {
-                                    
+                                    yAxisID: 'y-temperatura',
                                     label: 'RAM',
                                     borderColor: 'blue',
                                     backgroundColor: 'blue',
@@ -599,7 +601,7 @@
                                 },
 
                                 {
-                                   
+                                    yAxisID: 'y-temperatura',
                                     label: 'Disco',
                                     borderColor: 'yellow',
                                     backgroundColor: 'yellow',
@@ -611,18 +613,18 @@
                         for (i = 0; i < resposta.length; i++) {
                             var registro = resposta[i];
 
-                             if (registro.fkComponente == 1) {
+                            if (registro.fkComponente == 1) {
                                 if (dados.datasets[0].data.length != 6) {
                                     dados.labels.push(registro.dataHora);
                                     dados.datasets[0].data.push(registro.valor);
                                 }
                             } else if (registro.fkComponente == 2) {
                                 if (dados.datasets[1].data.length != 6) {
-                                dados.datasets[1].data.push(registro.valor);
+                                    dados.datasets[1].data.push(registro.valor);
                                 }
                             } else {
                                 if (dados.datasets[2].data.length != 6) {
-                                dados.datasets[2].data.push(registro.valor);
+                                    dados.datasets[2].data.push(registro.valor);
                                 }
                             }
                         }
@@ -686,7 +688,7 @@
 
     function atualizarGrafico(idMaquina, dados) {
         console.log("executei atualizarGrafico")
-        var idMaquinaComponente = 1
+        // var idMaquina = document.getElementById("feed_container").value;
         fetch(`/leituras/tempo-atual/${idMaquina}`).then(function (response) {
             console.log("Estou tentando pegar as leituras da maquina")
             if (response.ok) {
@@ -706,17 +708,16 @@
                     window.grafico_linha.update();
 
 
-                    proximaAtualizacao = setTimeout(() => atualizarGrafico(idMaquina, dados), 2000);
+                    setTimeout(() => atualizarGrafico(idMaquina, dados), 2000);
                 });
             } else {
                 console.error('Nenhum dado encontrado ou erro na API');
-                proximaAtualizacao = setTimeout(() => atualizarGrafico(idMaquina, dados), 2000);
+                setTimeout(() => atualizarGrafico(idMaquina, dados), 2000);
             }
-        })
-            .catch(function (error) {
+        }).catch(function (error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
-
+        // setTimeout(() => atualizarGrafico(idMaquina, dados), 2000);
     }
 
 </script>
