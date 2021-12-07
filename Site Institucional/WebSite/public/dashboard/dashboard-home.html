@@ -68,8 +68,8 @@
             <div class="user-wrapper">
                 <img src="../img/foto-perfil.png" width="40px" height="40px" alt="">
                 <div>
-                    <h4 id="h4_nome">Olá Gerson</h4>
-                    <b id="b_usuario"></b>
+                    <h4 id="h4_nome">Olá 
+                    <b id="b_usuario"></b></h4>
                     <small>Usuario comum</small>
                 </div>
             </div>
@@ -140,15 +140,15 @@ function leitura_componente(idUsuario) {
             response.json().then(function (resposta) {
                 for (let i = 0; i < resposta.length; i++) {
                     var resp = resposta[i];
-                    if (resp.nomeComponente == "Memoria-RAM") {
-                        situacao_ram.innerHTML = resp.valor;
+                    if (resp.nomeComponente == "Memoria-Ram") {
+                        situacao_ram.innerHTML = resp.valor +"%";
                         console.log("RAM: " + resp.valor)
                     } else if (resp.nomeComponente == "cpu") {
-                        situacao_cpu.innerHTML = resp.valor;
+                        situacao_cpu.innerHTML = resp.valor +"%";
                         console.log("CPU: " + resp.valor)
                     } else if (resp.nomeComponente == "Disco") {
                         console.log("Disco: " + resp.valor)
-                        situacao_disco.innerHTML = resp.valor;
+                        situacao_disco.innerHTML = resp.valor +"%";
                     } else {
                         console.log("Sem leitura");
                     }

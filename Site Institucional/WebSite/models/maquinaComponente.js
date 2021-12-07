@@ -28,9 +28,9 @@ module.exports = (sequelize, DataTypes) => {
 			type: DataTypes.STRING,
 			allowNull: false
 		},
-		descComponente: {
-			field: 'descComponente',
-			type: DataTypes.STRING,
+		descComponente:{
+			field:'descComponente',
+			type:DataTypes.STRING,
 			allowNull: false
 		}
 	}, 

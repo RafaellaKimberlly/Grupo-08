@@ -52,14 +52,14 @@ router.get('/', function (req, res, next) {
 		});
 });
 
-router.get('/componente_usuario/:idUsuario', function (req, res, next) {
+router.get('/componente_usuario/:idUsuario/:idMaquina', function (req, res, next) {
 	console.log('Recuperando todas as publicações');
 
 	// let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
 	let idUsuario = req.params.idUsuario;
-
+	let idMaquina = req.params.idMaquina;
 	if(env == 'dev') {
-		instrucaoSql = `select fkMaquina, nomeComponente from tb_maquina_componente as mc
+		instrucaoSql = `select fkMaquina, nomeComponente ,idMaquinaComponente from tb_maquina_componente as mc
 		join tb_componente as c
 		on c.idComponente = mc.fkComponente 
 		join tb_maquina as m
@@ -68,9 +68,11 @@ router.get('/componente_usuario/:idUsuario', function (req, res, next) {
 		on u.idUsuario = m.fkUsuario
 		where nomeComponente = 'Memoria-RAM'
 		and idUsuario = ${idUsuario}
+		and idMaquina = ${idMaquina}
+		and mcStatus = 'Ativo'
 		order by fkMaquina;`;
 	} else if (env == 'production') {
-		instrucaoSql = `select fkMaquina, nomeComponente from tb_maquina_componente as mc
+		instrucaoSql = `select fkMaquina, nomeComponente, idMaquinaComponente from tb_maquina_componente as mc
 		join tb_componente as c
 		on c.idComponente = mc.fkComponente 
 		join tb_maquina as m
@@ -79,6 +81,8 @@ router.get('/componente_usuario/:idUsuario', function (req, res, next) {
 		on u.idUsuario = m.fkUsuario
 		where nomeComponente = 'Memoria-RAM'
 		and idUsuario = ${idUsuario}
+		and idMaquina = ${idMaquina}
+		and mcStatus = 'Ativo'
 		order by fkMaquina;`;
 	}
 
@@ -95,14 +99,14 @@ router.get('/componente_usuario/:idUsuario', function (req, res, next) {
 		});
 });
 
-router.get('/cpu_usuario/:idUsuario', function (req, res, next) {
+router.get('/cpu_usuario/:idUsuario/:idMaquina', function (req, res, next) {
 	console.log('Recuperando todas as publicações');
 
 	// let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
 	let idUsuario = req.params.idUsuario;
-
+	let idMaquina = req.params.idMaquina;
 	if(env == 'dev') {
-		instrucaoSql = `select fkMaquina, nomeComponente from tb_maquina_componente as mc
+		instrucaoSql = `select fkMaquina, nomeComponente, idMaquinaComponente from tb_maquina_componente as mc
 	join tb_componente as c
 	on c.idComponente = mc.fkComponente 
 	join tb_maquina as m
@@ -111,9 +115,11 @@ router.get('/cpu_usuario/:idUsuario', function (req, res, next) {
 	on u.idUsuario = m.fkUsuario
 	where nomeComponente = 'cpu'
 	and idUsuario = ${idUsuario}
+	and m.idMaquina = ${idMaquina}
+	and mcStatus = 'Ativo'
 	order by fkMaquina;`;
 	} else if (env == 'production') {
-		instrucaoSql = `select fkMaquina, nomeComponente from tb_maquina_componente as mc
+		instrucaoSql = `select fkMaquina, nomeComponente ,idMaquinaComponente from tb_maquina_componente as mc
 	join tb_componente as c
 	on c.idComponente = mc.fkComponente 
 	join tb_maquina as m
@@ -122,6 +128,8 @@ router.get('/cpu_usuario/:idUsuario', function (req, res, next) {
 	on u.idUsuario = m.fkUsuario
 	where nomeComponente = 'cpu'
 	and idUsuario = ${idUsuario}
+	and m.idMaquina = ${idMaquina}
+	and mcStatus = 'Ativo'
 	order by fkMaquina;`;
 	}
 
@@ -138,95 +146,39 @@ router.get('/cpu_usuario/:idUsuario', function (req, res, next) {
 		});
 });
 
-router.get('/disco_usuario/:idUsuario', function (req, res, next) {
+router.get('/disco_usuario/:idUsuario/:idMaquina', function (req, res, next) {
 	console.log('Recuperando todas as publicações');
 
 	// let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
 	let idUsuario = req.params.idUsuario;
-
-	if(env == 'dev') {
-		instrucaoSql = `select fkMaquina, nomeComponente from tb_maquina_componente as mc
-	join tb_componente as c
-	on c.idComponente = mc.fkComponente 
-	join tb_maquina as m
-	on m.idMaquina = mc.fkMaquina
-	join tb_usuario as u
-	on u.idUsuario = m.fkUsuario
-	where nomeComponente = 'Disco'
-	and idUsuario = ${idUsuario}
-	order by fkMaquina;`;
-	} else if (env == 'production') {
-		instrucaoSql = `select fkMaquina, nomeComponente from tb_maquina_componente as mc
-	join tb_componente as c
-	on c.idComponente = mc.fkComponente 
-	join tb_maquina as m
-	on m.idMaquina = mc.fkMaquina
-	join tb_usuario as u
-	on u.idUsuario = m.fkUsuario
-	where nomeComponente = 'Disco'
-	and idUsuario = ${idUsuario}
-	order by fkMaquina;`;
-	}
-	
-	sequelize.query(instrucaoSql, {
-		model: componente,
-		mapToModel: true
-	})
-		.then(resultado => {
-			console.log(`Encontrados: ${resultado.length}`);
-			res.json(resultado);
-		}).catch(erro => {
-			console.error(erro);
-			res.status(500).send(erro.message);
-		});
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ROUTES TELA GRÁFICO
-
-router.get('/todos_componentes/:idMaquina', function (req, res, next) {
-	console.log('Recuperando componentes da máquina');
-
-	// let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
 	let idMaquina = req.params.idMaquina;
 
-	// if(env == 'dev') {
-	// 	instrucaoSql = `select fkMaquina, nomeComponente from tb_maquina_componente as mc
-	// join tb_componente as c
-	// on c.idComponente = mc.fkComponente 
-	// join tb_maquina as m
-	// on m.idMaquina = mc.fkMaquina
-	// join tb_usuario as u
-	// on u.idUsuario = m.fkUsuario
-	// where nomeComponente = 'Disco'
-	// and idUsuario = ${idUsuario}
-	// order by fkMaquina;`;
-	// } else 
-	
-	if (env == 'production') {
-		instrucaoSql = `select fkMaquina, nomeComponente, descComponente, mc.idMaquinaComponente as id_comp from tb_maquina_componente as mc
-		join tb_componente as c
-		on c.idComponente = mc.fkComponente 
-		join tb_maquina as m
-		on m.idMaquina = mc.fkMaquina
-		join tb_usuario as u
-		on u.idUsuario = m.fkUsuario
-		where m.idMaquina = ${idMaquina};`;
+	if(env == 'dev') {
+		instrucaoSql = `select fkMaquina, nomeComponente , idMaquinaComponente from tb_maquina_componente as mc
+	join tb_componente as c
+	on c.idComponente = mc.fkComponente 
+	join tb_maquina as m
+	on m.idMaquina = mc.fkMaquina
+	join tb_usuario as u
+	on u.idUsuario = m.fkUsuario
+	where nomeComponente = 'Disco'
+	and idUsuario = ${idUsuario}
+	and m.idMaquina = ${idMaquina}
+	and mcStatus = 'Ativo'
+	order by fkMaquina;`;
+	} else if (env == 'production') {
+		instrucaoSql = `select fkMaquina, nomeComponente, idMaquinaComponente from tb_maquina_componente as mc
+	join tb_componente as c
+	on c.idComponente = mc.fkComponente 
+	join tb_maquina as m
+	on m.idMaquina = mc.fkMaquina
+	join tb_usuario as u
+	on u.idUsuario = m.fkUsuario
+	where nomeComponente = 'Disco'
+	and idUsuario = ${idUsuario}
+	and m.idMaquina = ${idMaquina}
+	and mcStatus = 'Ativo'
+	order by fkMaquina;`;
 	}
 	
 	sequelize.query(instrucaoSql, {
@@ -241,13 +193,6 @@ router.get('/todos_componentes/:idMaquina', function (req, res, next) {
 			res.status(500).send(erro.message);
 		});
 });
-
-router.get('historic/:idMaquina/:idRam/:idCpu/:idDisco',(req,res,next) =>{
-	let query = ``
-})
-
-
-
 
 module.exports = router;
 

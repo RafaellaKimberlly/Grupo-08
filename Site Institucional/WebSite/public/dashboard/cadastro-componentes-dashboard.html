@@ -151,6 +151,12 @@
                             <br>
                             <select name="fkComponente" class="option-form" id="feed_container2"></select><br><br>
                         </label>
+                        <label for="descComponente" class="titleInput">
+                            Descrição do Componente:
+                            <br>
+                            <input class= "ipt-form"type="text" name="descComponente" id="descComponente" />
+                            <br><br>
+                        </label>
 
                         <!-- <label for="" class="titleInput">
                             Tipo Processador:
@@ -170,7 +176,7 @@
             </div>
             <br><br>
 
-            <button class="btn-deletar">Deletar</button>
+            <!-- <button class="btn-deletar">Deletar</button> -->
 
             <div style="display: flex; justify-content: center;">
 
@@ -254,10 +260,12 @@ function cadastrar_maquina() {
 fkUsuario.value = Number(sessionStorage.getItem('id_usuario_meuapp'));
 console.log(fkUsuario.value)
 
+debugger
 
 var formulario = new URLSearchParams(new FormData(form_cadastro_maquina));
 let long
 let lat
+
 
 let apiAdress = latlng.value.replace(" ", "+");
 fetch(
@@ -395,6 +403,7 @@ return false;
 
         for (let i = 0; i < maquinas.length; i++) {
             var maquina = maquinas[i];
+            debugger;
 
             if (maquina.fkUsuario == sessionStorage.id_usuario_meuapp) {
 
@@ -421,19 +430,13 @@ return false;
                 if (maquina.mcStatus == "Ativo") {
                     tdStatus.className = "ativo";
                     trMaquina.className = "statusativo";
-                    btnDesativar.innerHTML =
-                        ` <button class="btn-cadastrar" type="submit" onclick="teste(${maquina.idMaquina})">Desativar</button>`;
+                    btnDesativar.innerHTML =` <button class="btn-cadastrar" type="submit" onclick="desativarComponente(${maquina.idMaquina},${maquina.idMaquinaComponente})">Desativar</button>`;
                 } else {
                     tdStatus.className = "inativo";
                     trMaquina.className = "statusinativo";
-                    btnDesativar.innerHTML = ` <button class="btn-cadastrar" type="submit">Ativar</button>`;
+                    btnDesativar.innerHTML = ` <button class="btn-cadastrar" type="submit" onclick="ativarComponente(${maquina.idMaquina},${maquina.idMaquinaComponente})">Ativar</button>`;
                 }
 
-                // if (tdStatus.value == 'Ativo') {
-
-                // } else {
-
-                // }
 
                 trMaquina.appendChild(td_idMaquina);
                 trMaquina.appendChild(tdHostname);
@@ -452,6 +455,7 @@ return false;
 
 
     function obterPublicacoes3() {
+
         fetch("/maquinas/nomeComponente")
             .then(resposta => {
                 if (resposta.ok) {
@@ -490,6 +494,7 @@ return false;
     }
 
     function obterPublicacoes2() {
+        debugger;
         fetch("/componentes")
             .then(resposta => {
                 if (resposta.ok) {
@@ -549,7 +554,7 @@ return false;
 
 
     function cadastrar_maquina_componentes() {
-
+        debugger
         var formulario = new URLSearchParams(new FormData(form_cadastro_maquina_componente));
         fetch("/maquinasComponentes/cadastrar", {
             method: "POST",
@@ -577,31 +582,46 @@ return false;
         return false;
     }
 
-    function teste(idMaquina) {
-        console.log(componente.value);
-        console.log(hostname.value);
-
-        fetch(`/leituras/deletar/${idMaquina}`, {
+    function desativarComponente(idMaquina,idComponente) {
+       
+        fetch(`/leituras/desativar/${idMaquina}/${idComponente}`, {
                     method: 'DELETE'
                 })
-                window.location.href = 'cadastro-componentes-dashboard.html'
-                console.log('apagou saporra')
+                
                 .then(function (response) {
                     if (response.ok) {
+                        window.location.reload();
                     } else {
                         console.log('Erro ao deletar!');
                         response.text().then(function (resposta) {
                         });
                     }
                     
-                });
-                
-                    
-        
-      
-            
-        
+                });   
+
+                window.location.reload();
 
         return false;
     }
+    function ativarComponente(idMaquina,idComponente) {
+       
+       fetch(`/leituras/ativar/${idMaquina}/${idComponente}`, {
+                   method: 'DELETE'
+               })
+               
+               .then(function (response) {
+                   if (response.ok) {
+                       window.location.reload();
+                   } else {
+                       console.log('Erro ao deletar!');
+                       response.text().then(function (resposta) {
+                       });
+                   }
+                   
+               });  
+               window.location.reload(); 
+
+       return false;
+   }
+    
 </script>

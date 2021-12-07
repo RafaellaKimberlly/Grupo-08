@@ -6,13 +6,13 @@ var env = process.env.NODE_ENV || 'development';
 
 
 router.get('/tempo-atual/:idMaquinaComponente', function(req, res, next) {
+	console.log(this);
 	console.log('Recuperando idMaquinaComponente');
 	
 	//var idcaminhao = req.body.idcaminhao; // depois de .body, use o nome (name) do campo em seu formulário de login
 	var idMaquinaComponente = req.params.idMaquinaComponente;
 	
 	let instrucaoSql = "";
-	
 	if (env == 'dev') {
 		// abaixo, escreva o select de dados para o Workbench
 		instrucaoSql = `select nvAlerta, valor, DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico, fkMaquinaComponente from leitura where fkMaquinaComponente = ${idMaquinaComponente} order by id desc limit 1`;
@@ -34,13 +34,62 @@ router.get('/tempo-atual/:idMaquinaComponente', function(req, res, next) {
 	});
 });
 
-router.get('/', function(req, res, next) {
+
+router.get("/historicos/:idComponente/:idMaquina/:idUsuario", (req, res, next) =>{
+	var idComponente = req.params.idComponente;
+	var idMaquina = req.params.idMaquina;
+	var idUsuario = req.params.idUsuario;
+
+	let sql ="";
+	if(env == 'dev') {
+		sql = `select idLeitura, nvAlerta, dataHora,  m.hostname, c.nomeComponente, m.fkUsuario , mc.descComponente, valor from tb_leitura as l
+		join tb_maquina_componente as mc
+		on mc.idMaquinaComponente = l.fkMaquinaComponente
+		join tb_maquina as m
+		on m.idMaquina = mc.fkMaquina
+		join tb_usuario as u
+		on u.idUsuario = m.fkUsuario
+		join tb_componente as c
+		on c.idComponente = mc.fkComponente
+		where idUsuario  = ${idUsuario}
+		and idMaquinaComponente = ${idComponente}
+		and idMaquina = ${idMaquina}
+		order by idLeitura;`;
+	} else if (env == 'production') {
+		sql = `select idLeitura, nvAlerta, dataHora,  m.hostname, c.nomeComponente, m.fkUsuario, mc.descComponente, valor from tb_leitura as l
+		join tb_maquina_componente as mc
+		on mc.idMaquinaComponente = l.fkMaquinaComponente
+		join tb_maquina as m
+		on m.idMaquina = mc.fkMaquina
+		join tb_usuario as u
+		on u.idUsuario = m.fkUsuario
+		join tb_componente as c
+		on c.idComponente = mc.fkComponente
+		where idUsuario  = ${idUsuario}
+		and idMaquinaComponente = ${idComponente}
+		and idMaquina = ${idMaquina}
+		order by idLeitura;`;
+	}
+
+	sequelize.query(sql, { type: sequelize.QueryTypes.SELECT })
+	.then(resultado => {
+		res.json(resultado);
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+	});
+
+
+});
+
+router.get('/historicos/:idUsuario', (req, res, next) => {
 	console.log('Recuperando todas as publicações');
-	
+	var idUsuario = req.params.idUsuario;
+	let instrucaoSql = "";
 	// let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
 
 	if(env == 'dev') {
-		instrucaoSql = `select idLeitura, nvAlerta, dataHora,  m.hostname, c.nomeComponente, m.fkUsuario from tb_leitura as l
+		instrucaoSql = `select idLeitura, nvAlerta, dataHora,  m.hostname, c.nomeComponente, m.fkUsuario , mc.descComponente, valor from tb_leitura as l
 		join tb_maquina_componente as mc
 		on mc.idMaquinaComponente = l.fkMaquinaComponente
 		join tb_maquina as m
@@ -49,9 +98,10 @@ router.get('/', function(req, res, next) {
 		on u.idUsuario = m.fkUsuario
 		join tb_componente as c
 		on c.idComponente = mc.fkComponente
+		where idUsuario  = ${idUsuario}
 		order by idLeitura;`;
-	} else if (env == 'product') {
-		instrucaoSql = `select idLeitura, nvAlerta, dataHora,  m.hostname, c.nomeComponente, m.fkUsuario from tb_leitura as l
+	} else if (env == 'production') {
+		instrucaoSql = `select idLeitura, nvAlerta, dataHora,  m.hostname, c.nomeComponente, m.fkUsuario, mc.descComponente, valor from tb_leitura as l
 		join tb_maquina_componente as mc
 		on mc.idMaquinaComponente = l.fkMaquinaComponente
 		join tb_maquina as m
@@ -60,8 +110,11 @@ router.get('/', function(req, res, next) {
 		on u.idUsuario = m.fkUsuario
 		join tb_componente as c
 		on c.idComponente = mc.fkComponente
+		where idUsuario  = ${idUsuario}
 		order by idLeitura;`;
 	}
+
+	console.log(instrucaoSql)
 
 	sequelize.query(instrucaoSql, {
 		model: leitura,
@@ -75,6 +128,8 @@ router.get('/', function(req, res, next) {
 		res.status(500).send(erro.message);
 	});
 });
+
+
 
 
 router.get('/marcadores', function (req, res, next) {
@@ -93,20 +148,21 @@ router.get('/marcadores', function (req, res, next) {
   
 });
 
-router.delete('/deletar/:idMaquina/', function (req, res, next) {
+router.delete('/desativar/:idMaquina/:idComponente', function (req, res, next) {
     console.log('Deletando maquina');
     var idMaquina = req.params.idMaquina;
+	var idComponente = req.params.idComponente;
     let instrucaoSql = "";
     let instrucaoSql2 = "";
 	
      
 
     if (env == 'dev') {
-		instrucaoSql = `update tb_maquina_componente set fkMaquina = null where fkMaquina = ${idMaquina} `;
-		instrucaoSql2 = `delete from tb_maquina where idMaquina = ${idMaquina};`;
+		instrucaoSql = `update tb_maquina_componente set mcStatus = 'Inativo' where fkMaquina = ${idMaquina} and idMaquinaComponente = ${idComponente} ;`;
+	//	instrucaoSql2 = `delete from tb_maquina where idMaquina = ${idMaquina};`;
     } else if (env == 'production') {
-        instrucaoSql = `update tb_maquina_componente set fkMaquina = null where fkMaquina = ${idMaquina} `;
-		instrucaoSql2 = `delete from tb_maquina where idMaquina = ${idMaquina};`;
+        instrucaoSql = `update tb_maquina_componente set mcStatus = 'Inativo' where fkMaquina = ${idMaquina} and idMaquinaComponente = ${idComponente}  ;`;
+	//	instrucaoSql2 = `delete from tb_maquina where idMaquina = ${idMaquina};`;
     } else {
         console.log("\n\n\n\nVERIFIQUE O VALOR DE LINHA 1 EM APP.JS!\n\n\n\n")
     }
@@ -121,14 +177,53 @@ router.delete('/deletar/:idMaquina/', function (req, res, next) {
 		res.status(500).send(erro.message);
 	});
 
-    sequelize.query(instrucaoSql2, { type: sequelize.QueryTypes.DELETE })
-        .then(resultado => {
-		console.log(resultado)
+    // sequelize.query(instrucaoSql2, { type: sequelize.QueryTypes.DELETE })
+    //     .then(resultado => {
+	// 	console.log(resultado)
             
-        }).catch(erro => {
-            console.error(erro);
-            res.status(500).send(erro.message);
-        });
+    //     }).catch(erro => {
+    //         console.error(erro);
+    //         res.status(500).send(erro.message);
+    //     });
+}); 
+
+router.delete('/ativar/:idMaquina/:idComponente', function (req, res, next) {
+    console.log('Deletando maquina');
+    var idMaquina = req.params.idMaquina;
+	var idComponente = req.params.idComponente;
+    let instrucaoSql = "";
+    let instrucaoSql2 = "";
+	
+     
+
+    if (env == 'dev') {
+		instrucaoSql = `update tb_maquina_componente set mcStatus = 'Ativo' where fkMaquina = ${idMaquina} and idMaquinaComponente = ${idComponente} ;`;
+	//	instrucaoSql2 = `delete from tb_maquina where idMaquina = ${idMaquina};`;
+    } else if (env == 'production') {
+        instrucaoSql = `update tb_maquina_componente set mcStatus = 'Ativo' where fkMaquina = ${idMaquina} and idMaquinaComponente = ${idComponente}  ;`;
+	//	instrucaoSql2 = `delete from tb_maquina where idMaquina = ${idMaquina};`;
+    } else {
+        console.log("\n\n\n\nVERIFIQUE O VALOR DE LINHA 1 EM APP.JS!\n\n\n\n")
+    }
+
+    console.log(instrucaoSql);
+    console.log(instrucaoSql2);
+	sequelize.query(instrucaoSql, { type: sequelize.QueryTypes.UPDATE })
+	.then(resultado => {
+		console.log(resultado)
+	}).catch(erro => {
+		console.error(erro);
+		res.status(500).send(erro.message);
+	});
+
+    // sequelize.query(instrucaoSql2, { type: sequelize.QueryTypes.DELETE })
+    //     .then(resultado => {
+	// 	console.log(resultado)
+            
+    //     }).catch(erro => {
+    //         console.error(erro);
+    //         res.status(500).send(erro.message);
+    //     });
 }); 
 
 
@@ -185,7 +280,7 @@ router.get('/componentes', function(req, res, next) {
 router.get('/componentes/:idMaquina', function(req, res, next) {
 	
 	// quantas são as últimas leituras que quer? 7 está bom?
-	const limite_linhas = 6;
+	const limite_linhas = 200;
 
 	var idMaquina = req.params.idMaquina;
 

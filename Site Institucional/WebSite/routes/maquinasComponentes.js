@@ -6,9 +6,6 @@ var env = process.env.NODE_ENV || 'development';
 
 let sessoes = [];
 
-var nome =  Math.random() * (1000 - 1) + 1;
-
-
 // Cadastrando Máquina
 router.post('/cadastrar', function(req, res, next) {
 	console.log('Vinculando máquina e componente');
@@ -16,7 +13,7 @@ router.post('/cadastrar', function(req, res, next) {
 	maquinaComponente.create({
         fkMaquina: req.body.fkMaquina,
 		fkComponente: req.body.fkComponente,
-		descComponente: nome.toString(),
+		descComponente: req.body.descComponente,
         mcStatus: "Ativo"
 	}).then(resultado => {
 		console.log(`Registro criado: ${resultado}`)
@@ -68,7 +65,7 @@ if( env == 'dev' ) {
 	join tb_componente as c
 	on c.idComponente = mc.fkComponente
 	where m.fkUsuario = ${idUsuario} and nomeComponente = 'cpu';`;
-} else if(dev == 'production') {
+} else if(env == 'production') {
 	instrucaoSql = `select count(fkComponente) as qtdcpu from tb_maquina_componente as mc
 	join tb_maquina as m
 	on m.idMaquina = mc.fkMaquina

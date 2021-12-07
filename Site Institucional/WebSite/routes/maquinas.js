@@ -46,14 +46,15 @@ router.get('/', function(req, res, next) {
 	on mc.fkMaquina = m.idMaquina
 	join tb_usuario as u
 	on u.idUsuario = m.fkUsuario
+	where mcStatus = 'Ativo'
 	order by idMaquina;`;
 	} else if (env == 'production') {
-		instrucaoSql = `select distinct(idMaquina), hostname, coalesce(mcStatus, 'Inativo') as mcStatus, fkUsuario from tb_maquina as m
-	left join tb_maquina_componente as mc
-	on mc.fkMaquina = m.idMaquina
-	join tb_usuario as u
-	on u.idUsuario = m.fkUsuario
-	order by idMaquina;`;
+		instrucaoSql = `select distinct(idMaquina), hostname,  mcStatus, fkUsuario from tb_maquina as m join 
+		tb_maquina_componente as mc
+		on mcStatus ='Ativo'
+		   join tb_usuario as u
+		   on u.idUsuario = m.fkUsuario
+		   order by idMaquina;`;
 	}
 
 	sequelize.query(instrucaoSql, {
@@ -77,7 +78,7 @@ router.get('/nomeComponente', function(req, res, next) {
 	let instrucaoSql = "";
 
 	if(env == 'dev') {
-		instrucaoSql = `select idMaquina, hostname, c.nomeComponente, coalesce(mcStatus, 'Inativo') as mcStatus, fkUsuario from tb_maquina as m
+		instrucaoSql = `select idMaquina, hostname, c.nomeComponente, coalesce(mcStatus, 'Inativo') as mcStatus, fkUsuario , idMaquinaComponente from tb_maquina as m
 		left join tb_maquina_componente as mc
 		on mc.fkMaquina = m.idMaquina
 		join tb_componente as c
@@ -86,7 +87,7 @@ router.get('/nomeComponente', function(req, res, next) {
 		on u.idUsuario = m.fkUsuario
 		order by idMaquina;`;
 	} else if (env == 'production') {
-		instrucaoSql = `select idMaquina, hostname, c.nomeComponente, coalesce(mcStatus, 'Inativo') as mcStatus, fkUsuario from tb_maquina as m
+		instrucaoSql = `select idMaquina, hostname, c.nomeComponente, coalesce(mcStatus, 'Inativo') as mcStatus, fkUsuario,idMaquinaComponente from tb_maquina as m
 		left join tb_maquina_componente as mc
 		on mc.fkMaquina = m.idMaquina
 		join tb_componente as c
