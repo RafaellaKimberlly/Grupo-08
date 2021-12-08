@@ -67,6 +67,7 @@
 }
 
 .coluna-dados{
+    height: 510px;
     width: 60%;
     display: flex;
     flex-direction: column;
@@ -119,7 +120,7 @@
 }
 
 .dados-usuario input{
-    height: 45px;
+    height: 25px;
     border: none;
     background-color: rgb(219, 239, 240);
     width: 100%;
@@ -129,7 +130,7 @@
     background-color: rgb(219, 239, 240);
     display: flex;
     align-items: center;
-    margin: 5px;
+    margin: 2px;
 }
 
 .select_pais{
@@ -206,6 +207,22 @@
     align-self: center;
     border-width: 0px;
     margin-top: 1rem;
+}
+
+.btn_userr{
+    border-radius:15px;
+    text-transform: uppercase;
+    color: white;
+    font-size: 10px;
+    padding: 10px 37px;
+    cursor: pointer;
+    font-weight:bold;
+    width:125px;
+    height: 35px;
+    align-self: center;
+    border-width: 0px;
+    margin-top: 1rem;
+    margin-right: 100px;
 }
 
 .btn-primary_user{
