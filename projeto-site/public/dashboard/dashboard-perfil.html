@@ -115,7 +115,7 @@
                         <div class="input-form">
                             <label class="label-input">
                                 <i class="fas fa-globe-americas world"></i>
-                                <select class="select_pais" name="uf" id="uf" placeholder="Estado">
+                                <select style="cursor: pointer;" class="select_pais" name="uf" id="uf" placeholder="Estado">
                                     <option value="#" autofocus>Selecione seu Estado</option>
                                     <option value="AC">AC</option>
                                     <option value="AL">AL</option>
@@ -155,7 +155,7 @@
                             </label>
                         </div> -->
 
-                        <button type="submit" class="btn_perfil">
+                        <button type="submit" style="cursor: pointer;" class="btn_perfil">
                             Alterar informações
                         </button>
                     </form>
@@ -221,6 +221,7 @@
             if (response.ok) {
 
                 console.log(senha.value);
+                alert("Informações alteradas com sucesso!")
 
             } else {
 
