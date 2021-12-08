@@ -50,9 +50,14 @@ public class AcoesCli {
         }
 
     }
+    
+    public void testeTempo(){
+        rgController.tempo();
+    }
 
     public void leiturasRamCli() throws IOException, InterruptedException {
         rgController.addLeituraCpu();
         rgController.addLeituraRam();
+        rgController.addLeituraDisco();
     }
 }

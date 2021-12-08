@@ -27,8 +27,9 @@ public class Application {
 
         sistema.loginCli();
 
-        sistema.leiturasRamCli();
+        sistema.testeTempo();
 
+//        sistema.leiturasRamCli();
     }
 
 }

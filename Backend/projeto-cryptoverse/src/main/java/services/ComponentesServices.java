@@ -16,87 +16,84 @@ public class ComponentesServices {
     Looca looca = new Looca();
     Processador processador = new Processador();
     DiscosGroup discos = new DiscosGroup();
-    
 
 //    =======================================================================================================
 //    RAM
-
-    public Double tamanhoTotalRam(){
+    public Double tamanhoTotalRam() {
         return ram.getTotal().doubleValue();
     }
 
-    public Double tamanhoUsadoRam(){
+    public Double tamanhoUsadoRam() {
         return ram.getEmUso().doubleValue();
     }
 
-    public Integer tamanhoDisponivelRam(){
+    public Integer tamanhoDisponivelRam() {
         return ram.getDisponivel().intValue();
     }
 
     public Double getMemoriaEmUsoPorc() {
-        return (tamanhoUsadoRam()*100) / tamanhoTotalRam();
+        return (tamanhoUsadoRam() * 100) / tamanhoTotalRam();
     }
 
 //    ======================================================================================================
 //
 //    ======================================================================================================
 //    Processador
-    
-    public void hostName(){
-    try{
-      String nomecomputador=InetAddress.getLocalHost().getHostName();
-      System.out.println(nomecomputador);
-    }catch (Exception e){
-      System.out.println("Exception caught ="+e.getMessage());
+    public void hostName() {
+        try {
+            String nomecomputador = InetAddress.getLocalHost().getHostName();
+            System.out.println(nomecomputador);
+        } catch (Exception e) {
+            System.out.println("Exception caught =" + e.getMessage());
+        }
+
     }
- 
-    }
-    public String nomeProcessador(){
+
+    public String nomeProcessador() {
         return processador.getNome();
     }
 
-    public Integer usoProcessador(){
+    public Integer usoProcessador() {
         return processador.getUso().intValue();
     }
 
-    public String identificadorProcessador(){
+    public String identificadorProcessador() {
         return processador.getIdentificador();
     }
 
-    public Integer frequenciaProcessador(){
+    public Integer frequenciaProcessador() {
         return processador.getFrequencia().intValue();
     }
 
-    public Double getCpuUsoPorc(){
-        Integer cpuUso = usoProcessador()/1000000000;
+    public Double getCpuUsoPorc() {
+        Integer cpuUso = usoProcessador() / 1000000000;
         return cpuUso.doubleValue();
     }
 
 //    ========================================================================================================
-
 //    ========================================================================================================
 //    Disco
-    public Long tamanhoTotalDisco(){
-        return discos.getTamanhoTotal() / 1000000000;
+    public Long tamanhoTotalDisco() {
+        return (discos.getTamanhoTotal() / 100) / 100000000;
     }
 
-    public List<Disco> totalDiscos(){
+    public List<Disco> totalDiscos() {
         return discos.getDiscos();
     }
 
-    public Integer quantidadeDeDiscos(){
+    public Integer quantidadeDeDiscos() {
         return discos.getQuantidadeDeDiscos();
     }
 
-    public List<Volume> totalVolume(){
+    public List<Volume> totalVolume() {
         return discos.getVolumes();
     }
 
-    public Integer quantidadeDeVolumes(){
+    public Integer quantidadeDeVolumes() {
         return discos.getQuantidadeDeVolumes();
     }
 
-    public long getDiscoPorc(){
+    public long getDiscoPorc() {
 
         List<Disco> discosConvertidos = totalDiscos();
 
@@ -111,7 +108,6 @@ public class ComponentesServices {
 
 //        tamanhoUsadoRam() / (tamanhoTotalRam() * 0.0
     }
-    
 
 //    =========================================================================================================
 }
