@@ -310,6 +310,7 @@ main {
     margin-right: 2%;
     padding: 7px;
     background-color: #EBEBD3;
+    cursor: pointer;
 }
 
 .btn-cadastrar {
@@ -321,6 +322,7 @@ main {
     border-radius: 6px;
     height: 2.5vw;
     transition: 0.5s;
+    cursor: pointer;
 }
 
 .btn-cadastrar:hover {
