@@ -288,18 +288,19 @@ main {
 .forms form {
     padding: 10px;
     border-radius: 10px;
-    border: 0.5px solid black;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    /* border: 0.5px solid black; */
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+    background-color: #EBEBD3;
 }
 
 .ipt-form {
     width: 100%;
-    height: 2vw;
+    height: 2.5vw;
     border: 1px solid transparent;
     border-radius: 7px;
     margin-right: 2%;
     padding: 10px;
-    background-color: #EBEBD3;
+    background-color: #ccc;
 }
 
 .option-form {
@@ -309,16 +310,17 @@ main {
     border-radius: 7px;
     margin-right: 2%;
     padding: 7px;
-    background-color: #EBEBD3;
+    background-color: #ccc;
     cursor: pointer;
+    height: 2.5vw;
 }
 
 .btn-cadastrar {
     background-color: #F95738;
     color: #fff;
-    width: 50%;
-    margin-right: 1.8%;
-    border: 1px solid transparent;
+    width: 100%;
+    /* margin-right: 1.8%; */
+    /* border: 1px solid transparent; */
     border-radius: 6px;
     height: 2.5vw;
     transition: 0.5s;
@@ -328,7 +330,7 @@ main {
 .btn-cadastrar:hover {
     background-color: #922d19;
     color: #fff;
-    width: 50%;
+    width: 100%;
     margin-right: 1.8%;
     border: 1px solid transparent;
     border-radius: 6px;

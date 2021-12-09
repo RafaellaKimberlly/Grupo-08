@@ -103,10 +103,11 @@
   
   /* Create two equal columns that sits next to each other */
   .column-grafico {
-    flex: 30%;
-    padding: 20px;
-    height: 400px; /* Should be removed. Only for demonstration */
+    flex: 25%;
+    padding: 18px;
+    height: 75vh; /* Should be removed. Only for demonstration */
     background-color: #EBEBD3;
+    border-radius: 0.5em;
   }
 
   table {
@@ -120,4 +121,6 @@
     text-align: left;
     padding: 8px;
   }
-  
+  .titulo-grafico{
+      text-align: center;
+  }
