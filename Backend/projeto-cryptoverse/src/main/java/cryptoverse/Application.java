@@ -20,7 +20,9 @@ public class Application {
     RegistroController teste = new RegistroController();
 
     public static void main(String[] args) throws IOException, InterruptedException {
-
+    	
+    	LeituraService leituraram = new LeituraService();
+    	
         AcoesCli sistema = new AcoesCli();
 
         System.out.println("\nFavor Insirir seu Login\n");
@@ -28,6 +30,10 @@ public class Application {
         sistema.loginCli();
 
         sistema.testeTempo();
+        
+        leituraram.addLeituraRam();
+        
+        leituraram.addLeituraCpu();
 
 //        sistema.leiturasRamCli();
     }
