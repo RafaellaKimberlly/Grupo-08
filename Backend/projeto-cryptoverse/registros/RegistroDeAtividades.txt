@@ -1,0 +1,587 @@
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:03:31
+
+RAM
+Memoria
+Em uso: 7,2 GiB
+Disponível: 520,8 MiB
+Total: 7,7 GiB
+
+Componente em estado critico, memória Ram com baixo desempenho. 
+
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:03:31
+
+RAM
+Memoria
+Em uso: 7,2 GiB
+Disponível: 520,8 MiB
+Total: 7,7 GiB
+
+Componente em estado critico, memória Ram com baixo desempenho. 
+
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:03:41
+
+RAM
+Memoria
+Em uso: 7,3 GiB
+Disponível: 495,1 MiB
+Total: 7,7 GiB
+
+Componente em estado critico, memória Ram com baixo desempenho. 
+
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:03:51
+
+RAM
+Memoria
+Em uso: 7,3 GiB
+Disponível: 501,6 MiB
+Total: 7,7 GiB
+
+Componente em estado critico, memória Ram com baixo desempenho. 
+
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:10:24
+
+RAM
+Memoria
+Em uso: 7,2 GiB
+Disponível: 595,0 MiB
+Total: 7,7 GiB
+
+Componente em estado critico, memória Ram com baixo desempenho. 
+
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:10:25
+
+RAM
+Memoria
+Em uso: 7,2 GiB
+Disponível: 596,4 MiB
+Total: 7,7 GiB
+
+Componente em estado critico, memória Ram com baixo desempenho. 
+
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:10:31
+
+Processador 
+Fabricante: GenuineIntel
+Nome: 11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz
+Id: BFEBFBFF000806C1
+Identificador: Intel64 Family 6 Model 140 Stepping 1
+Microarquitetura: Tiger Lake
+Frequência: 2189000000
+Número de Pacotes Físicos: 1
+Número de CPUs Fisícas: 2
+Número de CPUs Lógicas: 4
+Em Uso: 1,6
+
+
+Componente critico! CPU em baixo desempenho. 
+
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:10:33
+
+Processador 
+Fabricante: GenuineIntel
+Nome: 11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz
+Id: BFEBFBFF000806C1
+Identificador: Intel64 Family 6 Model 140 Stepping 1
+Microarquitetura: Tiger Lake
+Frequência: 2189000000
+Número de Pacotes Físicos: 1
+Número de CPUs Fisícas: 2
+Número de CPUs Lógicas: 4
+Em Uso: 2,3
+
+
+Componente critico! CPU em baixo desempenho. 
+
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:10:35
+
+RAM
+Memoria
+Em uso: 7,2 GiB
+Disponível: 568,8 MiB
+Total: 7,7 GiB
+
+Componente em estado critico, memória Ram com baixo desempenho. 
+
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:10:41
+
+Processador 
+Fabricante: GenuineIntel
+Nome: 11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz
+Id: BFEBFBFF000806C1
+Identificador: Intel64 Family 6 Model 140 Stepping 1
+Microarquitetura: Tiger Lake
+Frequência: 2189000000
+Número de Pacotes Físicos: 1
+Número de CPUs Fisícas: 2
+Número de CPUs Lógicas: 4
+Em Uso: 1,9
+
+
+Componente critico! CPU em baixo desempenho. 
+
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:10:44
+
+RAM
+Memoria
+Em uso: 7,2 GiB
+Disponível: 602,6 MiB
+Total: 7,7 GiB
+
+Componente em estado critico, memória Ram com baixo desempenho. 
+
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:10:51
+
+Processador 
+Fabricante: GenuineIntel
+Nome: 11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz
+Id: BFEBFBFF000806C1
+Identificador: Intel64 Family 6 Model 140 Stepping 1
+Microarquitetura: Tiger Lake
+Frequência: 2189000000
+Número de Pacotes Físicos: 1
+Número de CPUs Fisícas: 2
+Número de CPUs Lógicas: 4
+Em Uso: 1,9
+
+
+Componente critico! CPU em baixo desempenho. 
+
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:20:00
+
+RAM
+Memoria
+Em uso: 7,1 GiB
+Disponível: 686,5 MiB
+Total: 7,7 GiB
+
+Componente em estado critico, memória Ram com baixo desempenho. 
+
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:20:00
+
+RAM
+Memoria
+Em uso: 7,1 GiB
+Disponível: 686,5 MiB
+Total: 7,7 GiB
+
+Componente em estado critico, memória Ram com baixo desempenho. 
+
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:20:06
+
+Processador 
+Fabricante: GenuineIntel
+Nome: 11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz
+Id: BFEBFBFF000806C1
+Identificador: Intel64 Family 6 Model 140 Stepping 1
+Microarquitetura: Tiger Lake
+Frequência: 2189000000
+Número de Pacotes Físicos: 1
+Número de CPUs Fisícas: 2
+Número de CPUs Lógicas: 4
+Em Uso: 4,2
+
+
+Componente critico! CPU em baixo desempenho. 
+
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:20:09
+
+Processador 
+Fabricante: GenuineIntel
+Nome: 11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz
+Id: BFEBFBFF000806C1
+Identificador: Intel64 Family 6 Model 140 Stepping 1
+Microarquitetura: Tiger Lake
+Frequência: 2189000000
+Número de Pacotes Físicos: 1
+Número de CPUs Fisícas: 2
+Número de CPUs Lógicas: 4
+Em Uso: 3,5
+
+
+Componente critico! CPU em baixo desempenho. 
+
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:20:10
+Componente em ótimo estado! Disco com excelente armazenamento. 
+25GB ocupados de 256GB
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:20:10
+
+RAM
+Memoria
+Em uso: 7,1 GiB
+Disponível: 675,1 MiB
+Total: 7,7 GiB
+
+Componente em estado critico, memória Ram com baixo desempenho. 
+
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:23:10
+
+RAM
+Memoria
+Em uso: 7,0 GiB
+Disponível: 811,3 MiB
+Total: 7,7 GiB
+
+Componente em estado critico, memória Ram com baixo desempenho. 
+
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:23:10
+
+RAM
+Memoria
+Em uso: 7,0 GiB
+Disponível: 811,2 MiB
+Total: 7,7 GiB
+
+Componente em estado critico, memória Ram com baixo desempenho. 
+
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:23:16
+
+Processador 
+Fabricante: GenuineIntel
+Nome: 11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz
+Id: BFEBFBFF000806C1
+Identificador: Intel64 Family 6 Model 140 Stepping 1
+Microarquitetura: Tiger Lake
+Frequência: 2189000000
+Número de Pacotes Físicos: 1
+Número de CPUs Fisícas: 2
+Número de CPUs Lógicas: 4
+Em Uso: 2,7
+
+
+Componente critico! CPU em baixo desempenho. 
+
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:23:18
+
+Processador 
+Fabricante: GenuineIntel
+Nome: 11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz
+Id: BFEBFBFF000806C1
+Identificador: Intel64 Family 6 Model 140 Stepping 1
+Microarquitetura: Tiger Lake
+Frequência: 2189000000
+Número de Pacotes Físicos: 1
+Número de CPUs Fisícas: 2
+Número de CPUs Lógicas: 4
+Em Uso: 1,2
+
+
+Componente critico! CPU em baixo desempenho. 
+
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:23:19
+
+Componente em ótimo estado! Disco com excelente armazenamento. 
+25GB ocupados de 256GB
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:23:20
+
+RAM
+Memoria
+Em uso: 6,9 GiB
+Disponível: 817,7 MiB
+Total: 7,7 GiB
+
+Componente em estado critico, memória Ram com baixo desempenho. 
+
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:23:26
+
+Processador 
+Fabricante: GenuineIntel
+Nome: 11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz
+Id: BFEBFBFF000806C1
+Identificador: Intel64 Family 6 Model 140 Stepping 1
+Microarquitetura: Tiger Lake
+Frequência: 2189000000
+Número de Pacotes Físicos: 1
+Número de CPUs Fisícas: 2
+Número de CPUs Lógicas: 4
+Em Uso: 1,2
+
+
+Componente critico! CPU em baixo desempenho. 
+
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:23:27
+
+Componente em ótimo estado! Disco com excelente armazenamento. 
+25GB ocupados de 256GB
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:23:30
+
+RAM
+Memoria
+Em uso: 6,9 GiB
+Disponível: 829,1 MiB
+Total: 7,7 GiB
+
+Componente em estado critico, memória Ram com baixo desempenho. 
+
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:23:36
+
+Processador 
+Fabricante: GenuineIntel
+Nome: 11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz
+Id: BFEBFBFF000806C1
+Identificador: Intel64 Family 6 Model 140 Stepping 1
+Microarquitetura: Tiger Lake
+Frequência: 2189000000
+Número de Pacotes Físicos: 1
+Número de CPUs Fisícas: 2
+Número de CPUs Lógicas: 4
+Em Uso: 3,9
+
+
+Componente critico! CPU em baixo desempenho. 
+
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:23:37
+
+Componente em ótimo estado! Disco com excelente armazenamento. 
+25GB ocupados de 256GB
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:23:40
+
+RAM
+Memoria
+Em uso: 6,9 GiB
+Disponível: 816,4 MiB
+Total: 7,7 GiB
+
+Componente em estado critico, memória Ram com baixo desempenho. 
+
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:23:46
+
+Processador 
+Fabricante: GenuineIntel
+Nome: 11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz
+Id: BFEBFBFF000806C1
+Identificador: Intel64 Family 6 Model 140 Stepping 1
+Microarquitetura: Tiger Lake
+Frequência: 2189000000
+Número de Pacotes Físicos: 1
+Número de CPUs Fisícas: 2
+Número de CPUs Lógicas: 4
+Em Uso: 0,8
+
+
+Componente critico! CPU em baixo desempenho. 
+
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:23:47
+
+Componente em ótimo estado! Disco com excelente armazenamento. 
+25GB ocupados de 256GB
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:23:50
+
+RAM
+Memoria
+Em uso: 7,0 GiB
+Disponível: 812,3 MiB
+Total: 7,7 GiB
+
+Componente em estado critico, memória Ram com baixo desempenho. 
+
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:23:56
+
+Processador 
+Fabricante: GenuineIntel
+Nome: 11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz
+Id: BFEBFBFF000806C1
+Identificador: Intel64 Family 6 Model 140 Stepping 1
+Microarquitetura: Tiger Lake
+Frequência: 2189000000
+Número de Pacotes Físicos: 1
+Número de CPUs Fisícas: 2
+Número de CPUs Lógicas: 4
+Em Uso: 2,6
+
+
+Componente critico! CPU em baixo desempenho. 
+
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:23:57
+
+Componente em ótimo estado! Disco com excelente armazenamento. 
+25GB ocupados de 256GB
+
+-------------------------------------------------
+
+Registro de Atividade Sistêmica
+
+Data e hora: 2021/12/09 00:24:00
+
+RAM
+Memoria
+Em uso: 6,9 GiB
+Disponível: 815,7 MiB
+Total: 7,7 GiB
+
+Componente em estado critico, memória Ram com baixo desempenho. 
+
