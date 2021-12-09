@@ -155,8 +155,7 @@
                         <div class="column-grafico">
                             <h2 class="titulo-grafico">Gráfico de desempenho de componente</h2>
                             <!-- adicione a tag canvas no seu HTML -->
-                            <div class="chart-container"
-                                style="position: relative; height:50vh; width:50vw; margin-top: 20px; display: flex;">
+                            <div class="chart-container" style="position: relative; height:50vh; width:50vw; margin-top: 20px; display: flex;">
                                 <canvas id="myChart"></canvas>
                             </div>
                         </div>
@@ -164,7 +163,7 @@
                         <div class="column-grafico">
                             <h2 class="titulo-grafico">Histórico</h2>
                             <br>
-                            <div style="overflow-y:auto; max-height: 50vh;">
+                            <div style="overflow-y:auto; max-height: 60vh;">
                                 <table>
                                     <thead>
                                         <tr>
@@ -191,7 +190,7 @@
 <script>
     verificar_autenticacao();
 
-     b_usuario.innerHTML = sessionStorage.nome_usuario_meuapp;
+    b_usuario.innerHTML = sessionStorage.nome_usuario_meuapp;
 
     function carregarComponentes() {
 
@@ -680,39 +679,39 @@
         return configuracoes;
     };
 
-    function atualizarGrafico(idMaquina, dados) {
-        console.log("executei atualizarGrafico")
-        // var idMaquina = document.getElementById("feed_container").value;
-        fetch(`/leituras/tempo-atual/${idMaquina}`).then(function (response) {
-            console.log("Estou tentando pegar as leituras da maquina")
-            if (response.ok) {
-                response.json().then(function (novoRegistro) {
+    // function atualizarGrafico(idMaquina, dados) {
+    //     console.log("executei atualizarGrafico")
+    //     // var idMaquina = document.getElementById("feed_container").value;
+    //     fetch(`/leituras/tempo-atual/${idMaquina}`).then(function (response) {
+    //         console.log("Estou tentando pegar as leituras da maquina")
+    //         if (response.ok) {
+    //             response.json().then(function (novoRegistro) {
 
-                    console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
-                    console.log(`Dados atuais do gráfico: ${dados}`);
+    //                 console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+    //                 console.log(`Dados atuais do gráfico: ${dados}`);
 
-                    // tirando e colocando valores no gráfico
-                    dados.labels.shift(); // apagar o primeiro
-                    dados.labels.push(novoRegistro.dataHora); // incluir um novo momento
-                    dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
-                    dados.datasets[0].data.push(novoRegistro.valor); // incluir uma nova leitura de temperatura
+    //                 // tirando e colocando valores no gráfico
+    //                 dados.labels.shift(); // apagar o primeiro
+    //                 dados.labels.push(novoRegistro.dataHora); // incluir um novo momento
+    //                 dados.datasets[0].data.shift();  // apagar o primeiro de temperatura
+    //                 dados.datasets[0].data.push(novoRegistro.valor); // incluir uma nova leitura de temperatura
 
-                    console.log("minha maquina é a " + idMaquina)
+    //                 console.log("minha maquina é a " + idMaquina)
 
-                    window.grafico_linha.update();
+    //                 window.grafico_linha.update();
 
 
-                    setTimeout(() => atualizarGrafico(idMaquina, dados), 2000);
-                });
-            } else {
-                console.error('Nenhum dado encontrado ou erro na API');
-                setTimeout(() => atualizarGrafico(idMaquina, dados), 2000);
-            }
-        }).catch(function (error) {
-                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
-            });
-        // setTimeout(() => atualizarGrafico(idMaquina, dados), 2000);
-    }
+    //                 setTimeout(() => atualizarGrafico(idMaquina, dados), 2000);
+    //             });
+    //         } else {
+    //             console.error('Nenhum dado encontrado ou erro na API');
+    //             setTimeout(() => atualizarGrafico(idMaquina, dados), 2000);
+    //         }
+    //     }).catch(function (error) {
+    //             console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+    //         });
+    //     // setTimeout(() => atualizarGrafico(idMaquina, dados), 2000);
+    // }
 
 </script>
 <!-- <script src="../js/graficos-js.js"></script> -->
