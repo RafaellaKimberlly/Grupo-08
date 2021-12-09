@@ -85,7 +85,6 @@
                     <div class="caixa-titulos">
                         <p class="title-card">CPU</p>
                         <p id="situacao_cpu" class="situacao-porcentagem"></p>
-                        <i class="fas fa-arrow-up seta"></i>
                     </div>
                 </div>
 
@@ -96,7 +95,6 @@
                     <div class="caixa-titulos">
                         <p class="title-card">RAM</p>
                         <p class="situacao-porcentagem" id="situacao_ram"></p>
-                        <i class="fas fa-arrow-up seta"></i>
                     </div>
                 </div>
 
@@ -107,30 +105,38 @@
                     <div class="caixa-titulos">
                         <p class="title-card">Disco</p>
                         <p class="situacao-porcentagem" id="situacao_disco"></p>
-                        <i class="fas fa-arrow-up seta"></i>
                     </div>
                 </div>
             </div>
 
             <div class="alertas">
-                <p class="title-situacao">Situação atual cpu:</p>
-                <img id="situacao_img_cpu" class="img-alert"
-                    src="https://3oecq13pb7a518hqscs13jv9-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/alert-icon-red-11.png"
-                    alt="alert">
-                    
+                <div class="teste_distancia">
+                    <p class="title-situacao">Situação atual cpu:</p>
+                    <img id="situacao_img_cpu" class="img-alert"
+                        src="https://3oecq13pb7a518hqscs13jv9-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/alert-icon-red-11.png"
+                        alt="alert">
+                </div>
+
+                <div class="teste_distancia">
                     <p class="title-situacao">Situação atual ram:</p>
-                <img id="situacao_img_ram" class="img-alert"
-                    src="https://3oecq13pb7a518hqscs13jv9-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/alert-icon-red-11.png"
-                    alt="alert"><br>
+                    <img id="situacao_img_ram" class="img-alert"
+                        src="https://3oecq13pb7a518hqscs13jv9-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/alert-icon-red-11.png"
+                        alt="alert"><br>
+                </div>
+
+                <div class="teste_distancia">
                     <p class="title-situacao">Situação atual disco:</p>
                     <img id="situacao_img_disco" class="img-alert"
                         src="https://3oecq13pb7a518hqscs13jv9-wpengine.netdna-ssl.com/wp-content/uploads/2014/01/alert-icon-red-11.png"
                         alt="alert">
+                </div>
+
             </div>
         </main>
     </div>
 
-    <img src="" alt="">
+
+
 </body>
 
 </html>
@@ -144,7 +150,7 @@
 
         console.log(idUsuario);
 
-        
+
 
         fetch(`/leituras/situacao_componente/${idUsuario}`, {
             method: "GET"
@@ -163,10 +169,10 @@
                         } else if (resp.valor <= 90) {
                             situacao_img_ram.src = `../img/alerta_amarelo.png`;
                         } else if (resp.valor > 90) {
-                            situacao_img_ram.src = "../img/alerta_verde.png";
+                            situacao_img_ram.src = `../img/alerta_verde.png`;
 
-                        } 
-                        
+                        }
+
                         if (resp.nomeComponente == "cpu") {
                             situacao_cpu.innerHTML = resp.valor + "%";
                             console.log("CPU: " + resp.valor)
@@ -180,9 +186,9 @@
                         } else if (resp.valor > 90) {
                             situacao_img_cpu.src = `../img/alerta_verde.png`;
 
-                        } 
-                        
-                        
+                        }
+
+
                         if (resp.nomeComponente == "Disco") {
                             console.log("Disco: " + resp.valor)
                             situacao_disco.innerHTML = resp.valor + "Gb";

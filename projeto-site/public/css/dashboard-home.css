@@ -295,7 +295,13 @@ main {
 }
 
 .alertas {
-  margin-left: 34px;
+  margin-left: -39.9px;
+  margin-top: 377px;
+  display: flex;
+}
+
+.teste_distancia{
+  margin-left: -370px;
 }
 
 .title-situacao {
@@ -306,7 +312,7 @@ main {
 }
 
 .img-alert {
-  width: 104px;
+  width: 10 4px;
   margin-left: 464px;
   height: 6vw;
   margin-top: 11px;
@@ -728,9 +734,9 @@ main {
   }
 
   .img-alert {
-    width: 81px;
+    width: 62px;
     margin-left: 528px;
-    height: 8vw;
+    height: 7vw;
     margin-top: 16px;
   }
 
@@ -834,9 +840,9 @@ main {
   }
 
   .img-alert {
-    width: 93px;
+    width: 69px;
     margin-left: 525px;
-    height: 8vw;
+    height: 7vw;
     margin-top: 16px;
   }
 
@@ -928,8 +934,12 @@ main {
   }
 
   .alertas {
-    margin-left: -72px;
+    margin-left: 160px;
     margin-top: 411px;
+  }
+
+  .teste_distancia{
+    margin-left: -452px;
   }
 
   .title-situacao {
@@ -940,9 +950,9 @@ main {
   }
 
   .img-alert {
-    width: 93px;
+    width: 69px;
     margin-left: 521px;
-    height: 7vw;
+    height: 6vw;
     margin-top: 16px;
   }
 
@@ -997,6 +1007,7 @@ main {
     width: 200px;
     height: 22.5vw;
     transition: 1s;
+    margin-right: 20px;
   }
 
   .caixa-conteudo .card-grafico,
@@ -1028,8 +1039,12 @@ main {
   }
 
   .alertas {
-    margin-left: -248px;
+    margin-left: -48px;
     margin-top: 440px;
+  }
+
+  .teste_distancia{
+    margin-left: -447px;
   }
 
   .title-situacao {
@@ -1040,8 +1055,8 @@ main {
   }
 
   .img-alert {
-    width: 95px;
-    margin-left: 535px;
+    width: 81px;
+    margin-left: 557px;
     height: 6vw;
     margin-top: 39px;
   }
@@ -1121,8 +1136,12 @@ main {
   }
 
   .alertas {
-    margin-left: -186px;
+    margin-left: -31px;
     margin-top: 427px;
+  }
+
+  .teste_distancia{
+    margin-left: -441px;
   }
 
   .title-situacao {
@@ -1133,9 +1152,9 @@ main {
   }
 
   .img-alert {
-    width: 104px;
-    margin-left: 521px;
-    height: 6vw;
+    width: 78px;
+    margin-left: 529px;
+    height: 5vw;
     margin-top: 39px;
   }
 
@@ -1210,7 +1229,7 @@ main {
   }
 
   .alertas {
-    margin-left: -60px;
+    margin-left: 100px;
     margin-top: 361px;
   }
 
@@ -1222,10 +1241,14 @@ main {
   }
 
   .img-alert {
-    width: 92px;
-    margin-left: 520px;
+    width: 72px;
+    margin-left: 542px;
     height: 5vw;
     margin-top: 21px;
+  }
+
+  .teste_distancia{
+    margin-left: -429px;
   }
 
   .caixa-titulos {
