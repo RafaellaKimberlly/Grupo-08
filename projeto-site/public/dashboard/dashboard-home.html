@@ -144,7 +144,7 @@
                         if (resp.nomeComponente == "Memoria-Ram") {
                             situacao_ram.innerHTML = resp.valor + "Gb";
                             console.log("RAM: " + resp.valor)
-                        } /* else if (resp.valor <= 30) {
+                        } else if (resp.valor <= 30) {
                             situacao_img.innerHTML = `<img src="../img/alerta_vermelho.png">`;
                         } else if (resp.valor <= 60) {
                             situacao_img.innerHTML = `<img src="../img/alerta_laranja.png">`;
@@ -153,11 +153,11 @@
                         } else if (resp.valor > 90) {
                             situacao_img.innerHTML = `<img src="../img/alerta_verde.png">`;
 
-                        } */ else if (resp.nomeComponente == "cpu") {
+                        } else if (resp.nomeComponente == "cpu") {
                             situacao_cpu.innerHTML = resp.valor + "%";
                             console.log("CPU: " + resp.valor)
 
-                        } /* else if (resp.valor <= 30) {
+                        } else if (resp.valor <= 30) {
                             situacao_img.innerHTML = `<img src="../img/alerta_vermelho.png">`;
                         } else if (resp.valor <= 60) {
                             situacao_img.innerHTML = `<img src="../img/alerta_laranja.png">`;
@@ -166,25 +166,17 @@
                         } else if (resp.valor > 90) {
                             situacao_img.innerHTML = `<img src="../img/alerta_verde.png">`;
 
-                        } */ else if (resp.nomeComponente == "Disco") {
+                        } else if (resp.nomeComponente == "Disco") {
                             console.log("Disco: " + resp.valor)
                             situacao_disco.innerHTML = resp.valor + "Gb";
 
-                        } /* else if (resp.valor <= 30) {
+                        } else if (resp.valor <= 30) {
                             situacao_img.innerHTML = `<img src="../img/alerta_vermelho.png">`;
                         } else if (resp.valor <= 60) {
                             situacao_img.innerHTML = `<img src="../img/alerta_laranja.png">`;
                         } else if (resp.valor <= 90) {
                             situacao_img.innerHTML = `<img src="../img/alerta_amarelo.png">`;
                         } else if (resp.valor > 90) {
-                            situacao_img.innerHTML = `<img src="../img/alerta_verde.png">`;
-                        } */ else if (situacao_ram || situacao_cpu || situacao_disco <= 30) {
-                            situacao.img.innerHTML = `<img src="../img/alerta_vermelho.png">`;
-                        } else if (situacao_ram || situacao_cpu || situacao_disco <= 60) {
-                            situacao_img.innerHTML = `<img src="../img/alerta_laranja.png">`;
-                        } else if (situacao_ram || situacao_cpu || situacao_disco <= 90) {
-                            situacao_img.innerHTML = `<img src="../img/alerta_amarelo.png">`;
-                        } else if (situacao_ram || situacao_cpu || situacao_disco > 90) {
                             situacao_img.innerHTML = `<img src="../img/alerta_verde.png">`;
                         } else {
                             console.log("Sem leitura");
