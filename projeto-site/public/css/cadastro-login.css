@@ -4,7 +4,7 @@
     display: flex;
     align-items:center;
     justify-content:center;
-    height: 92vh;
+    height: 100vh;
     background-color: rgb(222, 215, 201);
 }
 
@@ -37,6 +37,14 @@
 /* INICIO AJUSTE DE POSIÇÃO DO CONTEUDO/DEIXANDO ELES LADO A LADO */
 .primeiro-conteudo{
     display: flex;
+}
+
+.ajuste_dados1{
+    margin-top: 4%;
+}
+
+.ajuste_dados2{
+    margin-top: 15%;
 }
 
 .primeiro-conteudo .coluna-dados{
@@ -131,12 +139,13 @@
     display: flex;
     align-items: center;
     margin: 2px;
+    margin-bottom: 1%;
 }
 
 .select_pais{
     margin: 2% 3.5%;
     background-color: rgb(219, 239, 240);
-    height: 2.0rem;
+    height: 1.0rem;
     width: 95%;
     border: 1px solid rgb(219, 239, 240);
     text-align: center;
