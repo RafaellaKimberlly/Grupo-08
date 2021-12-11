@@ -527,7 +527,7 @@ input[type="checkbox"]:checked~.menu nav {
     }
     
     .img-conect {
-        height: 30em;
+        height: 24em;
     }
     
     .content-service article {
@@ -603,3 +603,134 @@ input[type="checkbox"]:checked~.menu nav {
         color: #EBEBD3;
     }
 }
+
+@media only screen and (max-width: 1050px) {
+
+  .button {
+    background: #F95738;
+    border-style: none;
+    height: 2.2em;
+    width: 24%;
+    min-width: 30px;
+    border-radius: 2em;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #EBEBD3;
+  }
+
+  .button-entrar {
+    margin-left: 53%;
+    margin-right: 4%;
+    background: #F95738;
+    border-style: none;
+    height: 1.8em;
+    width: 12em;
+    border-radius: 2em;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    color: #EBEBD3;
+  }
+}
+
+@media only screen and (max-width: 955px) {
+
+  .button {
+    background: #F95738;
+    border-style: none;
+    height: 2.2em;
+    width: 24%;
+    min-width: 30px;
+    border-radius: 2em;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #EBEBD3;
+  }
+
+  .button-entrar {
+    margin-left: 53%;
+    margin-right: 4%;
+    background: #F95738;
+    border-style: none;
+    height: 1.8em;
+    width: 12em;
+    border-radius: 2em;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    color: #EBEBD3;
+  }
+}
+
+@media only screen and (max-width: 913px) {
+
+  .button {
+    background: #F95738;
+    border-style: none;
+    height: 2.2em;
+    width: 24%;
+    min-width: 30px;
+    border-radius: 2em;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #EBEBD3;
+  }
+
+  .button-entrar {
+    margin-left: 53%;
+    margin-right: 4%;
+    background: #F95738;
+    border-style: none;
+    height: 1.8em;
+    width: 12em;
+    border-radius: 2em;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    color: #EBEBD3;
+  }
+}
+
+@media only screen and (max-width: 859px) {
+
+  .button {
+    background: #F95738;
+    border-style: none;
+    height: 2.2em;
+    width: 24%;
+    min-width: 30px;
+    border-radius: 2em;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #EBEBD3;
+  }
+
+  .button-entrar {
+    margin-left: 53%;
+    margin-right: 4%;
+    background: #F95738;
+    border-style: none;
+    height: 1.8em;
+    width: 12em;
+    border-radius: 2em;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    color: #EBEBD3;
+  }
+
+  
+}
+
+@media only screen and (max-width: 672px) {
+
+    .img-conect{
+        height: 20em;
+    }
+  
+    
+  }

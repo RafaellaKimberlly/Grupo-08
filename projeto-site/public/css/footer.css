@@ -19,7 +19,7 @@
 /* CRIANDO O FOOTER, CONTAINER PAI */
 .container_footer{
     width: 100%;
-    height: 17em;
+    height: 21em;
     background-color: #231D36;
 }
 
@@ -61,7 +61,7 @@
 
 /* DEIXANDO OS LINK DE NAVEGAÇÃO DO RODAPÉ LADO A LADO E DEFININDO CORES E TAMANHO */
 .container_link_rodape{
-    display: flex;
+    display: ruby;
     text-decoration: none;
     color: rgb(222, 215, 201);
     font-size: 1rem;
@@ -141,6 +141,325 @@
     margin-top: 4.6%;
     color: rgb(222, 215, 201);
     font-size: 17px;
+}
+
+@media only screen and (max-width: 1172px) {
+
+    .container_footer{
+        width: 100%;
+        height: 18em;
+        background-color: #231D36;
+    }
+
+    .container_entre_em_contato{
+        margin-left: 58%;
+        margin-top: -13%;
+    }
+
+    .direitos_autorais{
+        margin-left: 61.3%;
+        margin-top: 13.6%;
+        color: rgb(222, 215, 201);
+        font-size: 17px;
+    }
+
+    .btn{
+        background-color: rgb(230, 68, 9);
+        width: 15%;
+        height: 2.3rem;
+        transition: 0.5s;
+    }
+
+    .container_entre_em_contato input{
+        width: 51%;
+        height: 1em;
+        background-color: rgb(222, 215, 201);
+        padding: 10px;
+    }
+
+    .ajuste_input_btn{
+        margin-left: 1%;
+        margin-top: 2%;
+    }
+
+    .container_entre_em_contato p {
+        color: rgb(222, 215, 201);
+        font-size: 1.0rem;
+    }
+
+    .direitos_autorais{
+        margin-left: 61.3%;
+        margin-top: 9.6%;
+        color: rgb(222, 215, 201);
+        font-size: 17px;
+    }
+
+}
+
+@media only screen and (max-width: 1072px) {
+
+    .container_entre_em_contato{
+        margin-left: 60%;
+        margin-top: -14%;
+    }
+
+    .direitos_autorais{
+        margin-left: 61.3%;
+        margin-top: 7.6%;
+        color: rgb(222, 215, 201);
+        font-size: 17px;
+    }
+
+    .btn{
+        background-color: rgb(230, 68, 9);
+        width: 15%;
+        height: 2.3rem;
+        transition: 0.5s;
+    }
+
+    .container_entre_em_contato input{
+        width: 51%;
+        height: 1em;
+        background-color: rgb(222, 215, 201);
+        padding: 10px;
+    }
+
+    .ajuste_input_btn{
+        margin-left: 1%;
+        margin-top: 2%;
+    }
+
+    .container_entre_em_contato p {
+        color: rgb(222, 215, 201);
+        font-size: 1.0rem;
+    }
+
+}
+
+@media only screen and (max-width: 930px) {
+
+    .caixa_footer{
+        max-width: 87%;
+        margin-left: 2%;
+    }
+
+    .container_entre_em_contato{
+        margin-left: 67%;
+        margin-top: -16%;
+    }
+
+    .direitos_autorais{
+        margin-left: 66.3%;
+        margin-top: 10.6%;
+        color: rgb(222, 215, 201);
+        font-size: 14px;
+    }
+
+    .btn{
+        background-color: rgb(230, 68, 9);
+        width: 19%;
+        height: 2.3rem;
+        transition: 0.5s;
+    }
+
+    .container_entre_em_contato input{
+        width: 51%;
+        height: 1em;
+        background-color: rgb(222, 215, 201);
+        padding: 10px;
+    }
+
+    .ajuste_input_btn{
+        margin-left: 1%;
+        margin-top: 2%;
+    }
+
+    .container_entre_em_contato p {
+        color: rgb(222, 215, 201);
+        font-size: 1.0rem;
+    }
+
+}
+
+@media only screen and (max-width: 846px) {
+
+    .caixa_footer{
+        max-width: 87%;
+        margin-left: 2%;
+    }
+
+    .container_entre_em_contato{
+        margin-left: 69%;
+        margin-top: -18%;
+    }
+
+    .direitos_autorais{
+        margin-left: 69.5%;
+        margin-top: 9.6%;
+        color: rgb(222, 215, 201);
+        font-size: 14px;
+    }
+
+    .btn{
+        background-color: rgb(230, 68, 9);
+        width: 19%;
+        height: 2.3rem;
+        transition: 0.5s;
+    }
+
+    .container_entre_em_contato input{
+        width: 69%;
+        height: 1em;
+        background-color: rgb(222, 215, 201);
+        padding: 10px;
+    }
+
+    .ajuste_input_btn{
+        margin-left: 1%;
+        margin-top: 2%;
+    }
+
+    .container_entre_em_contato p {
+        color: rgb(222, 215, 201);
+        font-size: 0.9rem;
+    }
+
+}
+
+@media only screen and (max-width: 778px) {
+
+    .caixa_footer{
+        max-width: 87%;
+        margin-left: 2%;
+    }
+
+    .container_footer{
+        width: 100%;
+        height: 16.2em;
+        background-color: #231D36;
+    }
+
+    .container_link_rodape{
+        display: ruby;
+        text-decoration: none;
+        color: rgb(222, 215, 201);
+        font-size: 0.9rem;
+    }
+
+    .caixa_link_rodape1{
+        margin-left: 20%;
+        margin-top: -10.8%;
+    }
+
+    .caixa_link_rodape2{
+        margin-left: 6%;
+        margin-top: -10.8%;
+    }
+
+    .container_entre_em_contato{
+        margin-left: 70%;
+        margin-top: -19.9%;
+    }
+
+    .direitos_autorais{
+        margin-left: 69.5%;
+        margin-top: 8.6%;
+        color: rgb(222, 215, 201);
+        font-size: 13px;
+    }
+
+    .btn{
+        background-color: rgb(230, 68, 9);
+        width: 19%;
+        height: 2.3rem;
+        transition: 0.5s;
+    }
+
+    .container_entre_em_contato input{
+        width: 55%;
+        height: 1em;
+        background-color: rgb(222, 215, 201);
+        padding: 10px;
+    }
+
+    .ajuste_input_btn{
+        margin-left: 1%;
+        margin-top: 2%;
+    }
+
+    .container_entre_em_contato p {
+        color: rgb(222, 215, 201);
+        font-size: 0.9rem;
+    }
+
+}
+
+@media only screen and (max-width: 696px) {
+
+    .caixa_footer{
+        max-width: 87%;
+        margin-left: 2%;
+    }
+
+    .container_footer{
+        width: 100%;
+        height: 19em;
+        background-color: #231D36;
+    }
+
+    .container_link_rodape{
+        display: ruby;
+        text-decoration: none;
+        color: rgb(222, 215, 201);
+        font-size: 0.9rem;
+    }
+
+    .caixa_link_rodape1{
+        margin-left: 20%;
+        margin-top: -10.8%;
+    }
+
+    .caixa_link_rodape2{
+        margin-left: 6%;
+        margin-top: -10.8%;
+    }
+
+    .container_entre_em_contato{
+        margin-left: 69%;
+        margin-top: -21.9%;
+    }
+
+    .direitos_autorais{
+        margin-left: 67.5%;
+        margin-top: 15.6%;
+        color: rgb(222, 215, 201);
+        font-size: 13px;
+    }
+
+    .btn{
+        background-color: rgb(230, 68, 9);
+        width: 25%;
+        height: 2.3rem;
+        transition: 0.5s;
+    }
+
+    .container_entre_em_contato input{
+        width: 56%;
+        height: 1em;
+        background-color: rgb(222, 215, 201);
+        padding: 10px;
+    }
+
+    .ajuste_input_btn{
+        margin-left: 1%;
+        margin-top: 2%;
+    }
+
+    .container_entre_em_contato p {
+        color: rgb(222, 215, 201);
+        font-size: 0.9rem;
+    }
+
 }
 
 
