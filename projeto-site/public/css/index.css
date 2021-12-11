@@ -4,6 +4,7 @@
     padding    : 0;
     margin     : 0;
     font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
 }
 
 /* Inicio Header */
@@ -172,7 +173,7 @@ input[type="checkbox"]:checked~.menu nav {
 
 .content-hero h2 {
     padding    : 1em 0 0.2em 0;
-    font-size  : 6em;
+    font-size  : 5em;
     color      : #EEAF32;
     font-weight: 700;
 }
@@ -196,8 +197,9 @@ input[type="checkbox"]:checked~.menu nav {
 }
 
 .content-functions {
-    height : 31rem;
+    height: 38rem;
     padding: 20px;
+    overflow-y: hidden;
 }
 
 .content-functions h2 {
@@ -285,7 +287,7 @@ input[type="checkbox"]:checked~.menu nav {
 
 /* Fim Service */
 
-@media only screen and (max-width: 1800px) {
+/* @media only screen and (max-width: 1800px) {
     .content-service {
         display              : grid;
         grid-template-columns: repeat(2, auto);
@@ -306,7 +308,7 @@ input[type="checkbox"]:checked~.menu nav {
         height : 30em;
         padding: 5em 0 0 0;
     }
-}
+} */
 
 /* Inicio Footer */
 /* ESTILIZAÇÃO DAS TAG'S "a(LINK)" */
@@ -443,4 +445,148 @@ input[type="checkbox"]:checked~.menu nav {
     margin-top : 4.6%;
     color      : rgb(222, 215, 201);
     font-size  : 17px;
+}
+
+@media only screen and (max-width: 1281px) {
+
+    .button {
+        background: #F95738;
+        border-style: none;
+        height: 3em;
+        min-width: 30px;
+        border-radius: 2em;
+        cursor: pointer;
+        font-size: 0.9em;
+        font-weight: 600;
+        color: #EBEBD3;
+    }
+
+    .section-functions {
+        display         : flex;
+        flex-direction  : column;
+        justify-content : center;
+        padding         : 4em 4em 5em 4em;
+        background-color: #EBEBD3;
+    }
+    
+    .content-functions {
+        height : 67rem;
+        padding: 20px;
+        overflow-y: hidden;
+    }
+    
+    .content-functions h2 {
+        text-align : center;
+        font-size  : 3em;
+        font-weight: 400;
+        color      : #231D36;
+    }
+    
+    .icons {
+        padding        : 3em 4em 0em 4em;
+        display        : flex;
+        justify-content: space-around;
+        align-items    : center;
+        flex-direction: column;
+    }
+    
+    .icons-text {
+        display: none;
+    }
+    
+    .icons section {
+        width     : 18em;
+        text-align: center;
+        padding: 0 0 1em 0;
+    }
+    
+    .icons img {
+        height : 11em;
+        padding: 0 0 1em 0;
+    }
+/* fim service */
+    
+    .content-service {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .img-conect {
+        height: 30em;
+    }
+    
+    .content-service article {
+        width: 70%;
+    }
+    
+    .content-service h2 {
+        font-size  : 3em;
+        font-weight: 400;
+        padding    : 0 0 0.2em 0;
+    }
+    
+    .content-service p {
+        font-size: 1.2em;
+        color    : #EBEBD3;
+        padding  : 0 0 2.4em 0;
+    }
+    
+    .button-saiba {
+        height          : 3em;
+        width           : 9em;
+        border-radius   : 5em;
+        cursor          : pointer;
+        background-color: #231D36;
+        font-size       : 1em;
+        font-weight     : 600;
+        color           : #EBEBD3;
+    }
+    
+    .button-saiba:hover {
+        background-color: #493e6d;
+    }
+
+    /* section */
+
+    .section-hero {
+        display         : flex;
+        flex-direction  : column;
+        justify-content : center;
+        padding         : 4em 4em 3em 4em;
+        background-color: #231D36;
+    }
+    
+    .content-hero {
+        display              : flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size            : 1em;
+    }
+    
+    .mensagem_inicial {
+        margin-top: 2%;
+    }
+    
+    .content-hero img {
+        height : 30em;
+        padding: 0 3em 0 3em;
+    }
+    
+    .content-hero h2 {
+        padding    : 1em 0 0.2em 0;
+        font-size  : 6em;
+        color      : #EEAF32;
+        font-weight: 700;
+    }
+    
+    .content-hero p {
+        color: #EBEBD3;
+    }
+    
+    .content-hero span {
+        color: #EBEBD3;
+    }
 }
