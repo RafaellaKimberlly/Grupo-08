@@ -197,7 +197,7 @@ input[type="checkbox"]:checked~.menu nav {
 }
 
 .content-functions {
-    height: 38rem;
+    height: 39rem;
     padding: 20px;
     overflow-y: hidden;
 }
@@ -227,7 +227,7 @@ input[type="checkbox"]:checked~.menu nav {
 }
 
 .icons img {
-    height : 11em;
+    height : 8em;
     padding: 0 0 1em 0;
 }
 
@@ -449,6 +449,12 @@ input[type="checkbox"]:checked~.menu nav {
 
 @media only screen and (max-width: 1281px) {
 
+    .content-functions {
+        height: 39rem;
+        padding: 20px;
+        overflow-y: hidden;
+    }
+
     .button {
         background: #F95738;
         border-style: none;
@@ -500,11 +506,6 @@ input[type="checkbox"]:checked~.menu nav {
         display        : flex;
         justify-content: space-around;
         align-items    : center;
-        flex-direction: column;
-    }
-    
-    .icons-text {
-        display: none;
     }
     
     .icons section {
@@ -514,7 +515,7 @@ input[type="checkbox"]:checked~.menu nav {
     }
     
     .icons img {
-        height : 11em;
+        height : 8em;
         padding: 0 0 1em 0;
     }
 /* fim service */
@@ -604,7 +605,57 @@ input[type="checkbox"]:checked~.menu nav {
     }
 }
 
+@media only screen and (max-width: 1170px) {
+
+    .content-functions {
+        height: 39rem;
+        padding: 20px;
+        overflow-y: hidden;
+    }
+
+    .icons img{
+        height: 7em;
+    }
+
+  .button {
+    background: #F95738;
+    border-style: none;
+    height: 2.2em;
+    width: 24%;
+    min-width: 30px;
+    border-radius: 2em;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #EBEBD3;
+  }
+
+  .button-entrar {
+    margin-left: 53%;
+    margin-right: 4%;
+    background: #F95738;
+    border-style: none;
+    height: 1.8em;
+    width: 12em;
+    border-radius: 2em;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    color: #EBEBD3;
+  }
+}
+
 @media only screen and (max-width: 1050px) {
+
+    .content-functions {
+        height: 39rem;
+        padding: 20px;
+        overflow-y: hidden;
+    }
+
+    .icons img{
+        height: 6em;
+    }
 
   .button {
     background: #F95738;
@@ -636,6 +687,18 @@ input[type="checkbox"]:checked~.menu nav {
 
 @media only screen and (max-width: 955px) {
 
+    .content-functions {
+        height: 39rem;
+        padding: 20px;
+        overflow-y: hidden;
+    }
+
+    .icons img{
+        height: 5em;
+    }
+
+    #localizacao
+
   .button {
     background: #F95738;
     border-style: none;
@@ -666,6 +729,20 @@ input[type="checkbox"]:checked~.menu nav {
 
 @media only screen and (max-width: 913px) {
 
+    .content-functions {
+        height: 39rem;
+        padding: 20px;
+        overflow-y: hidden;
+    }
+
+    .icons img{
+        height: 5em;
+    }
+
+    .correcao_img{
+        margin-top: -6.5%;
+    }
+
   .button {
     background: #F95738;
     border-style: none;
@@ -695,6 +772,208 @@ input[type="checkbox"]:checked~.menu nav {
 }
 
 @media only screen and (max-width: 859px) {
+
+    .content-functions {
+        height: 39rem;
+        padding: 20px;
+        overflow-y: hidden;
+    }
+
+    .icons img{
+        height: 5em;
+    }
+
+    .button {
+      background: #F95738;
+      border-style: none;
+      height: 2.2em;
+      width: 24%;
+      min-width: 30px;
+      border-radius: 2em;
+      cursor: pointer;
+      font-size: 0.9em;
+      font-weight: 600;
+      color: #EBEBD3;
+    }
+  
+    .button-entrar {
+      margin-left: 53%;
+      margin-right: 4%;
+      background: #F95738;
+      border-style: none;
+      height: 1.8em;
+      width: 12em;
+      border-radius: 2em;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: 600;
+      color: #EBEBD3;
+    }
+  
+    
+  }
+
+@media only screen and (max-width: 859px) {
+
+    .content-functions {
+        height: 39rem;
+        padding: 20px;
+        overflow-y: hidden;
+    }
+
+    .icons img{
+        height: 5em;
+    }
+
+  .button {
+    background: #F95738;
+    border-style: none;
+    height: 2.2em;
+    width: 24%;
+    min-width: 30px;
+    border-radius: 2em;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #EBEBD3;
+  }
+
+  .button-entrar {
+    margin-left: 53%;
+    margin-right: 4%;
+    background: #F95738;
+    border-style: none;
+    height: 1.8em;
+    width: 12em;
+    border-radius: 2em;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    color: #EBEBD3;
+  }
+
+  
+}
+
+@media only screen and (max-width: 859px) {
+
+    .content-functions {
+        height: 39rem;
+        padding: 20px;
+        overflow-y: hidden;
+    }
+
+    .icons img{
+        height: 5em;
+    }
+
+  .button {
+    background: #F95738;
+    border-style: none;
+    height: 2.2em;
+    width: 24%;
+    min-width: 30px;
+    border-radius: 2em;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #EBEBD3;
+  }
+
+  .button-entrar {
+    margin-left: 53%;
+    margin-right: 4%;
+    background: #F95738;
+    border-style: none;
+    height: 1.8em;
+    width: 12em;
+    border-radius: 2em;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    color: #EBEBD3;
+  }
+
+  
+}
+
+@media only screen and (max-width: 795px) {
+
+    .content-functions {
+        height: 18rem;
+        padding: 20px;
+        overflow-y: hidden;
+    }
+
+    .icons{
+        display: flex;
+    }
+
+    .icons img{
+        height: 5em;
+    }
+
+    .icons h3{
+        font-size: 1.1em;
+    }
+
+    .icons-text{
+        display: none;
+    }
+
+  .button {
+    background: #F95738;
+    border-style: none;
+    height: 2.2em;
+    width: 24%;
+    min-width: 30px;
+    border-radius: 2em;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #EBEBD3;
+  }
+
+  .button-entrar {
+    margin-left: 53%;
+    margin-right: 4%;
+    background: #F95738;
+    border-style: none;
+    height: 1.8em;
+    width: 12em;
+    border-radius: 2em;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    color: #EBEBD3;
+  }
+
+  
+}
+
+@media only screen and (max-width: 768px) {
+
+    .content-functions {
+        height: 18rem;
+        padding: 20px;
+        overflow-y: hidden;
+    }
+
+    .icons{
+        display: flex;
+    }
+
+    .icons img{
+        height: 5em;
+    }
+
+    .icons h3{
+        font-size: 99%;
+    }
+
+    .icons-text{
+        display: none;
+    }
 
   .button {
     background: #F95738;
@@ -727,6 +1006,28 @@ input[type="checkbox"]:checked~.menu nav {
 }
 
 @media only screen and (max-width: 672px) {
+
+    .content-functions {
+        height: 18rem;
+        padding: 20px;
+        overflow-y: hidden;
+    }
+
+    .icons{
+        display: flex;
+    }
+
+    .icons h3{
+        font-size: 1.1em;
+    }
+
+    .icons img{
+        height: 5em;
+    }
+
+    .icons-text{
+        display: none;
+    }
 
     .img-conect{
         height: 20em;
