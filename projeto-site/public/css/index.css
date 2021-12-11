@@ -31,7 +31,7 @@
     background   : #F95738;
     border-style : none;
     height       : 3em;
-    width        : 10em;
+    min-width: 30px;
     border-radius: 2em;
     cursor       : pointer;
     font-size    : 0.9em;
@@ -50,10 +50,10 @@
     background   : #F95738;
     border-style : none;
     height       : 1.8em;
-    width        : 5em;
+    min-width: 30px;
     border-radius: 2em;
     cursor       : pointer;
-    font-size    : 1.1em;
+    font-size    : 0.9em;
     font-weight  : 600;
     color        : #EBEBD3;
 }
@@ -456,9 +456,22 @@ input[type="checkbox"]:checked~.menu nav {
         min-width: 30px;
         border-radius: 2em;
         cursor: pointer;
-        font-size: 0.9em;
+        font-size: 0.6em;
         font-weight: 600;
         color: #EBEBD3;
+    }
+
+    .button-entrar {
+        margin-left  : 75%;
+        background   : #F95738;
+        border-style : none;
+        height       : 1.8em;
+        min-width: 30px;
+        border-radius: 2em;
+        cursor       : pointer;
+        font-size    : 0.6em;
+        font-weight  : 600;
+        color        : #EBEBD3;
     }
 
     .section-functions {
