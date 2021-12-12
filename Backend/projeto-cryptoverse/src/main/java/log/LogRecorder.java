@@ -46,15 +46,19 @@ public class LogRecorder {
 
     public void registrarHistorico(String historico) throws IOException {
 
-        String home = System.getProperty("user.dir");
-
         DateTimeFormatter data = DateTimeFormatter.ofPattern("yyyy_MM_dd_HH-mm");
 
         String dataCerta = data.format(LocalDateTime.now());
 
         String dataCorrigida = dataCerta.toString();
 
-        File logFile = new File( home + "/registros/" + dataCorrigida + "_log_de_atividades.txt");
+        String home = System.getProperty("user.home");
+
+        File registros = new File(home + "/Registros");
+
+        registros.mkdir();
+
+        File logFile = new File( home + "/Registros/" + dataCorrigida + "_log_de_atividades.txt");
 
         Looca looca = new Looca();
 
