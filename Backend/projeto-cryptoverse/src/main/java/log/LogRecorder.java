@@ -48,7 +48,13 @@ public class LogRecorder {
 
         String home = System.getProperty("user.dir");
 
-        File logFile = new File(home + "/registros/RegistroDeAtividades.txt");
+        DateTimeFormatter data = DateTimeFormatter.ofPattern("yyyy_MM_dd_HH-mm");
+
+        String dataCerta = data.format(LocalDateTime.now());
+
+        String dataCorrigida = dataCerta.toString();
+
+        File logFile = new File( home + "/registros/" + dataCorrigida + "_log_de_atividades.txt");
 
         Looca looca = new Looca();
 
@@ -76,5 +82,4 @@ public class LogRecorder {
 
         bufferedRecLog.close();
     }
-
 }
