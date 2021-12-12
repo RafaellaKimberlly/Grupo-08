@@ -11,10 +11,10 @@
 }
 ::-webkit-scrollbar {
     width: 6px;
-    background: #F4F4F4;
+    background: #231D36;
 }
 ::-webkit-scrollbar-thumb {
-    background: #dad7d7;
+    background: #231D36;
 }
 body{
     background: rgb(202, 201, 201);
