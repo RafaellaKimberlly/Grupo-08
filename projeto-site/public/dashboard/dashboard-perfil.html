@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../funcoes.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&family=Roboto:wght@300;400;500;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/menu-dashboard.css">
+    <link rel="shortcut icon" href="../img/2.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/dashboard-perfil.css">
+    <script type="text/javascript" src="../funcoes.js"></script>
+
+    <title>Perfil</title>
+</head>
+
+<body>
+    <input type="checkbox" id="menu-toggle">
+    <div class="sidebar">
+        <div class="sidebar-marca">
+            <label for="menu-toggle">
+                <div class="menu-hamburguer">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </label>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="dashboard-home.html"><i class="fas fa-home"></i><span>Home</span></a>
+                </li>
+                <li>
+                    <a href="dashboard-graficos.html"><i class="fas fa-chart-line"></i><span>Gráficos</span></a>
+                </li>
+                <li>
+                    <a href="dashboard-relatorios.html"><i class="fas fa-clipboard-list"></i><span>Relatório</span></a>
+                </li>
+                <li>
+                    <a href="cadastro-componentes-dashboard.html"><i class="fas fa-desktop"></i></i><span>Cadastro
+                            Componentes</span></a>
+                </li>
+                <li>
+                    <a class="active" href="dashboard-perfil.html"><i
+                            class="fas fa-user-circle"></i><span>Perfil</span></a>
+                </li>
+            </ul>
+        </div>
+        <div class="sidebar-menu sair">
+            <ul>
+                <li>
+                    <a href="../login-cadastro.html">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Encerrar sessão</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="header-dashboard">
+        <header>
+            <!-- <div class="search-wrapper">
+                <span class="icone-pesquisa"><img src="../img/icone pesquisa.png" alt=""></span>
+                <input type="search" placeholder="Search here">
+            </div> -->
+            <div class="user-wrapper">
+                <img src="../img/foto-perfil.png" width="40px" height="40px" alt="">
+                <div>
+                    <h4 id="h4_nome">
+                    <b id="b_usuario"></b></h4>
+                    <small>Usuario comum</small>
+                </div>
+            </div>
+        </header>
+
+        <main>
+
+            <div class="altera-dados">
+                <!-- <div class="perfil">
+                    <img class="foto-perfil" src="../img/foto-perfil.png" alt="">
+                    <button class="btn_perfil">Alterar foto do Perfil</button>
+                </div> -->
+
+                <div class="form-infos">
+                    <h2>Suas Informações</h2>
+                    <form id="form_alteracao" method="POST" onsubmit="return alterarDados()">
+
+                        <input type="text" name="idUsuario" id="idUsuario" style="display: none;">
+
+                        <div class="input-form">
+                            <i class="fas fa-user icon-modify"></i>
+                            <input id="nome" name="nome" type="text" placeholder="Nome">
+                        </div>
+
+                        <div class="input-form">
+                            <i class="fas fa-user icon-modify"></i>
+                            <input id="sobrenome" name="sobrenome" type="text" placeholder="Sobrenome">
+                        </div>
+
+                        <div class="input-form">
+                            <i class="fas fa-envelope icon-modify"></i>
+                            <input id="email" name="email" type="email" placeholder="Endereço de email">
+                        </div>
+
+                        <div class="input-form">
+                            <i class="fas fa-lock icon-modify"></i>
+                            <input id="senha" name="senha" type="password" placeholder="Alterar Senha">
+                        </div>
+
+                        <div class="input-form">
+                            <label class="label-input">
+                                <i class="fas fa-globe-americas world"></i>
+                                <select style="cursor: pointer;" class="select_pais" name="uf" id="uf" placeholder="Estado">
+                                    <option value="#" autofocus>Selecione seu Estado</option>
+                                    <option value="AC">AC</option>
+                                    <option value="AL">AL</option>
+                                    <option value="AP">AP</option>
+                                    <option value="AM">AM</option>
+                                    <option value="BA">BA</option>
+                                    <option value="CE">CE</option>
+                                    <option value="ES">ES</option>
+                                    <option value="GO">GO</option>
+                                    <option value="MA">MA</option>
+                                    <option value="MT">MT</option>
+                                    <option value="MS">MS</option>
+                                    <option value="MG">MG</option>
+                                    <option value="PA">PA</option>
+                                    <option value="PB">PB</option>
+                                    <option value="PR">PR</option>
+                                    <option value="PE">PE</option>
+                                    <option value="PI">PI</option>
+                                    <option value="RJ">RJ</option>
+                                    <option value="RN">RN</option>
+                                    <option value="RS">RS</option>
+                                    <option value="RO">RO</option>
+                                    <option value="RR">RR</option>
+                                    <option value="SC">SC</option>
+                                    <option value="SP">SP</option>
+                                    <option value="SE">SE</option>
+                                    <option value="TO">TO</option>
+                                    <option value="DF">DF</option>
+                                </select>
+                            </label>
+                        </div>
+
+                        <!-- <div class="input-form">
+                            <label class="label-input">
+                                <i class="fas fa-lock icon-modify"></i>
+                                <input type="number" id="fkPool" name="fkPool" placeholder="Pool">
+                            </label>
+                        </div> -->
+
+                        <button type="submit" style="cursor: pointer;" class="btn_perfil">
+                            Alterar informações
+                        </button>
+                    </form>
+                </div>
+
+                <div class="img_perfil">
+                    <img src="../img/alteracao_perfil.png">
+                </div>
+
+            </div>
+
+        </main>
+</body>
+
+</html>
+
+<script>
+    verificar_autenticacao();
+
+    function cadastrar_maquina(idUsuario) {
+
+        fkUsuario.value = Number(sessionStorage.getItem('id_usuario_meuapp'));
+        console.log(fkUsuario.value)
+
+        var formulario = new URLSearchParams(new FormData(form_cadastro_maquina));
+        fetch("/usuarios/atualizar/:idUsuario", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+
+            if (response.ok) {
+                console.log('Maquina cadastrada')
+
+                // cadastrar_maquina_componentes();
+                alert('Maquina cadastrada com sucesso!');
+                carregarFeed();
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    alert(resposta);
+                    // div_erro.innerHTML = resposta;
+                });
+
+            }
+        });
+
+        return false;
+    }
+
+    function alterarDados() {
+
+        idUsuario.value = Number(sessionStorage.getItem('id_usuario_meuapp'));
+        console.log(idUsuario.value);
+
+        var formulario = new URLSearchParams(new FormData(form_alteracao));
+        fetch("/usuarios/alterar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+
+            if (response.ok) {
+
+                console.log(senha.value);
+                alert("Informações alteradas com sucesso!")
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    div_erro.innerHTML = resposta;
+                });
+            }
+        });
+
+
+        return false;
+    }
+
+</script>
+
+<script data-jsd-embedded data-key="80d9f6eb-00c3-44a5-b11d-16870c4fb50b"
+    data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>

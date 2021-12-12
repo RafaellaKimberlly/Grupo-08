@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    background: #231D36;
+}
+::-webkit-scrollbar-thumb {
+    background: #231D36;
+}
+body{
+    display:grid;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ebebd3;
+}
+
+
+.container-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px 0;
+}
+.container-card .card{
+    position: relative;
+    width: 320px;
+    height: 390px;
+    box-shadow: inset 0px 1px 5px #231D36;
+    border-radius: 15px;
+    margin: 30px;
+}
+.container-card .card:hover{
+    box-shadow: inset 0px 1px 5px #f95738;
+    color: #777;
+}
+.container-card .card .caixa{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    background: #231D36;
+    box-shadow: 0 10px 20px #777;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+.container-card .card:hover .caixa{
+    transform: translateY(-50px);
+    box-shadow: 0 10px 40px #231D36;
+    background: linear-gradient(45deg,#eeaf32,#f95738);
+}
+.container-card .card .caixa .conteudo{
+    padding: 20px;
+    text-align: center;
+}
+.container-card .card .caixa .conteudo figure{
+    position: absolute;
+    top: -10px;
+    right: 30px;
+    font-size: 8em;
+    color: #231D36;
+    transition: 0.5s;
+}
+.container-card .card:hover .caixa .conteudo figure{
+    color: rgba(0,0,0,0.05);
+}
+.container-card .card .caixa .conteudo h3{
+    font-size: 1.8em;
+    color: #eeaf32;
+    z-index: 1;
+    transition: 00.5s;
+}
+.container-card .card:hover .caixa .conteudo h3,
+.container-card .card:hover .caixa .conteudo p{
+    color: #231D36;
+}
+.container-card .card .caixa .conteudo p{
+    font-size: 1em;
+    font-weight: 300;
+    color: #ebebd3;
+    z-index: 1;
+    transition: 0.5s;
+}
+.icon1{
+    width:35%;
+    padding-top: 56px;
+    padding-left: 33px;
+}
+
+.caixa-txt{
+    margin-top: 5%;
+    margin-left: 30px;
+    margin-right: 30px;
+    text-align: center;
+}
+
+.ini-txt{
+    color: #231D36;
+}
+.ini2-txt{
+    color: #eeaf32;
+}
+
+.container-txt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px 0;
+    background-image: url("img/fundo-bloco.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container-txt .fundo{
+    width: 100%;
+    height: 70%;
+}
+
+.caixa-fig {
+    text-align: center;
+}
+
+.container-txt .icon-minerador{
+    position: absolute;
+    top: 145%;
+    left: 60%;
+    position: relative;
+  animation: mymove 5s infinite;
+  animation-delay: 2s;
+}
+
+@keyframes mymove {
+  from {left: -200px;}
+  to {left: 200px;}
+}
+
+
+.container-txt .conteudo-txt{
+      color:#231D36;
+      text-align:justify;
+      width: 55%;
+      margin: auto;
+      text-align: center;
+      display: flex;
+      flex-wrap:inherit;
+      line-height: 30px;
+}
+
+.container-txt .conteudo-txt p {
+    font-size: 2em;
+    font-weight: 400;
+}
+
+.container-colorido{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px 0;
+}
+.container-colorido .caixa-colorida{
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    background-color: #eeaf32;
+    padding: 10px;
+    box-shadow: 5px 10px 18px #777;
+}
+.container-colorido .caixa-colorida .conteudo-colorido{
+      color:#231D36;
+      text-align:justify;
+      align-items: center;
+      width: 80%;
+      margin-top: 10%;
+      margin-left: 10%;
+      margin-bottom: 10%;
+     
+}
+.container-colorido .caixa-colorida .linha1{
+     height: 5px;
+    background-color: #f95738;
+}
+
+.icon-gpu{
+    width: 30%;
+    margin-left: 35%;
+}
+.container-resultado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px 0;
+}
+.caixa-resultado{
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+}
+.linhas{
+    background-color: #231D36;
+    height: 5px;
+}
+.container-resultado .caixa-resultado .conteudo-resultado{
+    display: flex;
+    flex-wrap:inherit;
+    margin-top: 40px;
+}
+.icon-chave-circulo{
+    width: 120%;
+}
+.container-resultado .caixa-resultado .conteudo-resultado .resultado-txt{
+    margin-right: 70px;
+}
+.icon-pc{
+    width: 120%;
+}
+
+.container-wave{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: -5px;
+    margin-bottom: -5px;
+    background-color: #231D36;
+    color: #ebebd3;
+    box-shadow: 5px 10px 18px #777;
+
+}
+.container-wave .caixa-wave{
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+}
+.container-wave .caixa-wave .conteudo-wave1{
+    display: flex;
+    text-align:justify;
+    align-items: center;
+    text-shadow: 0 0 3px #231D36, 0 0 5px #ebebd3
+}
+.conteudo-wave2{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    text-shadow: 0 0 3px #231D36, 0 0 5px #ebebd3
+}
+.wave-txt {
+    margin-top: 40px;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+.icon-block{
+    margin-left: 20%;
+}
+
+.container-branco{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    color: #f95738;
+}
+.container-branco .caixa-branco{
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+}
+.container-branco .caixa-branco .conteudo-branco{
+    margin-top: 10%;
+    margin-bottom: 10%;
+    text-align:justify;
+    align-items: center;
+}
+
+.container-comandos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    color: #231D36;
+}
+.container-comandos .caixa-comandos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f95738;
+}
+.container-comandos .caixa-comandos .conteudo-comandos{
+    width: 75%;
+    background-color: #ebebd3;
+    text-align:justify;
+    align-items: center;
+    box-shadow: 5px 10px 18px #777;
+}
+.conteudo-txt{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.linha1{
+    height: 3px;
+    background-color: #f95738;
+}
+
+
+.conteudo-video{
+    box-shadow: 10px;
+    text-align: center;
+    padding: 0 0 5em 0;
+}
+

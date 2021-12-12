@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="../funcoes.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&family=Roboto:wght@300;400;500;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/dashboard-relatorios.css">
+    <link rel="shortcut icon" href="../img/2.png" type="image/x-icon">
+    <script type="text/javascript" src="../funcoes.js"></script>
+
+    <title>Relátorios</title>
+</head>
+
+<body onload="obterDados()">
+    <input type="checkbox" id="menu-toggle">
+    <div class="sidebar">
+        <div class="sidebar-marca">
+            <label for="menu-toggle">
+                <div class="menu-hamburguer">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </label>
+        </div>
+        <div class="sidebar-menu">
+            <ul>
+                <li>
+                    <a href="dashboard-home.html"><i class="fas fa-home"></i><span>Home</span></a>
+                </li>
+                <li>
+                    <a href="dashboard-graficos.html"><i class="fas fa-chart-line"></i><span>Gráficos</span></a>
+                </li>
+                <li>
+                    <a class="active" href="dashboard-relatorios.html"><i
+                            class="fas fa-clipboard-list"></i><span>Relatório</span></a>
+                </li>
+                <li>
+                    <a href="cadastro-componentes-dashboard.html"><i class="fas fa-desktop"></i></i><span>Cadastro
+                            Componentes</span></a>
+                </li>
+                <li>
+                    <a href="dashboard-perfil.html"><i class="fas fa-user-circle"></i><span>Perfil</span></a>
+                </li>
+            </ul>
+        </div>
+        <div class="sidebar-menu sair">
+            <ul>
+                <li>
+                    <a href="../login-cadastro.html">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Encerrar sessão</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="header-dashboard">
+        <header>
+            <!-- <div class="search-wrapper">
+                <span class="icone-pesquisa"><img src="../img/icone pesquisa.png" alt=""></span>
+                <input type="search" placeholder="Search here">
+            </div> -->
+            <div class="user-wrapper">
+                <img src="../img/foto-perfil.png" width="40px" height="40px" alt="">
+                <div>
+                    <h4 id="h4_nome">
+                    <b id="b_usuario"></b></h4>
+                    <small>Usuario comum</small>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- cards inicio -->
+            <div class="container-cards">
+                <div class="content">
+                    <div class="cards">
+                        <div class="card">
+                            <div class="box">
+                                <h1 id="qtdMaquinas">04</h1>
+                                <h3>Máquinas</h3>
+                            </div>
+                            <div class="icone-case">
+                                <figure>
+                                    <img src="../img/computadores.png" width="50" height="50" alt="">
+                                </figure>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="box">
+                                <h1 id="qtdRam">10</h1>
+                                <h3>RAM</h3>
+                            </div>
+                            <div class="icone-case">
+                                <figure>
+                                    <img src="../img/memoria-ram.png" width="50" height="50" alt="">
+                                </figure>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="box">
+                                <h1 id="qtdDisco">08</h1>
+                                <h3>Disco</h3>
+                            </div>
+                            <div class="icone-case">
+                                <figure>
+                                    <img src="../img/drive-de-disco-rigido.png" width="50" height="50" alt="">
+                                </figure>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="box">
+                                <h1 id="qtdCpu">04</h1>
+                                <h3>CPU</h3>
+                            </div>
+                            <div class="icone-case">
+                                <figure>
+                                    <img src="../img/processadores.png" width="50" height="50" alt="">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-2">
+                        <div class="recent-relatory">
+                            <div class="title">
+                                <h2>Relátório Completo</h2>
+                                <!-- <a href="#" class="btn">Visualizar</a> -->
+                            </div>
+                            <table>
+                                <tr>
+                                    <th>Nivel de Uso</th>
+                                    <th>Nível Alerta</th>
+                                    <th>Data/Hora</th>
+                                    <th>Nome Máquina</th>
+                                    <th>Nome Componente</th>
+                                </tr>
+                                <tbody id="feed_container2"></tbody>
+                            </table>
+                        </div>
+
+                        <!--tabela 2-->
+                        <div class="new-relatory">
+                            <div class="title">
+                                <h2>Relatório de máquinas</h2>
+                                <!-- <a href="#" class="btn">Visualizar</a> -->
+                            </div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Hostname</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="feed_container"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+        </main>
+    </div>
+</body>
+
+</html>
+
+<!-- <script>
+    verificar_autenticacao();
+</script> -->
+
+<script data-jsd-embedded data-key="80d9f6eb-00c3-44a5-b11d-16870c4fb50b"
+    data-base-url="https://jsd-widget.atlassian.com" src="https://jsd-widget.atlassian.com/assets/embed.js"></script>
+
+<script>
+    verificar_autenticacao();
+
+
+    function obterDados() {
+        obterPublicacoes();
+        obterPublicacoes2();
+        contar_maquinas();
+        contar_cpu();
+        contar_ram();
+        contar_disco();
+    }
+
+    function obterPublicacoes() {
+        fetch("/maquinas")
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        atualizarFeed(resposta);
+
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações: ${error.message}`);
+            });
+    }
+
+    function atualizarFeed(maquinas) {
+        let idUsuario = sessionStorage.getItem('id_usuario_meuapp');
+        var feed = document.getElementById("feed_container");
+        feed.innerHTML = "";
+
+        for (let i = 0; i < maquinas.length; i++) {
+            var maquina = maquinas[i];
+
+            if (maquina.fkUsuario == sessionStorage.id_usuario_meuapp) {
+
+                var trMaquina = document.createElement("tr")
+                var td_idMaquina = document.createElement("td")
+                var tdHostname = document.createElement("td")
+                var tdStatus = document.createElement("td")
+
+                td_idMaquina.innerHTML = `${maquina.idMaquina}`;
+                tdHostname.innerHTML = `${maquina.hostname}`;
+                tdStatus.innerHTML = `${maquina.mcStatus}`;
+
+                if (maquina.mcStatus == "Ativo") {
+                    tdStatus.className = "ativo";
+                    trMaquina.className = "statusativo";
+                } else {
+                    tdStatus.className = "inativo";
+                    trMaquina.className = "statusinativo";
+                }
+
+                // if (tdStatus.value == 'Ativo') {
+
+                // } else {
+
+                // }
+
+                trMaquina.appendChild(td_idMaquina);
+                trMaquina.appendChild(tdHostname);
+                trMaquina.appendChild(tdStatus);
+
+                feed.appendChild(trMaquina);
+
+            }
+        }
+    }
+
+    function obterPublicacoes2() {
+       
+        var idUsuario = sessionStorage.id_usuario_meuapp;
+        fetch(`/leituras/historicos/${idUsuario}`)
+            .then(resposta => {
+                if (resposta.ok) {
+                    resposta.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        atualizarFeed2(resposta);
+
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção das publicações: ${error.message}`);
+            });
+    }
+
+    function atualizarFeed2(leituras) {
+        var feed = document.getElementById("feed_container2");
+        feed.innerHTML = "";
+        
+        for (let i = 0; i < leituras.length; i++) {
+            var leitura = leituras[i];
+
+            if (leitura.fkUsuario == sessionStorage.id_usuario_meuapp) {
+
+                var trLeitura = document.createElement("tr")
+                var td_idLeitura = document.createElement("td")
+                var tdAlerta = document.createElement("td")
+                var tdDataHora = document.createElement("td")
+                var tdHostname = document.createElement("td")
+                var tdNomeComponente = document.createElement("td")
+                var formatDate = new Date(leitura.dataHora);
+                td_idLeitura.innerHTML = `${leitura.valor}%`;
+                tdAlerta.innerHTML = `${leitura.nvAlerta}`;
+                tdDataHora.innerHTML = `${formatDate.toLocaleDateString() + "   " +  formatDate.toLocaleTimeString()}`;
+                tdHostname.innerHTML = `${leitura.hostname}`;
+                tdNomeComponente.innerHTML = `${leitura.descComponente}`;
+               
+                // if (maquina.mcStatus == "Ativo") {
+                //     tdStatus.className = "ativo";
+                //     trMaquina.className = "statusativo";
+                // } else {
+                //     tdStatus.className = "inativo";
+                //     trMaquina.className = "statusinativo";
+                // }
+
+                trLeitura.appendChild(td_idLeitura);
+                trLeitura.appendChild(tdAlerta);
+                trLeitura.appendChild(tdDataHora);
+                trLeitura.appendChild(tdHostname);
+                trLeitura.appendChild(tdNomeComponente);
+
+                feed.appendChild(trLeitura);
+
+            }
+        }
+    }
+
+    function contar_maquinas(idUsuario) {
+
+        idUsuario = Number(sessionStorage.getItem('id_usuario_meuapp'));
+
+        console.log(idUsuario);
+
+        fetch(`/maquinas/contar_maquinas/${idUsuario}`, {
+            method: "GET"
+        }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    qtdMaquinas.innerHTML = resposta[0].qtdMaquina;
+                });
+            } else {
+                console.log('Erro de login!');
+            }
+        });
+
+        return false;
+    }
+
+    function contar_cpu(idUsuario) {
+
+        idUsuario = Number(sessionStorage.getItem('id_usuario_meuapp'));
+        var qtdCpu = document.getElementById("qtdCpu");
+        fetch(`/maquinasComponentes/contar_cpu/${idUsuario}`, {
+            method: "GET"
+        }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    qtdCpu.innerHTML = resposta[0].qtdcpu;
+                });
+            } else {
+                console.log('Erro de login!');
+            }
+        });
+
+        return false;
+    }
+
+    function contar_ram(idUsuario) {
+
+        idUsuario = Number(sessionStorage.getItem('id_usuario_meuapp'));
+
+        console.log(idUsuario);
+
+        fetch(`/maquinasComponentes/contar_ram/${idUsuario}`, {
+            method: "GET"
+        }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    qtdRam.innerHTML = resposta[0].qtdRam;
+                });
+            } else {
+                console.log('Erro de login!');
+            }
+        });
+
+        return false;
+    }
+
+    function contar_disco(idUsuario) {
+
+        idUsuario = Number(sessionStorage.getItem('id_usuario_meuapp'));
+
+        console.log(idUsuario);
+
+        fetch(`/maquinasComponentes/contar_disco/${idUsuario}`, {
+            method: "GET"
+        }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    qtdDisco.innerHTML = resposta[0].qtdDisco;
+                });
+            } else {
+                console.log('Erro de login!');
+            }
+        });
+
+        return false;
+    }
+
+</script>

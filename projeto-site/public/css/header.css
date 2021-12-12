@@ -1,0 +1,263 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #231D36;
+    height: 4.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+} 
+
+.header-login {
+  background-color: rgb(222, 215, 201);
+  height: 4.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+} 
+
+.button {
+  background: #F95738;
+  margin-left: 1%;
+  border-style: none;
+  height: 2.7em;
+  width: 10em;
+  border-radius: 2em;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #EBEBD3;
+}
+
+.button:hover{
+
+  background-color: #fa3d17 ;
+}
+
+
+.button-entrar {
+  margin-left: 68%;
+  margin-right: 2%;
+  background: #F95738;
+  border-style: none;
+  height: 2em;
+  width: 9em;
+  border-radius: 2em;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #EBEBD3;
+}
+
+
+.button-entrar:hover{
+
+    background-color: #fa3d17 ;
+}
+
+/* menu hamburguer */
+
+a {
+    text-decoration: none;
+    color: #EBEBD3;
+}
+
+body {
+    font: arial;
+}
+
+ul {
+    list-style: none;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.mobile-menu {
+  cursor: pointer;
+}
+  
+.mobile-menu div {
+  width: 32px;
+  height: 2px;
+  background: black;
+  margin: 8px;
+  transition: 0.3s;
+}
+
+ nav {
+  background-color: #201f22a1;
+    width: 12em;
+    height: 26em;
+    left: -12.5em;
+    position: absolute;
+    transition: all .5s;
+    border-bottom-right-radius: 15em;
+} 
+
+ .estilo_ul {
+    top: 70px;
+    position: absolute;
+    width: 100%;
+}
+
+.link_menu{
+  display: block;
+  padding: 20px 5px;
+  color: white;
+  margin-left: 3%;
+}
+
+.link_menu:hover{
+  color: rgb(176, 224, 230);
+}
+
+label {
+    padding: 10px;
+    /* position: absolute; */
+    z-index: 1;
+}
+
+input[type="checkbox"]:checked ~ .menu nav {
+    transform: translate(200px, -35px);
+}
+
+.menu-hamburguer {
+  cursor: pointer;
+}
+
+.menu-hamburguer div {
+  width: 32px;
+  height: 2px;
+  background: #fff;
+  margin: 8px;
+  transition: 0.3s;
+}
+
+@media only screen and (max-width: 1050px) {
+
+  .button {
+    background: #F95738;
+    border-style: none;
+    height: 2.2em;
+    width: 24%;
+    min-width: 30px;
+    border-radius: 2em;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #EBEBD3;
+  }
+
+  .button-entrar {
+    margin-left: 53%;
+    margin-right: 4%;
+    background: #F95738;
+    border-style: none;
+    height: 1.8em;
+    width: 12em;
+    border-radius: 2em;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    color: #EBEBD3;
+  }
+}
+
+@media only screen and (max-width: 955px) {
+
+  .button {
+    background: #F95738;
+    border-style: none;
+    height: 2.2em;
+    width: 24%;
+    min-width: 30px;
+    border-radius: 2em;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #EBEBD3;
+  }
+
+  .button-entrar {
+    margin-left: 53%;
+    margin-right: 4%;
+    background: #F95738;
+    border-style: none;
+    height: 1.8em;
+    width: 12em;
+    border-radius: 2em;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    color: #EBEBD3;
+  }
+}
+
+@media only screen and (max-width: 913px) {
+
+  .button {
+    background: #F95738;
+    border-style: none;
+    height: 2.2em;
+    width: 24%;
+    min-width: 30px;
+    border-radius: 2em;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #EBEBD3;
+  }
+
+  .button-entrar {
+    margin-left: 53%;
+    margin-right: 4%;
+    background: #F95738;
+    border-style: none;
+    height: 1.8em;
+    width: 12em;
+    border-radius: 2em;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    color: #EBEBD3;
+  }
+}
+
+@media only screen and (max-width: 859px) {
+
+  .button {
+    background: #F95738;
+    border-style: none;
+    height: 2.2em;
+    width: 24%;
+    min-width: 30px;
+    border-radius: 2em;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #EBEBD3;
+  }
+
+  .button-entrar {
+    margin-left: 53%;
+    margin-right: 4%;
+    background: #F95738;
+    border-style: none;
+    height: 1.8em;
+    width: 12em;
+    border-radius: 2em;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    color: #EBEBD3;
+  }
+
+  
+}
