@@ -66,7 +66,7 @@ public class ComponentesServices {
     }
 
     public Double getCpuUsoPorc() {
-        Integer cpuUso = usoProcessador() / 1000000000;
+        Integer cpuUso = usoProcessador();
         return cpuUso.doubleValue();
     }
 
@@ -74,7 +74,7 @@ public class ComponentesServices {
 //    ========================================================================================================
 //    Disco
     public Long tamanhoTotalDisco() {
-        return (discos.getTamanhoTotal() / 100) / 100000000;
+        return discos.getTamanhoTotal() / 1000000000;
     }
 
     public List<Disco> totalDiscos() {
