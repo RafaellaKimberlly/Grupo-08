@@ -143,6 +143,7 @@ input[type="checkbox"]:checked~.menu nav {
 
 .menu-hamburguer {
     cursor: pointer;
+    margin-right: 100px;
 }
 
 .menu-hamburguer div {
