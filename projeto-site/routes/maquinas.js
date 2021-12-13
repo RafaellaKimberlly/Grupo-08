@@ -41,7 +41,7 @@ router.get('/', function(req, res, next) {
 	let instrucaoSql = "";
 
 	if(env == 'dev') {
-		instrucaoSql = `select distinct(idMaquina), hostname, descComponente, coalesce(mcStatus, 'Inativo') as mcStatus, fkUsuario from tb_maquina as m
+		instrucaoSql = `select distinct(idMaquina), hostname,  coalesce(mcStatus, 'Inativo') as mcStatus, fkUsuario from tb_maquina as m
 	left join tb_maquina_componente as mc
 	on mc.fkMaquina = m.idMaquina
 	join tb_usuario as u
@@ -49,7 +49,7 @@ router.get('/', function(req, res, next) {
 	where mcStatus = 'Ativo'
 	order by idMaquina;`;
 	} else if (env == 'production') {
-		instrucaoSql = `select distinct(idMaquina), hostname, descComponente,  mcStatus, fkUsuario from tb_maquina as m join 
+		instrucaoSql = `select distinct(idMaquina), hostname,  mcStatus, fkUsuario from tb_maquina as m join 
 		tb_maquina_componente as mc
 		on mcStatus ='Ativo'
 		   join tb_usuario as u
