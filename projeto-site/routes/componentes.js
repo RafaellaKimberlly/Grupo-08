@@ -162,6 +162,7 @@ router.get('/disco_usuario/:idUsuario/:idMaquina', function (req, res, next) {
 	join tb_usuario as u
 	on u.idUsuario = m.fkUsuario
 	where nomeComponente = 'Disco'
+	or nomeComponente = 'Disco 2'
 	and idUsuario = ${idUsuario}
 	and m.idMaquina = ${idMaquina}
 	and mcStatus = 'Ativo'
@@ -175,6 +176,7 @@ router.get('/disco_usuario/:idUsuario/:idMaquina', function (req, res, next) {
 	join tb_usuario as u
 	on u.idUsuario = m.fkUsuario
 	where nomeComponente = 'Disco'
+	or nomeComponente = 'Disco 2'
 	and idUsuario = ${idUsuario}
 	and m.idMaquina = ${idMaquina}
 	and mcStatus = 'Ativo'

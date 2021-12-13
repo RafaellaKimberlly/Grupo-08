@@ -1,5 +1,6 @@
 package cryptoverse;
 
+import com.github.britooo.looca.api.core.Looca;
 import controller.RegistroController;
 import database.ConexaoBD;
 import java.io.IOException;
@@ -17,6 +18,8 @@ public class Application {
     LeituraService leitura = new LeituraService();
 
     ComponentesServices componente = new ComponentesServices();
+    
+    Looca looca = new Looca();
 
 
     public static void main(String[] args) throws IOException, InterruptedException, SQLException {
@@ -31,6 +34,7 @@ public class Application {
         System.out.println("\n\nFavor Inserir seu Login\n");
 
         sistema.loginCli();
+        
 
     }
 
