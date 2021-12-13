@@ -188,7 +188,7 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Hostname</th>
+                                <th>DescComponente</th>
                                 <th>Componente</th>
                                 <th>Status</th>
                                 <th></th>
@@ -402,43 +402,43 @@ return false;
 
         for (let i = 0; i < maquinas.length; i++) {
             var maquina = maquinas[i];
-            debugger;
+            
 
             if (maquina.fkUsuario == sessionStorage.id_usuario_meuapp) {
 
                 var trMaquina = document.createElement("tr")
                 var td_idMaquina = document.createElement("td")
-                var tdHostname = document.createElement("td")
+                var tdDescComponente = document.createElement("td")
                 var tdComponente = document.createElement("td")
                 var tdStatus = document.createElement("td")
                 var btnDesativar = document.createElement("td")
 
                 td_idMaquina.innerHTML = `${maquina.idMaquina}`;
-                tdHostname.innerHTML = `${maquina.hostname}`;
+                tdDescComponente.innerHTML = `${maquina.descComponente}`;
                 tdComponente.innerHTML = `${maquina.nomeComponente}`;
                 tdStatus.innerHTML = `${maquina.mcStatus}`;
                 // btnDesativar.innerHTML = ` <button class="btn-cadastrar" type="submit">Desativar</button>`;
 
 
                 tdComponente.id = 'componente';
-                tdHostname.id = 'hostname';
+                tdDescComponente.id = 'DescComponente';
 
-                tdHostname.value = `${maquina.idMaquina}`;
+                tdDescComponente.value = `${maquina.descComponente}`;
                 tdComponente.value = `${maquina.nomeComponente}`;
 
                 if (maquina.mcStatus == "Ativo") {
                     tdStatus.className = "ativo";
                     trMaquina.className = "statusativo";
-                    btnDesativar.innerHTML =` <button class="btn-cadastrar" type="submit" onclick="desativarComponente(${maquina.idMaquina},${maquina.idMaquinaComponente})">Desativar</button>`;
+                    btnDesativar.innerHTML =` <button class="btn-cadastrar" type="submit" onclick="desativarComponente(${maquina.descComponente},${maquina.idMaquinaComponente})">Desativar</button>`;
                 } else {
                     tdStatus.className = "inativo";
                     trMaquina.className = "statusinativo";
-                    btnDesativar.innerHTML = ` <button class="btn-cadastrar" type="submit" onclick="ativarComponente(${maquina.idMaquina},${maquina.idMaquinaComponente})">Ativar</button>`;
+                    btnDesativar.innerHTML = ` <button class="btn-cadastrar" type="submit" onclick="ativarComponente(${maquina.descComponente},${maquina.idMaquinaComponente})">Ativar</button>`;
                 }
 
 
                 trMaquina.appendChild(td_idMaquina);
-                trMaquina.appendChild(tdHostname);
+                trMaquina.appendChild(tdDescComponente);
                 trMaquina.appendChild(tdComponente);
                 trMaquina.appendChild(tdStatus);
                 trMaquina.appendChild(btnDesativar);
