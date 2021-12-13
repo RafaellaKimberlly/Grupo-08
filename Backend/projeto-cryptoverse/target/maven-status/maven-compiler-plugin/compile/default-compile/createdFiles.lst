@@ -4,12 +4,14 @@ cryptoverse\AcoesCli.class
 view\TelaSistema2$1.class
 model\TipoDadosModel.class
 database\ConexaoBD.class
+log\LogRecorder.class
 view\TelaLogin$2.class
 services\ServiceTeste.class
 model\LeiturasModel.class
 services\ComponentesServices.class
 cryptoverse\Application.class
 model\ComponentesModel.class
+cryptoverse\AcoesCli$1.class
 model\MaquinasModel.class
 view\TelaLogin.class
 services\LeituraService$1.class
@@ -17,6 +19,7 @@ view\TelaSistema2.class
 services\Slack.class
 model\MaquinasComponentesModel.class
 cryptoverse\timer.class
+database\ConnectorBD.class
 view\TelaLogin$1.class
 controller\RegistroController.class
 services\LeituraService.class
